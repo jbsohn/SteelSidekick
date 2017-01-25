@@ -7,7 +7,7 @@
 ![](Screenshots/iOS.png)
 
 ### Android
-![](Screenshots/macOS.png)
+![](Screenshots/Android.png)
 
 ### macOS
 ![](Screenshots/macOS.png)
