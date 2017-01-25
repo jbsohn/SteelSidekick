@@ -1,0 +1,23 @@
+{ "GuitarStrings" :
+    [ { "StartNote" : "E-4",
+        "StringNumber" : 1
+      },
+      { "StartNote" : "C#-4",
+        "StringNumber" : 2
+      },
+      { "StartNote" : "A-3",
+        "StringNumber" : 3
+      },
+      { "StartNote" : "E-3",
+        "StringNumber" : 4
+      },
+      { "StartNote" : "C#-3",
+        "StringNumber" : 5
+      },
+      { "StartNote" : "A-2",
+        "StringNumber" : 6
+      }
+    ],
+"NumberOfFrets" : 26,
+"GuitarType" : "Lap Steel"
+}

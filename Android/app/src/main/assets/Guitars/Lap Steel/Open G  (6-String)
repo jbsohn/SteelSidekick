@@ -1,0 +1,23 @@
+{ "GuitarStrings" :
+    [ { "StartNote" : "D-4",
+        "StringNumber" : 1
+      },
+      { "StartNote" : "B-3",
+        "StringNumber" : 2
+      },
+      { "StartNote" : "G-3",
+        "StringNumber" : 3
+      },
+      { "StartNote" : "D-3",
+        "StringNumber" : 4
+      },
+      { "StartNote" : "G-2",
+        "StringNumber" : 5
+      },
+      { "StartNote" : "D-2",
+        "StringNumber" : 6
+      }
+    ],
+"NumberOfFrets" : 26,
+"GuitarType" : "Lap Steel"
+}

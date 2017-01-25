@@ -1,0 +1,96 @@
+{
+"NumberOfFrets" : 26,
+"GuitarType" : "Pedal Steel",
+	"GuitarStrings": [{
+		"StringNumber": 1,
+		"StartNote": "G-4"
+	}, {
+		"StringNumber": 2,
+		"StartNote": "E-4"
+	}, {
+		"StringNumber": 3,
+		"StartNote": "C-4"
+	}, {
+		"StringNumber": 4,
+		"StartNote": "A-3"
+	}, {
+		"StringNumber": 5,
+		"StartNote": "G-3"
+	}, {
+		"StringNumber": 6,
+		"StartNote": "E-3"
+	}, {
+		"StringNumber": 7,
+		"StartNote": "C-3"
+	}, {
+		"StringNumber": 8,
+		"StartNote": "A-2"
+	}, {
+		"StringNumber": 9,
+		"StartNote": "F-2"
+	}, {
+		"StringNumber": 10,
+		"StartNote": "C-2"
+	}],
+	"GuitarAdjustments": [{
+		"ID": "P4",
+		"StringAdjustments": [{
+			"StringNumber": 4,
+			"Step": 2
+		}, {
+			"StringNumber": 8,
+			"Step": 2
+		}]
+	}, {
+		"ID": "P5",
+		"StringAdjustments": [{
+			"StringNumber": 1,
+			"Step": 1
+		}, {
+			"StringNumber": 5,
+			"Step": -1
+		}, {
+			"StringNumber": 9,
+			"Step": 1
+		}, {
+			"StringNumber": 10,
+			"Step": 2
+		}]
+	}, {
+		"ID": "P6",
+		"StringAdjustments": [{
+			"StringNumber": 2,
+			"Step": 1
+		}, {
+			"StringNumber": 6,
+			"Step": -1
+		}]
+	}, {
+		"ID": "P7",
+		"StringAdjustments": [{
+			"StringNumber": 3,
+			"Step": 2
+		}, {
+			"StringNumber": 4,
+			"Step": 2
+		}]
+	}, {
+		"ID": "P8",
+		"StringAdjustments": [{
+			"StringNumber": 7,
+			"Step": 1
+		}, {
+			"StringNumber": 9,
+			"Step": -1
+		}, {
+			"StringNumber": 10,
+			"Step": -3
+		}]
+	}, {
+		"ID": "RKL",
+		"StringAdjustments": [{
+			"StringNumber": 3,
+			"Step": -1
+		}]
+	}]
+}

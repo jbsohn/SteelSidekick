@@ -1,0 +1,2028 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		520F62961E3861AA00374912 /* Scale.mm in Sources */ = {isa = PBXBuildFile; fileRef = 520F62921E3861AA00374912 /* Scale.mm */; };
+		520F62971E3861AA00374912 /* SGuitar.mm in Sources */ = {isa = PBXBuildFile; fileRef = 520F62931E3861AA00374912 /* SGuitar.mm */; };
+		520F62981E3861AA00374912 /* GuitarAdjustmentType.mm in Sources */ = {isa = PBXBuildFile; fileRef = 520F62941E3861AA00374912 /* GuitarAdjustmentType.mm */; };
+		520F62991E3861AA00374912 /* ChordOptions.mm in Sources */ = {isa = PBXBuildFile; fileRef = 520F62951E3861AA00374912 /* ChordOptions.mm */; };
+		5228EF6B1D29B8B300E3E15B /* nanovg.c in Sources */ = {isa = PBXBuildFile; fileRef = 52969EA71D17B6A000EFE67B /* nanovg.c */; };
+		5252A0E91D208F9400641714 /* ColorSchemeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5252A0E81D208F9400641714 /* ColorSchemeViewController.m */; };
+		52584A861E2C8D15002461F5 /* NoteName.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52584A841E2C8D15002461F5 /* NoteName.cpp */; };
+		527016F81C8AA88B00EE5CF5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 527016F61C8AA88B00EE5CF5 /* Main.storyboard */; };
+		527016FB1C8AA8F300EE5CF5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 527016FA1C8AA8F300EE5CF5 /* ViewController.m */; };
+		5273B1FB1D488FD200D37CB4 /* GuitarNameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5273B1FA1D488FD200D37CB4 /* GuitarNameTableViewCell.m */; };
+		5284F0361D7E15E9000C3C37 /* NSTimer+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 5284F0341D7E15E9000C3C37 /* NSTimer+Blocks.m */; };
+		5284F03A1D7E211D000C3C37 /* AboutTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5284F0391D7E211D000C3C37 /* AboutTableViewController.m */; };
+		5284F03C1D7E2391000C3C37 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5284F03B1D7E2391000C3C37 /* Settings.bundle */; };
+		528BA0E21D18B9DA009FDC64 /* Chord.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 528BA0CB1D18B9DA009FDC64 /* Chord.cpp */; };
+		528BA0E31D18B9DA009FDC64 /* ChordOptions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 528BA0CC1D18B9DA009FDC64 /* ChordOptions.cpp */; };
+		528BA0E41D18B9DA009FDC64 /* Chords.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 528BA0CD1D18B9DA009FDC64 /* Chords.cpp */; };
+		528BA0E51D18B9DA009FDC64 /* ChordType.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 528BA0CE1D18B9DA009FDC64 /* ChordType.cpp */; };
+		528BA0E61D18B9DA009FDC64 /* FileUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 528BA0CF1D18B9DA009FDC64 /* FileUtils.cpp */; };
+		528BA0E71D18B9DA009FDC64 /* FileUtils_iOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = 528BA0D01D18B9DA009FDC64 /* FileUtils_iOS.mm */; };
+		528BA0E81D18B9DA009FDC64 /* Guitar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 528BA0D11D18B9DA009FDC64 /* Guitar.cpp */; };
+		528BA0E91D18B9DA009FDC64 /* GuitarAdjustment.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 528BA0D21D18B9DA009FDC64 /* GuitarAdjustment.cpp */; };
+		528BA0EA1D18B9DA009FDC64 /* GuitarCanvas.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 528BA0D31D18B9DA009FDC64 /* GuitarCanvas.cpp */; };
+		528BA0EB1D18B9DA009FDC64 /* GuitarOptions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 528BA0D41D18B9DA009FDC64 /* GuitarOptions.cpp */; };
+		528BA0EC1D18B9DA009FDC64 /* Guitars.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 528BA0D51D18B9DA009FDC64 /* Guitars.cpp */; };
+		528BA0ED1D18B9DA009FDC64 /* GuitarString.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 528BA0D61D18B9DA009FDC64 /* GuitarString.cpp */; };
+		528BA0EE1D18B9DA009FDC64 /* GuitarType.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 528BA0D71D18B9DA009FDC64 /* GuitarType.cpp */; };
+		528BA0EF1D18B9DA009FDC64 /* GuitarTypes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 528BA0D81D18B9DA009FDC64 /* GuitarTypes.cpp */; };
+		528BA0F01D18B9DA009FDC64 /* Note.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 528BA0D91D18B9DA009FDC64 /* Note.cpp */; };
+		528BA0F21D18B9DA009FDC64 /* OptionTypes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 528BA0DB1D18B9DA009FDC64 /* OptionTypes.cpp */; };
+		528BA0F31D18B9DA009FDC64 /* Scale.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 528BA0DC1D18B9DA009FDC64 /* Scale.cpp */; };
+		528BA0F41D18B9DA009FDC64 /* ScaleOptions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 528BA0DD1D18B9DA009FDC64 /* ScaleOptions.cpp */; };
+		528BA0F51D18B9DA009FDC64 /* Scales.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 528BA0DE1D18B9DA009FDC64 /* Scales.cpp */; };
+		528BA0F61D18B9DA009FDC64 /* ScaleType.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 528BA0DF1D18B9DA009FDC64 /* ScaleType.cpp */; };
+		528BA0F71D18B9DA009FDC64 /* SGuitar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 528BA0E01D18B9DA009FDC64 /* SGuitar.cpp */; };
+		528BA0F81D18B9DA009FDC64 /* StringAdjustment.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 528BA0E11D18B9DA009FDC64 /* StringAdjustment.cpp */; };
+		52969EAD1D17B6A000EFE67B /* nanovg.c in Sources */ = {isa = PBXBuildFile; fileRef = 52969EA71D17B6A000EFE67B /* nanovg.c */; };
+		52A12F1C1DFFA83200408552 /* UIViewController+Orientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A12F1B1DFFA83200408552 /* UIViewController+Orientation.m */; };
+		52BF4BEC1D203FBF00710CE5 /* UIColor+Expanded.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BF4BEB1D203FBF00710CE5 /* UIColor+Expanded.m */; };
+		52BF4BEF1D20415B00710CE5 /* FlatColorPalette.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BF4BEE1D20415B00710CE5 /* FlatColorPalette.m */; };
+		52CA6EF31D2B611D00EBA92E /* CustomGuitar.mm in Sources */ = {isa = PBXBuildFile; fileRef = 52CA6EF21D2B611D00EBA92E /* CustomGuitar.mm */; };
+		52D0A1081C7FE5D200EA5C6D /* Chord.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52D0A0E41C7FE5D200EA5C6D /* Chord.storyboard */; };
+		52D0A10A1C7FE5D200EA5C6D /* Scale.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52D0A0E81C7FE5D200EA5C6D /* Scale.storyboard */; };
+		52D0A10B1C7FE5D200EA5C6D /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52D0A0EA1C7FE5D200EA5C6D /* Settings.storyboard */; };
+		52D0A10C1C7FE5D200EA5C6D /* ChordTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D0A0ED1C7FE5D200EA5C6D /* ChordTypeViewController.m */; };
+		52D0A10D1C7FE5D200EA5C6D /* ChordViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 52D0A0EF1C7FE5D200EA5C6D /* ChordViewController.mm */; };
+		52D0A10E1C7FE5D200EA5C6D /* GuitarViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 52D0A0F11C7FE5D200EA5C6D /* GuitarViewController.mm */; };
+		52D0A10F1C7FE5D200EA5C6D /* CustomGuitarViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 52D0A0F31C7FE5D200EA5C6D /* CustomGuitarViewController.mm */; };
+		52D0A1131C7FE5D200EA5C6D /* RootNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D0A0FB1C7FE5D200EA5C6D /* RootNoteViewController.m */; };
+		52D0A1141C7FE5D200EA5C6D /* ScaleTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D0A0FD1C7FE5D200EA5C6D /* ScaleTypeViewController.m */; };
+		52D0A1151C7FE5D200EA5C6D /* ScaleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D0A0FF1C7FE5D200EA5C6D /* ScaleViewController.m */; };
+		52D0A1161C7FE5D200EA5C6D /* SettingsViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 52D0A1011C7FE5D200EA5C6D /* SettingsViewController.mm */; };
+		52D0A1181C7FE5D200EA5C6D /* GuitarAdjustmentViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 52D0A1051C7FE5D200EA5C6D /* GuitarAdjustmentViewController.mm */; };
+		52D5F8881D1B936E006C1308 /* ColorScheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D5F8871D1B936E006C1308 /* ColorScheme.m */; };
+		52D671F41E2C9C8D002799FA /* GuitarOptions.mm in Sources */ = {isa = PBXBuildFile; fileRef = 52D671F31E2C9666002799FA /* GuitarOptions.mm */; };
+		52D671F81E2CA1CB002799FA /* ScaleOptions.mm in Sources */ = {isa = PBXBuildFile; fileRef = 52D671F71E2CA1CB002799FA /* ScaleOptions.mm */; };
+		52D672011E2CA4B8002799FA /* NSArrayNoteValueVector.mm in Sources */ = {isa = PBXBuildFile; fileRef = 52D671FC1E2CA4B8002799FA /* NSArrayNoteValueVector.mm */; };
+		52D672021E2CA4B8002799FA /* NSArrayStdStringVector.mm in Sources */ = {isa = PBXBuildFile; fileRef = 52D671FE1E2CA4B8002799FA /* NSArrayStdStringVector.mm */; };
+		52D672031E2CA4B8002799FA /* NSArrayVector.mm in Sources */ = {isa = PBXBuildFile; fileRef = 52D672001E2CA4B8002799FA /* NSArrayVector.mm */; };
+		52D672061E2CA6FF002799FA /* Chord.mm in Sources */ = {isa = PBXBuildFile; fileRef = 52D672051E2CA6AE002799FA /* Chord.mm */; };
+		52D672091E2CAEC2002799FA /* GuitarAdjustmentType.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52D672071E2CAEC2002799FA /* GuitarAdjustmentType.cpp */; };
+		52E413DF1D1783BF00D030A2 /* Appirater.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E4E4DD1D1783AB00D030A2 /* Appirater.m */; };
+		52E413E11D1783BF00D030A2 /* AppiraterLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 52E4E4E01D1783AB00D030A2 /* AppiraterLocalizable.strings */; };
+		52E414481D1783C000D030A2 /* IQNSArray+Sort.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E413B01D1783BF00D030A2 /* IQNSArray+Sort.m */; };
+		52E414491D1783C000D030A2 /* IQUIScrollView+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E413B21D1783BF00D030A2 /* IQUIScrollView+Additions.m */; };
+		52E4144A1D1783C000D030A2 /* IQUITextFieldView+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E413B41D1783BF00D030A2 /* IQUITextFieldView+Additions.m */; };
+		52E4144B1D1783C000D030A2 /* IQUIView+Hierarchy.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E413B61D1783BF00D030A2 /* IQUIView+Hierarchy.m */; };
+		52E4144C1D1783C000D030A2 /* IQUIViewController+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E413B81D1783BF00D030A2 /* IQUIViewController+Additions.m */; };
+		52E4144D1D1783C000D030A2 /* IQUIWindow+Hierarchy.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E413BA1D1783BF00D030A2 /* IQUIWindow+Hierarchy.m */; };
+		52E4144E1D1783C000D030A2 /* IQKeyboardManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E413BF1D1783BF00D030A2 /* IQKeyboardManager.m */; };
+		52E4144F1D1783C000D030A2 /* IQKeyboardReturnKeyHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E413C11D1783BF00D030A2 /* IQKeyboardReturnKeyHandler.m */; };
+		52E414501D1783C000D030A2 /* IQTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E413C41D1783BF00D030A2 /* IQTextView.m */; };
+		52E414511D1783C000D030A2 /* IQBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E413C71D1783BF00D030A2 /* IQBarButtonItem.m */; };
+		52E414521D1783C000D030A2 /* IQTitleBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E413C91D1783BF00D030A2 /* IQTitleBarButtonItem.m */; };
+		52E414531D1783C000D030A2 /* IQToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E413CB1D1783BF00D030A2 /* IQToolbar.m */; };
+		52E414541D1783C000D030A2 /* IQUIView+IQKeyboardToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E413CD1D1783BF00D030A2 /* IQUIView+IQKeyboardToolbar.m */; };
+		52E414551D1783C000D030A2 /* IQKeyboardManager.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 52E413D01D1783BF00D030A2 /* IQKeyboardManager.bundle */; };
+		52E414571D1783C000D030A2 /* ALView+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E413D61D1783BF00D030A2 /* ALView+PureLayout.m */; };
+		52E414581D1783C000D030A2 /* NSArray+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E413D81D1783BF00D030A2 /* NSArray+PureLayout.m */; };
+		52E414591D1783C000D030A2 /* NSLayoutConstraint+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E413DA1D1783BF00D030A2 /* NSLayoutConstraint+PureLayout.m */; };
+		52E416021D17B46C00D030A2 /* Convert.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52E415CB1D17B46C00D030A2 /* Convert.cpp */; };
+		52E416031D17B46C00D030A2 /* Escaper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52E415CC1D17B46C00D030A2 /* Escaper.cpp */; };
+		52E416041D17B46C00D030A2 /* IndentCanceller.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52E415CD1D17B46C00D030A2 /* IndentCanceller.cpp */; };
+		52E416051D17B46C00D030A2 /* Indenter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52E415CE1D17B46C00D030A2 /* Indenter.cpp */; };
+		52E416061D17B46C00D030A2 /* JsonParsingError.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52E415CF1D17B46C00D030A2 /* JsonParsingError.cpp */; };
+		52E416071D17B46C00D030A2 /* JsonWritingError.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52E415D01D17B46C00D030A2 /* JsonWritingError.cpp */; };
+		52E416081D17B46C00D030A2 /* SolidusEscaper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52E415D11D17B46C00D030A2 /* SolidusEscaper.cpp */; };
+		52E416091D17B46C00D030A2 /* Value.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52E415D21D17B46C00D030A2 /* Value.cpp */; };
+		D9112ADD1D13173700F085DF /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9160D871CBBFF7B00A09A4A /* InfoViewController.m */; };
+		D919744C1CCAB73B000312F4 /* StringNoteTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D919744B1CCAB73B000312F4 /* StringNoteTableViewCell.m */; };
+		D92776911D36D10700822208 /* BTBalloon.m in Sources */ = {isa = PBXBuildFile; fileRef = D927768E1D36D10700822208 /* BTBalloon.m */; };
+		D92776921D36D10700822208 /* BTBalloonArrow.m in Sources */ = {isa = PBXBuildFile; fileRef = D92776901D36D10700822208 /* BTBalloonArrow.m */; };
+		D94701EB1E2D51CF00A40B7F /* NoteName.mm in Sources */ = {isa = PBXBuildFile; fileRef = D94701EA1E2D51CC00A40B7F /* NoteName.mm */; };
+		D9535C041D21A6BC003FCC4A /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9535C031D21A6BB003FCC4A /* CFNetwork.framework */; };
+		D9535C061D21A6C8003FCC4A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9535C051D21A6C8003FCC4A /* SystemConfiguration.framework */; };
+		D9535C081D21A6D0003FCC4A /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9535C071D21A6CF003FCC4A /* StoreKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		D95884FA1D1C244A001349CC /* Chord.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 528BA0CB1D18B9DA009FDC64 /* Chord.cpp */; };
+		D95884FB1D1C244A001349CC /* ChordOptions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 528BA0CC1D18B9DA009FDC64 /* ChordOptions.cpp */; };
+		D95884FC1D1C244A001349CC /* Chords.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 528BA0CD1D18B9DA009FDC64 /* Chords.cpp */; };
+		D95884FD1D1C244A001349CC /* ChordType.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 528BA0CE1D18B9DA009FDC64 /* ChordType.cpp */; };
+		D95884FE1D1C244A001349CC /* FileUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 528BA0CF1D18B9DA009FDC64 /* FileUtils.cpp */; };
+		D95884FF1D1C244A001349CC /* FileUtils_iOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = 528BA0D01D18B9DA009FDC64 /* FileUtils_iOS.mm */; };
+		D95885001D1C244A001349CC /* Guitar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 528BA0D11D18B9DA009FDC64 /* Guitar.cpp */; };
+		D95885011D1C244A001349CC /* GuitarAdjustment.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 528BA0D21D18B9DA009FDC64 /* GuitarAdjustment.cpp */; };
+		D95885021D1C244A001349CC /* GuitarCanvas.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 528BA0D31D18B9DA009FDC64 /* GuitarCanvas.cpp */; };
+		D95885031D1C244A001349CC /* GuitarOptions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 528BA0D41D18B9DA009FDC64 /* GuitarOptions.cpp */; };
+		D95885041D1C244A001349CC /* Guitars.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 528BA0D51D18B9DA009FDC64 /* Guitars.cpp */; };
+		D95885051D1C244A001349CC /* GuitarString.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 528BA0D61D18B9DA009FDC64 /* GuitarString.cpp */; };
+		D95885061D1C244A001349CC /* GuitarType.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 528BA0D71D18B9DA009FDC64 /* GuitarType.cpp */; };
+		D95885071D1C244A001349CC /* GuitarTypes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 528BA0D81D18B9DA009FDC64 /* GuitarTypes.cpp */; };
+		D95885081D1C244A001349CC /* Note.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 528BA0D91D18B9DA009FDC64 /* Note.cpp */; };
+		D958850A1D1C244A001349CC /* OptionTypes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 528BA0DB1D18B9DA009FDC64 /* OptionTypes.cpp */; };
+		D958850B1D1C244A001349CC /* Scale.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 528BA0DC1D18B9DA009FDC64 /* Scale.cpp */; };
+		D958850C1D1C244A001349CC /* ScaleOptions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 528BA0DD1D18B9DA009FDC64 /* ScaleOptions.cpp */; };
+		D958850D1D1C244A001349CC /* Scales.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 528BA0DE1D18B9DA009FDC64 /* Scales.cpp */; };
+		D958850E1D1C244A001349CC /* ScaleType.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 528BA0DF1D18B9DA009FDC64 /* ScaleType.cpp */; };
+		D958850F1D1C244A001349CC /* SGuitar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 528BA0E01D18B9DA009FDC64 /* SGuitar.cpp */; };
+		D95885101D1C244A001349CC /* StringAdjustment.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 528BA0E11D18B9DA009FDC64 /* StringAdjustment.cpp */; };
+		D95885111D1C2479001349CC /* Convert.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52E415CB1D17B46C00D030A2 /* Convert.cpp */; };
+		D95885121D1C2479001349CC /* Escaper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52E415CC1D17B46C00D030A2 /* Escaper.cpp */; };
+		D95885131D1C2479001349CC /* IndentCanceller.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52E415CD1D17B46C00D030A2 /* IndentCanceller.cpp */; };
+		D95885141D1C2479001349CC /* Indenter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52E415CE1D17B46C00D030A2 /* Indenter.cpp */; };
+		D95885151D1C2479001349CC /* JsonParsingError.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52E415CF1D17B46C00D030A2 /* JsonParsingError.cpp */; };
+		D95885161D1C2479001349CC /* JsonWritingError.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52E415D01D17B46C00D030A2 /* JsonWritingError.cpp */; };
+		D95885171D1C2479001349CC /* SolidusEscaper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52E415D11D17B46C00D030A2 /* SolidusEscaper.cpp */; };
+		D95885181D1C2479001349CC /* Value.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52E415D21D17B46C00D030A2 /* Value.cpp */; };
+		D96DC1C21D18534F00D7ECFD /* SGGuitarTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = D96DC1C01D18534F00D7ECFD /* SGGuitarTests.mm */; };
+		D96DC1C31D18534F00D7ECFD /* TestScaleChord.mm in Sources */ = {isa = PBXBuildFile; fileRef = D96DC1C11D18534F00D7ECFD /* TestScaleChord.mm */; };
+		D96DC1C81D18769C00D7ECFD /* TestGuitar.json in Resources */ = {isa = PBXBuildFile; fileRef = D96DC1C51D18769C00D7ECFD /* TestGuitar.json */; };
+		D96DC2A51D188C8D00D7ECFD /* ADSR.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC2391D188C8D00D7ECFD /* ADSR.cpp */; };
+		D96DC2A61D188C8D00D7ECFD /* Asymp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC23A1D188C8D00D7ECFD /* Asymp.cpp */; };
+		D96DC2A71D188C8D00D7ECFD /* BandedWG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC23B1D188C8D00D7ECFD /* BandedWG.cpp */; };
+		D96DC2A81D188C8D00D7ECFD /* BeeThree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC23C1D188C8D00D7ECFD /* BeeThree.cpp */; };
+		D96DC2A91D188C8D00D7ECFD /* BiQuad.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC23D1D188C8D00D7ECFD /* BiQuad.cpp */; };
+		D96DC2AA1D188C8D00D7ECFD /* Blit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC23E1D188C8D00D7ECFD /* Blit.cpp */; };
+		D96DC2AB1D188C8D00D7ECFD /* BlitSaw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC23F1D188C8D00D7ECFD /* BlitSaw.cpp */; };
+		D96DC2AC1D188C8D00D7ECFD /* BlitSquare.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC2401D188C8D00D7ECFD /* BlitSquare.cpp */; };
+		D96DC2AD1D188C8D00D7ECFD /* BlowBotl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC2411D188C8D00D7ECFD /* BlowBotl.cpp */; };
+		D96DC2AE1D188C8D00D7ECFD /* BlowHole.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC2421D188C8D00D7ECFD /* BlowHole.cpp */; };
+		D96DC2AF1D188C8D00D7ECFD /* Bowed.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC2431D188C8D00D7ECFD /* Bowed.cpp */; };
+		D96DC2B01D188C8D00D7ECFD /* Brass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC2441D188C8D00D7ECFD /* Brass.cpp */; };
+		D96DC2B11D188C8D00D7ECFD /* Chorus.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC2451D188C8D00D7ECFD /* Chorus.cpp */; };
+		D96DC2B21D188C8D00D7ECFD /* Clarinet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC2461D188C8D00D7ECFD /* Clarinet.cpp */; };
+		D96DC2B31D188C8D00D7ECFD /* Delay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC2471D188C8D00D7ECFD /* Delay.cpp */; };
+		D96DC2B41D188C8D00D7ECFD /* DelayA.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC2481D188C8D00D7ECFD /* DelayA.cpp */; };
+		D96DC2B51D188C8D00D7ECFD /* DelayL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC2491D188C8D00D7ECFD /* DelayL.cpp */; };
+		D96DC2B61D188C8D00D7ECFD /* Drummer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC24A1D188C8D00D7ECFD /* Drummer.cpp */; };
+		D96DC2B71D188C8D00D7ECFD /* Echo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC24B1D188C8D00D7ECFD /* Echo.cpp */; };
+		D96DC2B81D188C8D00D7ECFD /* Envelope.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC24C1D188C8D00D7ECFD /* Envelope.cpp */; };
+		D96DC2B91D188C8D00D7ECFD /* FileLoop.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC24D1D188C8D00D7ECFD /* FileLoop.cpp */; };
+		D96DC2BA1D188C8D00D7ECFD /* FileRead.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC24E1D188C8D00D7ECFD /* FileRead.cpp */; };
+		D96DC2BB1D188C8D00D7ECFD /* FileWrite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC24F1D188C8D00D7ECFD /* FileWrite.cpp */; };
+		D96DC2BC1D188C8D00D7ECFD /* FileWvIn.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC2501D188C8D00D7ECFD /* FileWvIn.cpp */; };
+		D96DC2BD1D188C8D00D7ECFD /* FileWvOut.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC2511D188C8D00D7ECFD /* FileWvOut.cpp */; };
+		D96DC2BE1D188C8D00D7ECFD /* Fir.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC2521D188C8D00D7ECFD /* Fir.cpp */; };
+		D96DC2BF1D188C8D00D7ECFD /* Flute.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC2531D188C8D00D7ECFD /* Flute.cpp */; };
+		D96DC2C01D188C8D00D7ECFD /* FM.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC2541D188C8D00D7ECFD /* FM.cpp */; };
+		D96DC2C11D188C8D00D7ECFD /* FMVoices.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC2551D188C8D00D7ECFD /* FMVoices.cpp */; };
+		D96DC2C21D188C8D00D7ECFD /* FormSwep.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC2561D188C8D00D7ECFD /* FormSwep.cpp */; };
+		D96DC2C31D188C8D00D7ECFD /* FreeVerb.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC2571D188C8D00D7ECFD /* FreeVerb.cpp */; };
+		D96DC2C41D188C8D00D7ECFD /* Granulate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC2581D188C8D00D7ECFD /* Granulate.cpp */; };
+		D96DC2C51D188C8D00D7ECFD /* Guitar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC2591D188C8D00D7ECFD /* Guitar.cpp */; };
+		D96DC2C61D188C8D00D7ECFD /* HevyMetl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC25A1D188C8D00D7ECFD /* HevyMetl.cpp */; };
+		D96DC2C71D188C8D00D7ECFD /* Iir.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC25B1D188C8D00D7ECFD /* Iir.cpp */; };
+		D96DC2CB1D188C8D00D7ECFD /* iasiothiscallresolver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC2691D188C8D00D7ECFD /* iasiothiscallresolver.cpp */; };
+		D96DC2CE1D188C8D00D7ECFD /* JCRev.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC26E1D188C8D00D7ECFD /* JCRev.cpp */; };
+		D96DC2CF1D188C8D00D7ECFD /* LentPitShift.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC26F1D188C8D00D7ECFD /* LentPitShift.cpp */; };
+		D96DC2D01D188C8D00D7ECFD /* Makefile.in in Resources */ = {isa = PBXBuildFile; fileRef = D96DC2701D188C8D00D7ECFD /* Makefile.in */; };
+		D96DC2D11D188C8D00D7ECFD /* Mandolin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC2711D188C8D00D7ECFD /* Mandolin.cpp */; };
+		D96DC2D21D188C8D00D7ECFD /* Mesh2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC2721D188C8D00D7ECFD /* Mesh2D.cpp */; };
+		D96DC2D31D188C8D00D7ECFD /* Messager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC2731D188C8D00D7ECFD /* Messager.cpp */; };
+		D96DC2D41D188C8D00D7ECFD /* MidiFileIn.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC2741D188C8D00D7ECFD /* MidiFileIn.cpp */; };
+		D96DC2D51D188C8D00D7ECFD /* Modal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC2751D188C8D00D7ECFD /* Modal.cpp */; };
+		D96DC2D61D188C8D00D7ECFD /* ModalBar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC2761D188C8D00D7ECFD /* ModalBar.cpp */; };
+		D96DC2D71D188C8D00D7ECFD /* Modulate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC2771D188C8D00D7ECFD /* Modulate.cpp */; };
+		D96DC2D81D188C8D00D7ECFD /* Moog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC2781D188C8D00D7ECFD /* Moog.cpp */; };
+		D96DC2DA1D188C8D00D7ECFD /* Noise.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC27A1D188C8D00D7ECFD /* Noise.cpp */; };
+		D96DC2DB1D188C8D00D7ECFD /* NRev.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC27B1D188C8D00D7ECFD /* NRev.cpp */; };
+		D96DC2DC1D188C8D00D7ECFD /* OnePole.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC27C1D188C8D00D7ECFD /* OnePole.cpp */; };
+		D96DC2DD1D188C8D00D7ECFD /* OneZero.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC27D1D188C8D00D7ECFD /* OneZero.cpp */; };
+		D96DC2DE1D188C8D00D7ECFD /* PercFlut.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC27E1D188C8D00D7ECFD /* PercFlut.cpp */; };
+		D96DC2DF1D188C8D00D7ECFD /* Phonemes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC27F1D188C8D00D7ECFD /* Phonemes.cpp */; };
+		D96DC2E01D188C8D00D7ECFD /* PitShift.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC2801D188C8D00D7ECFD /* PitShift.cpp */; };
+		D96DC2E11D188C8D00D7ECFD /* Plucked.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC2811D188C8D00D7ECFD /* Plucked.cpp */; };
+		D96DC2E21D188C8D00D7ECFD /* PoleZero.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC2821D188C8D00D7ECFD /* PoleZero.cpp */; };
+		D96DC2E31D188C8D00D7ECFD /* PRCRev.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC2831D188C8D00D7ECFD /* PRCRev.cpp */; };
+		D96DC2E51D188C8D00D7ECFD /* Resonate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC2861D188C8D00D7ECFD /* Resonate.cpp */; };
+		D96DC2E61D188C8D00D7ECFD /* Rhodey.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC2871D188C8D00D7ECFD /* Rhodey.cpp */; };
+		D96DC2EB1D188C8D00D7ECFD /* Sampler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC28C1D188C8D00D7ECFD /* Sampler.cpp */; };
+		D96DC2EC1D188C8D00D7ECFD /* Saxofony.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC28D1D188C8D00D7ECFD /* Saxofony.cpp */; };
+		D96DC2ED1D188C8D00D7ECFD /* Shakers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC28E1D188C8D00D7ECFD /* Shakers.cpp */; };
+		D96DC2EE1D188C8D00D7ECFD /* Simple.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC28F1D188C8D00D7ECFD /* Simple.cpp */; };
+		D96DC2EF1D188C8D00D7ECFD /* SineWave.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC2901D188C8D00D7ECFD /* SineWave.cpp */; };
+		D96DC2F01D188C8D00D7ECFD /* SingWave.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC2911D188C8D00D7ECFD /* SingWave.cpp */; };
+		D96DC2F11D188C8D00D7ECFD /* Sitar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC2921D188C8D00D7ECFD /* Sitar.cpp */; };
+		D96DC2F21D188C8D00D7ECFD /* Skini.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC2931D188C8D00D7ECFD /* Skini.cpp */; };
+		D96DC2F41D188C8D00D7ECFD /* Sphere.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC2951D188C8D00D7ECFD /* Sphere.cpp */; };
+		D96DC2F51D188C8D00D7ECFD /* StifKarp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC2961D188C8D00D7ECFD /* StifKarp.cpp */; };
+		D96DC2F61D188C8D00D7ECFD /* Stk.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC2971D188C8D00D7ECFD /* Stk.cpp */; };
+		D96DC2F71D188C8D00D7ECFD /* TapDelay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC2981D188C8D00D7ECFD /* TapDelay.cpp */; };
+		D96DC2FB1D188C8D00D7ECFD /* TubeBell.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC29C1D188C8D00D7ECFD /* TubeBell.cpp */; };
+		D96DC2FC1D188C8D00D7ECFD /* Twang.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC29D1D188C8D00D7ECFD /* Twang.cpp */; };
+		D96DC2FD1D188C8D00D7ECFD /* TwoPole.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC29E1D188C8D00D7ECFD /* TwoPole.cpp */; };
+		D96DC2FE1D188C8D00D7ECFD /* TwoZero.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC29F1D188C8D00D7ECFD /* TwoZero.cpp */; };
+		D96DC3001D188C8D00D7ECFD /* Voicer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC2A11D188C8D00D7ECFD /* Voicer.cpp */; };
+		D96DC3011D188C8D00D7ECFD /* VoicForm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC2A21D188C8D00D7ECFD /* VoicForm.cpp */; };
+		D96DC3021D188C8D00D7ECFD /* Whistle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC2A31D188C8D00D7ECFD /* Whistle.cpp */; };
+		D96DC3031D188C8D00D7ECFD /* Wurley.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC2A41D188C8D00D7ECFD /* Wurley.cpp */; };
+		D96DC3061D188D4700D7ECFD /* GuitarPlayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = D96DC3041D188D4700D7ECFD /* GuitarPlayer.mm */; };
+		D96DC30B1D1891CA00D7ECFD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D96DC30A1D1891CA00D7ECFD /* AVFoundation.framework */; };
+		D96DC30D1D1891D400D7ECFD /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D96DC30C1D1891D400D7ECFD /* AudioToolbox.framework */; };
+		D9752F2A1D305924005CC651 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D96DC3081D1891BA00D7ECFD /* AVKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		D9752F2C1D305924005CC651 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9C7414C1C7E5F60002B2A5F /* GLKit.framework */; };
+		D9752F2E1D305924005CC651 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9C7414A1C7E5F57002B2A5F /* OpenGLES.framework */; };
+		D9BCFE131C7E5DDB00C36405 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D9BCFE121C7E5DDB00C36405 /* main.m */; };
+		D9BCFE161C7E5DDB00C36405 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D9BCFE151C7E5DDB00C36405 /* AppDelegate.m */; };
+		D9BCFE1E1C7E5DDB00C36405 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9BCFE1D1C7E5DDB00C36405 /* Assets.xcassets */; };
+		D9BCFE211C7E5DDB00C36405 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9BCFE1F1C7E5DDB00C36405 /* LaunchScreen.storyboard */; };
+		D9BCFE2C1C7E5DDB00C36405 /* SteelSidekickTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D9BCFE2B1C7E5DDB00C36405 /* SteelSidekickTests.m */; };
+		D9BCFE371C7E5DDB00C36405 /* SteelSidekickUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D9BCFE361C7E5DDB00C36405 /* SteelSidekickUITests.m */; };
+		D9DA9EAC1E29655B00BF5141 /* Images in Resources */ = {isa = PBXBuildFile; fileRef = D9DA9EA91E29655B00BF5141 /* Images */; };
+		D9DA9EAD1E29655B00BF5141 /* Settings in Resources */ = {isa = PBXBuildFile; fileRef = D9DA9EAA1E29655B00BF5141 /* Settings */; };
+		D9DA9EAE1E29655B00BF5141 /* Guitars in Resources */ = {isa = PBXBuildFile; fileRef = D9DA9EAB1E29655B00BF5141 /* Guitars */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D9BCFE281C7E5DDB00C36405 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D9BCFE061C7E5DDB00C36405 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D9BCFE0D1C7E5DDB00C36405;
+			remoteInfo = SteelSidekick;
+		};
+		D9BCFE331C7E5DDB00C36405 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D9BCFE061C7E5DDB00C36405 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D9BCFE0D1C7E5DDB00C36405;
+			remoteInfo = SteelSidekick;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		520F62921E3861AA00374912 /* Scale.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = Scale.mm; path = ../SGuitar/src/Scale.mm; sourceTree = "<group>"; };
+		520F62931E3861AA00374912 /* SGuitar.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = SGuitar.mm; path = ../SGuitar/src/SGuitar.mm; sourceTree = "<group>"; };
+		520F62941E3861AA00374912 /* GuitarAdjustmentType.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = GuitarAdjustmentType.mm; path = ../SGuitar/src/GuitarAdjustmentType.mm; sourceTree = "<group>"; };
+		520F62951E3861AA00374912 /* ChordOptions.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ChordOptions.mm; path = ../SGuitar/src/ChordOptions.mm; sourceTree = "<group>"; };
+		5252A0E71D208F9400641714 /* ColorSchemeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorSchemeViewController.h; sourceTree = "<group>"; };
+		5252A0E81D208F9400641714 /* ColorSchemeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorSchemeViewController.m; sourceTree = "<group>"; };
+		52584A841E2C8D15002461F5 /* NoteName.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = NoteName.cpp; path = ../SGuitar/src/NoteName.cpp; sourceTree = "<group>"; };
+		52584A871E2C8D9E002461F5 /* NoteName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NoteName.h; path = ../SGuitar/include/SG/NoteName.h; sourceTree = "<group>"; };
+		527016F71C8AA88B00EE5CF5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		527016F91C8AA8F300EE5CF5 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		527016FA1C8AA8F300EE5CF5 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		5273B1F91D488FD200D37CB4 /* GuitarNameTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuitarNameTableViewCell.h; sourceTree = "<group>"; };
+		5273B1FA1D488FD200D37CB4 /* GuitarNameTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuitarNameTableViewCell.m; sourceTree = "<group>"; };
+		527FB7951D2CDF3800A35FA7 /* Convert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Convert.h; sourceTree = "<group>"; };
+		527FB7961D2CDF3800A35FA7 /* Escaper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Escaper.h; sourceTree = "<group>"; };
+		527FB7971D2CDF3800A35FA7 /* Grammar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Grammar.h; sourceTree = "<group>"; };
+		527FB7981D2CDF3800A35FA7 /* IndentCanceller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndentCanceller.h; sourceTree = "<group>"; };
+		527FB7991D2CDF3800A35FA7 /* Indenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Indenter.h; sourceTree = "<group>"; };
+		527FB79A1D2CDF3800A35FA7 /* JsonParsingError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonParsingError.h; sourceTree = "<group>"; };
+		527FB79B1D2CDF3800A35FA7 /* JsonWritingError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonWritingError.h; sourceTree = "<group>"; };
+		527FB79C1D2CDF3800A35FA7 /* OutputFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutputFilter.h; sourceTree = "<group>"; };
+		527FB79D1D2CDF3800A35FA7 /* SolidusEscaper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SolidusEscaper.h; sourceTree = "<group>"; };
+		527FB79E1D2CDF3800A35FA7 /* Value.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Value.h; sourceTree = "<group>"; };
+		527FB79F1D2CDF3800A35FA7 /* JsonBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonBox.h; sourceTree = "<group>"; };
+		5284F0331D7E15E9000C3C37 /* NSTimer+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+Blocks.h"; sourceTree = "<group>"; };
+		5284F0341D7E15E9000C3C37 /* NSTimer+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+Blocks.m"; sourceTree = "<group>"; };
+		5284F0351D7E15E9000C3C37 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		5284F0381D7E211D000C3C37 /* AboutTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutTableViewController.h; sourceTree = "<group>"; };
+		5284F0391D7E211D000C3C37 /* AboutTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutTableViewController.m; sourceTree = "<group>"; };
+		5284F03B1D7E2391000C3C37 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		528BA0CB1D18B9DA009FDC64 /* Chord.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; name = Chord.cpp; path = ../SGuitar/src/Chord.cpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
+		528BA0CC1D18B9DA009FDC64 /* ChordOptions.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ChordOptions.cpp; path = ../SGuitar/src/ChordOptions.cpp; sourceTree = "<group>"; };
+		528BA0CD1D18B9DA009FDC64 /* Chords.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Chords.cpp; path = ../SGuitar/src/Chords.cpp; sourceTree = "<group>"; };
+		528BA0CE1D18B9DA009FDC64 /* ChordType.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ChordType.cpp; path = ../SGuitar/src/ChordType.cpp; sourceTree = "<group>"; };
+		528BA0CF1D18B9DA009FDC64 /* FileUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FileUtils.cpp; path = ../SGuitar/src/FileUtils.cpp; sourceTree = "<group>"; };
+		528BA0D01D18B9DA009FDC64 /* FileUtils_iOS.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = FileUtils_iOS.mm; path = ../SGuitar/src/FileUtils_iOS.mm; sourceTree = "<group>"; };
+		528BA0D11D18B9DA009FDC64 /* Guitar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; name = Guitar.cpp; path = ../SGuitar/src/Guitar.cpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
+		528BA0D21D18B9DA009FDC64 /* GuitarAdjustment.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GuitarAdjustment.cpp; path = ../SGuitar/src/GuitarAdjustment.cpp; sourceTree = "<group>"; };
+		528BA0D31D18B9DA009FDC64 /* GuitarCanvas.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GuitarCanvas.cpp; path = ../SGuitar/src/GuitarCanvas.cpp; sourceTree = "<group>"; };
+		528BA0D41D18B9DA009FDC64 /* GuitarOptions.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GuitarOptions.cpp; path = ../SGuitar/src/GuitarOptions.cpp; sourceTree = "<group>"; };
+		528BA0D51D18B9DA009FDC64 /* Guitars.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Guitars.cpp; path = ../SGuitar/src/Guitars.cpp; sourceTree = "<group>"; };
+		528BA0D61D18B9DA009FDC64 /* GuitarString.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GuitarString.cpp; path = ../SGuitar/src/GuitarString.cpp; sourceTree = "<group>"; };
+		528BA0D71D18B9DA009FDC64 /* GuitarType.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GuitarType.cpp; path = ../SGuitar/src/GuitarType.cpp; sourceTree = "<group>"; };
+		528BA0D81D18B9DA009FDC64 /* GuitarTypes.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GuitarTypes.cpp; path = ../SGuitar/src/GuitarTypes.cpp; sourceTree = "<group>"; };
+		528BA0D91D18B9DA009FDC64 /* Note.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; name = Note.cpp; path = ../SGuitar/src/Note.cpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
+		528BA0DB1D18B9DA009FDC64 /* OptionTypes.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = OptionTypes.cpp; path = ../SGuitar/src/OptionTypes.cpp; sourceTree = "<group>"; };
+		528BA0DC1D18B9DA009FDC64 /* Scale.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; name = Scale.cpp; path = ../SGuitar/src/Scale.cpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
+		528BA0DD1D18B9DA009FDC64 /* ScaleOptions.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ScaleOptions.cpp; path = ../SGuitar/src/ScaleOptions.cpp; sourceTree = "<group>"; };
+		528BA0DE1D18B9DA009FDC64 /* Scales.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Scales.cpp; path = ../SGuitar/src/Scales.cpp; sourceTree = "<group>"; };
+		528BA0DF1D18B9DA009FDC64 /* ScaleType.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ScaleType.cpp; path = ../SGuitar/src/ScaleType.cpp; sourceTree = "<group>"; };
+		528BA0E01D18B9DA009FDC64 /* SGuitar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SGuitar.cpp; path = ../SGuitar/src/SGuitar.cpp; sourceTree = "<group>"; };
+		528BA0E11D18B9DA009FDC64 /* StringAdjustment.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = StringAdjustment.cpp; path = ../SGuitar/src/StringAdjustment.cpp; sourceTree = "<group>"; };
+		528BA0FB1D18F03C009FDC64 /* Chord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = Chord.h; path = ../SGuitar/include/SG/Chord.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		528BA0FC1D18F03C009FDC64 /* ChordOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChordOptions.h; path = ../SGuitar/include/SG/ChordOptions.h; sourceTree = "<group>"; };
+		528BA0FD1D18F03C009FDC64 /* Chords.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Chords.h; path = ../SGuitar/include/SG/Chords.h; sourceTree = "<group>"; };
+		528BA0FE1D18F03C009FDC64 /* ChordType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChordType.h; path = ../SGuitar/include/SG/ChordType.h; sourceTree = "<group>"; };
+		528BA0FF1D18F03C009FDC64 /* FileUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FileUtils.h; path = ../SGuitar/include/SG/FileUtils.h; sourceTree = "<group>"; };
+		528BA1001D18F03C009FDC64 /* Guitar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = Guitar.h; path = ../SGuitar/include/SG/Guitar.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		528BA1011D18F03C009FDC64 /* GuitarAdjustment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GuitarAdjustment.h; path = ../SGuitar/include/SG/GuitarAdjustment.h; sourceTree = "<group>"; };
+		528BA1021D18F03C009FDC64 /* GuitarCanvas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GuitarCanvas.h; path = ../SGuitar/include/SG/GuitarCanvas.h; sourceTree = "<group>"; };
+		528BA1031D18F03C009FDC64 /* GuitarOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GuitarOptions.h; path = ../SGuitar/include/SG/GuitarOptions.h; sourceTree = "<group>"; };
+		528BA1041D18F03C009FDC64 /* Guitars.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Guitars.h; path = ../SGuitar/include/SG/Guitars.h; sourceTree = "<group>"; };
+		528BA1051D18F03C009FDC64 /* GuitarString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GuitarString.h; path = ../SGuitar/include/SG/GuitarString.h; sourceTree = "<group>"; };
+		528BA1061D18F03C009FDC64 /* GuitarType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GuitarType.h; path = ../SGuitar/include/SG/GuitarType.h; sourceTree = "<group>"; };
+		528BA1071D18F03C009FDC64 /* GuitarTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GuitarTypes.h; path = ../SGuitar/include/SG/GuitarTypes.h; sourceTree = "<group>"; };
+		528BA1081D18F03C009FDC64 /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Note.h; path = ../SGuitar/include/SG/Note.h; sourceTree = "<group>"; };
+		528BA10A1D18F03C009FDC64 /* OptionTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OptionTypes.h; path = ../SGuitar/include/SG/OptionTypes.h; sourceTree = "<group>"; };
+		528BA10B1D18F03C009FDC64 /* Scale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Scale.h; path = ../SGuitar/include/SG/Scale.h; sourceTree = "<group>"; };
+		528BA10C1D18F03C009FDC64 /* ScaleOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScaleOptions.h; path = ../SGuitar/include/SG/ScaleOptions.h; sourceTree = "<group>"; };
+		528BA10D1D18F03C009FDC64 /* Scales.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Scales.h; path = ../SGuitar/include/SG/Scales.h; sourceTree = "<group>"; };
+		528BA10E1D18F03C009FDC64 /* ScaleType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScaleType.h; path = ../SGuitar/include/SG/ScaleType.h; sourceTree = "<group>"; };
+		528BA10F1D18F03C009FDC64 /* SGuitar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SGuitar.h; path = ../SGuitar/include/SG/SGuitar.h; sourceTree = "<group>"; };
+		528BA1101D18F03C009FDC64 /* StringAdjustment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StringAdjustment.h; path = ../SGuitar/include/SG/StringAdjustment.h; sourceTree = "<group>"; };
+		52969EA61D17B6A000EFE67B /* fontstash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fontstash.h; sourceTree = "<group>"; };
+		52969EA71D17B6A000EFE67B /* nanovg.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = nanovg.c; sourceTree = "<group>"; };
+		52969EA81D17B6A000EFE67B /* nanovg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = nanovg.h; sourceTree = "<group>"; };
+		52969EA91D17B6A000EFE67B /* nanovg_gl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = nanovg_gl.h; sourceTree = "<group>"; };
+		52969EAA1D17B6A000EFE67B /* nanovg_gl_utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = nanovg_gl_utils.h; sourceTree = "<group>"; };
+		52969EAB1D17B6A000EFE67B /* stb_image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_image.h; sourceTree = "<group>"; };
+		52969EAC1D17B6A000EFE67B /* stb_truetype.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_truetype.h; sourceTree = "<group>"; };
+		52969EF01D17B75300EFE67B /* Export.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Export.h; sourceTree = "<group>"; };
+		52A12F1A1DFFA83200408552 /* UIViewController+Orientation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Orientation.h"; sourceTree = "<group>"; };
+		52A12F1B1DFFA83200408552 /* UIViewController+Orientation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Orientation.m"; sourceTree = "<group>"; };
+		52A12F1D1DFFC92100408552 /* Globals.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Globals.h; sourceTree = "<group>"; };
+		52BF4BEA1D203FBF00710CE5 /* UIColor+Expanded.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Expanded.h"; sourceTree = "<group>"; };
+		52BF4BEB1D203FBF00710CE5 /* UIColor+Expanded.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Expanded.m"; sourceTree = "<group>"; };
+		52BF4BED1D20415B00710CE5 /* FlatColorPalette.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlatColorPalette.h; sourceTree = "<group>"; };
+		52BF4BEE1D20415B00710CE5 /* FlatColorPalette.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlatColorPalette.m; sourceTree = "<group>"; };
+		52CA6EF11D2B611D00EBA92E /* CustomGuitar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomGuitar.h; sourceTree = "<group>"; };
+		52CA6EF21D2B611D00EBA92E /* CustomGuitar.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CustomGuitar.mm; sourceTree = "<group>"; };
+		52D0A0E51C7FE5D200EA5C6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Chord.storyboard; sourceTree = "<group>"; };
+		52D0A0E91C7FE5D200EA5C6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Scale.storyboard; sourceTree = "<group>"; };
+		52D0A0EB1C7FE5D200EA5C6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
+		52D0A0EC1C7FE5D200EA5C6D /* ChordTypeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChordTypeViewController.h; sourceTree = "<group>"; };
+		52D0A0ED1C7FE5D200EA5C6D /* ChordTypeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChordTypeViewController.m; sourceTree = "<group>"; };
+		52D0A0EE1C7FE5D200EA5C6D /* ChordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChordViewController.h; sourceTree = "<group>"; };
+		52D0A0EF1C7FE5D200EA5C6D /* ChordViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ChordViewController.mm; sourceTree = "<group>"; };
+		52D0A0F01C7FE5D200EA5C6D /* GuitarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuitarViewController.h; sourceTree = "<group>"; };
+		52D0A0F11C7FE5D200EA5C6D /* GuitarViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GuitarViewController.mm; sourceTree = "<group>"; };
+		52D0A0F21C7FE5D200EA5C6D /* CustomGuitarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomGuitarViewController.h; sourceTree = "<group>"; };
+		52D0A0F31C7FE5D200EA5C6D /* CustomGuitarViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CustomGuitarViewController.mm; sourceTree = "<group>"; };
+		52D0A0FA1C7FE5D200EA5C6D /* RootNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootNoteViewController.h; sourceTree = "<group>"; };
+		52D0A0FB1C7FE5D200EA5C6D /* RootNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootNoteViewController.m; sourceTree = "<group>"; };
+		52D0A0FC1C7FE5D200EA5C6D /* ScaleTypeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScaleTypeViewController.h; sourceTree = "<group>"; };
+		52D0A0FD1C7FE5D200EA5C6D /* ScaleTypeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScaleTypeViewController.m; sourceTree = "<group>"; };
+		52D0A0FE1C7FE5D200EA5C6D /* ScaleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScaleViewController.h; sourceTree = "<group>"; };
+		52D0A0FF1C7FE5D200EA5C6D /* ScaleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScaleViewController.m; sourceTree = "<group>"; };
+		52D0A1001C7FE5D200EA5C6D /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		52D0A1011C7FE5D200EA5C6D /* SettingsViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SettingsViewController.mm; sourceTree = "<group>"; };
+		52D0A1041C7FE5D200EA5C6D /* GuitarAdjustmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuitarAdjustmentViewController.h; sourceTree = "<group>"; };
+		52D0A1051C7FE5D200EA5C6D /* GuitarAdjustmentViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GuitarAdjustmentViewController.mm; sourceTree = "<group>"; };
+		52D5F8861D1B936E006C1308 /* ColorScheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorScheme.h; sourceTree = "<group>"; };
+		52D5F8871D1B936E006C1308 /* ColorScheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorScheme.m; sourceTree = "<group>"; };
+		52D671F31E2C9666002799FA /* GuitarOptions.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = GuitarOptions.mm; path = ../SGuitar/src/GuitarOptions.mm; sourceTree = "<group>"; };
+		52D671F71E2CA1CB002799FA /* ScaleOptions.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ScaleOptions.mm; path = ../SGuitar/src/ScaleOptions.mm; sourceTree = "<group>"; };
+		52D671FB1E2CA4B8002799FA /* NSArrayNoteValueVector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSArrayNoteValueVector.h; path = ../SGuitar/src/NSArrayNoteValueVector.h; sourceTree = "<group>"; };
+		52D671FC1E2CA4B8002799FA /* NSArrayNoteValueVector.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = NSArrayNoteValueVector.mm; path = ../SGuitar/src/NSArrayNoteValueVector.mm; sourceTree = "<group>"; };
+		52D671FD1E2CA4B8002799FA /* NSArrayStdStringVector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSArrayStdStringVector.h; path = ../SGuitar/src/NSArrayStdStringVector.h; sourceTree = "<group>"; };
+		52D671FE1E2CA4B8002799FA /* NSArrayStdStringVector.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = NSArrayStdStringVector.mm; path = ../SGuitar/src/NSArrayStdStringVector.mm; sourceTree = "<group>"; };
+		52D671FF1E2CA4B8002799FA /* NSArrayVector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSArrayVector.h; path = ../SGuitar/src/NSArrayVector.h; sourceTree = "<group>"; };
+		52D672001E2CA4B8002799FA /* NSArrayVector.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = NSArrayVector.mm; path = ../SGuitar/src/NSArrayVector.mm; sourceTree = "<group>"; };
+		52D672051E2CA6AE002799FA /* Chord.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = Chord.mm; path = ../SGuitar/src/Chord.mm; sourceTree = "<group>"; };
+		52D672071E2CAEC2002799FA /* GuitarAdjustmentType.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GuitarAdjustmentType.cpp; path = ../SGuitar/src/GuitarAdjustmentType.cpp; sourceTree = "<group>"; };
+		52D6720A1E2CAFBB002799FA /* GuitarAdjustmentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GuitarAdjustmentType.h; path = ../SGuitar/include/SG/GuitarAdjustmentType.h; sourceTree = "<group>"; };
+		52E413AF1D1783BF00D030A2 /* IQNSArray+Sort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IQNSArray+Sort.h"; sourceTree = "<group>"; };
+		52E413B01D1783BF00D030A2 /* IQNSArray+Sort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IQNSArray+Sort.m"; sourceTree = "<group>"; };
+		52E413B11D1783BF00D030A2 /* IQUIScrollView+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IQUIScrollView+Additions.h"; sourceTree = "<group>"; };
+		52E413B21D1783BF00D030A2 /* IQUIScrollView+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IQUIScrollView+Additions.m"; sourceTree = "<group>"; };
+		52E413B31D1783BF00D030A2 /* IQUITextFieldView+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IQUITextFieldView+Additions.h"; sourceTree = "<group>"; };
+		52E413B41D1783BF00D030A2 /* IQUITextFieldView+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IQUITextFieldView+Additions.m"; sourceTree = "<group>"; };
+		52E413B51D1783BF00D030A2 /* IQUIView+Hierarchy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IQUIView+Hierarchy.h"; sourceTree = "<group>"; };
+		52E413B61D1783BF00D030A2 /* IQUIView+Hierarchy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IQUIView+Hierarchy.m"; sourceTree = "<group>"; };
+		52E413B71D1783BF00D030A2 /* IQUIViewController+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IQUIViewController+Additions.h"; sourceTree = "<group>"; };
+		52E413B81D1783BF00D030A2 /* IQUIViewController+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IQUIViewController+Additions.m"; sourceTree = "<group>"; };
+		52E413B91D1783BF00D030A2 /* IQUIWindow+Hierarchy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IQUIWindow+Hierarchy.h"; sourceTree = "<group>"; };
+		52E413BA1D1783BF00D030A2 /* IQUIWindow+Hierarchy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IQUIWindow+Hierarchy.m"; sourceTree = "<group>"; };
+		52E413BC1D1783BF00D030A2 /* IQKeyboardManagerConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQKeyboardManagerConstants.h; sourceTree = "<group>"; };
+		52E413BD1D1783BF00D030A2 /* IQKeyboardManagerConstantsInternal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQKeyboardManagerConstantsInternal.h; sourceTree = "<group>"; };
+		52E413BE1D1783BF00D030A2 /* IQKeyboardManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQKeyboardManager.h; sourceTree = "<group>"; };
+		52E413BF1D1783BF00D030A2 /* IQKeyboardManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQKeyboardManager.m; sourceTree = "<group>"; };
+		52E413C01D1783BF00D030A2 /* IQKeyboardReturnKeyHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQKeyboardReturnKeyHandler.h; sourceTree = "<group>"; };
+		52E413C11D1783BF00D030A2 /* IQKeyboardReturnKeyHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQKeyboardReturnKeyHandler.m; sourceTree = "<group>"; };
+		52E413C31D1783BF00D030A2 /* IQTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQTextView.h; sourceTree = "<group>"; };
+		52E413C41D1783BF00D030A2 /* IQTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQTextView.m; sourceTree = "<group>"; };
+		52E413C61D1783BF00D030A2 /* IQBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQBarButtonItem.h; sourceTree = "<group>"; };
+		52E413C71D1783BF00D030A2 /* IQBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQBarButtonItem.m; sourceTree = "<group>"; };
+		52E413C81D1783BF00D030A2 /* IQTitleBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQTitleBarButtonItem.h; sourceTree = "<group>"; };
+		52E413C91D1783BF00D030A2 /* IQTitleBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQTitleBarButtonItem.m; sourceTree = "<group>"; };
+		52E413CA1D1783BF00D030A2 /* IQToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQToolbar.h; sourceTree = "<group>"; };
+		52E413CB1D1783BF00D030A2 /* IQToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQToolbar.m; sourceTree = "<group>"; };
+		52E413CC1D1783BF00D030A2 /* IQUIView+IQKeyboardToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IQUIView+IQKeyboardToolbar.h"; sourceTree = "<group>"; };
+		52E413CD1D1783BF00D030A2 /* IQUIView+IQKeyboardToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IQUIView+IQKeyboardToolbar.m"; sourceTree = "<group>"; };
+		52E413CE1D1783BF00D030A2 /* KeyboardManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyboardManager.h; sourceTree = "<group>"; };
+		52E413D01D1783BF00D030A2 /* IQKeyboardManager.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = IQKeyboardManager.bundle; sourceTree = "<group>"; };
+		52E413D51D1783BF00D030A2 /* ALView+PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ALView+PureLayout.h"; sourceTree = "<group>"; };
+		52E413D61D1783BF00D030A2 /* ALView+PureLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ALView+PureLayout.m"; sourceTree = "<group>"; };
+		52E413D71D1783BF00D030A2 /* NSArray+PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+PureLayout.h"; sourceTree = "<group>"; };
+		52E413D81D1783BF00D030A2 /* NSArray+PureLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+PureLayout.m"; sourceTree = "<group>"; };
+		52E413D91D1783BF00D030A2 /* NSLayoutConstraint+PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+PureLayout.h"; sourceTree = "<group>"; };
+		52E413DA1D1783BF00D030A2 /* NSLayoutConstraint+PureLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+PureLayout.m"; sourceTree = "<group>"; };
+		52E413DB1D1783BF00D030A2 /* PureLayout+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PureLayout+Internal.h"; sourceTree = "<group>"; };
+		52E413DC1D1783BF00D030A2 /* PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PureLayout.h; sourceTree = "<group>"; };
+		52E413DD1D1783BF00D030A2 /* PureLayoutDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PureLayoutDefines.h; sourceTree = "<group>"; };
+		52E415CB1D17B46C00D030A2 /* Convert.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Convert.cpp; sourceTree = "<group>"; };
+		52E415CC1D17B46C00D030A2 /* Escaper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Escaper.cpp; sourceTree = "<group>"; };
+		52E415CD1D17B46C00D030A2 /* IndentCanceller.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IndentCanceller.cpp; sourceTree = "<group>"; };
+		52E415CE1D17B46C00D030A2 /* Indenter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Indenter.cpp; sourceTree = "<group>"; };
+		52E415CF1D17B46C00D030A2 /* JsonParsingError.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = JsonParsingError.cpp; sourceTree = "<group>"; };
+		52E415D01D17B46C00D030A2 /* JsonWritingError.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = JsonWritingError.cpp; sourceTree = "<group>"; };
+		52E415D11D17B46C00D030A2 /* SolidusEscaper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SolidusEscaper.cpp; sourceTree = "<group>"; };
+		52E415D21D17B46C00D030A2 /* Value.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Value.cpp; sourceTree = "<group>"; };
+		52E4E4DC1D1783AB00D030A2 /* Appirater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Appirater.h; sourceTree = "<group>"; };
+		52E4E4DD1D1783AB00D030A2 /* Appirater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Appirater.m; sourceTree = "<group>"; };
+		52E4E4DE1D1783AB00D030A2 /* Appirater.podspec.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Appirater.podspec.json; sourceTree = "<group>"; };
+		52E4E4DF1D1783AB00D030A2 /* AppiraterDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppiraterDelegate.h; sourceTree = "<group>"; };
+		52E4E4E11D1783AB00D030A2 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/AppiraterLocalizable.strings; sourceTree = "<group>"; };
+		52E4E4E21D1783AB00D030A2 /* ca */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ca; path = ca.lproj/AppiraterLocalizable.strings; sourceTree = "<group>"; };
+		52E4E4E31D1783AB00D030A2 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
+		52E4E4E41D1783AB00D030A2 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/AppiraterLocalizable.strings; sourceTree = "<group>"; };
+		52E4E4E51D1783AB00D030A2 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/AppiraterLocalizable.strings; sourceTree = "<group>"; };
+		52E4E4E61D1783AB00D030A2 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/AppiraterLocalizable.strings; sourceTree = "<group>"; };
+		52E4E4E71D1783AB00D030A2 /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = el.lproj/AppiraterLocalizable.strings; sourceTree = "<group>"; };
+		52E4E4E81D1783AB00D030A2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/AppiraterLocalizable.strings; sourceTree = "<group>"; };
+		52E4E4E91D1783AB00D030A2 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/AppiraterLocalizable.strings; sourceTree = "<group>"; };
+		52E4E4EA1D1783AB00D030A2 /* fi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fi; path = fi.lproj/AppiraterLocalizable.strings; sourceTree = "<group>"; };
+		52E4E4EB1D1783AB00D030A2 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/AppiraterLocalizable.strings; sourceTree = "<group>"; };
+		52E4E4EC1D1783AB00D030A2 /* he */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = he; path = he.lproj/AppiraterLocalizable.strings; sourceTree = "<group>"; };
+		52E4E4ED1D1783AB00D030A2 /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hu; path = hu.lproj/AppiraterLocalizable.strings; sourceTree = "<group>"; };
+		52E4E4EE1D1783AB00D030A2 /* id */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = id; path = id.lproj/AppiraterLocalizable.strings; sourceTree = "<group>"; };
+		52E4E4EF1D1783AB00D030A2 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/AppiraterLocalizable.strings; sourceTree = "<group>"; };
+		52E4E4F01D1783AB00D030A2 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/AppiraterLocalizable.strings; sourceTree = "<group>"; };
+		52E4E4F11D1783AB00D030A2 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/AppiraterLocalizable.strings; sourceTree = "<group>"; };
+		52E4E4F21D1783AB00D030A2 /* ms */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ms; path = ms.lproj/AppiraterLocalizable.strings; sourceTree = "<group>"; };
+		52E4E4F31D1783AB00D030A2 /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/AppiraterLocalizable.strings; sourceTree = "<group>"; };
+		52E4E4F41D1783AB00D030A2 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/AppiraterLocalizable.strings; sourceTree = "<group>"; };
+		52E4E4F51D1783AB00D030A2 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/AppiraterLocalizable.strings; sourceTree = "<group>"; };
+		52E4E4F61D1783AB00D030A2 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/AppiraterLocalizable.strings"; sourceTree = "<group>"; };
+		52E4E4F71D1783AB00D030A2 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/AppiraterLocalizable.strings; sourceTree = "<group>"; };
+		52E4E4F81D1783AB00D030A2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		52E4E4F91D1783AB00D030A2 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/AppiraterLocalizable.strings; sourceTree = "<group>"; };
+		52E4E4FA1D1783AB00D030A2 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/AppiraterLocalizable.strings; sourceTree = "<group>"; };
+		52E4E4FB1D1783AB00D030A2 /* sk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sk; path = sk.lproj/AppiraterLocalizable.strings; sourceTree = "<group>"; };
+		52E4E4FC1D1783AB00D030A2 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/AppiraterLocalizable.strings; sourceTree = "<group>"; };
+		52E4E4FD1D1783AB00D030A2 /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/AppiraterLocalizable.strings; sourceTree = "<group>"; };
+		52E4E4FE1D1783AB00D030A2 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/AppiraterLocalizable.strings; sourceTree = "<group>"; };
+		52E4E4FF1D1783AB00D030A2 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/AppiraterLocalizable.strings; sourceTree = "<group>"; };
+		52E4E5001D1783AB00D030A2 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/AppiraterLocalizable.strings; sourceTree = "<group>"; };
+		52E4E5011D1783AB00D030A2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/AppiraterLocalizable.strings"; sourceTree = "<group>"; };
+		52E4E5021D1783AB00D030A2 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/AppiraterLocalizable.strings"; sourceTree = "<group>"; };
+		D9160D861CBBFF7B00A09A4A /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
+		D9160D871CBBFF7B00A09A4A /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
+		D919744A1CCAB73B000312F4 /* StringNoteTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringNoteTableViewCell.h; sourceTree = "<group>"; };
+		D919744B1CCAB73B000312F4 /* StringNoteTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringNoteTableViewCell.m; sourceTree = "<group>"; };
+		D927768D1D36D10700822208 /* BTBalloon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTBalloon.h; sourceTree = "<group>"; };
+		D927768E1D36D10700822208 /* BTBalloon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTBalloon.m; sourceTree = "<group>"; };
+		D927768F1D36D10700822208 /* BTBalloonArrow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTBalloonArrow.h; sourceTree = "<group>"; };
+		D92776901D36D10700822208 /* BTBalloonArrow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTBalloonArrow.m; sourceTree = "<group>"; };
+		D94701EA1E2D51CC00A40B7F /* NoteName.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = NoteName.mm; path = ../SGuitar/src/NoteName.mm; sourceTree = "<group>"; };
+		D9535C031D21A6BB003FCC4A /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		D9535C051D21A6C8003FCC4A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		D9535C071D21A6CF003FCC4A /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		D96DC1C01D18534F00D7ECFD /* SGGuitarTests.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SGGuitarTests.mm; sourceTree = "<group>"; };
+		D96DC1C11D18534F00D7ECFD /* TestScaleChord.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TestScaleChord.mm; sourceTree = "<group>"; };
+		D96DC1C41D18769C00D7ECFD /* GuitarTypes.settings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GuitarTypes.settings; sourceTree = "<group>"; };
+		D96DC1C51D18769C00D7ECFD /* TestGuitar.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TestGuitar.json; sourceTree = "<group>"; };
+		D96DC2391D188C8D00D7ECFD /* ADSR.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADSR.cpp; sourceTree = "<group>"; };
+		D96DC23A1D188C8D00D7ECFD /* Asymp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Asymp.cpp; sourceTree = "<group>"; };
+		D96DC23B1D188C8D00D7ECFD /* BandedWG.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BandedWG.cpp; sourceTree = "<group>"; };
+		D96DC23C1D188C8D00D7ECFD /* BeeThree.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BeeThree.cpp; sourceTree = "<group>"; };
+		D96DC23D1D188C8D00D7ECFD /* BiQuad.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BiQuad.cpp; sourceTree = "<group>"; };
+		D96DC23E1D188C8D00D7ECFD /* Blit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Blit.cpp; sourceTree = "<group>"; };
+		D96DC23F1D188C8D00D7ECFD /* BlitSaw.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BlitSaw.cpp; sourceTree = "<group>"; };
+		D96DC2401D188C8D00D7ECFD /* BlitSquare.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BlitSquare.cpp; sourceTree = "<group>"; };
+		D96DC2411D188C8D00D7ECFD /* BlowBotl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BlowBotl.cpp; sourceTree = "<group>"; };
+		D96DC2421D188C8D00D7ECFD /* BlowHole.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BlowHole.cpp; sourceTree = "<group>"; };
+		D96DC2431D188C8D00D7ECFD /* Bowed.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Bowed.cpp; sourceTree = "<group>"; };
+		D96DC2441D188C8D00D7ECFD /* Brass.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Brass.cpp; sourceTree = "<group>"; };
+		D96DC2451D188C8D00D7ECFD /* Chorus.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Chorus.cpp; sourceTree = "<group>"; };
+		D96DC2461D188C8D00D7ECFD /* Clarinet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Clarinet.cpp; sourceTree = "<group>"; };
+		D96DC2471D188C8D00D7ECFD /* Delay.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Delay.cpp; sourceTree = "<group>"; };
+		D96DC2481D188C8D00D7ECFD /* DelayA.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DelayA.cpp; sourceTree = "<group>"; };
+		D96DC2491D188C8D00D7ECFD /* DelayL.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DelayL.cpp; sourceTree = "<group>"; };
+		D96DC24A1D188C8D00D7ECFD /* Drummer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Drummer.cpp; sourceTree = "<group>"; };
+		D96DC24B1D188C8D00D7ECFD /* Echo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Echo.cpp; sourceTree = "<group>"; };
+		D96DC24C1D188C8D00D7ECFD /* Envelope.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Envelope.cpp; sourceTree = "<group>"; };
+		D96DC24D1D188C8D00D7ECFD /* FileLoop.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FileLoop.cpp; sourceTree = "<group>"; };
+		D96DC24E1D188C8D00D7ECFD /* FileRead.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FileRead.cpp; sourceTree = "<group>"; };
+		D96DC24F1D188C8D00D7ECFD /* FileWrite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FileWrite.cpp; sourceTree = "<group>"; };
+		D96DC2501D188C8D00D7ECFD /* FileWvIn.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FileWvIn.cpp; sourceTree = "<group>"; };
+		D96DC2511D188C8D00D7ECFD /* FileWvOut.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FileWvOut.cpp; sourceTree = "<group>"; };
+		D96DC2521D188C8D00D7ECFD /* Fir.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Fir.cpp; sourceTree = "<group>"; };
+		D96DC2531D188C8D00D7ECFD /* Flute.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Flute.cpp; sourceTree = "<group>"; };
+		D96DC2541D188C8D00D7ECFD /* FM.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FM.cpp; sourceTree = "<group>"; };
+		D96DC2551D188C8D00D7ECFD /* FMVoices.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FMVoices.cpp; sourceTree = "<group>"; };
+		D96DC2561D188C8D00D7ECFD /* FormSwep.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FormSwep.cpp; sourceTree = "<group>"; };
+		D96DC2571D188C8D00D7ECFD /* FreeVerb.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FreeVerb.cpp; sourceTree = "<group>"; };
+		D96DC2581D188C8D00D7ECFD /* Granulate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Granulate.cpp; sourceTree = "<group>"; };
+		D96DC2591D188C8D00D7ECFD /* Guitar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Guitar.cpp; sourceTree = "<group>"; };
+		D96DC25A1D188C8D00D7ECFD /* HevyMetl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HevyMetl.cpp; sourceTree = "<group>"; };
+		D96DC25B1D188C8D00D7ECFD /* Iir.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Iir.cpp; sourceTree = "<group>"; };
+		D96DC2661D188C8D00D7ECFD /* FunctionDiscoveryKeys_devpkey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FunctionDiscoveryKeys_devpkey.h; sourceTree = "<group>"; };
+		D96DC2671D188C8D00D7ECFD /* ginclude.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ginclude.h; sourceTree = "<group>"; };
+		D96DC2681D188C8D00D7ECFD /* iasiodrv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iasiodrv.h; sourceTree = "<group>"; };
+		D96DC2691D188C8D00D7ECFD /* iasiothiscallresolver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = iasiothiscallresolver.cpp; sourceTree = "<group>"; };
+		D96DC26A1D188C8D00D7ECFD /* iasiothiscallresolver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iasiothiscallresolver.h; sourceTree = "<group>"; };
+		D96DC26B1D188C8D00D7ECFD /* soundcard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = soundcard.h; sourceTree = "<group>"; };
+		D96DC26E1D188C8D00D7ECFD /* JCRev.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = JCRev.cpp; sourceTree = "<group>"; };
+		D96DC26F1D188C8D00D7ECFD /* LentPitShift.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LentPitShift.cpp; sourceTree = "<group>"; };
+		D96DC2701D188C8D00D7ECFD /* Makefile.in */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Makefile.in; sourceTree = "<group>"; };
+		D96DC2711D188C8D00D7ECFD /* Mandolin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Mandolin.cpp; sourceTree = "<group>"; };
+		D96DC2721D188C8D00D7ECFD /* Mesh2D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Mesh2D.cpp; sourceTree = "<group>"; };
+		D96DC2731D188C8D00D7ECFD /* Messager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Messager.cpp; sourceTree = "<group>"; };
+		D96DC2741D188C8D00D7ECFD /* MidiFileIn.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MidiFileIn.cpp; sourceTree = "<group>"; };
+		D96DC2751D188C8D00D7ECFD /* Modal.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Modal.cpp; sourceTree = "<group>"; };
+		D96DC2761D188C8D00D7ECFD /* ModalBar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ModalBar.cpp; sourceTree = "<group>"; };
+		D96DC2771D188C8D00D7ECFD /* Modulate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Modulate.cpp; sourceTree = "<group>"; };
+		D96DC2781D188C8D00D7ECFD /* Moog.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Moog.cpp; sourceTree = "<group>"; };
+		D96DC27A1D188C8D00D7ECFD /* Noise.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Noise.cpp; sourceTree = "<group>"; };
+		D96DC27B1D188C8D00D7ECFD /* NRev.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NRev.cpp; sourceTree = "<group>"; };
+		D96DC27C1D188C8D00D7ECFD /* OnePole.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OnePole.cpp; sourceTree = "<group>"; };
+		D96DC27D1D188C8D00D7ECFD /* OneZero.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OneZero.cpp; sourceTree = "<group>"; };
+		D96DC27E1D188C8D00D7ECFD /* PercFlut.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PercFlut.cpp; sourceTree = "<group>"; };
+		D96DC27F1D188C8D00D7ECFD /* Phonemes.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Phonemes.cpp; sourceTree = "<group>"; };
+		D96DC2801D188C8D00D7ECFD /* PitShift.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PitShift.cpp; sourceTree = "<group>"; };
+		D96DC2811D188C8D00D7ECFD /* Plucked.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Plucked.cpp; sourceTree = "<group>"; };
+		D96DC2821D188C8D00D7ECFD /* PoleZero.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PoleZero.cpp; sourceTree = "<group>"; };
+		D96DC2831D188C8D00D7ECFD /* PRCRev.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PRCRev.cpp; sourceTree = "<group>"; };
+		D96DC2861D188C8D00D7ECFD /* Resonate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Resonate.cpp; sourceTree = "<group>"; };
+		D96DC2871D188C8D00D7ECFD /* Rhodey.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Rhodey.cpp; sourceTree = "<group>"; };
+		D96DC28C1D188C8D00D7ECFD /* Sampler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sampler.cpp; sourceTree = "<group>"; };
+		D96DC28D1D188C8D00D7ECFD /* Saxofony.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Saxofony.cpp; sourceTree = "<group>"; };
+		D96DC28E1D188C8D00D7ECFD /* Shakers.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Shakers.cpp; sourceTree = "<group>"; };
+		D96DC28F1D188C8D00D7ECFD /* Simple.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Simple.cpp; sourceTree = "<group>"; };
+		D96DC2901D188C8D00D7ECFD /* SineWave.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SineWave.cpp; sourceTree = "<group>"; };
+		D96DC2911D188C8D00D7ECFD /* SingWave.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SingWave.cpp; sourceTree = "<group>"; };
+		D96DC2921D188C8D00D7ECFD /* Sitar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sitar.cpp; sourceTree = "<group>"; };
+		D96DC2931D188C8D00D7ECFD /* Skini.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Skini.cpp; sourceTree = "<group>"; };
+		D96DC2951D188C8D00D7ECFD /* Sphere.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sphere.cpp; sourceTree = "<group>"; };
+		D96DC2961D188C8D00D7ECFD /* StifKarp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StifKarp.cpp; sourceTree = "<group>"; };
+		D96DC2971D188C8D00D7ECFD /* Stk.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Stk.cpp; sourceTree = "<group>"; };
+		D96DC2981D188C8D00D7ECFD /* TapDelay.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TapDelay.cpp; sourceTree = "<group>"; };
+		D96DC29C1D188C8D00D7ECFD /* TubeBell.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TubeBell.cpp; sourceTree = "<group>"; };
+		D96DC29D1D188C8D00D7ECFD /* Twang.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Twang.cpp; sourceTree = "<group>"; };
+		D96DC29E1D188C8D00D7ECFD /* TwoPole.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TwoPole.cpp; sourceTree = "<group>"; };
+		D96DC29F1D188C8D00D7ECFD /* TwoZero.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TwoZero.cpp; sourceTree = "<group>"; };
+		D96DC2A11D188C8D00D7ECFD /* Voicer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Voicer.cpp; sourceTree = "<group>"; };
+		D96DC2A21D188C8D00D7ECFD /* VoicForm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VoicForm.cpp; sourceTree = "<group>"; };
+		D96DC2A31D188C8D00D7ECFD /* Whistle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Whistle.cpp; sourceTree = "<group>"; };
+		D96DC2A41D188C8D00D7ECFD /* Wurley.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Wurley.cpp; sourceTree = "<group>"; };
+		D96DC3041D188D4700D7ECFD /* GuitarPlayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GuitarPlayer.mm; sourceTree = "<group>"; };
+		D96DC3051D188D4700D7ECFD /* GuitarPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuitarPlayer.h; sourceTree = "<group>"; };
+		D96DC3081D1891BA00D7ECFD /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		D96DC30A1D1891CA00D7ECFD /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		D96DC30C1D1891D400D7ECFD /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		D9BCFE0E1C7E5DDB00C36405 /* SteelSidekick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SteelSidekick.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9BCFE121C7E5DDB00C36405 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D9BCFE141C7E5DDB00C36405 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D9BCFE151C7E5DDB00C36405 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D9BCFE1D1C7E5DDB00C36405 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D9BCFE201C7E5DDB00C36405 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D9BCFE221C7E5DDB00C36405 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D9BCFE271C7E5DDB00C36405 /* SteelSidekickTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SteelSidekickTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9BCFE2B1C7E5DDB00C36405 /* SteelSidekickTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SteelSidekickTests.m; sourceTree = "<group>"; };
+		D9BCFE2D1C7E5DDB00C36405 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D9BCFE321C7E5DDB00C36405 /* SteelSidekickUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SteelSidekickUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9BCFE361C7E5DDB00C36405 /* SteelSidekickUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SteelSidekickUITests.m; sourceTree = "<group>"; };
+		D9BCFE381C7E5DDB00C36405 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D9C7414A1C7E5F57002B2A5F /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		D9C7414C1C7E5F60002B2A5F /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		D9DA9EA91E29655B00BF5141 /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Images; path = ../Resources/Images; sourceTree = "<group>"; };
+		D9DA9EAA1E29655B00BF5141 /* Settings */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Settings; path = ../Resources/Settings; sourceTree = "<group>"; };
+		D9DA9EAB1E29655B00BF5141 /* Guitars */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Guitars; path = ../Resources/Guitars; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D9BCFE0B1C7E5DDB00C36405 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9535C081D21A6D0003FCC4A /* StoreKit.framework in Frameworks */,
+				D9535C061D21A6C8003FCC4A /* SystemConfiguration.framework in Frameworks */,
+				D9752F2A1D305924005CC651 /* AVKit.framework in Frameworks */,
+				D9535C041D21A6BC003FCC4A /* CFNetwork.framework in Frameworks */,
+				D96DC30D1D1891D400D7ECFD /* AudioToolbox.framework in Frameworks */,
+				D9752F2C1D305924005CC651 /* GLKit.framework in Frameworks */,
+				D96DC30B1D1891CA00D7ECFD /* AVFoundation.framework in Frameworks */,
+				D9752F2E1D305924005CC651 /* OpenGLES.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D9BCFE241C7E5DDB00C36405 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D9BCFE2F1C7E5DDB00C36405 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5228EF6C1D29DF7C00E3E15B /* Canvas */ = {
+			isa = PBXGroup;
+			children = (
+				528BA1021D18F03C009FDC64 /* GuitarCanvas.h */,
+				528BA0D31D18B9DA009FDC64 /* GuitarCanvas.cpp */,
+			);
+			name = Canvas;
+			sourceTree = "<group>";
+		};
+		527FB7931D2CDF3800A35FA7 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				527FB7941D2CDF3800A35FA7 /* JsonBox */,
+				527FB79F1D2CDF3800A35FA7 /* JsonBox.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		527FB7941D2CDF3800A35FA7 /* JsonBox */ = {
+			isa = PBXGroup;
+			children = (
+				527FB7951D2CDF3800A35FA7 /* Convert.h */,
+				527FB7961D2CDF3800A35FA7 /* Escaper.h */,
+				527FB7971D2CDF3800A35FA7 /* Grammar.h */,
+				527FB7981D2CDF3800A35FA7 /* IndentCanceller.h */,
+				527FB7991D2CDF3800A35FA7 /* Indenter.h */,
+				527FB79A1D2CDF3800A35FA7 /* JsonParsingError.h */,
+				527FB79B1D2CDF3800A35FA7 /* JsonWritingError.h */,
+				527FB79C1D2CDF3800A35FA7 /* OutputFilter.h */,
+				527FB79D1D2CDF3800A35FA7 /* SolidusEscaper.h */,
+				527FB79E1D2CDF3800A35FA7 /* Value.h */,
+			);
+			path = JsonBox;
+			sourceTree = "<group>";
+		};
+		5284F0321D7E15E9000C3C37 /* NSTimer-Blocks */ = {
+			isa = PBXGroup;
+			children = (
+				5284F0331D7E15E9000C3C37 /* NSTimer+Blocks.h */,
+				5284F0341D7E15E9000C3C37 /* NSTimer+Blocks.m */,
+				5284F0351D7E15E9000C3C37 /* README.md */,
+			);
+			name = "NSTimer-Blocks";
+			path = "External/NSTimer-Blocks";
+			sourceTree = "<group>";
+		};
+		52969EA51D17B6A000EFE67B /* nanovg */ = {
+			isa = PBXGroup;
+			children = (
+				52969EA61D17B6A000EFE67B /* fontstash.h */,
+				52969EA71D17B6A000EFE67B /* nanovg.c */,
+				52969EA81D17B6A000EFE67B /* nanovg.h */,
+				52969EA91D17B6A000EFE67B /* nanovg_gl.h */,
+				52969EAA1D17B6A000EFE67B /* nanovg_gl_utils.h */,
+				52969EAB1D17B6A000EFE67B /* stb_image.h */,
+				52969EAC1D17B6A000EFE67B /* stb_truetype.h */,
+			);
+			name = nanovg;
+			path = ../SGuitar/External/nanovg;
+			sourceTree = "<group>";
+		};
+		52A99CAF1CC3F4D700E4B6FB /* Scale */ = {
+			isa = PBXGroup;
+			children = (
+				52D0A0FE1C7FE5D200EA5C6D /* ScaleViewController.h */,
+				52D0A0FF1C7FE5D200EA5C6D /* ScaleViewController.m */,
+				52D0A0FC1C7FE5D200EA5C6D /* ScaleTypeViewController.h */,
+				52D0A0FD1C7FE5D200EA5C6D /* ScaleTypeViewController.m */,
+				52D0A0E81C7FE5D200EA5C6D /* Scale.storyboard */,
+			);
+			name = Scale;
+			sourceTree = "<group>";
+		};
+		52A99CB01CC3F4E700E4B6FB /* Chord */ = {
+			isa = PBXGroup;
+			children = (
+				52D0A0EE1C7FE5D200EA5C6D /* ChordViewController.h */,
+				52D0A0EF1C7FE5D200EA5C6D /* ChordViewController.mm */,
+				52D0A0EC1C7FE5D200EA5C6D /* ChordTypeViewController.h */,
+				52D0A0ED1C7FE5D200EA5C6D /* ChordTypeViewController.m */,
+				52D0A0E41C7FE5D200EA5C6D /* Chord.storyboard */,
+			);
+			name = Chord;
+			sourceTree = "<group>";
+		};
+		52A99CDA1CC5D29100E4B6FB /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				D9EFC3E01CC7BAFF00FDD605 /* Guitar */,
+				52D0A1001C7FE5D200EA5C6D /* SettingsViewController.h */,
+				52D0A1011C7FE5D200EA5C6D /* SettingsViewController.mm */,
+				5252A0E71D208F9400641714 /* ColorSchemeViewController.h */,
+				5252A0E81D208F9400641714 /* ColorSchemeViewController.m */,
+				5284F0381D7E211D000C3C37 /* AboutTableViewController.h */,
+				5284F0391D7E211D000C3C37 /* AboutTableViewController.m */,
+				52D0A0EA1C7FE5D200EA5C6D /* Settings.storyboard */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		52A99CDB1CC5E2A100E4B6FB /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				52D0A0FA1C7FE5D200EA5C6D /* RootNoteViewController.h */,
+				52D0A0FB1C7FE5D200EA5C6D /* RootNoteViewController.m */,
+			);
+			name = Shared;
+			sourceTree = "<group>";
+		};
+		52BF4BE91D203FBF00710CE5 /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				52BF4BEA1D203FBF00710CE5 /* UIColor+Expanded.h */,
+				52BF4BEB1D203FBF00710CE5 /* UIColor+Expanded.m */,
+			);
+			name = Color;
+			path = External/Color;
+			sourceTree = "<group>";
+		};
+		52CA6EF41D2B635E00EBA92E /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				52CA6EF51D2B637900EBA92E /* Model */,
+				52D0A0F21C7FE5D200EA5C6D /* CustomGuitarViewController.h */,
+				52D0A0F31C7FE5D200EA5C6D /* CustomGuitarViewController.mm */,
+				52D0A1041C7FE5D200EA5C6D /* GuitarAdjustmentViewController.h */,
+				52D0A1051C7FE5D200EA5C6D /* GuitarAdjustmentViewController.mm */,
+				D919744A1CCAB73B000312F4 /* StringNoteTableViewCell.h */,
+				D919744B1CCAB73B000312F4 /* StringNoteTableViewCell.m */,
+				5273B1F91D488FD200D37CB4 /* GuitarNameTableViewCell.h */,
+				5273B1FA1D488FD200D37CB4 /* GuitarNameTableViewCell.m */,
+			);
+			name = Custom;
+			sourceTree = "<group>";
+		};
+		52CA6EF51D2B637900EBA92E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				52CA6EF11D2B611D00EBA92E /* CustomGuitar.h */,
+				52CA6EF21D2B611D00EBA92E /* CustomGuitar.mm */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		52D0A0E21C7FE5B200EA5C6D /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				52A99CAF1CC3F4D700E4B6FB /* Scale */,
+				52A99CB01CC3F4E700E4B6FB /* Chord */,
+				52A99CDA1CC5D29100E4B6FB /* Settings */,
+				52A99CDB1CC5E2A100E4B6FB /* Shared */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		52D5F8851D1B9354006C1308 /* ColorScheme */ = {
+			isa = PBXGroup;
+			children = (
+				52BF4BED1D20415B00710CE5 /* FlatColorPalette.h */,
+				52BF4BEE1D20415B00710CE5 /* FlatColorPalette.m */,
+				52D5F8861D1B936E006C1308 /* ColorScheme.h */,
+				52D5F8871D1B936E006C1308 /* ColorScheme.m */,
+			);
+			name = ColorScheme;
+			sourceTree = "<group>";
+		};
+		52D672041E2CA4F3002799FA /* File */ = {
+			isa = PBXGroup;
+			children = (
+				528BA0FF1D18F03C009FDC64 /* FileUtils.h */,
+				528BA0CF1D18B9DA009FDC64 /* FileUtils.cpp */,
+				528BA0D01D18B9DA009FDC64 /* FileUtils_iOS.mm */,
+			);
+			name = File;
+			sourceTree = "<group>";
+		};
+		52E413AD1D1783BF00D030A2 /* IQKeyBoardManager */ = {
+			isa = PBXGroup;
+			children = (
+				52E413AE1D1783BF00D030A2 /* Categories */,
+				52E413BB1D1783BF00D030A2 /* Constants */,
+				52E413BE1D1783BF00D030A2 /* IQKeyboardManager.h */,
+				52E413BF1D1783BF00D030A2 /* IQKeyboardManager.m */,
+				52E413C01D1783BF00D030A2 /* IQKeyboardReturnKeyHandler.h */,
+				52E413C11D1783BF00D030A2 /* IQKeyboardReturnKeyHandler.m */,
+				52E413C21D1783BF00D030A2 /* IQTextView */,
+				52E413C51D1783BF00D030A2 /* IQToolbar */,
+				52E413CE1D1783BF00D030A2 /* KeyboardManager.h */,
+				52E413CF1D1783BF00D030A2 /* Resources */,
+			);
+			name = IQKeyBoardManager;
+			path = External/IQKeyBoardManager;
+			sourceTree = "<group>";
+		};
+		52E413AE1D1783BF00D030A2 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				52E413AF1D1783BF00D030A2 /* IQNSArray+Sort.h */,
+				52E413B01D1783BF00D030A2 /* IQNSArray+Sort.m */,
+				52E413B11D1783BF00D030A2 /* IQUIScrollView+Additions.h */,
+				52E413B21D1783BF00D030A2 /* IQUIScrollView+Additions.m */,
+				52E413B31D1783BF00D030A2 /* IQUITextFieldView+Additions.h */,
+				52E413B41D1783BF00D030A2 /* IQUITextFieldView+Additions.m */,
+				52E413B51D1783BF00D030A2 /* IQUIView+Hierarchy.h */,
+				52E413B61D1783BF00D030A2 /* IQUIView+Hierarchy.m */,
+				52E413B71D1783BF00D030A2 /* IQUIViewController+Additions.h */,
+				52E413B81D1783BF00D030A2 /* IQUIViewController+Additions.m */,
+				52E413B91D1783BF00D030A2 /* IQUIWindow+Hierarchy.h */,
+				52E413BA1D1783BF00D030A2 /* IQUIWindow+Hierarchy.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		52E413BB1D1783BF00D030A2 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				52E413BC1D1783BF00D030A2 /* IQKeyboardManagerConstants.h */,
+				52E413BD1D1783BF00D030A2 /* IQKeyboardManagerConstantsInternal.h */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		52E413C21D1783BF00D030A2 /* IQTextView */ = {
+			isa = PBXGroup;
+			children = (
+				52E413C31D1783BF00D030A2 /* IQTextView.h */,
+				52E413C41D1783BF00D030A2 /* IQTextView.m */,
+			);
+			path = IQTextView;
+			sourceTree = "<group>";
+		};
+		52E413C51D1783BF00D030A2 /* IQToolbar */ = {
+			isa = PBXGroup;
+			children = (
+				52E413C61D1783BF00D030A2 /* IQBarButtonItem.h */,
+				52E413C71D1783BF00D030A2 /* IQBarButtonItem.m */,
+				52E413C81D1783BF00D030A2 /* IQTitleBarButtonItem.h */,
+				52E413C91D1783BF00D030A2 /* IQTitleBarButtonItem.m */,
+				52E413CA1D1783BF00D030A2 /* IQToolbar.h */,
+				52E413CB1D1783BF00D030A2 /* IQToolbar.m */,
+				52E413CC1D1783BF00D030A2 /* IQUIView+IQKeyboardToolbar.h */,
+				52E413CD1D1783BF00D030A2 /* IQUIView+IQKeyboardToolbar.m */,
+			);
+			path = IQToolbar;
+			sourceTree = "<group>";
+		};
+		52E413CF1D1783BF00D030A2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				52E413D01D1783BF00D030A2 /* IQKeyboardManager.bundle */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		52E413D41D1783BF00D030A2 /* PureLayout */ = {
+			isa = PBXGroup;
+			children = (
+				52E413D51D1783BF00D030A2 /* ALView+PureLayout.h */,
+				52E413D61D1783BF00D030A2 /* ALView+PureLayout.m */,
+				52E413D71D1783BF00D030A2 /* NSArray+PureLayout.h */,
+				52E413D81D1783BF00D030A2 /* NSArray+PureLayout.m */,
+				52E413D91D1783BF00D030A2 /* NSLayoutConstraint+PureLayout.h */,
+				52E413DA1D1783BF00D030A2 /* NSLayoutConstraint+PureLayout.m */,
+				52E413DB1D1783BF00D030A2 /* PureLayout+Internal.h */,
+				52E413DC1D1783BF00D030A2 /* PureLayout.h */,
+				52E413DD1D1783BF00D030A2 /* PureLayoutDefines.h */,
+			);
+			name = PureLayout;
+			path = External/PureLayout;
+			sourceTree = "<group>";
+		};
+		52E414AC1D178C2800D030A2 /* External */ = {
+			isa = PBXGroup;
+			children = (
+				D96DC1CF1D188C8D00D7ECFD /* STK */,
+				52969EA51D17B6A000EFE67B /* nanovg */,
+				52E4157F1D17B46C00D030A2 /* JsonBox */,
+			);
+			name = External;
+			sourceTree = "<group>";
+		};
+		52E4157F1D17B46C00D030A2 /* JsonBox */ = {
+			isa = PBXGroup;
+			children = (
+				527FB7931D2CDF3800A35FA7 /* include */,
+				52969EF01D17B75300EFE67B /* Export.h */,
+				52E415CA1D17B46C00D030A2 /* src */,
+			);
+			name = JsonBox;
+			path = ../SGuitar/External/JsonBox;
+			sourceTree = "<group>";
+		};
+		52E415CA1D17B46C00D030A2 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				52E415CB1D17B46C00D030A2 /* Convert.cpp */,
+				52E415CC1D17B46C00D030A2 /* Escaper.cpp */,
+				52E415CD1D17B46C00D030A2 /* IndentCanceller.cpp */,
+				52E415CE1D17B46C00D030A2 /* Indenter.cpp */,
+				52E415CF1D17B46C00D030A2 /* JsonParsingError.cpp */,
+				52E415D01D17B46C00D030A2 /* JsonWritingError.cpp */,
+				52E415D11D17B46C00D030A2 /* SolidusEscaper.cpp */,
+				52E415D21D17B46C00D030A2 /* Value.cpp */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		52E4E4911D17830F00D030A2 /* SGGuitar */ = {
+			isa = PBXGroup;
+			children = (
+				52E414AC1D178C2800D030A2 /* External */,
+				D9F0F09C1D25C3F500903F3A /* Chord */,
+				D9F0F09D1D25C40200903F3A /* Guitar */,
+				D9F0F09E1D25C40B00903F3A /* Note */,
+				D9F0F09F1D25C43B00903F3A /* Options */,
+				D9F0F0A01D25C46A00903F3A /* Scale */,
+				5228EF6C1D29DF7C00E3E15B /* Canvas */,
+				52D672041E2CA4F3002799FA /* File */,
+				D9F0F0A11D25C47200903F3A /* Utils */,
+				528BA10F1D18F03C009FDC64 /* SGuitar.h */,
+				528BA0E01D18B9DA009FDC64 /* SGuitar.cpp */,
+				520F62931E3861AA00374912 /* SGuitar.mm */,
+			);
+			name = SGGuitar;
+			sourceTree = "<group>";
+		};
+		52E4E4D91D17839100D030A2 /* External */ = {
+			isa = PBXGroup;
+			children = (
+				5284F0321D7E15E9000C3C37 /* NSTimer-Blocks */,
+				D92776851D36D0C400822208 /* BTBalloon */,
+				52BF4BE91D203FBF00710CE5 /* Color */,
+				52E4E4DA1D1783AB00D030A2 /* appirater */,
+				52E413AD1D1783BF00D030A2 /* IQKeyBoardManager */,
+				52E413D41D1783BF00D030A2 /* PureLayout */,
+			);
+			name = External;
+			sourceTree = "<group>";
+		};
+		52E4E4DA1D1783AB00D030A2 /* appirater */ = {
+			isa = PBXGroup;
+			children = (
+				52E4E4DC1D1783AB00D030A2 /* Appirater.h */,
+				52E4E4DD1D1783AB00D030A2 /* Appirater.m */,
+				52E4E4DE1D1783AB00D030A2 /* Appirater.podspec.json */,
+				52E4E4DF1D1783AB00D030A2 /* AppiraterDelegate.h */,
+				52E4E4E01D1783AB00D030A2 /* AppiraterLocalizable.strings */,
+				52E4E4E31D1783AB00D030A2 /* CHANGELOG.md */,
+				52E4E4F81D1783AB00D030A2 /* README.md */,
+			);
+			name = appirater;
+			path = External/appirater;
+			sourceTree = "<group>";
+		};
+		D92776851D36D0C400822208 /* BTBalloon */ = {
+			isa = PBXGroup;
+			children = (
+				D927768D1D36D10700822208 /* BTBalloon.h */,
+				D927768E1D36D10700822208 /* BTBalloon.m */,
+				D927768F1D36D10700822208 /* BTBalloonArrow.h */,
+				D92776901D36D10700822208 /* BTBalloonArrow.m */,
+			);
+			name = BTBalloon;
+			path = External/BTBalloon;
+			sourceTree = "<group>";
+		};
+		D96DC1CF1D188C8D00D7ECFD /* STK */ = {
+			isa = PBXGroup;
+			children = (
+				D96DC2381D188C8D00D7ECFD /* src */,
+			);
+			name = STK;
+			path = ../SGuitar/External/STK;
+			sourceTree = "<group>";
+		};
+		D96DC2381D188C8D00D7ECFD /* src */ = {
+			isa = PBXGroup;
+			children = (
+				D96DC2391D188C8D00D7ECFD /* ADSR.cpp */,
+				D96DC23A1D188C8D00D7ECFD /* Asymp.cpp */,
+				D96DC23B1D188C8D00D7ECFD /* BandedWG.cpp */,
+				D96DC23C1D188C8D00D7ECFD /* BeeThree.cpp */,
+				D96DC23D1D188C8D00D7ECFD /* BiQuad.cpp */,
+				D96DC23E1D188C8D00D7ECFD /* Blit.cpp */,
+				D96DC23F1D188C8D00D7ECFD /* BlitSaw.cpp */,
+				D96DC2401D188C8D00D7ECFD /* BlitSquare.cpp */,
+				D96DC2411D188C8D00D7ECFD /* BlowBotl.cpp */,
+				D96DC2421D188C8D00D7ECFD /* BlowHole.cpp */,
+				D96DC2431D188C8D00D7ECFD /* Bowed.cpp */,
+				D96DC2441D188C8D00D7ECFD /* Brass.cpp */,
+				D96DC2451D188C8D00D7ECFD /* Chorus.cpp */,
+				D96DC2461D188C8D00D7ECFD /* Clarinet.cpp */,
+				D96DC2471D188C8D00D7ECFD /* Delay.cpp */,
+				D96DC2481D188C8D00D7ECFD /* DelayA.cpp */,
+				D96DC2491D188C8D00D7ECFD /* DelayL.cpp */,
+				D96DC24A1D188C8D00D7ECFD /* Drummer.cpp */,
+				D96DC24B1D188C8D00D7ECFD /* Echo.cpp */,
+				D96DC24C1D188C8D00D7ECFD /* Envelope.cpp */,
+				D96DC24D1D188C8D00D7ECFD /* FileLoop.cpp */,
+				D96DC24E1D188C8D00D7ECFD /* FileRead.cpp */,
+				D96DC24F1D188C8D00D7ECFD /* FileWrite.cpp */,
+				D96DC2501D188C8D00D7ECFD /* FileWvIn.cpp */,
+				D96DC2511D188C8D00D7ECFD /* FileWvOut.cpp */,
+				D96DC2521D188C8D00D7ECFD /* Fir.cpp */,
+				D96DC2531D188C8D00D7ECFD /* Flute.cpp */,
+				D96DC2541D188C8D00D7ECFD /* FM.cpp */,
+				D96DC2551D188C8D00D7ECFD /* FMVoices.cpp */,
+				D96DC2561D188C8D00D7ECFD /* FormSwep.cpp */,
+				D96DC2571D188C8D00D7ECFD /* FreeVerb.cpp */,
+				D96DC2581D188C8D00D7ECFD /* Granulate.cpp */,
+				D96DC2591D188C8D00D7ECFD /* Guitar.cpp */,
+				D96DC25A1D188C8D00D7ECFD /* HevyMetl.cpp */,
+				D96DC25B1D188C8D00D7ECFD /* Iir.cpp */,
+				D96DC25C1D188C8D00D7ECFD /* include */,
+				D96DC26E1D188C8D00D7ECFD /* JCRev.cpp */,
+				D96DC26F1D188C8D00D7ECFD /* LentPitShift.cpp */,
+				D96DC2701D188C8D00D7ECFD /* Makefile.in */,
+				D96DC2711D188C8D00D7ECFD /* Mandolin.cpp */,
+				D96DC2721D188C8D00D7ECFD /* Mesh2D.cpp */,
+				D96DC2731D188C8D00D7ECFD /* Messager.cpp */,
+				D96DC2741D188C8D00D7ECFD /* MidiFileIn.cpp */,
+				D96DC2751D188C8D00D7ECFD /* Modal.cpp */,
+				D96DC2761D188C8D00D7ECFD /* ModalBar.cpp */,
+				D96DC2771D188C8D00D7ECFD /* Modulate.cpp */,
+				D96DC2781D188C8D00D7ECFD /* Moog.cpp */,
+				D96DC27A1D188C8D00D7ECFD /* Noise.cpp */,
+				D96DC27B1D188C8D00D7ECFD /* NRev.cpp */,
+				D96DC27C1D188C8D00D7ECFD /* OnePole.cpp */,
+				D96DC27D1D188C8D00D7ECFD /* OneZero.cpp */,
+				D96DC27E1D188C8D00D7ECFD /* PercFlut.cpp */,
+				D96DC27F1D188C8D00D7ECFD /* Phonemes.cpp */,
+				D96DC2801D188C8D00D7ECFD /* PitShift.cpp */,
+				D96DC2811D188C8D00D7ECFD /* Plucked.cpp */,
+				D96DC2821D188C8D00D7ECFD /* PoleZero.cpp */,
+				D96DC2831D188C8D00D7ECFD /* PRCRev.cpp */,
+				D96DC2861D188C8D00D7ECFD /* Resonate.cpp */,
+				D96DC2871D188C8D00D7ECFD /* Rhodey.cpp */,
+				D96DC28C1D188C8D00D7ECFD /* Sampler.cpp */,
+				D96DC28D1D188C8D00D7ECFD /* Saxofony.cpp */,
+				D96DC28E1D188C8D00D7ECFD /* Shakers.cpp */,
+				D96DC28F1D188C8D00D7ECFD /* Simple.cpp */,
+				D96DC2901D188C8D00D7ECFD /* SineWave.cpp */,
+				D96DC2911D188C8D00D7ECFD /* SingWave.cpp */,
+				D96DC2921D188C8D00D7ECFD /* Sitar.cpp */,
+				D96DC2931D188C8D00D7ECFD /* Skini.cpp */,
+				D96DC2951D188C8D00D7ECFD /* Sphere.cpp */,
+				D96DC2961D188C8D00D7ECFD /* StifKarp.cpp */,
+				D96DC2971D188C8D00D7ECFD /* Stk.cpp */,
+				D96DC2981D188C8D00D7ECFD /* TapDelay.cpp */,
+				D96DC29C1D188C8D00D7ECFD /* TubeBell.cpp */,
+				D96DC29D1D188C8D00D7ECFD /* Twang.cpp */,
+				D96DC29E1D188C8D00D7ECFD /* TwoPole.cpp */,
+				D96DC29F1D188C8D00D7ECFD /* TwoZero.cpp */,
+				D96DC2A11D188C8D00D7ECFD /* Voicer.cpp */,
+				D96DC2A21D188C8D00D7ECFD /* VoicForm.cpp */,
+				D96DC2A31D188C8D00D7ECFD /* Whistle.cpp */,
+				D96DC2A41D188C8D00D7ECFD /* Wurley.cpp */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		D96DC25C1D188C8D00D7ECFD /* include */ = {
+			isa = PBXGroup;
+			children = (
+				D96DC2661D188C8D00D7ECFD /* FunctionDiscoveryKeys_devpkey.h */,
+				D96DC2671D188C8D00D7ECFD /* ginclude.h */,
+				D96DC2681D188C8D00D7ECFD /* iasiodrv.h */,
+				D96DC2691D188C8D00D7ECFD /* iasiothiscallresolver.cpp */,
+				D96DC26A1D188C8D00D7ECFD /* iasiothiscallresolver.h */,
+				D96DC26B1D188C8D00D7ECFD /* soundcard.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		D96DC3071D188D4C00D7ECFD /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				D96DC3051D188D4700D7ECFD /* GuitarPlayer.h */,
+				D96DC3041D188D4700D7ECFD /* GuitarPlayer.mm */,
+			);
+			name = Sound;
+			sourceTree = "<group>";
+		};
+		D9BCFE051C7E5DDB00C36405 = {
+			isa = PBXGroup;
+			children = (
+				D9DA9EA81E29653200BF5141 /* Resources */,
+				52E4E4D91D17839100D030A2 /* External */,
+				52E4E4911D17830F00D030A2 /* SGGuitar */,
+				D9BCFE101C7E5DDB00C36405 /* SteelSidekick */,
+				D9BCFE2A1C7E5DDB00C36405 /* SteelSidekickTests */,
+				D9BCFE351C7E5DDB00C36405 /* SteelSidekickUITests */,
+				D9BCFE0F1C7E5DDB00C36405 /* Products */,
+				5284F03B1D7E2391000C3C37 /* Settings.bundle */,
+				D9535C071D21A6CF003FCC4A /* StoreKit.framework */,
+				D9535C051D21A6C8003FCC4A /* SystemConfiguration.framework */,
+				D9535C031D21A6BB003FCC4A /* CFNetwork.framework */,
+				D96DC30C1D1891D400D7ECFD /* AudioToolbox.framework */,
+				D96DC30A1D1891CA00D7ECFD /* AVFoundation.framework */,
+				D96DC3081D1891BA00D7ECFD /* AVKit.framework */,
+				D9C7414C1C7E5F60002B2A5F /* GLKit.framework */,
+				D9C7414A1C7E5F57002B2A5F /* OpenGLES.framework */,
+			);
+			sourceTree = "<group>";
+		};
+		D9BCFE0F1C7E5DDB00C36405 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D9BCFE0E1C7E5DDB00C36405 /* SteelSidekick.app */,
+				D9BCFE271C7E5DDB00C36405 /* SteelSidekickTests.xctest */,
+				D9BCFE321C7E5DDB00C36405 /* SteelSidekickUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D9BCFE101C7E5DDB00C36405 /* SteelSidekick */ = {
+			isa = PBXGroup;
+			children = (
+				52D5F8851D1B9354006C1308 /* ColorScheme */,
+				D96DC3071D188D4C00D7ECFD /* Sound */,
+				52D0A0E21C7FE5B200EA5C6D /* Settings */,
+				52A12F1D1DFFC92100408552 /* Globals.h */,
+				D9BCFE141C7E5DDB00C36405 /* AppDelegate.h */,
+				D9BCFE151C7E5DDB00C36405 /* AppDelegate.m */,
+				527016F91C8AA8F300EE5CF5 /* ViewController.h */,
+				527016FA1C8AA8F300EE5CF5 /* ViewController.m */,
+				D9160D861CBBFF7B00A09A4A /* InfoViewController.h */,
+				D9160D871CBBFF7B00A09A4A /* InfoViewController.m */,
+				52A12F1A1DFFA83200408552 /* UIViewController+Orientation.h */,
+				52A12F1B1DFFA83200408552 /* UIViewController+Orientation.m */,
+				D9BCFE1D1C7E5DDB00C36405 /* Assets.xcassets */,
+				D9BCFE1F1C7E5DDB00C36405 /* LaunchScreen.storyboard */,
+				D9BCFE221C7E5DDB00C36405 /* Info.plist */,
+				D9BCFE111C7E5DDB00C36405 /* Supporting Files */,
+			);
+			path = SteelSidekick;
+			sourceTree = "<group>";
+		};
+		D9BCFE111C7E5DDB00C36405 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				527016F61C8AA88B00EE5CF5 /* Main.storyboard */,
+				D9BCFE121C7E5DDB00C36405 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D9BCFE2A1C7E5DDB00C36405 /* SteelSidekickTests */ = {
+			isa = PBXGroup;
+			children = (
+				D96DC1C41D18769C00D7ECFD /* GuitarTypes.settings */,
+				D96DC1C51D18769C00D7ECFD /* TestGuitar.json */,
+				D96DC1C01D18534F00D7ECFD /* SGGuitarTests.mm */,
+				D96DC1C11D18534F00D7ECFD /* TestScaleChord.mm */,
+				D9BCFE2B1C7E5DDB00C36405 /* SteelSidekickTests.m */,
+				D9BCFE2D1C7E5DDB00C36405 /* Info.plist */,
+			);
+			path = SteelSidekickTests;
+			sourceTree = "<group>";
+		};
+		D9BCFE351C7E5DDB00C36405 /* SteelSidekickUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D9BCFE361C7E5DDB00C36405 /* SteelSidekickUITests.m */,
+				D9BCFE381C7E5DDB00C36405 /* Info.plist */,
+			);
+			path = SteelSidekickUITests;
+			sourceTree = "<group>";
+		};
+		D9DA9EA81E29653200BF5141 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D9DA9EA91E29655B00BF5141 /* Images */,
+				D9DA9EAA1E29655B00BF5141 /* Settings */,
+				D9DA9EAB1E29655B00BF5141 /* Guitars */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		D9EFC3E01CC7BAFF00FDD605 /* Guitar */ = {
+			isa = PBXGroup;
+			children = (
+				52CA6EF41D2B635E00EBA92E /* Custom */,
+				52D0A0F01C7FE5D200EA5C6D /* GuitarViewController.h */,
+				52D0A0F11C7FE5D200EA5C6D /* GuitarViewController.mm */,
+			);
+			name = Guitar;
+			sourceTree = "<group>";
+		};
+		D9F0F09C1D25C3F500903F3A /* Chord */ = {
+			isa = PBXGroup;
+			children = (
+				528BA0FB1D18F03C009FDC64 /* Chord.h */,
+				528BA0CB1D18B9DA009FDC64 /* Chord.cpp */,
+				52D672051E2CA6AE002799FA /* Chord.mm */,
+				528BA0FD1D18F03C009FDC64 /* Chords.h */,
+				528BA0CD1D18B9DA009FDC64 /* Chords.cpp */,
+				528BA0FE1D18F03C009FDC64 /* ChordType.h */,
+				528BA0CE1D18B9DA009FDC64 /* ChordType.cpp */,
+			);
+			name = Chord;
+			sourceTree = "<group>";
+		};
+		D9F0F09D1D25C40200903F3A /* Guitar */ = {
+			isa = PBXGroup;
+			children = (
+				528BA1001D18F03C009FDC64 /* Guitar.h */,
+				528BA0D11D18B9DA009FDC64 /* Guitar.cpp */,
+				528BA1101D18F03C009FDC64 /* StringAdjustment.h */,
+				528BA0E11D18B9DA009FDC64 /* StringAdjustment.cpp */,
+				528BA1011D18F03C009FDC64 /* GuitarAdjustment.h */,
+				528BA0D21D18B9DA009FDC64 /* GuitarAdjustment.cpp */,
+				528BA1041D18F03C009FDC64 /* Guitars.h */,
+				528BA0D51D18B9DA009FDC64 /* Guitars.cpp */,
+				528BA1051D18F03C009FDC64 /* GuitarString.h */,
+				528BA0D61D18B9DA009FDC64 /* GuitarString.cpp */,
+				528BA1061D18F03C009FDC64 /* GuitarType.h */,
+				528BA0D71D18B9DA009FDC64 /* GuitarType.cpp */,
+				528BA1071D18F03C009FDC64 /* GuitarTypes.h */,
+				528BA0D81D18B9DA009FDC64 /* GuitarTypes.cpp */,
+				52D6720A1E2CAFBB002799FA /* GuitarAdjustmentType.h */,
+				52D672071E2CAEC2002799FA /* GuitarAdjustmentType.cpp */,
+				520F62941E3861AA00374912 /* GuitarAdjustmentType.mm */,
+			);
+			name = Guitar;
+			sourceTree = "<group>";
+		};
+		D9F0F09E1D25C40B00903F3A /* Note */ = {
+			isa = PBXGroup;
+			children = (
+				528BA1081D18F03C009FDC64 /* Note.h */,
+				528BA0D91D18B9DA009FDC64 /* Note.cpp */,
+				52584A871E2C8D9E002461F5 /* NoteName.h */,
+				52584A841E2C8D15002461F5 /* NoteName.cpp */,
+				D94701EA1E2D51CC00A40B7F /* NoteName.mm */,
+			);
+			name = Note;
+			sourceTree = "<group>";
+		};
+		D9F0F09F1D25C43B00903F3A /* Options */ = {
+			isa = PBXGroup;
+			children = (
+				528BA10A1D18F03C009FDC64 /* OptionTypes.h */,
+				528BA0DB1D18B9DA009FDC64 /* OptionTypes.cpp */,
+				528BA1031D18F03C009FDC64 /* GuitarOptions.h */,
+				528BA0D41D18B9DA009FDC64 /* GuitarOptions.cpp */,
+				52D671F31E2C9666002799FA /* GuitarOptions.mm */,
+				528BA0FC1D18F03C009FDC64 /* ChordOptions.h */,
+				528BA0CC1D18B9DA009FDC64 /* ChordOptions.cpp */,
+				520F62951E3861AA00374912 /* ChordOptions.mm */,
+				528BA10C1D18F03C009FDC64 /* ScaleOptions.h */,
+				528BA0DD1D18B9DA009FDC64 /* ScaleOptions.cpp */,
+				52D671F71E2CA1CB002799FA /* ScaleOptions.mm */,
+			);
+			name = Options;
+			sourceTree = "<group>";
+		};
+		D9F0F0A01D25C46A00903F3A /* Scale */ = {
+			isa = PBXGroup;
+			children = (
+				528BA10D1D18F03C009FDC64 /* Scales.h */,
+				528BA0DE1D18B9DA009FDC64 /* Scales.cpp */,
+				528BA10B1D18F03C009FDC64 /* Scale.h */,
+				528BA0DC1D18B9DA009FDC64 /* Scale.cpp */,
+				520F62921E3861AA00374912 /* Scale.mm */,
+				528BA10E1D18F03C009FDC64 /* ScaleType.h */,
+				528BA0DF1D18B9DA009FDC64 /* ScaleType.cpp */,
+			);
+			name = Scale;
+			sourceTree = "<group>";
+		};
+		D9F0F0A11D25C47200903F3A /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				52D671FB1E2CA4B8002799FA /* NSArrayNoteValueVector.h */,
+				52D671FC1E2CA4B8002799FA /* NSArrayNoteValueVector.mm */,
+				52D671FD1E2CA4B8002799FA /* NSArrayStdStringVector.h */,
+				52D671FE1E2CA4B8002799FA /* NSArrayStdStringVector.mm */,
+				52D671FF1E2CA4B8002799FA /* NSArrayVector.h */,
+				52D672001E2CA4B8002799FA /* NSArrayVector.mm */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D9BCFE0D1C7E5DDB00C36405 /* SteelSidekick */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D9BCFE3B1C7E5DDB00C36405 /* Build configuration list for PBXNativeTarget "SteelSidekick" */;
+			buildPhases = (
+				D9BCFE0A1C7E5DDB00C36405 /* Sources */,
+				D9BCFE0B1C7E5DDB00C36405 /* Frameworks */,
+				D9BCFE0C1C7E5DDB00C36405 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SteelSidekick;
+			productName = SteelSidekick;
+			productReference = D9BCFE0E1C7E5DDB00C36405 /* SteelSidekick.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D9BCFE261C7E5DDB00C36405 /* SteelSidekickTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D9BCFE3E1C7E5DDB00C36405 /* Build configuration list for PBXNativeTarget "SteelSidekickTests" */;
+			buildPhases = (
+				D9BCFE231C7E5DDB00C36405 /* Sources */,
+				D9BCFE241C7E5DDB00C36405 /* Frameworks */,
+				D9BCFE251C7E5DDB00C36405 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D9BCFE291C7E5DDB00C36405 /* PBXTargetDependency */,
+			);
+			name = SteelSidekickTests;
+			productName = SteelSidekickTests;
+			productReference = D9BCFE271C7E5DDB00C36405 /* SteelSidekickTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D9BCFE311C7E5DDB00C36405 /* SteelSidekickUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D9BCFE411C7E5DDB00C36405 /* Build configuration list for PBXNativeTarget "SteelSidekickUITests" */;
+			buildPhases = (
+				D9BCFE2E1C7E5DDB00C36405 /* Sources */,
+				D9BCFE2F1C7E5DDB00C36405 /* Frameworks */,
+				D9BCFE301C7E5DDB00C36405 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D9BCFE341C7E5DDB00C36405 /* PBXTargetDependency */,
+			);
+			name = SteelSidekickUITests;
+			productName = SteelSidekickUITests;
+			productReference = D9BCFE321C7E5DDB00C36405 /* SteelSidekickUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D9BCFE061C7E5DDB00C36405 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0800;
+				TargetAttributes = {
+					D9BCFE0D1C7E5DDB00C36405 = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = N9V659CU72;
+					};
+					D9BCFE261C7E5DDB00C36405 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = D9BCFE0D1C7E5DDB00C36405;
+					};
+					D9BCFE311C7E5DDB00C36405 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = D9BCFE0D1C7E5DDB00C36405;
+					};
+				};
+			};
+			buildConfigurationList = D9BCFE091C7E5DDB00C36405 /* Build configuration list for PBXProject "SteelSidekick" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				ar,
+				ca,
+				cs,
+				da,
+				de,
+				el,
+				es,
+				fi,
+				fr,
+				he,
+				hu,
+				id,
+				it,
+				ja,
+				ko,
+				ms,
+				nb,
+				nl,
+				pl,
+				"pt-BR",
+				pt,
+				ro,
+				ru,
+				sk,
+				sv,
+				th,
+				tr,
+				uk,
+				vi,
+				"zh-Hans",
+				"zh-Hant",
+			);
+			mainGroup = D9BCFE051C7E5DDB00C36405;
+			productRefGroup = D9BCFE0F1C7E5DDB00C36405 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D9BCFE0D1C7E5DDB00C36405 /* SteelSidekick */,
+				D9BCFE261C7E5DDB00C36405 /* SteelSidekickTests */,
+				D9BCFE311C7E5DDB00C36405 /* SteelSidekickUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D9BCFE0C1C7E5DDB00C36405 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9DA9EAC1E29655B00BF5141 /* Images in Resources */,
+				D9BCFE211C7E5DDB00C36405 /* LaunchScreen.storyboard in Resources */,
+				527016F81C8AA88B00EE5CF5 /* Main.storyboard in Resources */,
+				D96DC2D01D188C8D00D7ECFD /* Makefile.in in Resources */,
+				D9DA9EAE1E29655B00BF5141 /* Guitars in Resources */,
+				D9BCFE1E1C7E5DDB00C36405 /* Assets.xcassets in Resources */,
+				52D0A1081C7FE5D200EA5C6D /* Chord.storyboard in Resources */,
+				52E414551D1783C000D030A2 /* IQKeyboardManager.bundle in Resources */,
+				52D0A10B1C7FE5D200EA5C6D /* Settings.storyboard in Resources */,
+				52E413E11D1783BF00D030A2 /* AppiraterLocalizable.strings in Resources */,
+				D9DA9EAD1E29655B00BF5141 /* Settings in Resources */,
+				5284F03C1D7E2391000C3C37 /* Settings.bundle in Resources */,
+				52D0A10A1C7FE5D200EA5C6D /* Scale.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D9BCFE251C7E5DDB00C36405 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D96DC1C81D18769C00D7ECFD /* TestGuitar.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D9BCFE301C7E5DDB00C36405 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D9BCFE0A1C7E5DDB00C36405 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				528BA0F61D18B9DA009FDC64 /* ScaleType.cpp in Sources */,
+				520F62961E3861AA00374912 /* Scale.mm in Sources */,
+				52E4144C1D1783C000D030A2 /* IQUIViewController+Additions.m in Sources */,
+				D96DC2F51D188C8D00D7ECFD /* StifKarp.cpp in Sources */,
+				D96DC2A71D188C8D00D7ECFD /* BandedWG.cpp in Sources */,
+				528BA0E81D18B9DA009FDC64 /* Guitar.cpp in Sources */,
+				52E4144D1D1783C000D030A2 /* IQUIWindow+Hierarchy.m in Sources */,
+				528BA0F41D18B9DA009FDC64 /* ScaleOptions.cpp in Sources */,
+				D96DC2EE1D188C8D00D7ECFD /* Simple.cpp in Sources */,
+				5252A0E91D208F9400641714 /* ColorSchemeViewController.m in Sources */,
+				527016FB1C8AA8F300EE5CF5 /* ViewController.m in Sources */,
+				52D0A1181C7FE5D200EA5C6D /* GuitarAdjustmentViewController.mm in Sources */,
+				52E413DF1D1783BF00D030A2 /* Appirater.m in Sources */,
+				D96DC2F01D188C8D00D7ECFD /* SingWave.cpp in Sources */,
+				52D0A1161C7FE5D200EA5C6D /* SettingsViewController.mm in Sources */,
+				52E4144B1D1783C000D030A2 /* IQUIView+Hierarchy.m in Sources */,
+				D96DC2B91D188C8D00D7ECFD /* FileLoop.cpp in Sources */,
+				D96DC2FC1D188C8D00D7ECFD /* Twang.cpp in Sources */,
+				528BA0F31D18B9DA009FDC64 /* Scale.cpp in Sources */,
+				52E416021D17B46C00D030A2 /* Convert.cpp in Sources */,
+				52E416041D17B46C00D030A2 /* IndentCanceller.cpp in Sources */,
+				D96DC2CF1D188C8D00D7ECFD /* LentPitShift.cpp in Sources */,
+				D96DC3031D188C8D00D7ECFD /* Wurley.cpp in Sources */,
+				528BA0F51D18B9DA009FDC64 /* Scales.cpp in Sources */,
+				52E414481D1783C000D030A2 /* IQNSArray+Sort.m in Sources */,
+				D96DC2B61D188C8D00D7ECFD /* Drummer.cpp in Sources */,
+				52E416081D17B46C00D030A2 /* SolidusEscaper.cpp in Sources */,
+				528BA0F21D18B9DA009FDC64 /* OptionTypes.cpp in Sources */,
+				52E414501D1783C000D030A2 /* IQTextView.m in Sources */,
+				5284F0361D7E15E9000C3C37 /* NSTimer+Blocks.m in Sources */,
+				D96DC2F61D188C8D00D7ECFD /* Stk.cpp in Sources */,
+				D96DC2DA1D188C8D00D7ECFD /* Noise.cpp in Sources */,
+				D96DC2C11D188C8D00D7ECFD /* FMVoices.cpp in Sources */,
+				D96DC2DB1D188C8D00D7ECFD /* NRev.cpp in Sources */,
+				D96DC3011D188C8D00D7ECFD /* VoicForm.cpp in Sources */,
+				528BA0E31D18B9DA009FDC64 /* ChordOptions.cpp in Sources */,
+				52D672031E2CA4B8002799FA /* NSArrayVector.mm in Sources */,
+				D96DC2BD1D188C8D00D7ECFD /* FileWvOut.cpp in Sources */,
+				D96DC2C41D188C8D00D7ECFD /* Granulate.cpp in Sources */,
+				D96DC2DF1D188C8D00D7ECFD /* Phonemes.cpp in Sources */,
+				D96DC2B81D188C8D00D7ECFD /* Envelope.cpp in Sources */,
+				D96DC2A61D188C8D00D7ECFD /* Asymp.cpp in Sources */,
+				D96DC2E51D188C8D00D7ECFD /* Resonate.cpp in Sources */,
+				D96DC2B71D188C8D00D7ECFD /* Echo.cpp in Sources */,
+				D96DC2DE1D188C8D00D7ECFD /* PercFlut.cpp in Sources */,
+				D96DC2C01D188C8D00D7ECFD /* FM.cpp in Sources */,
+				D9BCFE161C7E5DDB00C36405 /* AppDelegate.m in Sources */,
+				D96DC2D31D188C8D00D7ECFD /* Messager.cpp in Sources */,
+				52E414581D1783C000D030A2 /* NSArray+PureLayout.m in Sources */,
+				D96DC2E01D188C8D00D7ECFD /* PitShift.cpp in Sources */,
+				D96DC2DD1D188C8D00D7ECFD /* OneZero.cpp in Sources */,
+				52D672011E2CA4B8002799FA /* NSArrayNoteValueVector.mm in Sources */,
+				52D0A10D1C7FE5D200EA5C6D /* ChordViewController.mm in Sources */,
+				52E414571D1783C000D030A2 /* ALView+PureLayout.m in Sources */,
+				D96DC3021D188C8D00D7ECFD /* Whistle.cpp in Sources */,
+				52D672021E2CA4B8002799FA /* NSArrayStdStringVector.mm in Sources */,
+				52584A861E2C8D15002461F5 /* NoteName.cpp in Sources */,
+				D96DC2C71D188C8D00D7ECFD /* Iir.cpp in Sources */,
+				D96DC2BB1D188C8D00D7ECFD /* FileWrite.cpp in Sources */,
+				52BF4BEF1D20415B00710CE5 /* FlatColorPalette.m in Sources */,
+				52BF4BEC1D203FBF00710CE5 /* UIColor+Expanded.m in Sources */,
+				D96DC2AD1D188C8D00D7ECFD /* BlowBotl.cpp in Sources */,
+				52D672061E2CA6FF002799FA /* Chord.mm in Sources */,
+				528BA0EE1D18B9DA009FDC64 /* GuitarType.cpp in Sources */,
+				D96DC2AC1D188C8D00D7ECFD /* BlitSquare.cpp in Sources */,
+				528BA0EF1D18B9DA009FDC64 /* GuitarTypes.cpp in Sources */,
+				D96DC2B11D188C8D00D7ECFD /* Chorus.cpp in Sources */,
+				528BA0EC1D18B9DA009FDC64 /* Guitars.cpp in Sources */,
+				D96DC2D21D188C8D00D7ECFD /* Mesh2D.cpp in Sources */,
+				D96DC2ED1D188C8D00D7ECFD /* Shakers.cpp in Sources */,
+				D96DC2FE1D188C8D00D7ECFD /* TwoZero.cpp in Sources */,
+				52D0A10E1C7FE5D200EA5C6D /* GuitarViewController.mm in Sources */,
+				D94701EB1E2D51CF00A40B7F /* NoteName.mm in Sources */,
+				D9112ADD1D13173700F085DF /* InfoViewController.m in Sources */,
+				52E416051D17B46C00D030A2 /* Indenter.cpp in Sources */,
+				52E414511D1783C000D030A2 /* IQBarButtonItem.m in Sources */,
+				D96DC2F41D188C8D00D7ECFD /* Sphere.cpp in Sources */,
+				D92776921D36D10700822208 /* BTBalloonArrow.m in Sources */,
+				5273B1FB1D488FD200D37CB4 /* GuitarNameTableViewCell.m in Sources */,
+				D96DC2DC1D188C8D00D7ECFD /* OnePole.cpp in Sources */,
+				D96DC2B41D188C8D00D7ECFD /* DelayA.cpp in Sources */,
+				D96DC2D61D188C8D00D7ECFD /* ModalBar.cpp in Sources */,
+				D96DC2C51D188C8D00D7ECFD /* Guitar.cpp in Sources */,
+				D96DC2D11D188C8D00D7ECFD /* Mandolin.cpp in Sources */,
+				D96DC2B31D188C8D00D7ECFD /* Delay.cpp in Sources */,
+				D9BCFE131C7E5DDB00C36405 /* main.m in Sources */,
+				D96DC2C21D188C8D00D7ECFD /* FormSwep.cpp in Sources */,
+				52E4144F1D1783C000D030A2 /* IQKeyboardReturnKeyHandler.m in Sources */,
+				D96DC2EB1D188C8D00D7ECFD /* Sampler.cpp in Sources */,
+				D96DC3061D188D4700D7ECFD /* GuitarPlayer.mm in Sources */,
+				D96DC2E31D188C8D00D7ECFD /* PRCRev.cpp in Sources */,
+				D96DC2D51D188C8D00D7ECFD /* Modal.cpp in Sources */,
+				528BA0EB1D18B9DA009FDC64 /* GuitarOptions.cpp in Sources */,
+				52D0A10C1C7FE5D200EA5C6D /* ChordTypeViewController.m in Sources */,
+				D96DC2F71D188C8D00D7ECFD /* TapDelay.cpp in Sources */,
+				52A12F1C1DFFA83200408552 /* UIViewController+Orientation.m in Sources */,
+				D96DC2AF1D188C8D00D7ECFD /* Bowed.cpp in Sources */,
+				520F62971E3861AA00374912 /* SGuitar.mm in Sources */,
+				D96DC2FB1D188C8D00D7ECFD /* TubeBell.cpp in Sources */,
+				D96DC2CE1D188C8D00D7ECFD /* JCRev.cpp in Sources */,
+				528BA0E71D18B9DA009FDC64 /* FileUtils_iOS.mm in Sources */,
+				D96DC2AB1D188C8D00D7ECFD /* BlitSaw.cpp in Sources */,
+				D96DC2E61D188C8D00D7ECFD /* Rhodey.cpp in Sources */,
+				52E416031D17B46C00D030A2 /* Escaper.cpp in Sources */,
+				D96DC2AE1D188C8D00D7ECFD /* BlowHole.cpp in Sources */,
+				D96DC2BF1D188C8D00D7ECFD /* Flute.cpp in Sources */,
+				D96DC2EC1D188C8D00D7ECFD /* Saxofony.cpp in Sources */,
+				528BA0EA1D18B9DA009FDC64 /* GuitarCanvas.cpp in Sources */,
+				D96DC2BC1D188C8D00D7ECFD /* FileWvIn.cpp in Sources */,
+				528BA0E51D18B9DA009FDC64 /* ChordType.cpp in Sources */,
+				52D671F41E2C9C8D002799FA /* GuitarOptions.mm in Sources */,
+				D96DC2F21D188C8D00D7ECFD /* Skini.cpp in Sources */,
+				52E416061D17B46C00D030A2 /* JsonParsingError.cpp in Sources */,
+				D96DC2BA1D188C8D00D7ECFD /* FileRead.cpp in Sources */,
+				D96DC2A81D188C8D00D7ECFD /* BeeThree.cpp in Sources */,
+				528BA0E21D18B9DA009FDC64 /* Chord.cpp in Sources */,
+				D96DC2B01D188C8D00D7ECFD /* Brass.cpp in Sources */,
+				52D0A1151C7FE5D200EA5C6D /* ScaleViewController.m in Sources */,
+				52D672091E2CAEC2002799FA /* GuitarAdjustmentType.cpp in Sources */,
+				528BA0F71D18B9DA009FDC64 /* SGuitar.cpp in Sources */,
+				528BA0E61D18B9DA009FDC64 /* FileUtils.cpp in Sources */,
+				52D0A1131C7FE5D200EA5C6D /* RootNoteViewController.m in Sources */,
+				5284F03A1D7E211D000C3C37 /* AboutTableViewController.m in Sources */,
+				D96DC2FD1D188C8D00D7ECFD /* TwoPole.cpp in Sources */,
+				52D5F8881D1B936E006C1308 /* ColorScheme.m in Sources */,
+				520F62991E3861AA00374912 /* ChordOptions.mm in Sources */,
+				528BA0ED1D18B9DA009FDC64 /* GuitarString.cpp in Sources */,
+				528BA0E41D18B9DA009FDC64 /* Chords.cpp in Sources */,
+				52E4144E1D1783C000D030A2 /* IQKeyboardManager.m in Sources */,
+				52CA6EF31D2B611D00EBA92E /* CustomGuitar.mm in Sources */,
+				D96DC2C31D188C8D00D7ECFD /* FreeVerb.cpp in Sources */,
+				52E414541D1783C000D030A2 /* IQUIView+IQKeyboardToolbar.m in Sources */,
+				520F62981E3861AA00374912 /* GuitarAdjustmentType.mm in Sources */,
+				D96DC2B21D188C8D00D7ECFD /* Clarinet.cpp in Sources */,
+				52E416091D17B46C00D030A2 /* Value.cpp in Sources */,
+				D96DC2D41D188C8D00D7ECFD /* MidiFileIn.cpp in Sources */,
+				528BA0F81D18B9DA009FDC64 /* StringAdjustment.cpp in Sources */,
+				D96DC2E11D188C8D00D7ECFD /* Plucked.cpp in Sources */,
+				52E416071D17B46C00D030A2 /* JsonWritingError.cpp in Sources */,
+				52E414491D1783C000D030A2 /* IQUIScrollView+Additions.m in Sources */,
+				D96DC3001D188C8D00D7ECFD /* Voicer.cpp in Sources */,
+				52E414531D1783C000D030A2 /* IQToolbar.m in Sources */,
+				D919744C1CCAB73B000312F4 /* StringNoteTableViewCell.m in Sources */,
+				52E414521D1783C000D030A2 /* IQTitleBarButtonItem.m in Sources */,
+				D96DC2D81D188C8D00D7ECFD /* Moog.cpp in Sources */,
+				52D671F81E2CA1CB002799FA /* ScaleOptions.mm in Sources */,
+				52E414591D1783C000D030A2 /* NSLayoutConstraint+PureLayout.m in Sources */,
+				52D0A1141C7FE5D200EA5C6D /* ScaleTypeViewController.m in Sources */,
+				52E4144A1D1783C000D030A2 /* IQUITextFieldView+Additions.m in Sources */,
+				52969EAD1D17B6A000EFE67B /* nanovg.c in Sources */,
+				D96DC2F11D188C8D00D7ECFD /* Sitar.cpp in Sources */,
+				D96DC2D71D188C8D00D7ECFD /* Modulate.cpp in Sources */,
+				D92776911D36D10700822208 /* BTBalloon.m in Sources */,
+				D96DC2AA1D188C8D00D7ECFD /* Blit.cpp in Sources */,
+				D96DC2EF1D188C8D00D7ECFD /* SineWave.cpp in Sources */,
+				D96DC2C61D188C8D00D7ECFD /* HevyMetl.cpp in Sources */,
+				D96DC2B51D188C8D00D7ECFD /* DelayL.cpp in Sources */,
+				528BA0E91D18B9DA009FDC64 /* GuitarAdjustment.cpp in Sources */,
+				D96DC2BE1D188C8D00D7ECFD /* Fir.cpp in Sources */,
+				D96DC2A91D188C8D00D7ECFD /* BiQuad.cpp in Sources */,
+				D96DC2E21D188C8D00D7ECFD /* PoleZero.cpp in Sources */,
+				D96DC2CB1D188C8D00D7ECFD /* iasiothiscallresolver.cpp in Sources */,
+				52D0A10F1C7FE5D200EA5C6D /* CustomGuitarViewController.mm in Sources */,
+				D96DC2A51D188C8D00D7ECFD /* ADSR.cpp in Sources */,
+				528BA0F01D18B9DA009FDC64 /* Note.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D9BCFE231C7E5DDB00C36405 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D958850B1D1C244A001349CC /* Scale.cpp in Sources */,
+				D9BCFE2C1C7E5DDB00C36405 /* SteelSidekickTests.m in Sources */,
+				D95884FD1D1C244A001349CC /* ChordType.cpp in Sources */,
+				D95885171D1C2479001349CC /* SolidusEscaper.cpp in Sources */,
+				D95885151D1C2479001349CC /* JsonParsingError.cpp in Sources */,
+				D95885051D1C244A001349CC /* GuitarString.cpp in Sources */,
+				D95885141D1C2479001349CC /* Indenter.cpp in Sources */,
+				D96DC1C31D18534F00D7ECFD /* TestScaleChord.mm in Sources */,
+				D95884FA1D1C244A001349CC /* Chord.cpp in Sources */,
+				D96DC1C21D18534F00D7ECFD /* SGGuitarTests.mm in Sources */,
+				D95885121D1C2479001349CC /* Escaper.cpp in Sources */,
+				D95884FC1D1C244A001349CC /* Chords.cpp in Sources */,
+				D95885101D1C244A001349CC /* StringAdjustment.cpp in Sources */,
+				D95885161D1C2479001349CC /* JsonWritingError.cpp in Sources */,
+				D95884FB1D1C244A001349CC /* ChordOptions.cpp in Sources */,
+				D95885131D1C2479001349CC /* IndentCanceller.cpp in Sources */,
+				D95885011D1C244A001349CC /* GuitarAdjustment.cpp in Sources */,
+				D958850C1D1C244A001349CC /* ScaleOptions.cpp in Sources */,
+				D95885081D1C244A001349CC /* Note.cpp in Sources */,
+				D95884FE1D1C244A001349CC /* FileUtils.cpp in Sources */,
+				D95885031D1C244A001349CC /* GuitarOptions.cpp in Sources */,
+				D958850F1D1C244A001349CC /* SGuitar.cpp in Sources */,
+				D95885021D1C244A001349CC /* GuitarCanvas.cpp in Sources */,
+				D958850E1D1C244A001349CC /* ScaleType.cpp in Sources */,
+				D958850A1D1C244A001349CC /* OptionTypes.cpp in Sources */,
+				D95885041D1C244A001349CC /* Guitars.cpp in Sources */,
+				5228EF6B1D29B8B300E3E15B /* nanovg.c in Sources */,
+				D95885181D1C2479001349CC /* Value.cpp in Sources */,
+				D95885111D1C2479001349CC /* Convert.cpp in Sources */,
+				D958850D1D1C244A001349CC /* Scales.cpp in Sources */,
+				D95885071D1C244A001349CC /* GuitarTypes.cpp in Sources */,
+				D95885061D1C244A001349CC /* GuitarType.cpp in Sources */,
+				D95884FF1D1C244A001349CC /* FileUtils_iOS.mm in Sources */,
+				D95885001D1C244A001349CC /* Guitar.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D9BCFE2E1C7E5DDB00C36405 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9BCFE371C7E5DDB00C36405 /* SteelSidekickUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D9BCFE291C7E5DDB00C36405 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D9BCFE0D1C7E5DDB00C36405 /* SteelSidekick */;
+			targetProxy = D9BCFE281C7E5DDB00C36405 /* PBXContainerItemProxy */;
+		};
+		D9BCFE341C7E5DDB00C36405 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D9BCFE0D1C7E5DDB00C36405 /* SteelSidekick */;
+			targetProxy = D9BCFE331C7E5DDB00C36405 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		527016F61C8AA88B00EE5CF5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				527016F71C8AA88B00EE5CF5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		52D0A0E41C7FE5D200EA5C6D /* Chord.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				52D0A0E51C7FE5D200EA5C6D /* Base */,
+			);
+			name = Chord.storyboard;
+			sourceTree = "<group>";
+		};
+		52D0A0E81C7FE5D200EA5C6D /* Scale.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				52D0A0E91C7FE5D200EA5C6D /* Base */,
+			);
+			name = Scale.storyboard;
+			sourceTree = "<group>";
+		};
+		52D0A0EA1C7FE5D200EA5C6D /* Settings.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				52D0A0EB1C7FE5D200EA5C6D /* Base */,
+			);
+			name = Settings.storyboard;
+			sourceTree = "<group>";
+		};
+		52E4E4E01D1783AB00D030A2 /* AppiraterLocalizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				52E4E4E11D1783AB00D030A2 /* ar */,
+				52E4E4E21D1783AB00D030A2 /* ca */,
+				52E4E4E41D1783AB00D030A2 /* cs */,
+				52E4E4E51D1783AB00D030A2 /* da */,
+				52E4E4E61D1783AB00D030A2 /* de */,
+				52E4E4E71D1783AB00D030A2 /* el */,
+				52E4E4E81D1783AB00D030A2 /* en */,
+				52E4E4E91D1783AB00D030A2 /* es */,
+				52E4E4EA1D1783AB00D030A2 /* fi */,
+				52E4E4EB1D1783AB00D030A2 /* fr */,
+				52E4E4EC1D1783AB00D030A2 /* he */,
+				52E4E4ED1D1783AB00D030A2 /* hu */,
+				52E4E4EE1D1783AB00D030A2 /* id */,
+				52E4E4EF1D1783AB00D030A2 /* it */,
+				52E4E4F01D1783AB00D030A2 /* ja */,
+				52E4E4F11D1783AB00D030A2 /* ko */,
+				52E4E4F21D1783AB00D030A2 /* ms */,
+				52E4E4F31D1783AB00D030A2 /* nb */,
+				52E4E4F41D1783AB00D030A2 /* nl */,
+				52E4E4F51D1783AB00D030A2 /* pl */,
+				52E4E4F61D1783AB00D030A2 /* pt-BR */,
+				52E4E4F71D1783AB00D030A2 /* pt */,
+				52E4E4F91D1783AB00D030A2 /* ro */,
+				52E4E4FA1D1783AB00D030A2 /* ru */,
+				52E4E4FB1D1783AB00D030A2 /* sk */,
+				52E4E4FC1D1783AB00D030A2 /* sv */,
+				52E4E4FD1D1783AB00D030A2 /* th */,
+				52E4E4FE1D1783AB00D030A2 /* tr */,
+				52E4E4FF1D1783AB00D030A2 /* uk */,
+				52E4E5001D1783AB00D030A2 /* vi */,
+				52E4E5011D1783AB00D030A2 /* zh-Hans */,
+				52E4E5021D1783AB00D030A2 /* zh-Hant */,
+			);
+			name = AppiraterLocalizable.strings;
+			sourceTree = "<group>";
+		};
+		D9BCFE1F1C7E5DDB00C36405 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D9BCFE201C7E5DDB00C36405 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D9BCFE391C7E5DDB00C36405 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Debug;
+		};
+		D9BCFE3A1C7E5DDB00C36405 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D9BCFE3C1C7E5DDB00C36405 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = N9V659CU72;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = SteelSidekick/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.steelsidekick.com.SteelSidekick;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				USER_HEADER_SEARCH_PATHS = "../SGuitar/External/JsonBox/include ../SGuitar/External/stk/include ../SGuitar/include";
+			};
+			name = Debug;
+		};
+		D9BCFE3D1C7E5DDB00C36405 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = N9V659CU72;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = SteelSidekick/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.steelsidekick.com.SteelSidekick;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				USER_HEADER_SEARCH_PATHS = "../SGuitar/External/JsonBox/include ../SGuitar/External/stk/include ../SGuitar/include";
+			};
+			name = Release;
+		};
+		D9BCFE3F1C7E5DDB00C36405 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SteelSidekickTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/External/boost/ios",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.steelsidekick.SteelSidekickTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SteelSidekick.app/SteelSidekick";
+				USER_HEADER_SEARCH_PATHS = "./External/boost/include ../SGuitar/External/JsonBox/include ../SGuitar/External/stk/include ../SGuitar/include";
+			};
+			name = Debug;
+		};
+		D9BCFE401C7E5DDB00C36405 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SteelSidekickTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/External/boost/ios",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.steelsidekick.SteelSidekickTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SteelSidekick.app/SteelSidekick";
+				USER_HEADER_SEARCH_PATHS = "./External/boost/include ../SGuitar/External/JsonBox/include ../SGuitar/External/stk/include ../SGuitar/include";
+			};
+			name = Release;
+		};
+		D9BCFE421C7E5DDB00C36405 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SteelSidekickUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.steelsidekick.SteelSidekickUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = SteelSidekick;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		D9BCFE431C7E5DDB00C36405 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SteelSidekickUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.steelsidekick.SteelSidekickUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = SteelSidekick;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D9BCFE091C7E5DDB00C36405 /* Build configuration list for PBXProject "SteelSidekick" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D9BCFE391C7E5DDB00C36405 /* Debug */,
+				D9BCFE3A1C7E5DDB00C36405 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D9BCFE3B1C7E5DDB00C36405 /* Build configuration list for PBXNativeTarget "SteelSidekick" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D9BCFE3C1C7E5DDB00C36405 /* Debug */,
+				D9BCFE3D1C7E5DDB00C36405 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D9BCFE3E1C7E5DDB00C36405 /* Build configuration list for PBXNativeTarget "SteelSidekickTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D9BCFE3F1C7E5DDB00C36405 /* Debug */,
+				D9BCFE401C7E5DDB00C36405 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D9BCFE411C7E5DDB00C36405 /* Build configuration list for PBXNativeTarget "SteelSidekickUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D9BCFE421C7E5DDB00C36405 /* Debug */,
+				D9BCFE431C7E5DDB00C36405 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D9BCFE061C7E5DDB00C36405 /* Project object */;
+}

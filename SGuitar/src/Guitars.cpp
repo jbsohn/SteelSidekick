@@ -1,0 +1,133 @@
+//
+//  Guitars.cpp
+//  SGuitar
+//
+//  Created by John Sohn on 2/29/16.
+//  Copyright © 2016 John Sohn. All rights reserved.
+//
+
+#include "SG/Guitars.h"
+#include "SG/FileUtils.h"
+#include "JsonBox.h"
+
+namespace SG {
+    struct Guitars::GuitarsImpl {
+        std::string guitarsPath;
+        bool isValid;
+        
+        std::vector<GuitarType> readGuitarTypes(std::string json) {
+            std::vector<GuitarType> types;
+            JsonBox::Value root;
+            root.loadFromString(json);
+            
+            if (!root.isNull()) {
+                JsonBox::Array rootTypes = root.getArray();
+                
+                if (!rootTypes.empty()) {
+                    for (JsonBox::Value curType : rootTypes) {
+                        JsonBox::Value typeRoot = curType["type"];
+                        std::string type = "";
+                        if (typeRoot.isString()) {
+                            type = typeRoot.getString();
+                        }
+
+                        JsonBox::Value descriptionRoot = curType["type"];
+                        std::string description = "";
+                        if (descriptionRoot.isString()) {
+                            description = typeRoot.getString();
+                        }
+                        
+                        JsonBox::Value isCustomTypeRoot = curType["isCustomType"];
+                        bool isCustomType = false;
+                        if (isCustomTypeRoot.isBoolean()) {
+                            isCustomType = isCustomTypeRoot.getBoolean();
+                        }
+                        
+                        GuitarType newType(type, description, isCustomType);
+                        types.push_back(newType);
+                    }
+                }
+            }
+            
+            return types;
+        }
+    };
+
+    Guitars::Guitars() : impl(new GuitarsImpl) {
+        impl->guitarsPath = "";
+        impl->isValid = false;
+    }
+
+    Guitars::~Guitars() {
+        
+    }
+
+    bool Guitars::isValid() const {
+        return impl->isValid;
+    }
+
+    void Guitars::setGuitarsPath(std::string guitarsPath) {
+        impl->guitarsPath = guitarsPath;
+        impl->isValid = true;
+    }
+
+    std::vector<std::string> Guitars::getGuitarNames(std::string type) const {
+        std::string path = impl->guitarsPath + "/" + type;
+        std::vector<std::string> guitars = FileUtils::readFileListFromPath(path);
+        return guitars;
+    }
+
+    GuitarType Guitars::getGuitarType(std::string guitarName, std::vector<GuitarType> types) const {
+        GuitarType type;
+        for (GuitarType curType : types) {
+            std::string curTypeName = curType.getName();
+            std::vector<std::string> guitarNames = getGuitarNames(curTypeName);
+
+            for (std::string curGuitarName : guitarNames) {
+                if (curGuitarName == guitarName) {
+                    type = curType;
+                    break;
+                }
+            }
+        }
+        return type;
+    }
+    
+    std::string Guitars::guitarFileNameForGuitar(std::string name, std::string type) const {
+        std::string path = impl->guitarsPath + "/" + type;
+        std::vector<std::string> guitars = FileUtils::readFileListFromPath(path);
+
+        for (std::string curFile : guitars) {
+            if (curFile == name) {
+                return curFile;
+            }
+        }
+        return "";
+    }
+
+    std::vector<std::string> Guitars::getCustomGuitarNames() const {
+        std::string root = FileUtils::getRootPathForUserFiles();
+        std::string path = root + "/Custom Guitars";
+        std::vector<std::string> guitars = FileUtils::readFileListFromPath(path);
+        return guitars;
+    }
+
+    std::string Guitars::guitarFileNameForCustomGuitar(std::string name) const {
+        std::string root = FileUtils::getRootPathForUserFiles();
+        std::string path = root + "/Custom Guitars";
+        std::vector<std::string> guitars = FileUtils::readFileListFromPath(path);
+        
+        for (std::string curFile : guitars) {
+            if (curFile == name) {
+                return curFile;
+            }
+        }
+        return "";
+    }
+    
+    bool Guitars::removeCustomGuitar(std::string name) {
+        std::string root = FileUtils::getRootPathForUserFiles();
+        std::string filename = root + "/Custom Guitars/" + name;
+        return FileUtils::deleteFile(filename);
+    }
+}

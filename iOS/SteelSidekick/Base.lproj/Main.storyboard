@@ -1,0 +1,871 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="wMQ-za-UgB">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController extendedLayoutIncludesOpaqueBars="YES" id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="44" width="1024" height="724"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lzI-72-xlv">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="680"/>
+                                <color key="backgroundColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jrd-k8-9rC" userLabel="Bottom View">
+                                <rect key="frame" x="0.0" y="620" width="1024" height="44"/>
+                                <subviews>
+                                    <view autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qdy-Fe-2Mh" userLabel="Left Lever View">
+                                        <rect key="frame" x="16" y="0.0" width="224" height="44"/>
+                                        <subviews>
+                                            <button autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vQb-wd-Ple" userLabel="LeverLKL">
+                                                <rect key="frame" x="0.0" y="-6" width="44" height="44"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" image="Lever.png"/>
+                                                <state key="selected" image="LeftLeverActive.png"/>
+                                                <state key="highlighted" image="LeftLeverActive"/>
+                                                <connections>
+                                                    <action selector="leverSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SE6-3F-XoU"/>
+                                                </connections>
+                                            </button>
+                                            <button autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ENd-24-GOW" userLabel="LeverLKLR">
+                                                <rect key="frame" x="45" y="-6" width="44" height="44"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                                <state key="normal" image="Lever.png">
+                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <state key="selected" image="LeftLeverActive.png"/>
+                                                <state key="highlighted" image="LeftLeverActive">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="leverSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fwK-Hx-jWj"/>
+                                                </connections>
+                                            </button>
+                                            <button autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VDJ-Po-1Vc" userLabel="LeverLKV">
+                                                <rect key="frame" x="90" y="0.0" width="44" height="44"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                                <state key="normal" image="VerticalLever.png">
+                                                    <color key="titleColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <state key="selected" image="VerticalLeverActive.png"/>
+                                                <state key="highlighted" image="VerticalLeverActive">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="leverSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oVN-rs-vx5"/>
+                                                </connections>
+                                            </button>
+                                            <button autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7rg-O2-bRd" userLabel="LeverLKR">
+                                                <rect key="frame" x="180" y="-6" width="44" height="44"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <gestureRecognizers/>
+                                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                                <state key="normal" image="Lever.png">
+                                                    <color key="titleColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <state key="selected" image="RightLeverActive.png"/>
+                                                <state key="highlighted" image="RightLeverActive">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="leverSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pia-0J-AIh"/>
+                                                </connections>
+                                            </button>
+                                            <button autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4bv-t7-z0U" userLabel="LeverLKRR">
+                                                <rect key="frame" x="135" y="-6" width="44" height="44"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                                <state key="normal" image="Lever.png">
+                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <state key="selected" image="RightLeverActive.png"/>
+                                                <state key="highlighted" image="RightLeverActive">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="leverSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aaz-8Y-FFY"/>
+                                                </connections>
+                                            </button>
+                                            <imageView hidden="YES" autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Circle.png" translatesAutoresizingMaskIntoConstraints="NO" id="8fq-U0-LOz" userLabel="LKL Activated">
+                                                <rect key="frame" x="20" y="39" width="4" height="4"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView hidden="YES" autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Circle.png" translatesAutoresizingMaskIntoConstraints="NO" id="WDC-Hy-OdH" userLabel="LKLR Activated">
+                                                <rect key="frame" x="65" y="39" width="4" height="4"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView hidden="YES" autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Circle.png" translatesAutoresizingMaskIntoConstraints="NO" id="IKd-hI-aVU" userLabel="LKV Activated">
+                                                <rect key="frame" x="110" y="39" width="4" height="4"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView hidden="YES" autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Circle.png" translatesAutoresizingMaskIntoConstraints="NO" id="f93-aE-XSq" userLabel="LKR Activated">
+                                                <rect key="frame" x="200" y="39" width="4" height="4"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView hidden="YES" autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Circle.png" translatesAutoresizingMaskIntoConstraints="NO" id="pY6-ZT-Rjf" userLabel="LKRR Activated">
+                                                <rect key="frame" x="155" y="39" width="4" height="4"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="224" placeholder="YES" id="ENk-FN-Uxj"/>
+                                            <constraint firstAttribute="height" constant="44" placeholder="YES" id="QUR-Ok-lCv"/>
+                                        </constraints>
+                                    </view>
+                                    <view autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="76e-j5-U9g" userLabel="Right Lever View">
+                                        <rect key="frame" x="784" y="0.0" width="224" height="44"/>
+                                        <subviews>
+                                            <button autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" tag="5" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vnG-kO-CcY" userLabel="LeverRKL">
+                                                <rect key="frame" x="0.0" y="-6" width="44" height="44"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                                <state key="normal" image="Lever.png">
+                                                    <color key="titleColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <state key="selected" image="LeftLeverActive.png"/>
+                                                <state key="highlighted" image="LeftLeverActive">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="leverSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WlB-25-N97"/>
+                                                </connections>
+                                            </button>
+                                            <button autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" tag="6" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZyD-Xb-bo1" userLabel="LeverRKLR">
+                                                <rect key="frame" x="45" y="-6" width="44" height="44"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                                <state key="normal" image="Lever.png">
+                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <state key="selected" image="LeftLeverActive.png"/>
+                                                <state key="highlighted" image="LeftLeverActive">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="leverSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZCJ-bM-9Y8"/>
+                                                </connections>
+                                            </button>
+                                            <button autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" tag="7" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bmv-8g-koY" userLabel="LeverRKV">
+                                                <rect key="frame" x="90" y="0.0" width="44" height="44"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                                <state key="normal" image="VerticalLever.png">
+                                                    <color key="titleColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <state key="selected" image="VerticalLeverActive.png"/>
+                                                <state key="highlighted" image="VerticalLeverActive">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="leverSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zTv-aY-vvT"/>
+                                                </connections>
+                                            </button>
+                                            <button autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" tag="8" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IOy-gX-ruG" userLabel="LeverRKR">
+                                                <rect key="frame" x="180" y="-6" width="44" height="44"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <gestureRecognizers/>
+                                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                                <state key="normal" image="Lever.png">
+                                                    <color key="titleColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <state key="selected" image="RightLeverActive.png"/>
+                                                <state key="highlighted" image="RightLeverActive">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="leverSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bns-q4-Tax"/>
+                                                </connections>
+                                            </button>
+                                            <button autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" tag="9" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YDc-Jh-jcB" userLabel="LeverRKRR">
+                                                <rect key="frame" x="135" y="-6" width="44" height="44"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                                <state key="normal" image="Lever.png">
+                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <state key="selected" image="RightLeverActive.png"/>
+                                                <state key="highlighted" image="RightLeverActive">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="leverSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Gf7-mI-pAi"/>
+                                                </connections>
+                                            </button>
+                                            <imageView hidden="YES" autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Circle" translatesAutoresizingMaskIntoConstraints="NO" id="G1q-ap-Wcs" userLabel="RKL Activated">
+                                                <rect key="frame" x="20" y="39" width="4" height="4"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView hidden="YES" autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="6" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Circle" translatesAutoresizingMaskIntoConstraints="NO" id="Jeq-7A-2My" userLabel="RKLR Activated">
+                                                <rect key="frame" x="65" y="39" width="4" height="4"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView hidden="YES" autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="7" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Circle" translatesAutoresizingMaskIntoConstraints="NO" id="szM-9d-MFL" userLabel="RKV Activated">
+                                                <rect key="frame" x="110" y="39" width="4" height="4"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView hidden="YES" autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="8" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Circle" translatesAutoresizingMaskIntoConstraints="NO" id="4RZ-CJ-ILe" userLabel="RKR Activated">
+                                                <rect key="frame" x="200" y="39" width="4" height="4"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView hidden="YES" autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="9" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Circle" translatesAutoresizingMaskIntoConstraints="NO" id="mFm-QO-HyO" userLabel="RKRR Activated">
+                                                <rect key="frame" x="155" y="39" width="4" height="4"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" placeholder="YES" id="X0r-NS-m0z"/>
+                                            <constraint firstAttribute="width" constant="224" placeholder="YES" id="ypV-dx-P33"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="qdy-Fe-2Mh" firstAttribute="top" secondItem="Jrd-k8-9rC" secondAttribute="top" placeholder="YES" id="3fy-8y-nx3"/>
+                                    <constraint firstItem="qdy-Fe-2Mh" firstAttribute="leading" secondItem="Jrd-k8-9rC" secondAttribute="leading" constant="16" placeholder="YES" id="94y-NY-dDV"/>
+                                    <constraint firstItem="76e-j5-U9g" firstAttribute="top" secondItem="Jrd-k8-9rC" secondAttribute="top" placeholder="YES" id="BjL-cq-U2z"/>
+                                    <constraint firstAttribute="height" constant="44" placeholder="YES" id="b7B-R8-xpB"/>
+                                    <constraint firstItem="76e-j5-U9g" firstAttribute="trailing" secondItem="Jrd-k8-9rC" secondAttribute="trailing" constant="-16" placeholder="YES" id="kYZ-kg-QKS"/>
+                                </constraints>
+                            </view>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4hq-NJ-nPZ" userLabel="Top View">
+                                <rect key="frame" x="0.0" y="60" width="1024" height="44"/>
+                                <subviews>
+                                    <button autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" alpha="0.89999997615814209" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lDc-Zn-Eq5" userLabel="Pedal1">
+                                        <rect key="frame" x="0.0" y="-6" width="44" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                        <state key="normal" image="Pedal">
+                                            <color key="titleColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <state key="selected" image="PedalActive"/>
+                                        <state key="highlighted" image="Pedal">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="pedalSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cRx-nJ-oqO"/>
+                                        </connections>
+                                    </button>
+                                    <button autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" alpha="0.89999997615814209" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FAS-R0-xKP" userLabel="Pedal2">
+                                        <rect key="frame" x="45" y="-6" width="44" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <gestureRecognizers/>
+                                        <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                        <state key="normal" image="Pedal">
+                                            <color key="titleColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <state key="selected" image="PedalActive"/>
+                                        <state key="highlighted" image="Pedal">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="pedalSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zuU-LG-kar"/>
+                                        </connections>
+                                    </button>
+                                    <button autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" alpha="0.89999997615814209" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hLy-CG-kLo" userLabel="Pedal3">
+                                        <rect key="frame" x="90" y="-6" width="44" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                        <state key="normal" image="Pedal">
+                                            <color key="titleColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <state key="selected" image="PedalActive"/>
+                                        <state key="highlighted" image="Pedal">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="pedalSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ACy-51-ji3"/>
+                                        </connections>
+                                    </button>
+                                    <button autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" alpha="0.89999997615814209" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W2V-wd-Z4N" userLabel="Pedal4">
+                                        <rect key="frame" x="135" y="-6" width="44" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                        <state key="normal" image="Pedal">
+                                            <color key="titleColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <state key="selected" image="PedalActive"/>
+                                        <state key="highlighted" image="Pedal">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="pedalSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4VP-qA-Rbd"/>
+                                        </connections>
+                                    </button>
+                                    <button autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" alpha="0.89999997615814209" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l2O-gd-FAW" userLabel="Pedal5">
+                                        <rect key="frame" x="180" y="-6" width="44" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                        <state key="normal" image="Pedal">
+                                            <color key="titleColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <state key="selected" image="PedalActive"/>
+                                        <state key="highlighted" image="Pedal">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="pedalSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GIj-Eo-bKB"/>
+                                        </connections>
+                                    </button>
+                                    <button autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" alpha="0.89999997615814209" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Gp-cl-6gN" userLabel="Pedal6">
+                                        <rect key="frame" x="225" y="-6" width="44" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                        <state key="normal" image="Pedal">
+                                            <color key="titleColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <state key="selected" image="PedalActive"/>
+                                        <state key="highlighted" image="Pedal">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="pedalSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FMx-6u-X0k"/>
+                                        </connections>
+                                    </button>
+                                    <button autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" alpha="0.89999997615814209" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9vG-sR-AY4" userLabel="Pedal7">
+                                        <rect key="frame" x="270" y="-6" width="44" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                        <state key="normal" image="Pedal">
+                                            <color key="titleColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <state key="selected" image="PedalActive"/>
+                                        <state key="highlighted" image="Pedal">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="pedalSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Uc4-uX-yea"/>
+                                        </connections>
+                                    </button>
+                                    <button autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" alpha="0.89999997615814209" tag="7" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vaM-BF-a01" userLabel="Pedal8">
+                                        <rect key="frame" x="315" y="-6" width="44" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                        <state key="normal" image="Pedal">
+                                            <color key="titleColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <state key="selected" image="PedalActive"/>
+                                        <state key="highlighted" image="Pedal">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="pedalSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ooE-ZJ-Mq0"/>
+                                        </connections>
+                                    </button>
+                                    <button autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" alpha="0.89999997615814209" tag="8" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gjN-QH-kdK" userLabel="Pedal9">
+                                        <rect key="frame" x="360" y="-6" width="44" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                        <state key="normal" image="Pedal">
+                                            <color key="titleColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <state key="selected" image="PedalActive"/>
+                                        <state key="highlighted" image="Pedal">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="pedalSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1dg-Ci-YzR"/>
+                                        </connections>
+                                    </button>
+                                    <button autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" alpha="0.89999997615814209" tag="9" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d9B-6C-Sgh" userLabel="Pedal10">
+                                        <rect key="frame" x="405" y="-6" width="44" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                        <state key="normal" image="Pedal">
+                                            <color key="titleColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <state key="selected" image="PedalActive"/>
+                                        <state key="highlighted" image="Pedal">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="pedalSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EpA-ko-dy5"/>
+                                        </connections>
+                                    </button>
+                                    <imageView hidden="YES" autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Circle" translatesAutoresizingMaskIntoConstraints="NO" id="oPk-Iw-74Z" userLabel="Pedal1 Activated">
+                                        <rect key="frame" x="21" y="39" width="4" height="4"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView hidden="YES" autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Circle" translatesAutoresizingMaskIntoConstraints="NO" id="g3D-VA-0Xf" userLabel="Pedal2 Activated">
+                                        <rect key="frame" x="66" y="39" width="4" height="4"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView hidden="YES" autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Circle" translatesAutoresizingMaskIntoConstraints="NO" id="CNf-dS-t9y" userLabel="Pedal3 Activated">
+                                        <rect key="frame" x="111" y="39" width="4" height="4"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView hidden="YES" autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Circle" translatesAutoresizingMaskIntoConstraints="NO" id="tiR-3y-qqe" userLabel="Pedal4 Activated">
+                                        <rect key="frame" x="156" y="39" width="4" height="4"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView hidden="YES" autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Circle" translatesAutoresizingMaskIntoConstraints="NO" id="AcU-Kf-BqR" userLabel="Pedal5 Activated">
+                                        <rect key="frame" x="201" y="39" width="4" height="4"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView hidden="YES" autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Circle" translatesAutoresizingMaskIntoConstraints="NO" id="xxf-22-rW6" userLabel="Pedal6 Activated">
+                                        <rect key="frame" x="246" y="39" width="4" height="4"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView hidden="YES" autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="6" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Circle" translatesAutoresizingMaskIntoConstraints="NO" id="m0a-7f-Jxq" userLabel="Pedal7 Activated">
+                                        <rect key="frame" x="291" y="39" width="4" height="4"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView hidden="YES" autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="7" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Circle" translatesAutoresizingMaskIntoConstraints="NO" id="vVu-2W-Hp9" userLabel="Pedal8 Activated">
+                                        <rect key="frame" x="336" y="39" width="4" height="4"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView hidden="YES" autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="8" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Circle" translatesAutoresizingMaskIntoConstraints="NO" id="ixL-m7-yP3" userLabel="Pedal9 Activated">
+                                        <rect key="frame" x="381" y="39" width="4" height="4"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView hidden="YES" autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="9" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Circle" translatesAutoresizingMaskIntoConstraints="NO" id="AO1-9a-RHR" userLabel="Pedal10 Activated">
+                                        <rect key="frame" x="426" y="39" width="4" height="4"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" placeholder="YES" id="N63-OR-fPq"/>
+                                </constraints>
+                            </view>
+                            <glkView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" enableSetNeedsDisplay="NO" translatesAutoresizingMaskIntoConstraints="NO" id="80Z-1a-uQJ">
+                                <rect key="frame" x="7" y="112" width="1009" height="500"/>
+                            </glkView>
+                            <containerView hidden="YES" opaque="NO" alpha="0.84999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0eb-4t-0iA">
+                                <rect key="frame" x="20" y="674" width="984" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" placeholder="YES" id="qOX-hB-EVX"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="F7X-Dk-jiV" kind="embed" identifier="infoViewContainer" id="IAG-cK-MG4"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="0eb-4t-0iA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" placeholder="YES" id="10d-I1-YC8"/>
+                            <constraint firstItem="80Z-1a-uQJ" firstAttribute="top" secondItem="4hq-NJ-nPZ" secondAttribute="bottom" constant="8" placeholder="YES" id="3Nb-n7-CvK"/>
+                            <constraint firstItem="4hq-NJ-nPZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" placeholder="YES" id="3sm-zR-9Tc"/>
+                            <constraint firstItem="80Z-1a-uQJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="7" placeholder="YES" id="6KH-sI-1lD"/>
+                            <constraint firstItem="Jrd-k8-9rC" firstAttribute="top" secondItem="80Z-1a-uQJ" secondAttribute="bottom" constant="8" placeholder="YES" id="7Ss-gM-DjV"/>
+                            <constraint firstItem="Jrd-k8-9rC" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottomMargin" constant="-60" placeholder="YES" id="H7S-qn-6ma"/>
+                            <constraint firstItem="0eb-4t-0iA" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottomMargin" placeholder="YES" id="O2L-B1-UpE"/>
+                            <constraint firstItem="Jrd-k8-9rC" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="20" placeholder="YES" id="clX-Gt-ITY"/>
+                            <constraint firstItem="lzI-72-xlv" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="fZm-wE-B6d"/>
+                            <constraint firstItem="lzI-72-xlv" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="fyA-PM-Q74"/>
+                            <constraint firstItem="0eb-4t-0iA" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" placeholder="YES" id="ge1-n7-ryA"/>
+                            <constraint firstItem="lzI-72-xlv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="hwV-bu-luV"/>
+                            <constraint firstItem="lzI-72-xlv" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="j1w-jm-ZZk"/>
+                            <constraint firstItem="Jrd-k8-9rC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" placeholder="YES" id="nj2-WR-Kbh"/>
+                            <constraint firstAttribute="trailing" secondItem="80Z-1a-uQJ" secondAttribute="trailing" constant="8" placeholder="YES" id="pKQ-RM-98v"/>
+                            <constraint firstItem="4hq-NJ-nPZ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="60" placeholder="YES" id="soT-ar-7Af"/>
+                            <constraint firstItem="4hq-NJ-nPZ" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="20" placeholder="YES" id="weE-EO-ZK9"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="D9l-sv-RSY">
+                        <nil key="title"/>
+                        <leftBarButtonItems>
+                            <barButtonItem title="Scale" id="57C-gF-a3m">
+                                <connections>
+                                    <action selector="scaleSelected:" destination="BYZ-38-t0r" id="VPY-Bh-7La"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Chord" id="kJs-AL-fSv">
+                                <connections>
+                                    <action selector="chordSelected:" destination="BYZ-38-t0r" id="YLd-0Y-EsC"/>
+                                </connections>
+                            </barButtonItem>
+                        </leftBarButtonItems>
+                        <view key="titleView" contentMode="scaleToFill" id="QOP-JY-FvM">
+                            <rect key="frame" x="438" y="6" width="148" height="33"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Steel Guitar - Steel Sidekick" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="t6f-I7-iPO">
+                                    <rect key="frame" x="0.0" y="0.0" width="148" height="33"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="t6f-I7-iPO" firstAttribute="leading" secondItem="QOP-JY-FvM" secondAttribute="leading" id="Oeq-vZ-UGq"/>
+                                <constraint firstAttribute="bottom" secondItem="t6f-I7-iPO" secondAttribute="bottom" id="Yue-aw-hrC"/>
+                                <constraint firstItem="t6f-I7-iPO" firstAttribute="top" secondItem="QOP-JY-FvM" secondAttribute="top" id="Zyf-bj-ud3"/>
+                                <constraint firstAttribute="trailing" secondItem="t6f-I7-iPO" secondAttribute="trailing" id="eL6-bL-Z03"/>
+                            </constraints>
+                        </view>
+                        <rightBarButtonItems>
+                            <barButtonItem image="Settings" width="22" id="NJu-Ju-Bbx">
+                                <connections>
+                                    <action selector="settingsSelected:" destination="BYZ-38-t0r" id="oPT-M6-Juo"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="Info" id="ndu-Qq-LQJ">
+                                <connections>
+                                    <action selector="infoSelected:" destination="BYZ-38-t0r" id="nss-h3-Lya"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="1024" height="768"/>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="lzI-72-xlv" id="HV6-Z9-oda"/>
+                        <outlet property="bottomView" destination="Jrd-k8-9rC" id="GuV-pn-mIb"/>
+                        <outlet property="chordButton" destination="kJs-AL-fSv" id="LTz-53-60c"/>
+                        <outlet property="glView" destination="80Z-1a-uQJ" id="tZK-zO-zVI"/>
+                        <outlet property="infoButton" destination="ndu-Qq-LQJ" id="w6i-wF-X1S"/>
+                        <outlet property="infoView" destination="0eb-4t-0iA" id="FNe-2E-XOK"/>
+                        <outlet property="leftLeverView" destination="qdy-Fe-2Mh" id="uOe-nu-Whf"/>
+                        <outlet property="rightLeverView" destination="76e-j5-U9g" id="FaE-XB-d5h"/>
+                        <outlet property="scaleButton" destination="57C-gF-a3m" id="O5Y-Ce-UZm"/>
+                        <outlet property="settingsButton" destination="NJu-Ju-Bbx" id="47d-7Q-yXw"/>
+                        <outlet property="titleLabel" destination="t6f-I7-iPO" id="8Fa-4d-Oms"/>
+                        <outlet property="topView" destination="4hq-NJ-nPZ" id="YvF-2m-0ZP"/>
+                        <outletCollection property="pedalActivatedImageViews" destination="oPk-Iw-74Z" id="Psk-3H-c7l"/>
+                        <outletCollection property="pedalActivatedImageViews" destination="g3D-VA-0Xf" id="gNx-us-kKz"/>
+                        <outletCollection property="pedalActivatedImageViews" destination="CNf-dS-t9y" id="nYA-hi-5Gq"/>
+                        <outletCollection property="pedalActivatedImageViews" destination="tiR-3y-qqe" id="1F4-t7-eb1"/>
+                        <outletCollection property="pedalActivatedImageViews" destination="AcU-Kf-BqR" id="xve-rQ-cTh"/>
+                        <outletCollection property="pedalActivatedImageViews" destination="xxf-22-rW6" id="57O-bh-UrD"/>
+                        <outletCollection property="pedalActivatedImageViews" destination="m0a-7f-Jxq" id="IlK-m4-2iq"/>
+                        <outletCollection property="pedalActivatedImageViews" destination="vVu-2W-Hp9" id="yaV-Wy-PUl"/>
+                        <outletCollection property="pedalActivatedImageViews" destination="ixL-m7-yP3" id="1tG-JK-7Xt"/>
+                        <outletCollection property="pedalActivatedImageViews" destination="AO1-9a-RHR" id="REY-04-10G"/>
+                        <outletCollection property="leverActivatedImageViews" destination="8fq-U0-LOz" id="5nk-uC-yAc"/>
+                        <outletCollection property="leverActivatedImageViews" destination="WDC-Hy-OdH" id="pG8-W8-GYl"/>
+                        <outletCollection property="leverActivatedImageViews" destination="IKd-hI-aVU" id="Myz-th-2Dx"/>
+                        <outletCollection property="leverActivatedImageViews" destination="f93-aE-XSq" id="RBI-QP-bzn"/>
+                        <outletCollection property="leverActivatedImageViews" destination="pY6-ZT-Rjf" id="XAX-jt-pO9"/>
+                        <outletCollection property="leverActivatedImageViews" destination="G1q-ap-Wcs" id="Kmp-hd-UwC"/>
+                        <outletCollection property="leverActivatedImageViews" destination="Jeq-7A-2My" id="o0K-IE-0SN"/>
+                        <outletCollection property="leverActivatedImageViews" destination="szM-9d-MFL" id="SQB-Xe-foa"/>
+                        <outletCollection property="leverActivatedImageViews" destination="4RZ-CJ-ILe" id="blN-vQ-wiC"/>
+                        <outletCollection property="leverActivatedImageViews" destination="mFm-QO-HyO" id="LW5-Kp-R7b"/>
+                        <outletCollection property="pedalButtons" destination="lDc-Zn-Eq5" id="3Wa-vi-TZ2"/>
+                        <outletCollection property="pedalButtons" destination="FAS-R0-xKP" id="KRE-Kl-ODm"/>
+                        <outletCollection property="pedalButtons" destination="hLy-CG-kLo" id="Ycz-X7-HE9"/>
+                        <outletCollection property="pedalButtons" destination="W2V-wd-Z4N" id="A44-BO-akN"/>
+                        <outletCollection property="pedalButtons" destination="l2O-gd-FAW" id="4hl-BL-nR7"/>
+                        <outletCollection property="pedalButtons" destination="7Gp-cl-6gN" id="byX-yk-eat"/>
+                        <outletCollection property="pedalButtons" destination="9vG-sR-AY4" id="yMC-wf-fJf"/>
+                        <outletCollection property="pedalButtons" destination="vaM-BF-a01" id="zke-H5-tjk"/>
+                        <outletCollection property="pedalButtons" destination="gjN-QH-kdK" id="UEn-Ai-7G8"/>
+                        <outletCollection property="pedalButtons" destination="d9B-6C-Sgh" id="kXR-9a-WsS"/>
+                        <outletCollection property="leverButtons" destination="vQb-wd-Ple" id="rIh-rF-Isu"/>
+                        <outletCollection property="leverButtons" destination="ENd-24-GOW" id="uy8-Mf-eu8"/>
+                        <outletCollection property="leverButtons" destination="VDJ-Po-1Vc" id="0G6-RW-KU9"/>
+                        <outletCollection property="leverButtons" destination="7rg-O2-bRd" id="zJF-GW-aYH"/>
+                        <outletCollection property="leverButtons" destination="4bv-t7-z0U" id="7gH-aD-j65"/>
+                        <outletCollection property="leverButtons" destination="vnG-kO-CcY" id="Foh-3I-Unb"/>
+                        <outletCollection property="leverButtons" destination="ZyD-Xb-bo1" id="IcQ-Yh-XmQ"/>
+                        <outletCollection property="leverButtons" destination="bmv-8g-koY" id="YCz-1I-BRi"/>
+                        <outletCollection property="leverButtons" destination="IOy-gX-ruG" id="hX3-Gy-Txb"/>
+                        <outletCollection property="leverButtons" destination="YDc-Jh-jcB" id="NqJ-OH-ltJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="949" y="428"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="i3C-wq-YjU">
+            <objects>
+                <navigationController id="wMQ-za-UgB" sceneMemberID="viewController">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1Ms-Ah-L93">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="el4-BQ-zBF">
+                        <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Eg4-rV-c3L"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4tz-uK-78I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-383" y="429"/>
+        </scene>
+        <!--Info View Controller-->
+        <scene sceneID="EZr-Ov-FUT">
+            <objects>
+                <viewController id="F7X-Dk-jiV" customClass="InfoViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="a10-Rk-Xi5"/>
+                        <viewControllerLayoutGuide type="bottom" id="yJA-JN-MVC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DPp-34-3ad">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CVU-vd-1Wa" userLabel="Scale View">
+                                <rect key="frame" x="0.0" y="0.0" width="300" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scale: Major" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ttm-cJ-wcy">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="22"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="22" id="mH8-IZ-Pfh"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Note-G-Flat.png" translatesAutoresizingMaskIntoConstraints="NO" id="WTi-rV-Lbt">
+                                        <rect key="frame" x="0.0" y="24" width="22" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.62745098039215685" green="0.078431372549019607" blue="0.0039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Note-G-Flat.png" translatesAutoresizingMaskIntoConstraints="NO" id="H50-Ql-FXc">
+                                        <rect key="frame" x="24" y="24" width="22" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.62745098039215685" green="0.078431372549019607" blue="0.0039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Note-G-Flat.png" translatesAutoresizingMaskIntoConstraints="NO" id="rqc-zb-UEB">
+                                        <rect key="frame" x="48" y="24" width="22" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.62745098039215685" green="0.078431372549019607" blue="0.0039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Note-G-Flat.png" translatesAutoresizingMaskIntoConstraints="NO" id="Pty-YS-WXt">
+                                        <rect key="frame" x="72" y="24" width="22" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.62745098039215685" green="0.078431372549019607" blue="0.0039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Note-G-Flat.png" translatesAutoresizingMaskIntoConstraints="NO" id="F5p-KU-DMH">
+                                        <rect key="frame" x="96" y="24" width="22" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.62745098039215685" green="0.078431372549019607" blue="0.0039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Note-G-Flat.png" translatesAutoresizingMaskIntoConstraints="NO" id="ZbW-5J-nPm">
+                                        <rect key="frame" x="120" y="24" width="22" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.62745098039215685" green="0.078431372549019607" blue="0.0039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Note-G-Flat.png" translatesAutoresizingMaskIntoConstraints="NO" id="x2D-2k-JYa">
+                                        <rect key="frame" x="144" y="24" width="22" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.62745098039215685" green="0.078431372549019607" blue="0.0039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Note-G-Flat.png" translatesAutoresizingMaskIntoConstraints="NO" id="BPi-5m-UmG">
+                                        <rect key="frame" x="168" y="24" width="22" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.62745098039215685" green="0.078431372549019607" blue="0.0039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Note-G-Flat.png" translatesAutoresizingMaskIntoConstraints="NO" id="Vxj-CE-Mlb">
+                                        <rect key="frame" x="192" y="24" width="22" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.62745098039215685" green="0.078431372549019607" blue="0.0039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Note-G-Flat.png" translatesAutoresizingMaskIntoConstraints="NO" id="DDJ-Td-lDC">
+                                        <rect key="frame" x="216" y="24" width="22" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.62745098039215685" green="0.078431372549019607" blue="0.0039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Note-G-Flat.png" translatesAutoresizingMaskIntoConstraints="NO" id="KcD-NP-hqy">
+                                        <rect key="frame" x="240" y="24" width="22" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.62745098039215685" green="0.078431372549019607" blue="0.0039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Note-G-Flat.png" translatesAutoresizingMaskIntoConstraints="NO" id="s8R-YN-DKj">
+                                        <rect key="frame" x="264" y="24" width="22" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.62745098039215685" green="0.078431372549019607" blue="0.0039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Ttm-cJ-wcy" firstAttribute="top" secondItem="CVU-vd-1Wa" secondAttribute="top" id="2W0-Jj-3Jd"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ttm-cJ-wcy" secondAttribute="trailing" id="FTw-lj-ah3"/>
+                                    <constraint firstItem="Ttm-cJ-wcy" firstAttribute="leading" secondItem="CVU-vd-1Wa" secondAttribute="leading" id="RyY-K5-nhh"/>
+                                    <constraint firstAttribute="height" constant="50" placeholder="YES" id="vO7-Ia-l7k"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SYD-fp-u4F" userLabel="Chord View">
+                                <rect key="frame" x="300" y="0.0" width="300" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chord: Major" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zEK-uD-OQe">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="22"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="22" id="BZT-AS-az5"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Note-G-Flat.png" translatesAutoresizingMaskIntoConstraints="NO" id="nHJ-89-Jk5">
+                                        <rect key="frame" x="0.0" y="24" width="22" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.019607843137254902" green="0.21176470588235294" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Note-G-Flat.png" translatesAutoresizingMaskIntoConstraints="NO" id="ARu-jg-ebd">
+                                        <rect key="frame" x="24" y="24" width="22" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.019607843137254902" green="0.21176470588235294" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Note-G-Flat.png" translatesAutoresizingMaskIntoConstraints="NO" id="ume-rD-Rca">
+                                        <rect key="frame" x="48" y="24" width="22" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.019607843137254902" green="0.21176470588235294" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Note-G-Flat.png" translatesAutoresizingMaskIntoConstraints="NO" id="lvL-Xg-ox2">
+                                        <rect key="frame" x="72" y="24" width="22" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.019607843137254902" green="0.21176470588235294" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Note-G-Flat.png" translatesAutoresizingMaskIntoConstraints="NO" id="pfC-02-Hbg">
+                                        <rect key="frame" x="96" y="24" width="22" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.019607843137254902" green="0.21176470588235294" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Note-G-Flat.png" translatesAutoresizingMaskIntoConstraints="NO" id="ypi-ho-wTk">
+                                        <rect key="frame" x="120" y="24" width="22" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.0" green="0.23529411764705882" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Note-G-Flat.png" translatesAutoresizingMaskIntoConstraints="NO" id="hbw-aP-pry">
+                                        <rect key="frame" x="144" y="24" width="22" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.019607843137254902" green="0.21176470588235294" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Note-G-Flat.png" translatesAutoresizingMaskIntoConstraints="NO" id="gLw-hn-pYr">
+                                        <rect key="frame" x="168" y="24" width="22" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.019607843137254902" green="0.21176470588235294" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Note-G-Flat.png" translatesAutoresizingMaskIntoConstraints="NO" id="K6L-vF-w8r">
+                                        <rect key="frame" x="192" y="24" width="22" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.019607843137254902" green="0.21176470588235294" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Note-G-Flat.png" translatesAutoresizingMaskIntoConstraints="NO" id="LeM-eW-q6T">
+                                        <rect key="frame" x="216" y="24" width="22" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.019607843137254902" green="0.21176470588235294" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Note-G-Flat.png" translatesAutoresizingMaskIntoConstraints="NO" id="UJH-DV-4R7">
+                                        <rect key="frame" x="240" y="24" width="22" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.019607843137254902" green="0.21176470588235294" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Note-G-Flat.png" translatesAutoresizingMaskIntoConstraints="NO" id="YGd-7w-S7e">
+                                        <rect key="frame" x="264" y="24" width="22" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.019607843137254902" green="0.21176470588235294" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="zEK-uD-OQe" firstAttribute="leading" secondItem="SYD-fp-u4F" secondAttribute="leading" id="4xz-rJ-iDr"/>
+                                    <constraint firstAttribute="trailing" secondItem="zEK-uD-OQe" secondAttribute="trailing" id="GHT-AK-ryc"/>
+                                    <constraint firstAttribute="height" constant="50" placeholder="YES" id="cgg-ak-AiJ"/>
+                                    <constraint firstItem="zEK-uD-OQe" firstAttribute="top" secondItem="SYD-fp-u4F" secondAttribute="top" id="fvz-Hv-ZAR"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="SYD-fp-u4F" firstAttribute="width" secondItem="CVU-vd-1Wa" secondAttribute="width" placeholder="YES" id="KdO-4M-EU2"/>
+                            <constraint firstItem="SYD-fp-u4F" firstAttribute="leading" secondItem="CVU-vd-1Wa" secondAttribute="trailing" placeholder="YES" id="MCJ-Dh-aQe"/>
+                            <constraint firstItem="SYD-fp-u4F" firstAttribute="trailing" secondItem="DPp-34-3ad" secondAttribute="trailingMargin" constant="20" placeholder="YES" id="P8d-0y-3UX"/>
+                            <constraint firstItem="CVU-vd-1Wa" firstAttribute="top" secondItem="a10-Rk-Xi5" secondAttribute="bottom" placeholder="YES" id="Whl-NL-IIu"/>
+                            <constraint firstItem="CVU-vd-1Wa" firstAttribute="leading" secondItem="DPp-34-3ad" secondAttribute="leadingMargin" constant="-20" placeholder="YES" id="lRc-8n-qo6"/>
+                            <constraint firstItem="SYD-fp-u4F" firstAttribute="top" secondItem="a10-Rk-Xi5" secondAttribute="bottom" placeholder="YES" id="rJ5-Cp-oTD"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="50"/>
+                    <connections>
+                        <outlet property="chordLabel" destination="zEK-uD-OQe" id="br3-b1-DvX"/>
+                        <outlet property="chordView" destination="SYD-fp-u4F" id="LKp-kZ-wuO"/>
+                        <outlet property="scaleLabel" destination="Ttm-cJ-wcy" id="Hhk-aP-ckA"/>
+                        <outlet property="scaleView" destination="CVU-vd-1Wa" id="Jef-nV-ojj"/>
+                        <outletCollection property="scaleImages" destination="WTi-rV-Lbt" id="TeB-5t-Iad"/>
+                        <outletCollection property="scaleImages" destination="H50-Ql-FXc" id="0GN-d2-Ylm"/>
+                        <outletCollection property="scaleImages" destination="rqc-zb-UEB" id="2Gf-ez-vka"/>
+                        <outletCollection property="scaleImages" destination="Pty-YS-WXt" id="ebf-ii-LXQ"/>
+                        <outletCollection property="scaleImages" destination="F5p-KU-DMH" id="H75-dY-kIW"/>
+                        <outletCollection property="scaleImages" destination="ZbW-5J-nPm" id="P8a-Ci-bxu"/>
+                        <outletCollection property="scaleImages" destination="x2D-2k-JYa" id="jch-uj-f6I"/>
+                        <outletCollection property="scaleImages" destination="BPi-5m-UmG" id="nSt-MY-KbV"/>
+                        <outletCollection property="scaleImages" destination="Vxj-CE-Mlb" id="Sdf-N1-cZb"/>
+                        <outletCollection property="scaleImages" destination="DDJ-Td-lDC" id="xUW-C7-jUZ"/>
+                        <outletCollection property="scaleImages" destination="KcD-NP-hqy" id="dDw-Zp-VGt"/>
+                        <outletCollection property="scaleImages" destination="s8R-YN-DKj" id="gXf-Cn-JOz"/>
+                        <outletCollection property="chordImages" destination="nHJ-89-Jk5" id="qle-Yu-aHw"/>
+                        <outletCollection property="chordImages" destination="ARu-jg-ebd" id="ZcF-hX-2ds"/>
+                        <outletCollection property="chordImages" destination="ume-rD-Rca" id="s9H-1L-zCC"/>
+                        <outletCollection property="chordImages" destination="lvL-Xg-ox2" id="PQr-i9-Rhp"/>
+                        <outletCollection property="chordImages" destination="pfC-02-Hbg" id="elJ-oT-g4a"/>
+                        <outletCollection property="chordImages" destination="ypi-ho-wTk" id="7YK-8y-8FU"/>
+                        <outletCollection property="chordImages" destination="hbw-aP-pry" id="8fr-la-PiS"/>
+                        <outletCollection property="chordImages" destination="gLw-hn-pYr" id="GUB-qz-yMM"/>
+                        <outletCollection property="chordImages" destination="K6L-vF-w8r" id="771-CQ-SMX"/>
+                        <outletCollection property="chordImages" destination="LeM-eW-q6T" id="8rN-Ov-aKe"/>
+                        <outletCollection property="chordImages" destination="UJH-DV-4R7" id="P24-GH-qjr"/>
+                        <outletCollection property="chordImages" destination="YGd-7w-S7e" id="cnN-r2-33A"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1KN-zm-Ftb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="357" y="930"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Circle" width="8" height="8"/>
+        <image name="Circle.png" width="8" height="8"/>
+        <image name="Info" width="24" height="24"/>
+        <image name="LeftLeverActive" width="44" height="44"/>
+        <image name="LeftLeverActive.png" width="44" height="44"/>
+        <image name="Lever.png" width="44" height="44"/>
+        <image name="Note-G-Flat.png" width="22" height="22"/>
+        <image name="Pedal" width="44" height="44"/>
+        <image name="PedalActive" width="44" height="44"/>
+        <image name="RightLeverActive" width="44" height="44"/>
+        <image name="RightLeverActive.png" width="44" height="44"/>
+        <image name="Settings" width="24" height="24"/>
+        <image name="VerticalLever.png" width="44" height="44"/>
+        <image name="VerticalLeverActive" width="44" height="44"/>
+        <image name="VerticalLeverActive.png" width="44" height="44"/>
+    </resources>
+</document>

@@ -1,0 +1,73 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+    defaultConfig {
+        applicationId "com.steelsidekick.steelsidekick"
+        minSdkVersion 15
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        externalNativeBuild {
+            cmake {
+                cppFlags "-std=c++11 -fexceptions"
+                arguments "-DANDROID_STL=c++_shared"
+            }
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    // Configures source set directory.
+    sourceSets {
+        main.java.srcDirs += "../../SGuitar/swig/java"
+        main { assets.srcDirs = ['../../Resources'] }
+    }
+//                    srcDir
+
+    externalNativeBuild {
+        cmake {
+            path "CMakeLists.txt"
+        }
+    }
+}
+
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:25.1.0'
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support.constraint:constraint-layout:1.0.0-beta4'
+}
+
+//task cleanSwig {
+//    def sguitar = new File("../../SGuitar/swig/java/sguitar")
+////    delete fileTree(dir: sguitar)
+////    delete file('../..//SGuitar/swig/SG.cpp')
+//    sguitar.mkdirs()
+//}
+//
+//// For this to work, it's assumed SWIG is installed
+//task runSwig(type:Exec, dependsOn: ['cleanSwig']) {
+//
+//    String osName = System.getProperty("os.name").toLowerCase();
+//    if (osName.contains("windows")) {
+//        workingDir '../../SGuitar/swig'
+//        commandLine 'cmd', '/c', 'swig'
+//        args '-java', '-c++', '-cppext', '.cpp', '-package', 'sguitar', '-outdir', 'java/sguitar', '-o', 'SG.cpp', 'swiginclude/SG.i'
+//    }
+//    else {
+//        workingDir '../../SGuitar/swig'
+//        commandLine 'swig'
+//        args '-java', '-c++', '-cppext', '.cpp', '-package', 'sguitar', '-outdir', 'java/sguitar', '-o', 'SG.cpp', 'swiginclude/SG.i'
+//    }
+//}

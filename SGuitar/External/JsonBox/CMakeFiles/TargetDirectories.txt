@@ -1,0 +1,8 @@
+/Volumes/MacUsers/Users/john/Projects/SteelSidekick/SGuitar/External/JsonBox/CMakeFiles/edit_cache.dir
+/Volumes/MacUsers/Users/john/Projects/SteelSidekick/SGuitar/External/JsonBox/CMakeFiles/rebuild_cache.dir
+/Volumes/MacUsers/Users/john/Projects/SteelSidekick/SGuitar/External/JsonBox/CMakeFiles/list_install_components.dir
+/Volumes/MacUsers/Users/john/Projects/SteelSidekick/SGuitar/External/JsonBox/CMakeFiles/example1.dir
+/Volumes/MacUsers/Users/john/Projects/SteelSidekick/SGuitar/External/JsonBox/CMakeFiles/install.dir
+/Volumes/MacUsers/Users/john/Projects/SteelSidekick/SGuitar/External/JsonBox/CMakeFiles/install/strip.dir
+/Volumes/MacUsers/Users/john/Projects/SteelSidekick/SGuitar/External/JsonBox/CMakeFiles/install/local.dir
+/Volumes/MacUsers/Users/john/Projects/SteelSidekick/SGuitar/External/JsonBox/CMakeFiles/JsonBox.dir

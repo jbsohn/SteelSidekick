@@ -1,0 +1,22 @@
+[{
+	"Name": "Major",
+	"Semitones": [2, 2, 1, 2, 2, 2]
+}, {
+	"Name": "Natural Minor",
+	"Semitones": [2, 1, 2, 2, 1, 2]
+}, {
+	"Name": "Harmonic Minor",
+	"Semitones": [2, 1, 2, 2, 1, 3]
+}, {
+	"Name": "Pentatonic Major",
+	"Semitones": [2, 2, 3, 2]
+}, {
+	"Name": "Pentatonic Minor",
+	"Semitones": [3, 2, 2, 3]
+}, {
+	"Name": "Minor Blues",
+	"Semitones": [3, 2, 1, 1, 3]
+}, {
+	"Name": "Major Blues",
+	"Semitones": [2, 1, 1, 3, 2]
+}]
