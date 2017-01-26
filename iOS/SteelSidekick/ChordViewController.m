@@ -11,7 +11,6 @@
 #import "RootNoteViewController.h"
 #import "SG/SGuitar.h"
 #import "SG/NoteName.h"
-#import "NSArrayStdStringVector.h"
 #import "ColorScheme.h"
 
 #define POPOVER_VIEW_SIZE     CGSizeMake(320.0, 480.0)
@@ -40,7 +39,8 @@
         self.navigationItem.leftBarButtonItem = nil;
     }
     
-    SG::SGuitar& guitar = SG::SGuitar::sharedInstance();
+    SGuitar *sguitar = [SGuitar sharedInstance];
+    ChordOptions *chordOptions = [sguitar getChordOptions];
     
     self.showChordSwitch = [[UISwitch alloc] init];
     CGSize switchSize = [self.showChordSwitch sizeThatFits:CGSizeZero];
@@ -51,7 +51,7 @@
     self.showChordSwitch.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin;
     [self.showChordSwitch addTarget:self action:@selector(showChordSwitchChanged:) forControlEvents:UIControlEventValueChanged];
     [self.showChordItemsCell.contentView addSubview:self.showChordSwitch];
-    self.showChordSwitch.on = guitar.getChordOptions().getShowChord();
+    self.showChordSwitch.on = chordOptions.showChord;
     
     [self resetChordName];
     [self resetChordRootNote];
@@ -71,15 +71,15 @@
 }
 
 - (void)resetChordName {
-    SG::SGuitar& guitar = SG::SGuitar::sharedInstance();
-    self.chordTypeCell.detailTextLabel.text = @(guitar.getChordOptions().getChordName().c_str());
+    SGuitar *sguitar = [SGuitar sharedInstance];
+    ChordOptions *chordOptions = [sguitar getChordOptions];
+    self.chordTypeCell.detailTextLabel.text = chordOptions.chordName;
 }
 
 - (void)resetChordRootNote {
-    SG::SGuitar& guitar = SG::SGuitar::sharedInstance();
-    int chordRootNoteValue = guitar.getChordOptions().getChordRootNoteValue();
-    guitar.getChordOptions().setChordRootNoteValue(chordRootNoteValue);
-    NSString *labelText = @(SG::NoteName::getNoteNameSharpFlat(chordRootNoteValue).c_str());
+    SGuitar *sguitar = [SGuitar sharedInstance];
+    ChordOptions *chordOptions = [sguitar getChordOptions];
+    NSString *labelText = [NoteName getNoteNameSharpFlat:chordOptions.chordRoteNoteValue];
     self.rootNoteCell.detailTextLabel.text = labelText;
 }
 
@@ -93,8 +93,10 @@
 }
 
 - (void)chordTypeViewControllerItemSelected:(ChordTypeViewController *)controller {
-    SG::SGuitar& guitar = SG::SGuitar::sharedInstance();
-    guitar.getChordOptions().setChordName([controller.selectedChordName UTF8String]);
+    SGuitar *sguitar = [SGuitar sharedInstance];
+    ChordOptions *chordOptions = [sguitar getChordOptions];
+    chordOptions.chordName = controller.selectedChordName;
+
     [self resetChordName];
     [self.delegate chordViewControllerResetDisplay];
 }
@@ -105,8 +107,10 @@
 }
 
 - (void)rootNoteViewControllerItemSelected:(RootNoteViewController *)controller {
-    SG::SGuitar& guitar = SG::SGuitar::sharedInstance();
-    guitar.getChordOptions().setChordRootNoteValue(controller.selectedNote);
+    SGuitar *sguitar = [SGuitar sharedInstance];
+    ChordOptions *chordOptions = [sguitar getChordOptions];
+    
+    chordOptions.chordRoteNoteValue = controller.selectedNote;
     [self resetChordRootNote];
     [self.delegate chordViewControllerResetDisplay];
 }
@@ -120,8 +124,10 @@
 }
 
 - (void)showChordSwitchChanged:(id)sender {
-    SG::SGuitar& guitar = SG::SGuitar::sharedInstance();
-    guitar.getChordOptions().setShowChord(self.showChordSwitch.on);
+    SGuitar *sguitar = [SGuitar sharedInstance];
+    ChordOptions *chordOptions = [sguitar getChordOptions];
+    
+    chordOptions.showChord = self.showChordSwitch.on;
     [self.tableView reloadData];
     [self.delegate chordViewControllerResetDisplay];
 }
@@ -145,17 +151,18 @@ const NSInteger SECTIONS_CHORD_SWITCH_OFF = 1;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    SG::SGuitar& guitar = SG::SGuitar::sharedInstance();
+    SGuitar *sguitar = [SGuitar sharedInstance];
+    ChordOptions *chordOptions = [sguitar getChordOptions];
+
     if ([segue.identifier isEqualToString:@"displayChordType"]) {
         ChordTypeViewController *vc = [segue destinationViewController];
         vc.delegate = self;
-        vc.chordNames = [NSArrayStdStringVector arrayFromStdStringVector:guitar.getChordNames()];
-        vc.selectedChordName = @(guitar.getChordOptions().getChordName().c_str());
+        vc.chordNames = [sguitar getChordNames];
+        vc.selectedChordName = chordOptions.chordName;
     } else if ([segue.identifier isEqualToString:@"displayRootNote"]) {
         RootNoteViewController *vc = [segue destinationViewController];
         vc.delegate = self;
-        int noteValue = guitar.getChordOptions().getChordRootNoteValue();
-        vc.selectedNote = noteValue;
+        vc.selectedNote = chordOptions.chordRoteNoteValue;
     }
 }
 

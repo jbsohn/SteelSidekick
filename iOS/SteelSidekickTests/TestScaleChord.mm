@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 #import "Note.h"
+#import "NoteName.h"
 #import "Scale.h"
 #import "Chord.h"
 #import "Note.h"
@@ -60,7 +61,7 @@ using namespace SG;
     SG::Chord chord(rootNoteValue, intervals);
     std::string s = chord.unitTestDescription();
     std::string chordName = chordType.getName();
-    std::string rootNoteName = SG::Note::nameForNoteValue(rootNoteValue, AT_SHARP);
+    std::string rootNoteName = SG::NoteName::nameForNoteValue(rootNoteValue, AT_SHARP);
     NSString *chordDescription = [NSString stringWithUTF8String:s.c_str()];
 //    XCTAssertEqualObjects(chordDescription, description,
 //                          @"chord: %s failed for root note: %s", chordName.c_str(), rootNoteName.c_str());
@@ -76,7 +77,7 @@ using namespace SG;
     SG::Scale scale(rootNoteValue, semitones);
     std::string sd = scale.unitTestDescription();
     std::string scaleName = scaleType.getName();
-    std::string rootNoteName = SG::Note::nameForNoteValue(rootNoteValue, AT_SHARP);
+    std::string rootNoteName = SG::NoteName::nameForNoteValue(rootNoteValue, AT_SHARP);
     NSLog(@"sd: %s", sd.c_str());
     NSString *scaleDescription = [NSString stringWithUTF8String:sd.c_str()];
     NSLog(@"scaleDescription: %@", scaleDescription);
