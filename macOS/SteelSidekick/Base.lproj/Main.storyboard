@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11542"/>
         <capability name="box content view" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -10,7 +10,14 @@
         <!--Application-->
         <scene sceneID="JPo-4y-FX3">
             <objects>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="SteelSidekick" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="SteelSidekick" customModuleProvider="target">
+                    <connections>
+                        <outlet property="showAsIntervalsMenu" destination="Efu-MK-DLZ" id="wRE-ki-mnX"/>
+                        <outlet property="showAsNotesMenu" destination="V9V-1Z-aCb" id="cB9-Pw-iG9"/>
+                        <outlet property="showChordMenu" destination="AEX-xl-IB0" id="1hn-Zc-9YP"/>
+                        <outlet property="showScaleMenu" destination="rvk-9p-vwY" id="TLv-QD-2d1"/>
+                    </connections>
+                </customObject>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <application id="hnw-xV-0zn" sceneMemberID="viewController">
                     <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
@@ -84,9 +91,15 @@
                                     <items>
                                         <menuItem title="Show Scale" id="rvk-9p-vwY">
                                             <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="showScaleSelected:" target="Voe-Tx-rLC" id="yUr-hV-YdU"/>
+                                            </connections>
                                         </menuItem>
                                         <menuItem title="Show Chord" id="AEX-xl-IB0">
                                             <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="showChordSelected:" target="Voe-Tx-rLC" id="kl6-8d-kIN"/>
+                                            </connections>
                                         </menuItem>
                                         <menuItem title="Show Note Items As" id="TT2-Id-96t">
                                             <modifierMask key="keyEquivalentModifierMask"/>
@@ -94,9 +107,15 @@
                                                 <items>
                                                     <menuItem title="Notes" id="V9V-1Z-aCb">
                                                         <modifierMask key="keyEquivalentModifierMask"/>
+                                                        <connections>
+                                                            <action selector="showAsNotesSelected:" target="Voe-Tx-rLC" id="Day-R9-ttF"/>
+                                                        </connections>
                                                     </menuItem>
                                                     <menuItem title="Intervals" id="Efu-MK-DLZ">
                                                         <modifierMask key="keyEquivalentModifierMask"/>
+                                                        <connections>
+                                                            <action selector="showAsIntervalsSelected:" target="Voe-Tx-rLC" id="V7T-1k-ohk"/>
+                                                        </connections>
                                                     </menuItem>
                                                 </items>
                                             </menu>
@@ -161,7 +180,7 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController showSeguePresentationStyle="single" id="B8D-0N-5wS" customClass="WindowController" customModule="SteelSidekick" customModuleProvider="target" sceneMemberID="viewController">
-                    <window key="window" title="Steel Sidekick" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hasShadow="NO" oneShot="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" tabbingMode="disallowed" id="IQv-IB-iLA">
+                    <window key="window" title="Steel Sidekick" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hasShadow="NO" oneShot="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="777" height="270"/>
@@ -169,6 +188,40 @@
                         <toolbar key="toolbar" implicitIdentifier="7966C80F-1663-480E-ADC1-F23B6DCC5C32" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="Nru-22-JQN">
                             <allowedToolbarItems>
                                 <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="xnV-CJ-gjE"/>
+                                <toolbarItem implicitItemIdentifier="567D8479-96CB-49BE-908F-8CE1C5DFED94" label="View" paletteLabel="View" image="NSHomeTemplate" id="pjh-ww-fyQ">
+                                    <nil key="toolTip"/>
+                                    <size key="minSize" width="32" height="26"/>
+                                    <size key="maxSize" width="44" height="26"/>
+                                    <popUpButton key="view" verticalHuggingPriority="750" id="R5X-mR-mwc">
+                                        <rect key="frame" x="0.0" y="14" width="44" height="26"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <popUpButtonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" imagePosition="only" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" pullsDown="YES" selectedItem="3I4-av-idH" id="HLz-f1-4iP">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="menu"/>
+                                            <menu key="menu" id="IeW-pw-Dr0">
+                                                <items>
+                                                    <menuItem state="on" image="NSHomeTemplate" hidden="YES" id="3I4-av-idH"/>
+                                                    <menuItem title="Show Scale" id="1hh-Mq-OmV"/>
+                                                    <menuItem title="Show Chord" id="x9p-3N-acl"/>
+                                                    <menuItem isSeparatorItem="YES" id="a77-o3-weC"/>
+                                                    <menuItem title="Show Note Items As" id="4eU-ir-dLu">
+                                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                                        <menu key="submenu" title="Show Note Items As" id="Z6Y-kN-oNa">
+                                                            <items>
+                                                                <menuItem title="Notes" id="63n-Pr-urS">
+                                                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                                                </menuItem>
+                                                                <menuItem title="Intervals" id="4M4-lX-jnN">
+                                                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                                                </menuItem>
+                                                            </items>
+                                                        </menu>
+                                                    </menuItem>
+                                                </items>
+                                            </menu>
+                                        </popUpButtonCell>
+                                    </popUpButton>
+                                </toolbarItem>
                                 <toolbarItem implicitItemIdentifier="9EE17876-85B1-4077-8309-ADE006F487AE" label="Scale" paletteLabel="Scale" id="RDt-n0-IXO">
                                     <nil key="toolTip"/>
                                     <size key="minSize" width="132" height="28"/>
@@ -277,8 +330,22 @@
                                         </connections>
                                     </popUpButton>
                                 </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="A7B7D9EA-675F-4EFF-B61B-3AEEB43918C0" label="Settings" paletteLabel="Settings" id="AWX-8e-uGR">
+                                    <nil key="toolTip"/>
+                                    <size key="minSize" width="82" height="32"/>
+                                    <size key="maxSize" width="82" height="32"/>
+                                    <button key="view" verticalHuggingPriority="750" id="ynT-Lf-If9">
+                                        <rect key="frame" x="0.0" y="14" width="82" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="push" title="Settings" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="uIE-LT-iHU">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                    </button>
+                                </toolbarItem>
                             </allowedToolbarItems>
                             <defaultToolbarItems>
+                                <toolbarItem reference="pjh-ww-fyQ"/>
                                 <toolbarItem reference="xnV-CJ-gjE"/>
                                 <toolbarItem reference="RDt-n0-IXO"/>
                                 <toolbarItem reference="k9r-9f-c0O"/>
@@ -286,6 +353,7 @@
                                 <toolbarItem reference="fOB-b1-ksC"/>
                                 <toolbarItem reference="lRf-bm-7M5"/>
                                 <toolbarItem reference="xnV-CJ-gjE"/>
+                                <toolbarItem reference="AWX-8e-uGR"/>
                             </defaultToolbarItems>
                         </toolbar>
                     </window>
@@ -464,4 +532,7 @@ Gw
             <point key="canvasLocation" x="162.5" y="1009"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="NSHomeTemplate" width="14" height="14"/>
+    </resources>
 </document>
