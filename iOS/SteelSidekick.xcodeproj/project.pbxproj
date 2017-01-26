@@ -17,6 +17,7 @@
 		527016F81C8AA88B00EE5CF5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 527016F61C8AA88B00EE5CF5 /* Main.storyboard */; };
 		527016FB1C8AA8F300EE5CF5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 527016FA1C8AA8F300EE5CF5 /* ViewController.m */; };
 		5273B1FB1D488FD200D37CB4 /* GuitarNameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5273B1FA1D488FD200D37CB4 /* GuitarNameTableViewCell.m */; };
+		528003E11E3970CE00EC24A8 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 528003E01E3970CE00EC24A8 /* SettingsViewController.m */; };
 		5284F0361D7E15E9000C3C37 /* NSTimer+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 5284F0341D7E15E9000C3C37 /* NSTimer+Blocks.m */; };
 		5284F03A1D7E211D000C3C37 /* AboutTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5284F0391D7E211D000C3C37 /* AboutTableViewController.m */; };
 		5284F03C1D7E2391000C3C37 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5284F03B1D7E2391000C3C37 /* Settings.bundle */; };
@@ -51,13 +52,12 @@
 		52D0A10A1C7FE5D200EA5C6D /* Scale.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52D0A0E81C7FE5D200EA5C6D /* Scale.storyboard */; };
 		52D0A10B1C7FE5D200EA5C6D /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52D0A0EA1C7FE5D200EA5C6D /* Settings.storyboard */; };
 		52D0A10C1C7FE5D200EA5C6D /* ChordTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D0A0ED1C7FE5D200EA5C6D /* ChordTypeViewController.m */; };
-		52D0A10D1C7FE5D200EA5C6D /* ChordViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 52D0A0EF1C7FE5D200EA5C6D /* ChordViewController.mm */; };
+		52D0A10D1C7FE5D200EA5C6D /* ChordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D0A0EF1C7FE5D200EA5C6D /* ChordViewController.m */; };
 		52D0A10E1C7FE5D200EA5C6D /* GuitarViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 52D0A0F11C7FE5D200EA5C6D /* GuitarViewController.mm */; };
 		52D0A10F1C7FE5D200EA5C6D /* CustomGuitarViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 52D0A0F31C7FE5D200EA5C6D /* CustomGuitarViewController.mm */; };
 		52D0A1131C7FE5D200EA5C6D /* RootNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D0A0FB1C7FE5D200EA5C6D /* RootNoteViewController.m */; };
 		52D0A1141C7FE5D200EA5C6D /* ScaleTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D0A0FD1C7FE5D200EA5C6D /* ScaleTypeViewController.m */; };
 		52D0A1151C7FE5D200EA5C6D /* ScaleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D0A0FF1C7FE5D200EA5C6D /* ScaleViewController.m */; };
-		52D0A1161C7FE5D200EA5C6D /* SettingsViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 52D0A1011C7FE5D200EA5C6D /* SettingsViewController.mm */; };
 		52D0A1181C7FE5D200EA5C6D /* GuitarAdjustmentViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 52D0A1051C7FE5D200EA5C6D /* GuitarAdjustmentViewController.mm */; };
 		52D5F8881D1B936E006C1308 /* ColorScheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D5F8871D1B936E006C1308 /* ColorScheme.m */; };
 		52D671F41E2C9C8D002799FA /* GuitarOptions.mm in Sources */ = {isa = PBXBuildFile; fileRef = 52D671F31E2C9666002799FA /* GuitarOptions.mm */; };
@@ -273,6 +273,7 @@
 		527FB79D1D2CDF3800A35FA7 /* SolidusEscaper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SolidusEscaper.h; sourceTree = "<group>"; };
 		527FB79E1D2CDF3800A35FA7 /* Value.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Value.h; sourceTree = "<group>"; };
 		527FB79F1D2CDF3800A35FA7 /* JsonBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonBox.h; sourceTree = "<group>"; };
+		528003E01E3970CE00EC24A8 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		5284F0331D7E15E9000C3C37 /* NSTimer+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+Blocks.h"; sourceTree = "<group>"; };
 		5284F0341D7E15E9000C3C37 /* NSTimer+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+Blocks.m"; sourceTree = "<group>"; };
 		5284F0351D7E15E9000C3C37 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -345,7 +346,7 @@
 		52D0A0EC1C7FE5D200EA5C6D /* ChordTypeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChordTypeViewController.h; sourceTree = "<group>"; };
 		52D0A0ED1C7FE5D200EA5C6D /* ChordTypeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChordTypeViewController.m; sourceTree = "<group>"; };
 		52D0A0EE1C7FE5D200EA5C6D /* ChordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChordViewController.h; sourceTree = "<group>"; };
-		52D0A0EF1C7FE5D200EA5C6D /* ChordViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ChordViewController.mm; sourceTree = "<group>"; };
+		52D0A0EF1C7FE5D200EA5C6D /* ChordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChordViewController.m; sourceTree = "<group>"; };
 		52D0A0F01C7FE5D200EA5C6D /* GuitarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuitarViewController.h; sourceTree = "<group>"; };
 		52D0A0F11C7FE5D200EA5C6D /* GuitarViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GuitarViewController.mm; sourceTree = "<group>"; };
 		52D0A0F21C7FE5D200EA5C6D /* CustomGuitarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomGuitarViewController.h; sourceTree = "<group>"; };
@@ -357,7 +358,6 @@
 		52D0A0FE1C7FE5D200EA5C6D /* ScaleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScaleViewController.h; sourceTree = "<group>"; };
 		52D0A0FF1C7FE5D200EA5C6D /* ScaleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScaleViewController.m; sourceTree = "<group>"; };
 		52D0A1001C7FE5D200EA5C6D /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
-		52D0A1011C7FE5D200EA5C6D /* SettingsViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SettingsViewController.mm; sourceTree = "<group>"; };
 		52D0A1041C7FE5D200EA5C6D /* GuitarAdjustmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuitarAdjustmentViewController.h; sourceTree = "<group>"; };
 		52D0A1051C7FE5D200EA5C6D /* GuitarAdjustmentViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GuitarAdjustmentViewController.mm; sourceTree = "<group>"; };
 		52D5F8861D1B936E006C1308 /* ColorScheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorScheme.h; sourceTree = "<group>"; };
@@ -693,7 +693,7 @@
 			isa = PBXGroup;
 			children = (
 				52D0A0EE1C7FE5D200EA5C6D /* ChordViewController.h */,
-				52D0A0EF1C7FE5D200EA5C6D /* ChordViewController.mm */,
+				52D0A0EF1C7FE5D200EA5C6D /* ChordViewController.m */,
 				52D0A0EC1C7FE5D200EA5C6D /* ChordTypeViewController.h */,
 				52D0A0ED1C7FE5D200EA5C6D /* ChordTypeViewController.m */,
 				52D0A0E41C7FE5D200EA5C6D /* Chord.storyboard */,
@@ -706,7 +706,7 @@
 			children = (
 				D9EFC3E01CC7BAFF00FDD605 /* Guitar */,
 				52D0A1001C7FE5D200EA5C6D /* SettingsViewController.h */,
-				52D0A1011C7FE5D200EA5C6D /* SettingsViewController.mm */,
+				528003E01E3970CE00EC24A8 /* SettingsViewController.m */,
 				5252A0E71D208F9400641714 /* ColorSchemeViewController.h */,
 				5252A0E81D208F9400641714 /* ColorSchemeViewController.m */,
 				5284F0381D7E211D000C3C37 /* AboutTableViewController.h */,
@@ -1486,7 +1486,6 @@
 				52D0A1181C7FE5D200EA5C6D /* GuitarAdjustmentViewController.mm in Sources */,
 				52E413DF1D1783BF00D030A2 /* Appirater.m in Sources */,
 				D96DC2F01D188C8D00D7ECFD /* SingWave.cpp in Sources */,
-				52D0A1161C7FE5D200EA5C6D /* SettingsViewController.mm in Sources */,
 				52E4144B1D1783C000D030A2 /* IQUIView+Hierarchy.m in Sources */,
 				D96DC2B91D188C8D00D7ECFD /* FileLoop.cpp in Sources */,
 				D96DC2FC1D188C8D00D7ECFD /* Twang.cpp in Sources */,
@@ -1524,7 +1523,7 @@
 				D96DC2E01D188C8D00D7ECFD /* PitShift.cpp in Sources */,
 				D96DC2DD1D188C8D00D7ECFD /* OneZero.cpp in Sources */,
 				52D672011E2CA4B8002799FA /* NSArrayNoteValueVector.mm in Sources */,
-				52D0A10D1C7FE5D200EA5C6D /* ChordViewController.mm in Sources */,
+				52D0A10D1C7FE5D200EA5C6D /* ChordViewController.m in Sources */,
 				52E414571D1783C000D030A2 /* ALView+PureLayout.m in Sources */,
 				D96DC3021D188C8D00D7ECFD /* Whistle.cpp in Sources */,
 				52D672021E2CA4B8002799FA /* NSArrayStdStringVector.mm in Sources */,
@@ -1635,6 +1634,7 @@
 				D96DC2E21D188C8D00D7ECFD /* PoleZero.cpp in Sources */,
 				D96DC2CB1D188C8D00D7ECFD /* iasiothiscallresolver.cpp in Sources */,
 				52D0A10F1C7FE5D200EA5C6D /* CustomGuitarViewController.mm in Sources */,
+				528003E11E3970CE00EC24A8 /* SettingsViewController.m in Sources */,
 				D96DC2A51D188C8D00D7ECFD /* ADSR.cpp in Sources */,
 				528BA0F01D18B9DA009FDC64 /* Note.cpp in Sources */,
 			);

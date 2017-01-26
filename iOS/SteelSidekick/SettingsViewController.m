@@ -13,8 +13,6 @@
 #import "ColorScheme.h"
 #import "Globals.h"
 
-using namespace SG;
-
 #define POPOVER_VIEW_SIZE     CGSizeMake(320.0, 480.0)
 
 typedef enum {
@@ -110,15 +108,15 @@ typedef enum {
 }
 
 - (void)resetGuitar {
-    SG::SGuitar& guitar = SG::SGuitar::sharedInstance();
-    std::string name = guitar.getGuitarOptions().getGuitarName();
-    NSString *labelText = [[NSString alloc] initWithUTF8String:name.c_str()];
-    self.guitarCell.detailTextLabel.text = labelText;
+    SGuitar *sguitar = [SGuitar sharedInstance];
+    GuitarOptions *guitarOptions = [sguitar getGuitarOptions];
+    self.guitarCell.detailTextLabel.text = guitarOptions.guitarName;
 }
 
 - (void)resetShowAllNotes {
-    SG::SGuitar& guitar = SG::SGuitar::sharedInstance();
-    self.showAllNotesSwitch.on = guitar.getGuitarOptions().getShowAllNotes();
+    SGuitar *sguitar = [SGuitar sharedInstance];
+    GuitarOptions *guitarOptions = [sguitar getGuitarOptions];
+    self.showAllNotesSwitch.on = guitarOptions.showAllNotes;
 }
 
 - (void)resetColorScheme {
@@ -129,11 +127,10 @@ typedef enum {
 }
 
 - (void)guitarViewControllerItemSelected:(GuitarViewController *)controller {
-    SG::SGuitar& guitar = SG::SGuitar::sharedInstance();
-    NSString *name = controller.selectedGuitarName;
-    NSString *type = controller.selectedGuitarType;
-    guitar.getGuitarOptions().setGuitarType([type UTF8String]);
-    guitar.getGuitarOptions().setGuitarName([name UTF8String]);
+    SGuitar *sguitar = [SGuitar sharedInstance];
+    GuitarOptions *guitarOptions = [sguitar getGuitarOptions];
+    guitarOptions.guitarType = controller.selectedGuitarType;
+    guitarOptions.guitarName = controller.selectedGuitarName;
     [self resetGuitar];
     [self.delegate settingsViewControllerResetDisplay];
 }
@@ -147,15 +144,13 @@ typedef enum {
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    SG::SGuitar& guitar = SG::SGuitar::sharedInstance();
+    SGuitar *sguitar = [SGuitar sharedInstance];
+    GuitarOptions *guitarOptions = [sguitar getGuitarOptions];
     if ([segue.identifier isEqualToString:@"displayGuitar"]) {
         GuitarViewController *vc = [segue destinationViewController];
         vc.delegate = self;
-        NSString *guitarName = @(guitar.getGuitarOptions().getGuitarName().c_str());
-        NSString *guitarType = @(guitar.getGuitarOptions().getGuitarType().c_str());
-        
-        vc.selectedGuitarName = guitarName;
-        vc.selectedGuitarType = guitarType;
+        vc.selectedGuitarName = guitarOptions.guitarName;
+        vc.selectedGuitarType = guitarOptions.guitarType;
     } else if ([segue.identifier isEqualToString:@"showColorScheme"]) {
         ColorSchemeViewController *vc = segue.destinationViewController;
         vc.delegate = self;
@@ -163,8 +158,9 @@ typedef enum {
 }
 
 - (void)showAllNotesChanged:(id)sender {
-    SG::SGuitar& guitar = SG::SGuitar::sharedInstance();
-    guitar.getGuitarOptions().setShowAllNotes(self.showAllNotesSwitch.on);
+    SGuitar *sguitar = [SGuitar sharedInstance];
+    GuitarOptions *guitarOptions = [sguitar getGuitarOptions];
+    guitarOptions.showAllNotes = self.showAllNotesSwitch.on;
     [self.tableView reloadData];
     [self.delegate settingsViewControllerResetDisplay];
 }
@@ -173,11 +169,11 @@ typedef enum {
     UITableViewCell *cell = [super tableView:tableView cellForRowAtIndexPath:indexPath];
     [[ColorScheme sharedInstance] applyThemeToTableViewCell:cell];
 
-    SG::SGuitar& guitar = SG::SGuitar::sharedInstance();
+    SGuitar *sguitar = [SGuitar sharedInstance];
+    GuitarOptions *guitarOptions = [sguitar getGuitarOptions];
     
     if (indexPath.section == SECTION_SHOW_NOTES_AS) {
-        
-        if (guitar.getGuitarOptions().getShowNotesAs() ==  indexPath.row) {
+        if (guitarOptions.showNotesAs ==  indexPath.row) {
             cell.accessoryType = UITableViewCellAccessoryCheckmark;
         } else {
             cell.accessoryType = UITableViewCellAccessoryNone;
@@ -191,16 +187,17 @@ typedef enum {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     if(indexPath.section == SECTION_SHOW_NOTES_AS) {
-        SG::SGuitar& guitar = SG::SGuitar::sharedInstance();
+        SGuitar *sguitar = [SGuitar sharedInstance];
+        GuitarOptions *guitarOptions = [sguitar getGuitarOptions];
         
         UITableViewCell *prevCell =
-                [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:guitar.getGuitarOptions().getShowNotesAs()
+                [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:guitarOptions.showNotesAs
                                                                          inSection:SECTION_SHOW_NOTES_AS]];
         prevCell.accessoryType = UITableViewCellAccessoryNone;
         
-        guitar.getGuitarOptions().setShowNotesAs((ACCIDENTAL_DISPLAY_TYPE) indexPath.row);
+        guitarOptions.showNotesAs = (ACCIDENTAL_DISPLAY_TYPE) indexPath.row;
         UITableViewCell *newCell =
-                [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:guitar.getGuitarOptions().getShowNotesAs()
+                [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:guitarOptions.showNotesAs
                                                                          inSection:SECTION_SHOW_NOTES_AS]];
         newCell.accessoryType = UITableViewCellAccessoryCheckmark;
         
