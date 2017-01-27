@@ -16,14 +16,8 @@ class ScaleViewController: NSViewController {
 
     @IBOutlet weak var scaleButton: NSPopUpButton!
     @IBOutlet weak var rootNoteButton: NSPopUpButton!
-    @IBOutlet weak var notesButton: NSButton!
-    @IBOutlet weak var intervalsButton: NSButton!
 
 //    var delegate: ScaleViewControllerDelegate;
-    
-//    required init?(coder: NSCoder) {
-//        super.init(coder: coder);
-//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

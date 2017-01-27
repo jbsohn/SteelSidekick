@@ -32,28 +32,28 @@ class ViewController: NSViewController {
         let sguitar = SGuitar.sharedInstance();
         let scaleOptions = sguitar?.getScaleOptions();
         scaleOptions?.scaleRoteNoteValue = rootNoteValue;
-        self.view.needsDisplay = true;
+        view.needsDisplay = true;
     }
 
     func setChordRootNoteValue(rootNoteValue: Int32) {
         let sguitar = SGuitar.sharedInstance();
         let chordOptions = sguitar?.getChordOptions();
         chordOptions?.chordRoteNoteValue = rootNoteValue;
-        self.view.needsDisplay = true;
+        view.needsDisplay = true;
     }
     
     func setScaleName(scaleName: String) {
         let sguitar = SGuitar.sharedInstance();
         let scaleOptions = sguitar?.getScaleOptions();
         scaleOptions?.scaleName = scaleName;
-        self.view.needsDisplay = true;
+        view.needsDisplay = true;
     }
 
     func setChordName(chordName: String) {
         let sguitar = SGuitar.sharedInstance();
         let chordOptions = sguitar?.getChordOptions();
         chordOptions?.chordName = chordName;
-        self.view.needsDisplay = true;
+        view.needsDisplay = true;
     }
     
 }

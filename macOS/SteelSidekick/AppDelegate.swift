@@ -18,73 +18,79 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var showAsIntervalsMenu: NSMenuItem!
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
+        syncMenuItems();
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
-        // Insert code here to tear down your application
+    }
+
+
+    func syncMenuItems() {
+        let sguitar = SGuitar.sharedInstance();
+        let scaleOptions = sguitar?.getScaleOptions();
+        let chordOptions = sguitar?.getChordOptions();
+
+        setDisplayItemAsMenu(type: (scaleOptions?.displayItemAs)!);
+        setMenuState(menuItem: showChordMenu, status: (chordOptions?.showChord)!);
+        setMenuState(menuItem: showScaleMenu, status: (scaleOptions?.showScale)!);
+    }
+
+    func updateViewController() {
+        let mainWindow = NSApplication.shared().windows[0];
+        let vc = mainWindow.contentViewController as! ViewController
+        vc.view.needsDisplay = true;
+    }
+
+    func setDisplayItemAsMenu(type: DISPLAY_ITEM_AS_TYPE) {
+        if (type == DIA_NOTES) {
+            showAsNotesMenu.state = NSOnState;
+            showAsIntervalsMenu.state = NSOffState;
+        } else if (type == DIA_INTERVAL) {
+            showAsNotesMenu.state = NSOffState;
+            showAsIntervalsMenu.state = NSOnState;
+        }
+    }
+    
+    func setMenuState(menuItem: NSMenuItem, status: Bool) {
+        if (status) {
+            menuItem.state = NSOnState;
+        } else {
+            menuItem.state = NSOffState;
+        }
     }
 
     @IBAction func showScaleSelected(_ sender: NSMenuItem) {
-        let mainWindow = NSApplication.shared().windows[0];
-        let vc = mainWindow.contentViewController as! ViewController
-
         let sguitar = SGuitar.sharedInstance();
         let scaleOptions = sguitar?.getScaleOptions();
         scaleOptions?.showScale = !(scaleOptions?.showScale)!;
-        
-        if (scaleOptions?.showScale)! {
-            self.showScaleMenu.state = NSOnState;
-        } else {
-            self.showScaleMenu.state = NSOffState;
-        }
-        
-        vc.view.needsDisplay = true;
+
+        setMenuState(menuItem: showScaleMenu, status: (scaleOptions?.showScale)!);
+        updateViewController();
     }
     
     @IBAction func showChordSelected(_ sender: NSMenuItem) {
-        let mainWindow = NSApplication.shared().windows[0];
-        let vc = mainWindow.contentViewController as! ViewController
-        
-        self.showChordMenu.state = NSOnState;
-        
         let sguitar = SGuitar.sharedInstance();
         let chordOptions = sguitar?.getChordOptions();
         chordOptions?.showChord = !(chordOptions?.showChord)!;
-        
-        if (chordOptions?.showChord)! {
-            self.showChordMenu.state = NSOnState;
-        } else {
-            self.showChordMenu.state = NSOffState;
-        }
-        
-        vc.view.needsDisplay = true;
+
+        setMenuState(menuItem: showChordMenu, status: (chordOptions?.showChord)!);
+        updateViewController();
     }
 
     @IBAction func showAsIntervalsSelected(_ sender: NSMenuItem) {
-        let mainWindow = NSApplication.shared().windows[0];
-        let vc = mainWindow.contentViewController as! ViewController
-        
-        self.showAsNotesMenu.state = NSOffState;
-        self.showAsIntervalsMenu.state = NSOnState;
-        
         let sguitar = SGuitar.sharedInstance();
         let scaleOptions = sguitar?.getScaleOptions();
         scaleOptions?.displayItemAs = DIA_INTERVAL;
-        vc.view.needsDisplay = true;
+        setDisplayItemAsMenu(type: DIA_INTERVAL);
+        updateViewController();
     }
     
     @IBAction func showAsNotesSelected(_ sender: NSMenuItem) {
-        let mainWindow = NSApplication.shared().windows[0];
-        let vc = mainWindow.contentViewController as! ViewController
-
-        self.showAsNotesMenu.state = NSOnState;
-        self.showAsIntervalsMenu.state = NSOffState;
-        
         let sguitar = SGuitar.sharedInstance();
         let scaleOptions = sguitar?.getScaleOptions();
         scaleOptions?.displayItemAs = DIA_NOTES;
-        vc.view.needsDisplay = true;
+        setDisplayItemAsMenu(type: DIA_NOTES);
+        updateViewController();
     }
 }
 
