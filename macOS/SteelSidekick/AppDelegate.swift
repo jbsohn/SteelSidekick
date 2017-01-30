@@ -37,8 +37,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func updateViewController() {
         let mainWindow = NSApplication.shared().windows[0];
-        let vc = mainWindow.contentViewController as! ViewController
+        let wc = mainWindow.windowController as! WindowController;
+        let vc = mainWindow.contentViewController as! ViewController;
+        
+        wc.syncToolbarItems();
         vc.view.needsDisplay = true;
+        
     }
 
     func setDisplayItemAsMenu(type: DISPLAY_ITEM_AS_TYPE) {

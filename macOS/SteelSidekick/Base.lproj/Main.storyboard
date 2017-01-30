@@ -206,7 +206,11 @@
                                                             <action selector="showScaleSelected:" target="B8D-0N-5wS" id="bJ2-LU-LqP"/>
                                                         </connections>
                                                     </menuItem>
-                                                    <menuItem title="Show Chord" id="x9p-3N-acl"/>
+                                                    <menuItem title="Show Chord" id="x9p-3N-acl">
+                                                        <connections>
+                                                            <action selector="showChordSelected:" target="B8D-0N-5wS" id="Iiu-kd-qw9"/>
+                                                        </connections>
+                                                    </menuItem>
                                                     <menuItem isSeparatorItem="YES" id="a77-o3-weC"/>
                                                     <menuItem title="Show Note Items As" id="4eU-ir-dLu">
                                                         <modifierMask key="keyEquivalentModifierMask"/>
@@ -214,9 +218,15 @@
                                                             <items>
                                                                 <menuItem title="Notes" id="63n-Pr-urS">
                                                                     <modifierMask key="keyEquivalentModifierMask"/>
+                                                                    <connections>
+                                                                        <action selector="showAsNotesSelected:" target="B8D-0N-5wS" id="Hvx-YP-z57"/>
+                                                                    </connections>
                                                                 </menuItem>
                                                                 <menuItem title="Intervals" id="4M4-lX-jnN">
                                                                     <modifierMask key="keyEquivalentModifierMask"/>
+                                                                    <connections>
+                                                                        <action selector="showAsIntervalsSelected:" target="B8D-0N-5wS" id="0O5-Ke-w9O"/>
+                                                                    </connections>
                                                                 </menuItem>
                                                             </items>
                                                         </menu>
@@ -354,8 +364,8 @@
                                 <toolbarItem reference="RDt-n0-IXO"/>
                                 <toolbarItem reference="k9r-9f-c0O"/>
                                 <toolbarItem reference="xnV-CJ-gjE"/>
-                                <toolbarItem reference="fOB-b1-ksC"/>
                                 <toolbarItem reference="lRf-bm-7M5"/>
+                                <toolbarItem reference="fOB-b1-ksC"/>
                                 <toolbarItem reference="xnV-CJ-gjE"/>
                                 <toolbarItem reference="AWX-8e-uGR"/>
                             </defaultToolbarItems>
@@ -366,13 +376,16 @@
                         <outlet property="chordRootNoteButton" destination="WWH-DM-iEm" id="Aic-BK-Y53"/>
                         <outlet property="scaleButton" destination="NvH-2B-DYF" id="gfa-cB-eFk"/>
                         <outlet property="scaleRootNoteButton" destination="x9l-64-SNu" id="Ms5-Es-bA2"/>
+                        <outlet property="showAsIntervalsMenu" destination="4M4-lX-jnN" id="jgb-O4-5OU"/>
+                        <outlet property="showAsNotesMenu" destination="63n-Pr-urS" id="3nS-Nx-vMI"/>
+                        <outlet property="showChordMenu" destination="x9p-3N-acl" id="2Mz-VK-mXl"/>
                         <outlet property="showScaleMenu" destination="1hh-Mq-OmV" id="b0J-WC-D9c"/>
                         <segue destination="xt1-Lr-qOh" kind="relationship" relationship="window.shadowedContentViewController" id="O21-AT-YdM"/>
                     </connections>
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-144" y="156"/>
+            <point key="canvasLocation" x="-167" y="162"/>
         </scene>
         <!--Scale View Controller-->
         <scene sceneID="0Ui-j8-qmQ">

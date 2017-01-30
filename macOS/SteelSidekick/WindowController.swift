@@ -16,7 +16,10 @@ class WindowController: NSWindowController {
     @IBOutlet weak var chordRootNoteButton: NSPopUpButton!
 
     @IBOutlet weak var showScaleMenu: NSMenuItem!
-    
+    @IBOutlet weak var showChordMenu: NSMenuItem!
+    @IBOutlet weak var showAsNotesMenu: NSMenuItem!
+    @IBOutlet weak var showAsIntervalsMenu: NSMenuItem!
+
     override func windowDidLoad() {
         super.windowDidLoad()
         setupScales();
@@ -68,47 +71,110 @@ class WindowController: NSWindowController {
         chordButton.setTitle(chordName!);
         chordRootNoteButton.selectItem(at:chordRootNoteValue);
         chordRootNoteButton.setTitle(chordRootNoteValueName!);
+        
+        setDisplayItemAsMenu(type: (scaleOptions?.displayItemAs)!);
+        setMenuState(menuItem: showChordMenu, status: (chordOptions?.showChord)!);
+        setMenuState(menuItem: showScaleMenu, status: (scaleOptions?.showScale)!);
     }
 
-    @IBAction func scaleRootNoteButtonSelected(_ sender: NSPopUpButton) {
-        scaleRootNoteButton.setTitle(sender.titleOfSelectedItem!);
-        let vc = contentViewController as! ViewController
-        vc.setScaleRootNoteValue(rootNoteValue: Int32(sender.indexOfSelectedItem - 1));
-    }
-
-    @IBAction func showScaleSelected(_ sender: NSMenuItem) {
-        let vc = contentViewController as! ViewController
-        
-        let sguitar = SGuitar.sharedInstance();
-        let scaleOptions = sguitar?.getScaleOptions();
-        scaleOptions?.showScale = !(scaleOptions?.showScale)!;
-        
-        if (scaleOptions?.showScale)! {
-            showScaleMenu.state = NSOnState;
-        } else {
-            showScaleMenu.state = NSOffState;
+    func setDisplayItemAsMenu(type: DISPLAY_ITEM_AS_TYPE) {
+        if (type == DIA_NOTES) {
+            showAsNotesMenu.state = NSOnState;
+            showAsIntervalsMenu.state = NSOffState;
+        } else if (type == DIA_INTERVAL) {
+            showAsNotesMenu.state = NSOffState;
+            showAsIntervalsMenu.state = NSOnState;
         }
-        
+    }
+    
+    func setMenuState(menuItem: NSMenuItem, status: Bool) {
+        if (status) {
+            menuItem.state = NSOnState;
+        } else {
+            menuItem.state = NSOffState;
+        }
+    }
+
+    func updateViewController() {
+        let vc = contentViewController as! ViewController
+        let ad = NSApplication.shared().delegate as? AppDelegate
+        ad?.syncMenuItems();
         vc.view.needsDisplay = true;
     }
     
-    @IBAction func chordRootNoteButtonSelected(_ sender: NSPopUpButton) {
-        chordRootNoteButton.setTitle(sender.titleOfSelectedItem!);
-        let vc = contentViewController as! ViewController
-        vc.setChordRootNoteValue(rootNoteValue: Int32(sender.indexOfSelectedItem - 1));
+    @IBAction func scaleRootNoteButtonSelected(_ sender: NSPopUpButton) {
+        scaleRootNoteButton.setTitle(sender.titleOfSelectedItem!);
+
+        let sguitar = SGuitar.sharedInstance();
+        let scaleOptions = sguitar?.getScaleOptions();
+        scaleOptions?.scaleRoteNoteValue = Int32(sender.indexOfSelectedItem - 1);
+
+        updateViewController();
     }
 
     @IBAction func scaleSelected(_ sender: NSPopUpButton) {
         let scaleName: String = sender.titleOfSelectedItem!;
         scaleButton.setTitle(scaleName);
-        let vc = contentViewController as! ViewController
-        vc.setScaleName(scaleName:scaleName);
+        
+        let sguitar = SGuitar.sharedInstance();
+        let scaleOptions = sguitar?.getScaleOptions();
+        scaleOptions?.scaleName = scaleName;
+
+        updateViewController();
     }
     
+    @IBAction func chordRootNoteButtonSelected(_ sender: NSPopUpButton) {
+        chordRootNoteButton.setTitle(sender.titleOfSelectedItem!);
+        
+        let sguitar = SGuitar.sharedInstance();
+        let chordOptions = sguitar?.getChordOptions();
+        chordOptions?.chordRoteNoteValue = Int32(sender.indexOfSelectedItem - 1);
+
+        updateViewController();
+    }
+
     @IBAction func chordSelected(_ sender: NSPopUpButton) {
         let chordName: String = sender.titleOfSelectedItem!;
         chordButton.setTitle(chordName);
-        let vc = contentViewController as! ViewController
-        vc.setChordName(chordName:chordName);
+        
+        let sguitar = SGuitar.sharedInstance();
+        let chordOptions = sguitar?.getChordOptions();
+        chordOptions?.chordName = chordName;
+
+        updateViewController();
+    }
+    
+    @IBAction func showScaleSelected(_ sender: NSMenuItem) {
+        let sguitar = SGuitar.sharedInstance();
+        let scaleOptions = sguitar?.getScaleOptions();
+        scaleOptions?.showScale = !(scaleOptions?.showScale)!;
+        setMenuState(menuItem: showScaleMenu, status: (scaleOptions?.showScale)!);
+        updateViewController();
+    }
+    
+    @IBAction func showChordSelected(_ sender: NSMenuItem) {
+        let sguitar = SGuitar.sharedInstance();
+        let chordOptions = sguitar?.getChordOptions();
+        chordOptions?.showChord = !(chordOptions?.showChord)!;
+        
+        setMenuState(menuItem: showChordMenu, status: (chordOptions?.showChord)!);
+        updateViewController();
+    }
+    
+    @IBAction func showAsIntervalsSelected(_ sender: NSMenuItem) {
+        let sguitar = SGuitar.sharedInstance();
+        let scaleOptions = sguitar?.getScaleOptions();
+        scaleOptions?.displayItemAs = DIA_INTERVAL;
+
+        setDisplayItemAsMenu(type: DIA_INTERVAL);
+        updateViewController();
+    }
+    
+    @IBAction func showAsNotesSelected(_ sender: NSMenuItem) {
+        let sguitar = SGuitar.sharedInstance();
+        let scaleOptions = sguitar?.getScaleOptions();
+        scaleOptions?.displayItemAs = DIA_NOTES;
+        setDisplayItemAsMenu(type: DIA_NOTES);
+        updateViewController();
     }
 }

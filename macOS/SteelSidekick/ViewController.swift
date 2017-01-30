@@ -27,33 +27,5 @@ class ViewController: NSViewController {
 
     override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
     }
-    
-    func setScaleRootNoteValue(rootNoteValue: Int32) {
-        let sguitar = SGuitar.sharedInstance();
-        let scaleOptions = sguitar?.getScaleOptions();
-        scaleOptions?.scaleRoteNoteValue = rootNoteValue;
-        view.needsDisplay = true;
-    }
 
-    func setChordRootNoteValue(rootNoteValue: Int32) {
-        let sguitar = SGuitar.sharedInstance();
-        let chordOptions = sguitar?.getChordOptions();
-        chordOptions?.chordRoteNoteValue = rootNoteValue;
-        view.needsDisplay = true;
-    }
-    
-    func setScaleName(scaleName: String) {
-        let sguitar = SGuitar.sharedInstance();
-        let scaleOptions = sguitar?.getScaleOptions();
-        scaleOptions?.scaleName = scaleName;
-        view.needsDisplay = true;
-    }
-
-    func setChordName(chordName: String) {
-        let sguitar = SGuitar.sharedInstance();
-        let chordOptions = sguitar?.getChordOptions();
-        chordOptions?.chordName = chordName;
-        view.needsDisplay = true;
-    }
-    
 }
