@@ -9,8 +9,7 @@
 #import "ChordViewController.h"
 #import "ChordTypeViewController.h"
 #import "RootNoteViewController.h"
-#import "SG/SGuitar.h"
-#import "SG/NoteName.h"
+#import "SGuitar.h"
 #import "ColorScheme.h"
 
 #define POPOVER_VIEW_SIZE     CGSizeMake(320.0, 480.0)
@@ -40,7 +39,7 @@
     }
     
     SGuitar *sguitar = [SGuitar sharedInstance];
-    ChordOptions *chordOptions = [sguitar getChordOptions];
+    SGChordOptions *chordOptions = [sguitar getChordOptions];
     
     self.showChordSwitch = [[UISwitch alloc] init];
     CGSize switchSize = [self.showChordSwitch sizeThatFits:CGSizeZero];
@@ -72,14 +71,14 @@
 
 - (void)resetChordName {
     SGuitar *sguitar = [SGuitar sharedInstance];
-    ChordOptions *chordOptions = [sguitar getChordOptions];
+    SGChordOptions *chordOptions = [sguitar getChordOptions];
     self.chordTypeCell.detailTextLabel.text = chordOptions.chordName;
 }
 
 - (void)resetChordRootNote {
     SGuitar *sguitar = [SGuitar sharedInstance];
-    ChordOptions *chordOptions = [sguitar getChordOptions];
-    NSString *labelText = [NoteName getNoteNameSharpFlat:chordOptions.chordRoteNoteValue];
+    SGChordOptions *chordOptions = [sguitar getChordOptions];
+    NSString *labelText = [SGuitar getNoteNameSharpFlat:chordOptions.chordRootNoteValue];
     self.rootNoteCell.detailTextLabel.text = labelText;
 }
 
@@ -94,8 +93,9 @@
 
 - (void)chordTypeViewControllerItemSelected:(ChordTypeViewController *)controller {
     SGuitar *sguitar = [SGuitar sharedInstance];
-    ChordOptions *chordOptions = [sguitar getChordOptions];
+    SGChordOptions *chordOptions = [sguitar getChordOptions];
     chordOptions.chordName = controller.selectedChordName;
+    [sguitar setChordOptions:chordOptions];
 
     [self resetChordName];
     [self.delegate chordViewControllerResetDisplay];
@@ -108,9 +108,10 @@
 
 - (void)rootNoteViewControllerItemSelected:(RootNoteViewController *)controller {
     SGuitar *sguitar = [SGuitar sharedInstance];
-    ChordOptions *chordOptions = [sguitar getChordOptions];
-    
-    chordOptions.chordRoteNoteValue = controller.selectedNote;
+    SGChordOptions *chordOptions = [sguitar getChordOptions];
+    chordOptions.chordRootNoteValue = controller.selectedNote;
+    [sguitar setChordOptions:chordOptions];
+
     [self resetChordRootNote];
     [self.delegate chordViewControllerResetDisplay];
 }
@@ -125,9 +126,10 @@
 
 - (void)showChordSwitchChanged:(id)sender {
     SGuitar *sguitar = [SGuitar sharedInstance];
-    ChordOptions *chordOptions = [sguitar getChordOptions];
-    
+    SGChordOptions *chordOptions = [sguitar getChordOptions];
     chordOptions.showChord = self.showChordSwitch.on;
+    [sguitar setChordOptions:chordOptions];
+
     [self.tableView reloadData];
     [self.delegate chordViewControllerResetDisplay];
 }
@@ -152,7 +154,7 @@ const NSInteger SECTIONS_CHORD_SWITCH_OFF = 1;
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     SGuitar *sguitar = [SGuitar sharedInstance];
-    ChordOptions *chordOptions = [sguitar getChordOptions];
+    SGChordOptions *chordOptions = [sguitar getChordOptions];
 
     if ([segue.identifier isEqualToString:@"displayChordType"]) {
         ChordTypeViewController *vc = [segue destinationViewController];
@@ -162,7 +164,7 @@ const NSInteger SECTIONS_CHORD_SWITCH_OFF = 1;
     } else if ([segue.identifier isEqualToString:@"displayRootNote"]) {
         RootNoteViewController *vc = [segue destinationViewController];
         vc.delegate = self;
-        vc.selectedNote = chordOptions.chordRoteNoteValue;
+        vc.selectedNote = chordOptions.chordRootNoteValue;
     }
 }
 

@@ -4,8 +4,4 @@
 }, {
 	"type": "Lap Steel",
 	"description": "Lap Steel Guitars"
-}, {
-	"type": "Custom",
-	"description": "Custom Guitars",
-	"isCustomType": true
 }]

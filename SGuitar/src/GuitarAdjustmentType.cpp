@@ -6,7 +6,7 @@
 //
 //
 
-#include "SG/GuitarAdjustmentType.h"
+#include "SG/GuitarAdjustmentType.hpp"
 
 namespace SG {
     std::string GuitarAdjustmentType::LEVER_TYPE_NAMES[] = {

@@ -8,8 +8,8 @@
 
 #import "GuitarViewController.h"
 #import "CustomGuitarViewController.h"
-#import "SG/SGuitar.h"
-#import "NSArrayStdStringVector.h"
+#import "SGuitar.h"
+//#import "NSArrayStdStringVector.h"
 #import "ColorScheme.h"
 
 #define POPOVER_VIEW_SIZE     CGSizeMake(320.0, 480.0)
@@ -51,8 +51,9 @@
     [[ColorScheme sharedInstance] applyThemeToTableView:self.tableView];
     [self setupItems];
     
-    SG::GuitarOptions& options = SG::SGuitar::sharedInstance().getGuitarOptions();
-    self.selectedGuitarName = @(options.getGuitarName().c_str());
+    SGuitar *sguitar = [SGuitar sharedInstance];
+    SGGuitarOptions *options = [sguitar getGuitarOptions];
+    self.selectedGuitarName = options.guitarName;
     
     [self.tableView reloadData];
 }
@@ -74,14 +75,14 @@
 }
 
 - (void)setupItems {
-    SG::SGuitar& guitar = SG::SGuitar::sharedInstance();
+    SGuitar *sguitar = [SGuitar sharedInstance];
     NSMutableArray *items = [[NSMutableArray alloc] init];
     NSMutableArray *sectionTitles = [[NSMutableArray alloc] init];
 
     // add guitars by type
-    NSArray *types = [NSArrayStdStringVector arrayFromStdStringVector:guitar.getGuitarTypeNames()];
+    NSArray *types = [sguitar getGuitarTypeNames];
     for (NSString *curType in types) {
-        NSArray *curGuitars = [NSArrayStdStringVector arrayFromStdStringVector:guitar.getGuitarNames([curType UTF8String])];
+        NSArray *curGuitars = [sguitar getGuitarNames:curType];
 
         NSMutableArray *curItems = [[NSMutableArray alloc] init];
         for (NSString *curGuitar in curGuitars) {
@@ -98,7 +99,7 @@
 
     
     NSMutableArray *curItems = [[NSMutableArray alloc] init];
-    NSArray *customTypes = [NSArrayStdStringVector arrayFromStdStringVector:guitar.getCustomGuitarNames()];
+    NSArray *customTypes = [sguitar getCustomGuitarNames];
     
     GuitarViewItem *item = [[GuitarViewItem alloc] init];
     item.name = @"Create New Guitar";
@@ -247,7 +248,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    SG::SGuitar& guitar = SG::SGuitar::sharedInstance();
+    SGuitar *sguitar = [SGuitar sharedInstance];
     NSArray *sectionItems = self.items[indexPath.section];
     GuitarViewItem *item = sectionItems[indexPath.row];
 
@@ -256,7 +257,7 @@
         if (item.isCustomType) {
             [self endEditing];
 
-            if (guitar.removeCustomGuitar([item.name UTF8String])) {
+            if ([sguitar removeCustomGuitar:item.name]) {
                 [self setupItems];
                 [self.tableView reloadData];
             }

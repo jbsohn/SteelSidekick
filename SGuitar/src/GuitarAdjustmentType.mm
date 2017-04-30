@@ -4,7 +4,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SG/GuitarAdjustmentType.h"
+#import "SG/GuitarAdjustmentType.hpp"
 
 @implementation GuitarAdjustmentType
 

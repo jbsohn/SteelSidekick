@@ -12,10 +12,14 @@
 #ifdef __cplusplus
 #include <vector>
 #include <string>
-#include "GuitarType.h"
+#include "GuitarType.hpp"
 
 namespace SG {
     class Guitars {
+    protected:
+        std::string guitarsPath;
+        bool valid;
+
     public:
         Guitars();
         ~Guitars();
@@ -29,9 +33,9 @@ namespace SG {
         std::vector<std::string> getCustomGuitarNames() const;
         std::string guitarFileNameForCustomGuitar(std::string name) const;
         bool removeCustomGuitar(std::string name);
-    private:
-        struct GuitarsImpl;
-        std::unique_ptr<GuitarsImpl> impl;
+
+    protected:
+        std::vector<GuitarType> readGuitarTypes(std::string json);        
     };
 }
 #endif

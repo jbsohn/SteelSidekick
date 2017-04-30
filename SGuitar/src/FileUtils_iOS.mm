@@ -8,7 +8,7 @@
 
 #ifdef __APPLE__
 #import <Foundation/Foundation.h>
-#import "SG/FileUtils.h"
+#import "SG/FileUtils.hpp"
 
 namespace SG {
     std::string FileUtils::getRootPathForFiles() {

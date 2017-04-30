@@ -7,7 +7,7 @@
 //
 
 #import "CustomGuitar.h"
-#import "SG/SGuitar.h"
+#import "SGuitar.h"
 
 #define DEFAULT_NUMBER_OF_FRETS     26
 #define MAX_NUMBER_OF_STRINGS       12
@@ -129,11 +129,13 @@
         
     }
     
-    SG::GuitarOptions& options = SG::SGuitar::sharedInstance().getGuitarOptions();
-    NSString *selectedGuitarName = @(options.getGuitarName().c_str());
+    SGuitar *sguitar = [SGuitar sharedInstance];
+    SGGuitarOptions *options = [sguitar getGuitarOptions];
+    
+    NSString *selectedGuitarName = options.guitarName;
     if ([selectedGuitarName isEqualToString:self.editingGuitarName]) {
         // the selected guitar has been renamed, set to new guitar name
-        options.setGuitarName([self.guitarName UTF8String]);
+        options.guitarName = self.guitarName;
     }
     
     self.editingGuitarName = self.guitarName;

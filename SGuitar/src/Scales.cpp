@@ -7,18 +7,13 @@
 //
 
 #include <vector>
-#include "SG/Scales.h"
-#include "SG/Scale.h"
-#include "SG/FileUtils.h"
+#include "SG/Scales.hpp"
+#include "SG/Scale.hpp"
+#include "SG/FileUtils.hpp"
 #include "JsonBox.h"
 
 namespace SG {
-    struct Scales::ScalesImpl {
-        std::vector<ScaleType> scales;
-        bool isValid;
-    };
-
-    Scales::Scales() : impl(new ScalesImpl) {
+    Scales::Scales() {
 
     }
 
@@ -26,10 +21,6 @@ namespace SG {
         
     }
     
-    bool Scales::isValid() const {
-        return impl->isValid;
-    }
-
     void Scales::readFile(std::string filename) {
         std::string json = FileUtils::readFile(filename);
         readString(json);
@@ -37,8 +28,8 @@ namespace SG {
     
     bool Scales::readString(std::string json) {
         try {
-            impl->scales.clear();
-            impl->isValid = false;
+            scales.clear();
+            valid = false;
             
             JsonBox::Value root;
             root.loadFromString(json);
@@ -50,7 +41,7 @@ namespace SG {
             JsonBox::Array rootArray = root.getArray();
             
             if (rootArray.empty()) {
-                impl->isValid = false;
+                valid = false;
                 return false;
             }
             
@@ -71,25 +62,21 @@ namespace SG {
                 }
                 
                 ScaleType curScaleType(name, semitones);
-                impl->scales.push_back(curScaleType);
+                scales.push_back(curScaleType);
             }
         } catch (...) {
-            impl->isValid = false;
+            valid = false;
             return false;
         }
         
-        impl->isValid = true;
+        valid = true;
         return true;
-    }
-    
-    std::vector<SG::ScaleType> Scales::getScales() const {
-        return impl->scales;
     }
     
     SG::ScaleType Scales::getScaleType(std::string scaleName) {
         ScaleType scale;
 
-        for (ScaleType curScale : impl->scales) {
+        for (ScaleType curScale : scales) {
             if (curScale.getName() == scaleName) {
                 scale = curScale;
                 break;

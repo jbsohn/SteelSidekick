@@ -9,8 +9,7 @@
 #import "ScaleViewController.h"
 #import "ScaleTypeViewController.h"
 #import "RootNoteViewController.h"
-#import "SG/SGuitar.h"
-#import "SG/NoteName.h"
+#import "SGuitar.h"
 #import "ColorScheme.h"
 
 #define POPOVER_VIEW_SIZE     CGSizeMake(320.0, 480.0)
@@ -56,7 +55,7 @@ typedef enum { SECTION_SHOW_SCALE = 0,  SECTION_SCALE = 1, SECTION_DISPLAY_AS = 
 
 - (void)setupScaleSwitch {
     SGuitar *sguitar = [SGuitar sharedInstance];
-    ScaleOptions *scaleOptions = [sguitar getScaleOptions];
+    SGScaleOptions *scaleOptions = [sguitar getScaleOptions];
 
     self.showScaleSwitch = [[UISwitch alloc] init];
     CGSize switchSize = [self.showScaleSwitch sizeThatFits:CGSizeZero];
@@ -82,16 +81,16 @@ typedef enum { SECTION_SHOW_SCALE = 0,  SECTION_SCALE = 1, SECTION_DISPLAY_AS = 
 
 - (void)resetScaleName {
     SGuitar *sguitar = [SGuitar sharedInstance];
-    ScaleOptions *scaleOptions = [sguitar getScaleOptions];
+    SGScaleOptions *scaleOptions = [sguitar getScaleOptions];
     NSString *labelText = scaleOptions.scaleName;
     self.scaleCell.detailTextLabel.text = labelText;
 }
 
 - (void)resetScaleRootNote {
     SGuitar *sguitar = [SGuitar sharedInstance];
-    ScaleOptions *scaleOptions = [sguitar getScaleOptions];
-    int scaleRootNoteValue = scaleOptions.scaleRoteNoteValue;
-    NSString *labelText = [NoteName getNoteNameSharp:scaleRootNoteValue];
+    SGScaleOptions *scaleOptions = [sguitar getScaleOptions];
+    int scaleRootNoteValue = scaleOptions.scaleRootNoteValue;
+    NSString *labelText = [SGuitar getNoteNameSharpFlat:scaleRootNoteValue];
     self.rootNoteCell.detailTextLabel.text = labelText;
 }
 
@@ -108,9 +107,11 @@ typedef enum { SECTION_SHOW_SCALE = 0,  SECTION_SCALE = 1, SECTION_DISPLAY_AS = 
 
 - (void)scaleTypeViewControllerItemSelected:(ScaleTypeViewController *)controller {
     SGuitar *sguitar = [SGuitar sharedInstance];
-    ScaleOptions *scaleOptions = [sguitar getScaleOptions];
+    SGScaleOptions *scaleOptions = [sguitar getScaleOptions];
 
     scaleOptions.scaleName = controller.selectedScaleName;
+    [sguitar setScaleOptions:scaleOptions];
+
     [self resetScaleName];
     [self.delegate scaleViewControllerResetDisplay];
 }
@@ -121,10 +122,11 @@ typedef enum { SECTION_SHOW_SCALE = 0,  SECTION_SCALE = 1, SECTION_DISPLAY_AS = 
 
 - (void)rootNoteViewControllerItemSelected:(RootNoteViewController *)controller {
     SGuitar *sguitar = [SGuitar sharedInstance];
-    ScaleOptions *scaleOptions = [sguitar getScaleOptions];
+    SGScaleOptions *scaleOptions = [sguitar getScaleOptions];
 
     int rootNoteValue = (int) controller.selectedNote;
-    scaleOptions.scaleRoteNoteValue = rootNoteValue;
+    scaleOptions.scaleRootNoteValue = rootNoteValue;
+    [sguitar setScaleOptions:scaleOptions];
 
     [self resetScaleRootNote];
     [self.delegate scaleViewControllerResetDisplay];
@@ -136,7 +138,7 @@ typedef enum { SECTION_SHOW_SCALE = 0,  SECTION_SCALE = 1, SECTION_DISPLAY_AS = 
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     SGuitar *sguitar = [SGuitar sharedInstance];
-    ScaleOptions *scaleOptions = [sguitar getScaleOptions];
+    SGScaleOptions *scaleOptions = [sguitar getScaleOptions];
 
     if ([segue.identifier isEqualToString:@"displayScaleType"]) {
         ScaleTypeViewController *vc = [segue destinationViewController];
@@ -146,15 +148,16 @@ typedef enum { SECTION_SHOW_SCALE = 0,  SECTION_SCALE = 1, SECTION_DISPLAY_AS = 
     } else if ([segue.identifier isEqualToString:@"displayRootNote"]) {
         RootNoteViewController *vc = [segue destinationViewController];
         vc.delegate = self;
-        int rootNoteValue = scaleOptions.scaleRoteNoteValue;
+        int rootNoteValue = scaleOptions.scaleRootNoteValue;
         vc.selectedNote = rootNoteValue;
     }
 }
 
 - (void)showScaleSwitchChanged:(id)sender {
     SGuitar *sguitar = [SGuitar sharedInstance];
-    ScaleOptions *scaleOptions = [sguitar getScaleOptions];
+    SGScaleOptions *scaleOptions = [sguitar getScaleOptions];
     scaleOptions.showScale = self.showScaleSwitch.on;
+    [sguitar setScaleOptions:scaleOptions];
 
     [self.tableView reloadData];
     [self.delegate scaleViewControllerResetDisplay];
@@ -169,12 +172,12 @@ typedef enum { SECTION_SHOW_SCALE = 0,  SECTION_SCALE = 1, SECTION_DISPLAY_AS = 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     SGuitar *sguitar = [SGuitar sharedInstance];
-    ScaleOptions *scaleOptions = [sguitar getScaleOptions];
+    SGScaleOptions *scaleOptions = [sguitar getScaleOptions];
     UITableViewCell *cell = [super tableView:tableView cellForRowAtIndexPath:indexPath];
     [[ColorScheme sharedInstance] applyThemeToTableViewCell:cell];
 
     if (indexPath.section == SECTION_DISPLAY_AS) {
-        if (scaleOptions.displayItemAs ==  indexPath.row) {
+        if (scaleOptions.displayItemsAs ==  indexPath.row) {
             cell.accessoryType = UITableViewCellAccessoryCheckmark;
         } else {
             cell.accessoryType = UITableViewCellAccessoryNone;
@@ -186,19 +189,21 @@ typedef enum { SECTION_SHOW_SCALE = 0,  SECTION_SCALE = 1, SECTION_DISPLAY_AS = 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     SGuitar *sguitar = [SGuitar sharedInstance];
-    ScaleOptions *scaleOptions = [sguitar getScaleOptions];
+    SGScaleOptions *scaleOptions = [sguitar getScaleOptions];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     if(indexPath.section == SECTION_DISPLAY_AS) {
         UITableViewCell *prevCell =
-                [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:scaleOptions.displayItemAs
+                [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:scaleOptions.displayItemsAs
                                                                          inSection:SECTION_DISPLAY_AS]];
         prevCell.accessoryType = UITableViewCellAccessoryNone;
         
         
-        scaleOptions.displayItemAs = (DISPLAY_ITEM_AS_TYPE) indexPath.row;
+        scaleOptions.displayItemsAs = (DISPLAY_ITEM_AS_TYPE) indexPath.row;
+        [sguitar setScaleOptions:scaleOptions];
+
         UITableViewCell *newCell =
-                [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:scaleOptions.displayItemAs
+                [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:scaleOptions.displayItemsAs
                                                                          inSection:SECTION_DISPLAY_AS]];
         newCell.accessoryType = UITableViewCellAccessoryCheckmark;
 

@@ -48,15 +48,15 @@ namespace SG {
 }
 #endif
 
-#ifdef __OBJC__
-
-@interface GuitarAdjustmentType : NSObject
-
-+ (NSString *)getPedalTypeName:(int)index;
-+ (NSString *)getLeverTypeName:(int)index;
-
-@end
-
-#endif
+//#ifdef __OBJC__
+//
+//@interface GuitarAdjustmentType : NSObject
+//
+//+ (NSString *)getPedalTypeName:(int)index;
+//+ (NSString *)getLeverTypeName:(int)index;
+//
+//@end
+//
+//#endif
 
 #endif

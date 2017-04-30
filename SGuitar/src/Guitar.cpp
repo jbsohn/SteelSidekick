@@ -11,13 +11,13 @@
 #include <vector>
 #include <map>
 #include <JsonBox.h>
-#include "SG/Note.h"
-#include "SG/NoteName.h"
-#include "SG/GuitarString.h"
-#include "SG/GuitarAdjustment.h"
-#include "SG/GuitarAdjustmentType.h"
-#include "SG/Guitar.h"
-#include "SG/FileUtils.h"
+#include "SG/Note.hpp"
+#include "SG/NoteName.hpp"
+#include "SG/GuitarString.hpp"
+#include "SG/GuitarAdjustment.hpp"
+#include "SG/GuitarAdjustmentType.hpp"
+#include "SG/Guitar.hpp"
+#include "SG/FileUtils.hpp"
 
 namespace SG {
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

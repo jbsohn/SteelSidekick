@@ -15,9 +15,7 @@
 #import "SettingsViewController.h"
 #import "InfoViewController.h"
 #import "GuitarPlayer.h"
-#import "SG/SGuitar.h"
-#import "SG/Guitar.h"
-#import "SG/GuitarAdjustmentType.h"
+#import "SGuitar.h"
 #import "ColorScheme.h"
 #import "BTBalloon.h"
 #import "NSTimer+Blocks.h"
@@ -556,12 +554,12 @@
 //
 // lever/pedal translation helpers
 - (NSString *)settingIDForPedalTag:(NSInteger)tag {
-    NSString *settingID = [GuitarAdjustmentType getPedalTypeName:(int)tag];
+    NSString *settingID = [SGuitar getPedalTypeName:(int)tag];
     return settingID;
 }
 
 - (NSString *)settingIDForLeverTag:(NSInteger)tag {
-    NSString *settingID = [GuitarAdjustmentType getLeverTypeName:(int)tag];
+    NSString *settingID = [SGuitar getLeverTypeName:(int)tag];
     return settingID;
 }
 
@@ -661,7 +659,7 @@
     SGuitar* sguitar = [SGuitar sharedInstance];
     
     for (int pedalID = PT_P1; pedalID <= PT_P10; pedalID++) {
-        BOOL enabled = [sguitar isAdjustmentEnabled:[GuitarAdjustmentType getPedalTypeName:pedalID]];
+        BOOL enabled = [sguitar isAdjustmentEnabled:[SGuitar getPedalTypeName:pedalID]];
         
         UIButton *curButton = self.pedalButtons[pedalID];
         UIImageView *curImage = self.pedalActivatedImageViews[pedalID];
@@ -673,7 +671,7 @@
     }
 
     for (int leverID = LT_LKL; leverID <= LT_RKRR; leverID++) {
-        BOOL enabled = [sguitar isAdjustmentEnabled:[GuitarAdjustmentType getLeverTypeName:leverID]];
+        BOOL enabled = [sguitar isAdjustmentEnabled:[SGuitar getLeverTypeName:leverID]];
         UIButton *curButton = self.leverButtons[leverID];
         UIImageView *curImage = self.leverActivatedImageViews[leverID];
         curButton.hidden = !enabled;

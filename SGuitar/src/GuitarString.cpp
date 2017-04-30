@@ -7,107 +7,62 @@
 //
 
 #include <vector>
-#include "SG/GuitarString.h"
+#include "SG/GuitarString.hpp"
 
 #define DEFAULT_NUMBER_OF_FRETS         24
 
 namespace SG {
-    struct GuitarString::GuitarStringImpl {
-        std::vector<int> noteValues;
-        Note startNote;
-        int numberOfFrets;
-        bool isValid;
-        
-        void init(const GuitarString& guitarString) {
-            noteValues = guitarString.impl->noteValues;
-            startNote = guitarString.impl->startNote;
-            numberOfFrets = guitarString.impl->numberOfFrets;
-            isValid = guitarString.impl->isValid;
-        }
-    };
-
-    GuitarString::GuitarString() :impl(new GuitarStringImpl) {
+    GuitarString::GuitarString() {
         Note note;
-        impl->noteValues.resize(DEFAULT_NUMBER_OF_FRETS);
-        impl->startNote = note;
-        impl->numberOfFrets = 0;
-        impl->isValid = false;
+        noteValues.resize(DEFAULT_NUMBER_OF_FRETS);
+        startNote = note;
+        numberOfFrets = 0;
+        valid = false;
     }
 
-    GuitarString::GuitarString(SG::Note note, int numberOfFrets) : impl(new GuitarStringImpl) {
-        impl->noteValues.resize(DEFAULT_NUMBER_OF_FRETS);
-        impl->startNote = note;
-        impl->numberOfFrets = numberOfFrets;
-        impl->isValid = true;
+    GuitarString::GuitarString(SG::Note note, int numberOfFrets) {
+        noteValues.resize(numberOfFrets);
+        startNote = note;
+        this->numberOfFrets = numberOfFrets;
+        valid = true;
         reset();
     }
     
-    GuitarString::GuitarString(int midiValue, int numberOfFrets) : impl(new GuitarStringImpl) {
+    GuitarString::GuitarString(int midiValue, int numberOfFrets) {
         Note note(midiValue);
-        impl->noteValues.resize(DEFAULT_NUMBER_OF_FRETS);
-        impl->startNote = note;
-        impl->numberOfFrets = numberOfFrets;
-        impl->isValid = true;
+        noteValues.resize(numberOfFrets);
+        startNote = note;
+        this->numberOfFrets = numberOfFrets;
+        valid = true;
         reset();
     }
 
-    GuitarString::GuitarString(const GuitarString& guitarString) : impl(new GuitarStringImpl) {
-        impl->init(guitarString);
-    }
-    
     GuitarString::~GuitarString() {
     }
-
-    GuitarString& GuitarString::operator=(const GuitarString& guitarString) {
-        impl->init(guitarString);
-        return *this;
-    }
-
-    GuitarString::GuitarString(GuitarString&& guitarString) {
-        impl = std::move(guitarString.impl);
-        guitarString.impl = nullptr;
+    
+    
+    void GuitarString::init(const GuitarString& guitarString) {
+        noteValues = guitarString.noteValues;
+        startNote = guitarString.startNote;
+        numberOfFrets = guitarString.numberOfFrets;
+        valid = guitarString.valid;
     }
     
-    GuitarString& GuitarString::operator=(GuitarString&& guitarString) {
-        if (this != &guitarString) {
-            impl = std::move(guitarString.impl);
-            guitarString.impl = nullptr;
-        }
-        return *this;
-    }
-
-    bool GuitarString::isValid() const {
-        return impl->isValid;
-    }
-
     void GuitarString::reset() {
-        impl->noteValues.resize(impl->numberOfFrets + 1);
-        int curNoteMIDIValue = impl->startNote.getMIDIValue();
+        noteValues.resize(numberOfFrets + 1);
+        int curNoteMIDIValue = startNote.getMIDIValue();
 
-        for (int fret = 0; fret <= impl->numberOfFrets; fret++) {
-            impl->noteValues[fret] = curNoteMIDIValue;
+        for (int fret = 0; fret <= numberOfFrets; fret++) {
+            noteValues[fret] = curNoteMIDIValue;
             curNoteMIDIValue++;
         }
     }
 
     void GuitarString::adjustStringBySteps(int steps) {
-        for (int fret = 0; fret <= impl->numberOfFrets; fret++) {
-            int curNoteMIDIValue = impl->noteValues[fret];
+        for (int fret = 0; fret <= numberOfFrets; fret++) {
+            int curNoteMIDIValue = noteValues[fret];
             curNoteMIDIValue += steps;
-            impl->noteValues[fret] = curNoteMIDIValue;
+            noteValues[fret] = curNoteMIDIValue;
         }
-    }
-
-    SG::Note GuitarString::getStartNote() {
-        return impl->startNote;
-    }
-
-    std::vector<int> GuitarString::getNoteValues() const {
-        return impl->noteValues;
-    }
-    
-    SG::Note GuitarString::getNoteAtFret(int fretNumber) const {
-        SG::Note note(impl->noteValues[fretNumber]);
-        return note;
     }
 }

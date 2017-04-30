@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SG/Guitar.h"
+#import "SG/Guitar.hpp"
 
 @interface CustomGuitarViewController : UITableViewController
 

@@ -10,9 +10,13 @@
 #import <XCTest/XCTest.h>
 #import <fstream>
 #import <sstream>
-#import "SG/SGuitar.h"
-#import "SG/GuitarString.h"
-#import "SG/Guitar.h"
+#import "SG/SGuitar.hpp"
+#import "SG/GuitarString.hpp"
+#import "SG/Guitar.hpp"
+#import "SG/Chords.hpp"
+#import "SG/Scales.hpp"
+#import "SG/ChordType.hpp"
+#import "SG/ScaleType.hpp"
 
 @interface SGGuitarTests : XCTestCase
 
@@ -45,20 +49,21 @@
     const int NUMBER_OF_FRETS = 24;
     SG::GuitarString string(48, NUMBER_OF_FRETS);
 
-    std::vector<SG::Note> notes = string.getNotes();
+    std::vector<int> notes = string.getNoteValues();
     
-    for (SG::Note curNote : notes) {
+    for (SG::Note note : notes) {
+        SG::Note curNote(note);
         XCTAssert(curNote.getNoteValue() >= NOTE_VALUE_C && curNote.getNoteValue() <= NOTE_VALUE_B);
     }
 
     string.adjustStringBySteps(-2);
-    notes = string.getNotes();
-    SG::Note adjustedFirstNote = notes[0];
+    notes = string.getNoteValues();
+    SG::Note adjustedFirstNote(notes[0]);
     XCTAssert(adjustedFirstNote.getNoteValue() == NOTE_VALUE_A_SHARP);
 
     string.reset();
-    notes = string.getNotes();
-    SG::Note resetFirstNote = notes[0];
+    notes = string.getNoteValues();
+    SG::Note resetFirstNote(notes[0]);
     XCTAssert(resetFirstNote.getNoteValue() == NOTE_VALUE_C);
 }
 
@@ -81,7 +86,7 @@ static std::string readFile(const char* filename)
 - (void)testGuitar
 {
     SG::Guitar guitar;
-    NSString *filename = [[NSBundle bundleForClass:[self class]] pathForResource:@"TestGuitar" ofType:@"json"];
+    NSString *filename = [[NSBundle bundleForClass:[self class]] pathForResource:@"Guitar-Test" ofType:@"json"];
     XCTAssert(guitar.readFile([filename UTF8String]));
     
     XCTAssert(guitar.isValid());
@@ -163,13 +168,13 @@ static std::string readFile(const char* filename)
              midiValue:(int)midiValue
             pitchValue:(int)pitchValue
 {
-    std::vector<SG::Note> notes = string.getNotes();
+    std::vector<int> notes = string.getNoteValues();
     XCTAssert(notes.size() == numberOfFrets + 1); // account for fret 0
     if (notes.size() != numberOfFrets + 1) { // account for fret 0
         return NO;
     }
     
-    SG::Note note = notes[0];
+    SG::Note note(notes[0]);
     XCTAssert(note.getNoteValue() == integerValue);
     if (note.getNoteValue() != integerValue) {
         return NO;
@@ -199,25 +204,25 @@ static std::string readFile(const char* filename)
     
     SG::GuitarString string2 = strings[2];
     XCTAssert(string2.isValid());
-    std::vector<SG::Note> notes = string2.getNotes();
+    std::vector<int> notes = string2.getNoteValues();
     SG::Note note2 = notes[0];
     XCTAssert(note2.getNoteValue() == NOTE_VALUE_D_SHARP);
               
     SG::GuitarString string4 = strings[4];
     XCTAssert(string4.isValid());
-    notes = string4.getNotes();
+    notes = string4.getNoteValues();
     SG::Note note4 = notes[0];
     XCTAssert(note4.getNoteValue() == NOTE_VALUE_E);
     
     SG::GuitarString string6 = strings[6];
     XCTAssert(string6.isValid());
-    notes = string6.getNotes();
+    notes = string6.getNoteValues();
     SG::Note note6 = notes[0];
     XCTAssert(note6.getNoteValue() == NOTE_VALUE_G_SHARP);
     
     SG::GuitarString string8 = strings[8];
     XCTAssert(string8.isValid());
-    notes = string8.getNotes();
+    notes = string8.getNoteValues();
     SG::Note note8 = notes[0];
     XCTAssert(note8.getNoteValue() == NOTE_VALUE_E);
 
@@ -226,12 +231,12 @@ static std::string readFile(const char* filename)
         std::vector<SG::GuitarString> strings = guitar.getStrings();
         
         SG::GuitarString string5 = strings[5];
-        notes = string5.getNotes();
+        notes = string5.getNoteValues();
         SG::Note note5(notes[0]);
         XCTAssert(note5.getNoteValue() == NOTE_VALUE_C_SHARP);
         
         SG::GuitarString string10 = strings[10];
-        notes = string10.getNotes();
+        notes = string10.getNoteValues();
         SG::Note note10 = notes[0];
         XCTAssert(note10.getNoteValue() == NOTE_VALUE_C_SHARP);
         
@@ -243,12 +248,12 @@ static std::string readFile(const char* filename)
         std::vector<SG::GuitarString> strings = guitar.getStrings();
     
         SG::GuitarString string3 = strings[3];
-        notes = string3.getNotes();
+        notes = string3.getNoteValues();
         SG::Note note3 = notes[0];
         XCTAssert(note3.getNoteValue() == NOTE_VALUE_A);
         
         SG::GuitarString string6 = strings[6];
-        notes = string3.getNotes();
+        notes = string3.getNoteValues();
         SG::Note note6 = notes[0];
         XCTAssert(note6.getNoteValue() == NOTE_VALUE_A);
 
@@ -260,12 +265,12 @@ static std::string readFile(const char* filename)
         std::vector<SG::GuitarString> strings = guitar.getStrings();
         
         SG::GuitarString string8 = strings[8];
-        std::vector<SG::Note> notes = string8.getNotes();
+        std::vector<int> notes = string8.getNoteValues();
         SG::Note note3 = notes[3];
         XCTAssert(note3.getNoteValue() == NOTE_VALUE_G_SHARP);
         
         SG::GuitarString string4 = strings[4];
-        notes = string4.getNotes();
+        notes = string4.getNoteValues();
         SG::Note note6 = notes[6];
         XCTAssert(note6.getNoteValue() == NOTE_VALUE_B);
         
@@ -281,25 +286,25 @@ static std::string readFile(const char* filename)
         std::vector<SG::GuitarString> strings = guitar.getStrings();
         SG::GuitarString string2 = strings[2];
         XCTAssert(string2.isValid());
-        notes = string2.getNotes();
+        notes = string2.getNoteValues();
         SG::Note note2 = notes[0];
         XCTAssert(note2.getNoteValue() == NOTE_VALUE_D_SHARP);
         
         SG::GuitarString string4 = strings[4];
         XCTAssert(string4.isValid());
-        notes = string4.getNotes();
+        notes = string4.getNoteValues();
         SG::Note note4 = notes[0];
         XCTAssert(note4.getNoteValue() == NOTE_VALUE_E);
         
         SG::GuitarString string6 = strings[6];
         XCTAssert(string6.isValid());
-        notes = string6.getNotes();
+        notes = string6.getNoteValues();
         SG::Note note6 = notes[0];
         XCTAssert(note6.getNoteValue() == NOTE_VALUE_G_SHARP);
         
         SG::GuitarString string8 = strings[8];
         XCTAssert(string8.isValid());
-        notes = string8.getNotes();
+        notes = string8.getNoteValues();
         SG::Note note8 = notes[0];
         XCTAssert(note8.getNoteValue() == NOTE_VALUE_E);
     }
@@ -308,16 +313,16 @@ static std::string readFile(const char* filename)
 - (void)testNoteValueForName {
     int noteValue = NOTE_VALUE_NONE;
 
-    noteValue = SG::Note::noteValueForName("C");
+    noteValue = SG::NoteName::noteValueForName("C");
     XCTAssert(noteValue == NOTE_VALUE_C);
 
-    noteValue = SG::Note::noteValueForName("G");
+    noteValue = SG::NoteName::noteValueForName("G");
     XCTAssert(noteValue == NOTE_VALUE_G);
 
-    noteValue = SG::Note::noteValueForName("A");
+    noteValue = SG::NoteName::noteValueForName("A");
     XCTAssert(noteValue == NOTE_VALUE_A);
     
-    noteValue = SG::Note::noteValueForName("B");
+    noteValue = SG::NoteName::noteValueForName("B");
     XCTAssert(noteValue == NOTE_VALUE_B);
 }
 

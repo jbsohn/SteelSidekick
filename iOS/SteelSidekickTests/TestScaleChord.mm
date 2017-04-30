@@ -8,14 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
-#import "Note.h"
-#import "NoteName.h"
-#import "Scale.h"
-#import "Chord.h"
-#import "Note.h"
-#import "Scales.h"
-#import "Chords.h"
-#import "FileUtils.h"
+#import "SG/SGuitar.hpp"
+#import "SG/Chords.hpp"
+#import "SG/Scales.hpp"
+#import "SG/GuitarString.hpp"
 
 using namespace SG;
 
@@ -40,14 +36,14 @@ using namespace SG;
 
 - (void)loadChords {
     NSBundle *bundle = [NSBundle bundleForClass:[self class]];
-    NSString *path = [bundle pathForResource:@"Chords" ofType:@"settings"];
+    NSString *path = [bundle pathForResource:@"Chords-Test" ofType:@"settings"];
     std::string json = SG::FileUtils::readFile([path UTF8String]);
     chords.readString(json);
 }
 
 - (void)loadScales {
     NSBundle *bundle = [NSBundle bundleForClass:[self class]];
-    NSString *path = [bundle pathForResource:@"Scales" ofType:@"settings"];
+    NSString *path = [bundle pathForResource:@"Scales-Test" ofType:@"settings"];
     std::string json = SG::FileUtils::readFile([path UTF8String]);
     scales.readString(json);
 }
@@ -59,7 +55,7 @@ using namespace SG;
     ChordType chordType = chords.getChordType([name UTF8String]);
     std::vector<int> intervals = chordType.getintervals();
     SG::Chord chord(rootNoteValue, intervals);
-    std::string s = chord.unitTestDescription();
+    std::string s = chord.getDescription();
     std::string chordName = chordType.getName();
     std::string rootNoteName = SG::NoteName::nameForNoteValue(rootNoteValue, AT_SHARP);
     NSString *chordDescription = [NSString stringWithUTF8String:s.c_str()];
@@ -75,7 +71,7 @@ using namespace SG;
     ScaleType scaleType = scales.getScaleType([name UTF8String]);
     std::vector<int> semitones = scaleType.getSemitones();
     SG::Scale scale(rootNoteValue, semitones);
-    std::string sd = scale.unitTestDescription();
+    std::string sd = scale.getDescription();
     std::string scaleName = scaleType.getName();
     std::string rootNoteName = SG::NoteName::nameForNoteValue(rootNoteValue, AT_SHARP);
     NSLog(@"sd: %s", sd.c_str());

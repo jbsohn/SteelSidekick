@@ -10,13 +10,15 @@
 #define __GuitarTypes_h__
 
 #ifdef __cplusplus
-#include <memory>
-#include <map>
 #include <string>
-#include "GuitarType.h"
+#include "GuitarType.hpp"
 
 namespace SG {
     class GuitarTypes {
+    protected:
+        std::vector<GuitarType> types;
+        bool valid;
+
     public:
         GuitarTypes();
         ~GuitarTypes();
@@ -26,9 +28,9 @@ namespace SG {
 
         GuitarType getGuitarType(std::string type);
         std::vector<GuitarType> getGuitarTypes();
-    private:
-        struct GuitarTypesImpl;
-        std::unique_ptr<GuitarTypesImpl> impl;
+    
+    protected:
+        std::vector<GuitarType> readGuitarTypes(std::string json);
     };
 }
 #endif

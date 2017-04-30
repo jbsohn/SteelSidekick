@@ -34,11 +34,11 @@
 #include <fstream>
 #include "nanovg.h"
 #include "nanovg_gl.h"
-#include "SG/GuitarString.h"
-#include "SG/Note.h"
-#include "SG/FileUtils.h"
-#include "SG/SGuitar.h"
-#include "SG/GuitarCanvas.h"
+#include "SG/GuitarString.hpp"
+#include "SG/Note.hpp"
+#include "SG/FileUtils.hpp"
+#include "SG/SGuitar.hpp"
+#include "SG/GuitarCanvas.hpp"
 
 #define DEFAULT_NUMBER_OF_STRINGS       12
 
@@ -398,12 +398,10 @@ namespace SG {
         impl->noteWidthHeight = noteWidthHeight;
     }
     
-    void GuitarCanvas::draw(SG::SGuitar& sguitar) {
+    void GuitarCanvas::draw(Guitar guitar, GuitarOptions guitarOptions, ScaleOptions scaleOptions, ChordOptions chordOptions,
+                            Scale scale, Chord chord) {
         glClearColor(0.08, 0.08, 0.18, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT|GL_STENCIL_BUFFER_BIT);
-        
-        impl->fretCount = sguitar.getNumberOfFrets();
-        impl->stringCount = sguitar.getNumberOfStrings();
         
         CanvasFrame frame(&impl->canvas);
         drawBackground();
@@ -411,7 +409,7 @@ namespace SG {
         drawFrets();
         drawFretMarkers();
         drawStrings();
-        drawNotes(sguitar);
+        drawNotes(guitar, guitarOptions, scaleOptions, chordOptions, scale, chord);
     }
     
     void GuitarCanvas::loadImages() {
@@ -836,22 +834,20 @@ namespace SG {
         intervalImage.drawImage(x + impl->noteWidthHeight * 0.33, y - impl->noteWidthHeight * 0.10, impl->noteWidthHeight * 0.75, impl->noteWidthHeight * 0.75);
         noteImage.drawImage(x - impl->noteWidthHeight * 0.05, y + impl->noteWidthHeight * 0.25, impl->noteWidthHeight * 0.75, impl->noteWidthHeight * 0.75);
     }
-    
-    void GuitarCanvas::drawNotes(SGuitar& sguitar) {
+
+    void GuitarCanvas::drawNotes(Guitar guitar, GuitarOptions guitarOptions, ScaleOptions scaleOptions,
+                                 ChordOptions chordOptions, Scale scale, Chord chord) {
         bool landscape = isLandscape();
         float topSpacing = impl->calcTopSpacing(landscape);
         float topAdjust = (topSpacing - impl->noteWidthHeight) / 2;
         float top = impl->calcTop();
         float leftAdjustment = impl->calcLeftAdjustment();
-        ScaleOptions scaleOptions = sguitar.getScaleOptions();
-        ChordOptions chordOptions = sguitar.getChordOptions();
-        Scale scale = sguitar.getScale();
-        Chord chord = sguitar.getChord();
-        GuitarOptions options = sguitar.getGuitarOptions();
-        
         bool showScale = scaleOptions.getShowScale();
         bool showChord = chordOptions.getShowChord();
-
+        bool showAllNotes = guitarOptions.getShowAllNotes();
+        ACCIDENTAL_DISPLAY_TYPE showNotesAs = guitarOptions.getShowNotesAs();
+        DISPLAY_ITEM_AS_TYPE displayItemsAs = scaleOptions.getDisplayItemsAs();
+        
         for (int s = 1; s <= impl->stringCount; s++) {
             float left = impl->calcLeft();
             int stringNumber = s;
@@ -859,28 +855,29 @@ namespace SG {
                 stringNumber = (impl->stringCount + 1) - s;
             }
             
-            std::vector<int> notes = sguitar.getNoteValuesForString(stringNumber);
+            GuitarString curString = guitar.getString(s);
+            std::vector<int> notes = curString.getNoteValues();
             
             int fretNumber = 0;
             for (Note curNote : notes) {
-                bool isScale = scale.isNoteValueInScale(curNote.getNoteValue()) && scaleOptions.getShowScale();
-                bool isChord = chord.isNoteValueInChord(curNote.getNoteValue()) && chordOptions.getShowChord();
+                bool isScale = scale.isNoteValueInScale(curNote.getNoteValue()) && showScale;
+                bool isChord = chord.isNoteValueInChord(curNote.getNoteValue()) && showChord;
                 CanvasImage imageBackground;
 
                 if (isScale && isChord) {
-                    if (scaleOptions.getShowScale() && chordOptions.getShowChord()) {
+                    if (showScale && showChord) {
                         imageBackground = impl->noteScaleChordBackground;
                     }
                 } else if (isScale) {
-                    if (scaleOptions.getShowScale()) {
+                    if (showScale) {
                         imageBackground = impl->noteScaleBackground;
                     }
                 } else if (isChord) {
-                    if (chordOptions.getShowChord()) {
+                    if (showChord) {
                         imageBackground = impl->noteChordBackground;
                     }
                 } else {
-                    if (options.getShowAllNotes()) {
+                    if (showAllNotes) {
                         imageBackground = impl->noteBackground;
                     }
                 }
@@ -892,26 +889,25 @@ namespace SG {
 
                 if (imageBackground.getImageID() == impl->noteSelectedBackground.getImageID()) {
                     // if select note ALWAYS draw note name
-                    drawNote(imageBackground, curNote.getNoteValue(), left, top + topAdjust,
-                             options.getShowNotesAs());
+                    drawNote(imageBackground, curNote.getNoteValue(), left, top + topAdjust, showNotesAs);
                 } else if (imageBackground.getImageID() != -1) {
-                    DISPLAY_ITEM_AS_TYPE displayItemAs = scaleOptions.getDisplayItemsAs();
-                    if (displayItemAs == DIA_INTERVAL && scaleOptions.getShowScale()) {
+                    if (displayItemsAs == DIA_INTERVAL && showScale) {
                         int interval = scale.intervalForNoteValue(curNote.getNoteValue());
                         
                         if (interval >= 0) {
                             if (isScale && isChord && showChord && showScale) {
-                                drawNoteAndInterval(imageBackground, curNote.getNoteValue(), interval, left, top + topAdjust, options.getShowNotesAs());
+                                drawNoteAndInterval(imageBackground, curNote.getNoteValue(), interval, left, top + topAdjust,
+                                                    showNotesAs);
                             } else {
                                 drawInterval(imageBackground, interval, left, top + topAdjust);
                             }
                         } else {
                             drawNote(imageBackground, curNote.getNoteValue(), left, top + topAdjust,
-                                     options.getShowNotesAs());
+                                     showNotesAs);
                         }
                     } else {
                         drawNote(imageBackground, curNote.getNoteValue(), left, top + topAdjust,
-                                 options.getShowNotesAs());
+                                 showNotesAs);
                     }
                 }
                 left += leftAdjustment;

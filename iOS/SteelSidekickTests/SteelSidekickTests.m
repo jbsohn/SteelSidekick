@@ -8,7 +8,6 @@
 
 
 #import <XCTest/XCTest.h>
-#import "SG/SGuitar.h"
 
 @interface SteelSidekickTests : XCTestCase
 

@@ -9,7 +9,7 @@
 #import "SettingsViewController.h"
 #import "GuitarViewController.h"
 #import "ColorSchemeViewController.h"
-#import "SG/SGuitar.h"
+#import "SGuitar.h"
 #import "ColorScheme.h"
 #import "Globals.h"
 
@@ -109,13 +109,13 @@ typedef enum {
 
 - (void)resetGuitar {
     SGuitar *sguitar = [SGuitar sharedInstance];
-    GuitarOptions *guitarOptions = [sguitar getGuitarOptions];
+    SGGuitarOptions *guitarOptions = [sguitar getGuitarOptions];
     self.guitarCell.detailTextLabel.text = guitarOptions.guitarName;
 }
 
 - (void)resetShowAllNotes {
     SGuitar *sguitar = [SGuitar sharedInstance];
-    GuitarOptions *guitarOptions = [sguitar getGuitarOptions];
+    SGGuitarOptions *guitarOptions = [sguitar getGuitarOptions];
     self.showAllNotesSwitch.on = guitarOptions.showAllNotes;
 }
 
@@ -128,9 +128,11 @@ typedef enum {
 
 - (void)guitarViewControllerItemSelected:(GuitarViewController *)controller {
     SGuitar *sguitar = [SGuitar sharedInstance];
-    GuitarOptions *guitarOptions = [sguitar getGuitarOptions];
+    SGGuitarOptions *guitarOptions = [sguitar getGuitarOptions];
     guitarOptions.guitarType = controller.selectedGuitarType;
     guitarOptions.guitarName = controller.selectedGuitarName;
+    [sguitar setGuitarOptions:guitarOptions];
+
     [self resetGuitar];
     [self.delegate settingsViewControllerResetDisplay];
 }
@@ -145,7 +147,7 @@ typedef enum {
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     SGuitar *sguitar = [SGuitar sharedInstance];
-    GuitarOptions *guitarOptions = [sguitar getGuitarOptions];
+    SGGuitarOptions *guitarOptions = [sguitar getGuitarOptions];
     if ([segue.identifier isEqualToString:@"displayGuitar"]) {
         GuitarViewController *vc = [segue destinationViewController];
         vc.delegate = self;
@@ -159,8 +161,10 @@ typedef enum {
 
 - (void)showAllNotesChanged:(id)sender {
     SGuitar *sguitar = [SGuitar sharedInstance];
-    GuitarOptions *guitarOptions = [sguitar getGuitarOptions];
+    SGGuitarOptions *guitarOptions = [sguitar getGuitarOptions];
     guitarOptions.showAllNotes = self.showAllNotesSwitch.on;
+    [sguitar setGuitarOptions:guitarOptions];
+
     [self.tableView reloadData];
     [self.delegate settingsViewControllerResetDisplay];
 }
@@ -170,7 +174,7 @@ typedef enum {
     [[ColorScheme sharedInstance] applyThemeToTableViewCell:cell];
 
     SGuitar *sguitar = [SGuitar sharedInstance];
-    GuitarOptions *guitarOptions = [sguitar getGuitarOptions];
+    SGGuitarOptions *guitarOptions = [sguitar getGuitarOptions];
     
     if (indexPath.section == SECTION_SHOW_NOTES_AS) {
         if (guitarOptions.showNotesAs ==  indexPath.row) {
@@ -188,7 +192,7 @@ typedef enum {
     
     if(indexPath.section == SECTION_SHOW_NOTES_AS) {
         SGuitar *sguitar = [SGuitar sharedInstance];
-        GuitarOptions *guitarOptions = [sguitar getGuitarOptions];
+        SGGuitarOptions *guitarOptions = [sguitar getGuitarOptions];
         
         UITableViewCell *prevCell =
                 [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:guitarOptions.showNotesAs
@@ -196,6 +200,8 @@ typedef enum {
         prevCell.accessoryType = UITableViewCellAccessoryNone;
         
         guitarOptions.showNotesAs = (ACCIDENTAL_DISPLAY_TYPE) indexPath.row;
+        [sguitar setGuitarOptions:guitarOptions];
+
         UITableViewCell *newCell =
                 [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:guitarOptions.showNotesAs
                                                                          inSection:SECTION_SHOW_NOTES_AS]];

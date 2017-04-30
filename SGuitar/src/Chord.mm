@@ -4,7 +4,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SG/Chord.h"
+#import "SG/Chord.hpp"
 #import "NSArrayNoteValueVector.h"
 
 @interface Chord()

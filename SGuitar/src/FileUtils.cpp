@@ -9,7 +9,7 @@
 #include <fstream>
 #include <sstream>
 #include <dirent.h>
-#include "SG/FileUtils.h"
+#include "SG/FileUtils.hpp"
 
 
 namespace SG {

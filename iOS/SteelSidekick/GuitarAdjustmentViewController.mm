@@ -8,9 +8,9 @@
 
 
 #import "GuitarAdjustmentViewController.h"
-#import "SG/SGuitar.h"
-#import "CustomGuitar.h"
+#import "SGuitar.h"
 #import "ColorScheme.h"
+#import "CustomGuitar.h"
 
 #define POPOVER_VIEW_SIZE       CGSizeMake(320.0, 480.0)
 #define HEADER_HEIGHT           44.0f

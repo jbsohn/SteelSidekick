@@ -10,11 +10,12 @@
 
 #ifdef __cplusplus
 #import <vector>
-#import "SG/SGuitar.h"
+#import "SG/SGuitar.hpp"
 
-@interface NSArrayNoteValueVector : NSObject
+@interface NSArrayIntVector : NSObject
 
-+ (NSArray *)arrayFromNoteValueVector:(std::vector<int>)vector;
++ (NSArray *)arrayFromIntVector:(std::vector<int>)vector;
 
 @end
+
 #endif

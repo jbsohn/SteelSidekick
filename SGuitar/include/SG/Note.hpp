@@ -38,11 +38,14 @@ enum {
 
 
 #ifdef __cplusplus
-#include <memory>
 #include <string>
 
 namespace SG {
     class Note {
+    protected:
+        int midiValue;
+        bool valid;
+        
     public:
         Note();
         Note(int noteValue, int pitch);
@@ -50,8 +53,6 @@ namespace SG {
         Note(std::string name);
         Note(const Note& note);
         Note& operator=(const Note& adjustment);
-        Note(Note&& options);
-        Note& operator=(Note&& options);
         ~Note();
 
         bool isValid() const;
@@ -60,9 +61,9 @@ namespace SG {
         int getNoteValue() const;
         int getPitchValue() const;
         std::string getNoteNamePitch() const;
-    private:
-        struct NoteImpl;
-        std::unique_ptr<NoteImpl> impl;
+    protected:
+        void init(int noteValue, int pitch);
+        void init(const Note& note);
     };
 }
 #endif

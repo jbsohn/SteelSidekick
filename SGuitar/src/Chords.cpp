@@ -7,17 +7,12 @@
 //
 
 #include <vector>
-#include "SG/Chords.h"
-#include "SG/FileUtils.h"
+#include "SG/Chords.hpp"
+#include "SG/FileUtils.hpp"
 #include "JsonBox.h"
 
 namespace SG {
-    struct Chords::ChordsImpl {
-        std::vector<ChordType> chords;
-        bool isValid;
-    };
-
-    Chords::Chords() : impl(new ChordsImpl) {
+    Chords::Chords() {
 
     }
 
@@ -25,10 +20,6 @@ namespace SG {
         
     }
     
-    bool Chords::isValid() const {
-        return impl->isValid;
-    }
-
     void Chords::readFile(std::string filename) {
         std::string json = FileUtils::readFile(filename);
         readString(json);
@@ -36,8 +27,8 @@ namespace SG {
     
     bool Chords::readString(std::string json) {
         try {
-            impl->chords.clear();
-            impl->isValid = false;
+            chords.clear();
+            valid = false;
             
             JsonBox::Value root;
             root.loadFromString(json);
@@ -49,7 +40,7 @@ namespace SG {
             JsonBox::Array rootArray = root.getArray();
             
             if (rootArray.empty()) {
-                impl->isValid = false;
+                valid = false;
                 return false;
             }
             
@@ -70,25 +61,21 @@ namespace SG {
                 }
                 
                 ChordType curChordType(name, intervals);
-                impl->chords.push_back(curChordType);
+                chords.push_back(curChordType);
             }
         } catch (...) {
-            impl->isValid = false;
+            valid = false;
             return false;
         }
         
-        impl->isValid = true;
+        valid = true;
         return true;
     }
 
-    std::vector<ChordType> Chords::getChords() const {
-        return impl->chords;
-    }
-    
     ChordType Chords::getChordType(std::string chordName) {
         ChordType chord;
         
-        for (ChordType curChord : impl->chords) {
+        for (ChordType curChord : chords) {
             if (curChord.getName() == chordName) {
                 chord = curChord;
                 break;

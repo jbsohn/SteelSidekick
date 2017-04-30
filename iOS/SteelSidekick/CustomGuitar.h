@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SG/SGuitar.h"
+#import "SGuitar.h"
 
 @interface CustomGuitar : NSObject
 

@@ -12,26 +12,33 @@
 #ifdef __cplusplus
 #include <vector>
 #include <string>
-#include <memory>
 
 namespace SG {
     class ScaleType {
+    protected:
+        std::string name;
+        std::vector<int> semitones;
+        bool valid;
+        
     public:
         ScaleType();
         ScaleType(std::string name, std::vector<int> semitones);
-        ScaleType(const ScaleType& scaleType);
-        ScaleType& operator=(const ScaleType& scaleType);
-        ScaleType(ScaleType&& scaleType);
-        ScaleType& operator=(ScaleType&& scaleType);
         ~ScaleType();
 
-        bool isValid() const;
+        bool isValid() const {
+            return valid;
+        }
         
-        std::string getName();
-        std::vector<int> getSemitones();
-    private:
-        struct ScaleTypeImpl;
-        std::unique_ptr<ScaleTypeImpl> impl;
+        std::string getName() {
+            return name;
+        }
+        
+        std::vector<int> getSemitones() {
+            return semitones;
+        }
+        
+    protected:
+        void init(const ScaleType& scaleType);
     };
 }
 #endif

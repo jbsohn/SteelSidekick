@@ -7,76 +7,31 @@
 //
 
 #include <vector>
-#include "SG/GuitarType.h"
+#include "SG/GuitarType.hpp"
 #include "JsonBox.h"
 
 namespace SG {
-    struct GuitarType::GuitarTypeImpl {
-        std::string name;
-        std::string description;
-        bool isCustomType;
-        bool isValid;
-        
-        void init(const GuitarType& guitarType) {
-            name = guitarType.impl->name;
-            description = guitarType.impl->description;
-            isCustomType = guitarType.impl->isCustomType;
-        }
-    };
-    
-    GuitarType::GuitarType() : impl(new GuitarTypeImpl) {
-        impl->name = "";
-        impl->description = "";
-        impl->isCustomType = false;
-        impl->isValid = false;
+    GuitarType::GuitarType() {
+        name = "";
+        description = "";
+        customType = false;
+        valid = false;
     }
     
-    GuitarType::GuitarType(std::string name, std::string description, bool isCustomType) : impl(new GuitarTypeImpl) {
-        impl->name = name;
-        impl->description = description;
-        impl->isCustomType = isCustomType;
-    }
-    
-    GuitarType::GuitarType(const GuitarType& guitarType) : impl(new GuitarTypeImpl) {
-        impl->init(guitarType);
+    GuitarType::GuitarType(std::string name, std::string description, bool isCustomType) {
+        this->name = name;
+        this->description = description;
+        customType = isCustomType;
+        valid = true;
     }
     
     GuitarType::~GuitarType() {
         
     }
 
-    GuitarType& GuitarType::operator=(const GuitarType& guitarType) {
-        impl->init(guitarType);
-        return *this;
+    void GuitarType::init(const GuitarType& guitarType) {
+        name = guitarType.name;
+        description = guitarType.description;
+        customType = guitarType.customType;
     }
-
-    GuitarType::GuitarType(GuitarType&& guitarType) {
-        impl = std::move(guitarType.impl);
-        guitarType.impl = nullptr;
-    }
-    
-    GuitarType& GuitarType::operator=(GuitarType&& guitarType) {
-        if (this != &guitarType) {
-            impl = std::move(guitarType.impl);
-            guitarType.impl = nullptr;
-        }
-        return *this;
-    }
-    
-    bool GuitarType::isValid() const {
-        return impl->isValid;
-    }
-
-    std::string GuitarType::getName() {
-        return impl->name;
-    }
-    
-    std::string GuitarType::getDescription() {
-        return impl->description;
-    }
-    
-    bool GuitarType::isCustomType() {
-        return impl->isCustomType;
-    }
-
 }

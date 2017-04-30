@@ -9,31 +9,34 @@
 #ifndef __Chords_h__
 #define __Chords_h__
 
-#include "ChordType.h"
+#include "ChordType.hpp"
 
 #ifdef __cplusplus
 #include <vector>
 #include <string>
-#include <memory>
 
 namespace SG {
     class Chords {
+    protected:
+        std::vector<ChordType> chords;
+        bool valid;
+        
     public:
         Chords();
         ~Chords();
 
-        bool isValid() const;
+        bool isValid() const {
+            return valid;
+        }
 
+        std::vector<ChordType> getChords() const {
+            return chords;
+        }
+        
         void readFile(std::string filename);
         bool readString(std::string json);
-        
-        std::vector<ChordType> getChords() const;
+
         ChordType getChordType(std::string chordName);
-        
-    private:
-        struct ChordsImpl;
-        std::unique_ptr<ChordsImpl> impl;
-        
     };
 }
 #endif

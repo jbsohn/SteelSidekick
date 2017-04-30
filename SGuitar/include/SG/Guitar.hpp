@@ -9,8 +9,8 @@
 #ifndef __Guitar_h__
 #define __Guitar_h__
 
-#include "GuitarString.h"
-#include "GuitarAdjustment.h"
+#include "GuitarString.hpp"
+#include "GuitarAdjustment.hpp"
 
 typedef enum {
     GT_NONE = -1,
@@ -33,7 +33,6 @@ typedef enum {
 #define DEFAULT_NUMBER_OF_STRINGS       12
 
 #ifdef __cplusplus
-#include <memory>
 #include <string>
 
 namespace SG {

@@ -4,7 +4,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SG/NoteName.h"
+#import "SG/NoteName.hpp"
 
 @implementation NoteName
 

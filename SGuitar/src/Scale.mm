@@ -4,7 +4,7 @@
 //
 
 #include <Foundation/Foundation.h>
-#include "SG/Scale.h"
+#include "SG/Scale.hpp"
 #include "NSArrayNoteValueVector.h"
 
 @interface Scale()

@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "Appirater.h"
 #import "ColorScheme.h"
-#import "SG/SGuitar.h"
+#import "SGuitar.h"
 
 @interface AppDelegate ()
 

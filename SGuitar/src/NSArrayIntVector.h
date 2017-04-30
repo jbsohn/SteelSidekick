@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <vector>
 
-@interface NSArrayVector : NSObject
+@interface NSArrayIntVector : NSObject
 
 + (NSArray *)arrayFromIntVector:(std::vector<int>)vector;
 + (std::vector<int>)vectorFromIntArray:(NSArray *)array;

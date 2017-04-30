@@ -6,17 +6,17 @@
 //  Copyright © 2016 John Sohn. All rights reserved.
 //
 
-#include "SG/SGuitar.h"
-#include "SG/GuitarOptions.h"
-#include "SG/ScaleOptions.h"
-#include "SG/ChordOptions.h"
-#include "SG/Scales.h"
-#include "SG/Chords.h"
-#include "SG/GuitarTypes.h"
-#include "SG/Guitar.h"
-#include "SG/Guitars.h"
-#include "SG/GuitarCanvas.h"
-#include "SG/FileUtils.h"
+#include "SG/SGuitar.hpp"
+#include "SG/GuitarOptions.hpp"
+#include "SG/ScaleOptions.hpp"
+#include "SG/ChordOptions.hpp"
+#include "SG/Scales.hpp"
+#include "SG/Chords.hpp"
+#include "SG/GuitarTypes.hpp"
+#include "SG/Guitar.hpp"
+#include "SG/Guitars.hpp"
+#include "SG/GuitarCanvas.hpp"
+#include "SG/FileUtils.hpp"
 
 namespace SG {
     struct SGuitar::SGuitarImpl {
@@ -99,16 +99,68 @@ namespace SG {
         return instance;
     }
     
-    GuitarOptions& SGuitar::getGuitarOptions() {
-        return impl->guitarOptions;
+    SGGuitarOptions SGuitar::getGuitarOptions() {
+        SGGuitarOptions options;
+        options.guitarType = impl->guitarOptions.getGuitarType();
+        options.guitarName = impl->guitarOptions.getGuitarName();
+        options.showAllNotes = impl->guitarOptions.getShowAllNotes();
+        options.showNotesAs = impl->guitarOptions.getShowNotesAs();
+        return options;
+    };
+    
+    void SGuitar::setGuitarOptions(SGGuitarOptions options) {
+        impl->guitarOptions.setGuitarType(options.guitarType);
+        impl->guitarOptions.setGuitarName(options.guitarName);
+        impl->guitarOptions.setShowAllNotes(options.showAllNotes);
+        impl->guitarOptions.setShowNotesAs(options.showNotesAs);
     }
     
-    ScaleOptions& SGuitar::getScaleOptions() {
-        return impl->scaleOptions;
+    SGScaleOptions SGuitar::getScaleOptions() {
+        SGScaleOptions options;
+        options.showScale = impl->scaleOptions.getShowScale();
+        options.scaleName = impl->scaleOptions.getScaleName();
+        options.scaleRootNoteValue = impl->scaleOptions.getScaleRootNoteValue();
+        options.displayItemsAs = impl->scaleOptions.getDisplayItemsAs();
+        return options;
+    }
+
+    void SGuitar::setScaleOptions(SGScaleOptions options) {
+        impl->scaleOptions.setShowScale(options.showScale);
+        impl->scaleOptions.setScaleName(options.scaleName);
+        impl->scaleOptions.setScaleRootNoteValue(options.scaleRootNoteValue);
+        impl->scaleOptions.setDisplayItemsAs(options.displayItemsAs);
     }
     
-    ChordOptions& SGuitar::getChordOptions() {
-        return impl->chordOptions;
+    SGChordOptions SGuitar::getChordOptions() {
+        SGChordOptions options;
+        options.showChord = impl->chordOptions.getShowChord();
+        options.chordName = impl->chordOptions.getChordName();
+        options.chordRootNoteValue = impl->chordOptions.getChordRootNoteValue();
+        options.displayItemsAs = impl->chordOptions.getDisplayItemsAs();
+        return options;
+    }
+    
+    void SGuitar::setChordOptions(SGChordOptions options) {
+        impl->chordOptions.setShowChord(options.showChord);
+        impl->chordOptions.setChordName(options.chordName);
+        impl->chordOptions.setChordRootNoteValue(options.chordRootNoteValue);
+        impl->chordOptions.setDisplayItemsAs(options.displayItemsAs);
+    }
+
+    std::vector<int> SGuitar::getScaleNoteValues() {
+        std::string scaleName = impl->scaleOptions.getScaleName();
+        ScaleType scaleType = impl->scales.getScaleType(scaleName);
+        std::vector<int> semitones = scaleType.getSemitones();
+        Scale scale(impl->scaleOptions.getScaleRootNoteValue(), semitones);
+        return scale.getNoteValues();
+    }
+    
+    std::vector<int> SGuitar::getChordNoteValues() {
+        std::string chordName = impl->chordOptions.getChordName();
+        ChordType chordType = impl->chords.getChordType(chordName);
+        std::vector<int> intervals = chordType.getintervals();
+        Chord chord(impl->chordOptions.getChordRootNoteValue(), intervals);
+        return chord.getNoteValues();
     }
 
     void SGuitar::reloadGuitar() {
@@ -158,7 +210,7 @@ namespace SG {
     }
 
     void SGuitar::draw() {
-        impl->guitarCanvas.draw(*this);
+        impl->guitarCanvas.draw(impl->guitar, impl->guitarOptions, impl->scaleOptions, impl->chordOptions, getScale(), getChord());
     }
     
     GUITAR_CANVAS_POSITION SGuitar::positionAtCoordinates(float x, float y) {
@@ -167,20 +219,6 @@ namespace SG {
     
     void SGuitar::setSelectedItem(GUITAR_CANVAS_POSITION position) {
         impl->guitarCanvas.setSelectedItem(position);
-    }
-    
-    Scale SGuitar::getScale() const {
-        std::string scaleName = impl->scaleOptions.getScaleName();
-        ScaleType scaleType = impl->scales.getScaleType(scaleName);
-        std::vector<int> semitones = scaleType.getSemitones();
-        return Scale(impl->scaleOptions.getScaleRootNoteValue(), semitones);
-    }
-    
-    Chord SGuitar::getChord() const {
-        std::string chordName = impl->chordOptions.getChordName();
-        ChordType chordType = impl->chords.getChordType(chordName);
-        std::vector<int> intervals = chordType.getintervals();
-        return Chord(impl->chordOptions.getChordRootNoteValue(), intervals);
     }
     
     std::vector<std::string> SGuitar::getScaleNames() const {
@@ -214,6 +252,21 @@ namespace SG {
             names.push_back(name);
         }
         return names;
+    }
+    
+    
+    Scale SGuitar::getScale() const {
+        std::string scaleName = impl->scaleOptions.getScaleName();
+        ScaleType scaleType = impl->scales.getScaleType(scaleName);
+        std::vector<int> semitones = scaleType.getSemitones();
+        return Scale(impl->scaleOptions.getScaleRootNoteValue(), semitones);
+    }
+    
+    Chord SGuitar::getChord() const {
+        std::string chordName = impl->chordOptions.getChordName();
+        ChordType chordType = impl->chords.getChordType(chordName);
+        std::vector<int> intervals = chordType.getintervals();
+        return Chord(impl->chordOptions.getChordRootNoteValue(), intervals);
     }
 
     std::vector<std::string> SGuitar::getGuitarNames(std::string type) const {

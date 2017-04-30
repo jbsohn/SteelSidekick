@@ -6,56 +6,14 @@
 //  Copyright © 2016 John Sohn. All rights reserved.
 //
 
-#include "SG/Guitars.h"
-#include "SG/FileUtils.h"
+#include "SG/Guitars.hpp"
+#include "SG/FileUtils.hpp"
 #include "JsonBox.h"
 
 namespace SG {
-    struct Guitars::GuitarsImpl {
-        std::string guitarsPath;
-        bool isValid;
-        
-        std::vector<GuitarType> readGuitarTypes(std::string json) {
-            std::vector<GuitarType> types;
-            JsonBox::Value root;
-            root.loadFromString(json);
-            
-            if (!root.isNull()) {
-                JsonBox::Array rootTypes = root.getArray();
-                
-                if (!rootTypes.empty()) {
-                    for (JsonBox::Value curType : rootTypes) {
-                        JsonBox::Value typeRoot = curType["type"];
-                        std::string type = "";
-                        if (typeRoot.isString()) {
-                            type = typeRoot.getString();
-                        }
-
-                        JsonBox::Value descriptionRoot = curType["type"];
-                        std::string description = "";
-                        if (descriptionRoot.isString()) {
-                            description = typeRoot.getString();
-                        }
-                        
-                        JsonBox::Value isCustomTypeRoot = curType["isCustomType"];
-                        bool isCustomType = false;
-                        if (isCustomTypeRoot.isBoolean()) {
-                            isCustomType = isCustomTypeRoot.getBoolean();
-                        }
-                        
-                        GuitarType newType(type, description, isCustomType);
-                        types.push_back(newType);
-                    }
-                }
-            }
-            
-            return types;
-        }
-    };
-
-    Guitars::Guitars() : impl(new GuitarsImpl) {
-        impl->guitarsPath = "";
-        impl->isValid = false;
+    Guitars::Guitars() {
+        guitarsPath = "";
+        valid = false;
     }
 
     Guitars::~Guitars() {
@@ -63,16 +21,16 @@ namespace SG {
     }
 
     bool Guitars::isValid() const {
-        return impl->isValid;
+        return valid;
     }
 
     void Guitars::setGuitarsPath(std::string guitarsPath) {
-        impl->guitarsPath = guitarsPath;
-        impl->isValid = true;
+        this->guitarsPath = guitarsPath;
+        valid = true;
     }
 
     std::vector<std::string> Guitars::getGuitarNames(std::string type) const {
-        std::string path = impl->guitarsPath + "/" + type;
+        std::string path = guitarsPath + "/" + type;
         std::vector<std::string> guitars = FileUtils::readFileListFromPath(path);
         return guitars;
     }
@@ -94,7 +52,7 @@ namespace SG {
     }
     
     std::string Guitars::guitarFileNameForGuitar(std::string name, std::string type) const {
-        std::string path = impl->guitarsPath + "/" + type;
+        std::string path = guitarsPath + "/" + type;
         std::vector<std::string> guitars = FileUtils::readFileListFromPath(path);
 
         for (std::string curFile : guitars) {
@@ -129,5 +87,42 @@ namespace SG {
         std::string root = FileUtils::getRootPathForUserFiles();
         std::string filename = root + "/Custom Guitars/" + name;
         return FileUtils::deleteFile(filename);
+    }
+    
+    std::vector<GuitarType> Guitars::readGuitarTypes(std::string json) {
+        std::vector<GuitarType> types;
+        JsonBox::Value root;
+        root.loadFromString(json);
+        
+        if (!root.isNull()) {
+            JsonBox::Array rootTypes = root.getArray();
+            
+            if (!rootTypes.empty()) {
+                for (JsonBox::Value curType : rootTypes) {
+                    JsonBox::Value typeRoot = curType["type"];
+                    std::string type = "";
+                    if (typeRoot.isString()) {
+                        type = typeRoot.getString();
+                    }
+                    
+                    JsonBox::Value descriptionRoot = curType["type"];
+                    std::string description = "";
+                    if (descriptionRoot.isString()) {
+                        description = typeRoot.getString();
+                    }
+                    
+                    JsonBox::Value isCustomTypeRoot = curType["isCustomType"];
+                    bool isCustomType = false;
+                    if (isCustomTypeRoot.isBoolean()) {
+                        isCustomType = isCustomTypeRoot.getBoolean();
+                    }
+                    
+                    GuitarType newType(type, description, isCustomType);
+                    types.push_back(newType);
+                }
+            }
+        }
+        
+        return types;
     }
 }

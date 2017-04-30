@@ -6,7 +6,7 @@
 //
 //
 
-#include "SG/NoteName.h"
+#include "SG/NoteName.hpp"
 
 namespace SG {
     std::string NoteName::UTF8_NOTE_NAMES_SHARP[] = {

@@ -9,8 +9,8 @@
 #import "PureLayout.h"
 #import "UIViewController+Orientation.h"
 #import "InfoViewController.h"
-#import "SG/SGuitar.h"
-#include "Globals.h"
+#import "SGuitar.h"
+#import "Globals.h"
 
 @interface InfoViewController ()
 
@@ -67,8 +67,8 @@
 
 - (void)setupLabels {
     SGuitar *sguitar = [SGuitar sharedInstance];
-    ScaleOptions *scaleOptions = [sguitar getScaleOptions];
-    ChordOptions *chordOptions = [sguitar getChordOptions];
+    SGScaleOptions *scaleOptions = [sguitar getScaleOptions];
+    SGChordOptions *chordOptions = [sguitar getChordOptions];
     NSString *scaleName = @"";
 
     if (scaleOptions.showScale) {
@@ -142,17 +142,17 @@
 
 - (void)setupNoteDisplayImages:(NSArray *)images isScale:(BOOL)isScale {
     SGuitar* sguitar = [SGuitar sharedInstance];
-    ScaleOptions *scaleOptions = [sguitar getScaleOptions];
-    ChordOptions *chordOptions = [sguitar getChordOptions];
+    SGScaleOptions *scaleOptions = [sguitar getScaleOptions];
+    SGChordOptions *chordOptions = [sguitar getChordOptions];
     NSArray *noteValues = @[];
     
     if (isScale) {  // Scale
         if (scaleOptions.showScale) {
-            noteValues = [[sguitar getScale] getNoteValues];
+            noteValues = [sguitar getScaleNoteValues];
         }
     } else {        // Chord
         if (chordOptions.showChord) {
-            noteValues = [[sguitar getChord] getNoteValues];
+            noteValues = [sguitar getChordNoteValues];
         }
     }
 
@@ -177,9 +177,9 @@
             
             if ([sguitar getScaleOptions].showScale && [sguitar getChordOptions].showChord) {
                 if (isScale) {
-                    isBoth = [[sguitar getChord] isNoteValueInChord:noteValue];
+//                    isBoth = [[sguitar getChord] isNoteValueInChord:noteValue];
                 } else {
-                    isBoth = [[sguitar getScale] isNoteValueInScale:noteValue];
+//                    isBoth = [[sguitar getScale] isNoteValueInScale:noteValue];
                 }
             }
             

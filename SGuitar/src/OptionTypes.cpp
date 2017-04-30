@@ -6,7 +6,7 @@
 //  Copyright © 2016 John Sohn. All rights reserved.
 //
 
-#include "SG/OptionTypes.h"
+#include "SG/OptionTypes.hpp"
 
 std::string OptionTypes::ACCIDENTAL_DISPLAY_TYPE_NAMES[] = {
     "Sharps",

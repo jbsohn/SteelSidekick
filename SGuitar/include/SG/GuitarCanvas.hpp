@@ -9,7 +9,8 @@
 #ifndef __GuitarCanvas_h__
 #define __GuitarCanvas_h__
 
-#include "SG/SGuitar.h"
+#include "SG/SGuitar.hpp"
+#include "SG/Guitar.hpp"
 
 typedef enum {
     FMC_ALL,
@@ -25,7 +26,7 @@ typedef struct {
 } GUITAR_CANVAS_POSITION;
 
 #ifdef __cplusplus
-#include <memory>
+#include <vector>
 
 namespace SG {
     class Canvas;
@@ -45,9 +46,10 @@ namespace SG {
         bool isLandscape();
         
         void updateCanvasDimensions(float width, float height, float noteWidthHeight, float scale);
-        void draw(SGuitar& sguitar);
-        GUITAR_CANVAS_POSITION positionAtCoordinates(float x, float y);
+        void draw(Guitar guitar, GuitarOptions guitarOptions, ScaleOptions scaleOptions, ChordOptions chordOptions,
+                  Scale scale, Chord chord);
 
+        GUITAR_CANVAS_POSITION positionAtCoordinates(float x, float y);
         void setSelectedItem(GUITAR_CANVAS_POSITION position);
 
     protected:
@@ -67,7 +69,8 @@ namespace SG {
                       ACCIDENTAL_DISPLAY_TYPE type);
         void drawInterval(CanvasImage backgroundImage, int interval, float left, float top);
         void drawNoteAndInterval(CanvasImage backgroundImage, int noteValue, int interval, float left, float top, ACCIDENTAL_DISPLAY_TYPE type);
-        void drawNotes(SGuitar& sguitar);
+        void drawNotes(Guitar guitar, GuitarOptions guitarOptions, ScaleOptions scaleOptions,
+                       ChordOptions chordOptions, Scale scale, Chord chord);
         void createNotes();
 
         CanvasImage imageForFretNumber(int fretNumber);

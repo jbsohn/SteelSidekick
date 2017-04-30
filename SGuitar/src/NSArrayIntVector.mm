@@ -6,10 +6,10 @@
 //
 //
 
-#import "NSArrayVector.h"
+#import "NSArrayIntVector.h"
 #import <vector>
 
-@implementation NSArrayVector
+@implementation NSArrayIntVector
 
 + (NSArray *)arrayFromIntVector:(std::vector<int>)vector {
     NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:vector.size()];

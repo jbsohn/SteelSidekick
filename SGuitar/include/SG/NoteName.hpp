@@ -9,7 +9,7 @@
 #ifndef __NOTE_NAME_H__
 #define __NOTE_NAME_H__
 
-#include "SG/Note.h"
+#include "SG/Note.hpp"
 
 #ifdef __cplusplus
 #include <string>
@@ -30,19 +30,6 @@ namespace SG {
         static std::string NOTE_NAMES_SHARP_FLAT[];
     };
 }
-#endif
-
-#ifdef __OBJC__
-
-@interface NoteName : NSObject
-
-+ (NSString*)nameForNoteValue:(int)noteValue accidentalTypeL:(ACCIDENTAL_TYPE)accidentalType;
-+ (int)noteValueForName:(NSString*)noteName;
-+ (NSString*)getNoteNameSharpFlat:(int)noteValue;
-+ (NSString*)getNoteNameSharp:(int)noteValue;
-
-@end
-
 #endif
 
 #endif

@@ -11,9 +11,7 @@
 #import "GuitarNameTableViewCell.h"
 #import "StringNoteTableViewCell.h"
 #import "CustomGuitar.h"
-#import "SG/SGuitar.h"
-#import "SG/NoteName.h"
-#import "SG/GuitarAdjustmentType.h"
+#import "SGuitar.h"
 #import "ColorScheme.h"
 
 #define POPOVER_VIEW_SIZE     CGSizeMake(320.0, 480.0)
