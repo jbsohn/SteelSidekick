@@ -34,8 +34,13 @@ typedef enum {
 
 #ifdef __cplusplus
 #include <string>
+#include <memory>
 
 namespace SG {
+    //
+    // - represents a guitar -- a collection of GuitarString, GuitarAdjustments
+    // - read and writes a guitar from storage
+    //
     class Guitar {
     public:
         Guitar();

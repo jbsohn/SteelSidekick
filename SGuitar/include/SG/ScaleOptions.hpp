@@ -16,6 +16,9 @@
 #ifdef __cplusplus
 
 namespace SG {
+    //
+    // storage container for the scale settings in use
+    //
     class ScaleOptions {
     protected:
         bool showScale;

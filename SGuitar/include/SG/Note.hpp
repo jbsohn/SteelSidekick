@@ -41,6 +41,9 @@ enum {
 #include <string>
 
 namespace SG {
+    //
+    // represents a musical note on the staff with pitch, integer note value, and MIDI value
+    //
     class Note {
     protected:
         int midiValue;

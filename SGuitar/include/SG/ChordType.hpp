@@ -14,6 +14,9 @@
 #include <string>
 
 namespace SG {
+    //
+    // storage container for the scale name and its intervals
+    //
     class ChordType {
     protected:
         std::string name;

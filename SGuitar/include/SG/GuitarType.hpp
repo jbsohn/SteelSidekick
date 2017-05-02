@@ -14,7 +14,9 @@
 #include <string>
 
 namespace SG {
-    struct GuitarTypeImpl;
+    //
+    // storage container for a guitar name, description, and type
+    //
     class GuitarType {
     protected:
         std::string name;
@@ -25,10 +27,6 @@ namespace SG {
     public:
         GuitarType();
         GuitarType(std::string name, std::string description, bool isCustomType);
-//        GuitarType(const GuitarType& guitarType);
-//        GuitarType& operator=(const GuitarType& guitarType);
-//        GuitarType(GuitarType&& guitarType);
-//        GuitarType& operator=(GuitarType&& guitarType);
         ~GuitarType();
         
         bool isValid() const {

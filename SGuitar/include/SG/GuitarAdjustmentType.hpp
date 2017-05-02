@@ -6,6 +6,7 @@
 #ifndef __GuitarAdjustmentType_h__
 #define __GuitarAdjustmentType_h__
 
+// the available pedals on guitar
 typedef enum {
     PT_P1,
     PT_P2,
@@ -19,6 +20,7 @@ typedef enum {
     PT_P10
 } PEDAL_TYPES;
 
+// the available levers on the guitar
 typedef enum {
     LT_LKL,
     LT_LKLR,
@@ -37,6 +39,9 @@ typedef enum {
 #include <string>
 
 namespace SG {
+    //
+    // returns a name for given pedal or lever type
+    //
     class GuitarAdjustmentType {
     public:
         static std::string getPedalTypeName(int index);
@@ -47,16 +52,5 @@ namespace SG {
     };
 }
 #endif
-
-//#ifdef __OBJC__
-//
-//@interface GuitarAdjustmentType : NSObject
-//
-//+ (NSString *)getPedalTypeName:(int)index;
-//+ (NSString *)getLeverTypeName:(int)index;
-//
-//@end
-//
-//#endif
 
 #endif

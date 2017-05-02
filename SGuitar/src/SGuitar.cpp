@@ -6,7 +6,7 @@
 //  Copyright © 2016 John Sohn. All rights reserved.
 //
 
-#include "SG/SGuitar.hpp"
+#include "SGuitar.hpp"
 #include "SG/GuitarOptions.hpp"
 #include "SG/ScaleOptions.hpp"
 #include "SG/ChordOptions.hpp"

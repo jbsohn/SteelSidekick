@@ -16,6 +16,9 @@
 #include <string>
 
 namespace SG {
+    //
+    // storage container for the chords
+    //
     class Chords {
     protected:
         std::vector<ChordType> chords;

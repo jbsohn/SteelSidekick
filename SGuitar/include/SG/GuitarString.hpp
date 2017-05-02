@@ -15,6 +15,9 @@
 #include <vector>
 
 namespace SG {
+    //
+    // represents a string of notes on a guitar
+    //
     class GuitarString {
     protected:
         std::vector<int> noteValues;
@@ -26,10 +29,6 @@ namespace SG {
         GuitarString();
         GuitarString(SG::Note note, int numberOfFrets);
         GuitarString(int midiValue, int numberOfFrets);
-//        GuitarString(const GuitarString& guitarString);
-//        GuitarString& operator=(const GuitarString& guitarString);
-//        GuitarString(GuitarString&& guitarString);
-//        GuitarString& operator=(GuitarString&& guitarString);
         ~GuitarString();
         
         bool isValid() const {

@@ -16,6 +16,9 @@
 #include <vector>
 
 namespace SG {
+    //
+    // represents a Scale, given a root note value and a list of semitones
+    //
     class Scale {
     protected:
         std::string name;

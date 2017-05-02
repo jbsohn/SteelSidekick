@@ -15,6 +15,9 @@
 #ifdef __cplusplus
 
 namespace SG {
+    //
+    // storage container for the global guitar settings
+    //
     class GuitarOptions {
     protected:
         std::string guitarType;

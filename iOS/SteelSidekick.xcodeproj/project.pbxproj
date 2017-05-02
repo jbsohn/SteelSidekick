@@ -313,7 +313,6 @@
 		528BA10C1D18F03C009FDC64 /* ScaleOptions.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = ScaleOptions.hpp; path = ../SGuitar/include/SG/ScaleOptions.hpp; sourceTree = "<group>"; };
 		528BA10D1D18F03C009FDC64 /* Scales.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Scales.hpp; path = ../SGuitar/include/SG/Scales.hpp; sourceTree = "<group>"; };
 		528BA10E1D18F03C009FDC64 /* ScaleType.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = ScaleType.hpp; path = ../SGuitar/include/SG/ScaleType.hpp; sourceTree = "<group>"; };
-		528BA10F1D18F03C009FDC64 /* SGuitar.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = SGuitar.hpp; path = ../SGuitar/include/SG/SGuitar.hpp; sourceTree = "<group>"; };
 		528BA1101D18F03C009FDC64 /* StringAdjustment.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = StringAdjustment.hpp; path = ../SGuitar/include/SG/StringAdjustment.hpp; sourceTree = "<group>"; };
 		52969EA61D17B6A000EFE67B /* fontstash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fontstash.h; sourceTree = "<group>"; };
 		52969EA71D17B6A000EFE67B /* nanovg.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = nanovg.c; sourceTree = "<group>"; };
@@ -447,6 +446,8 @@
 		D9160D871CBBFF7B00A09A4A /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = InfoViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		D919744A1CCAB73B000312F4 /* StringNoteTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = StringNoteTableViewCell.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		D919744B1CCAB73B000312F4 /* StringNoteTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringNoteTableViewCell.m; sourceTree = "<group>"; };
+		D9261C171EB8CEF0007A87DE /* SGuitar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SGuitar.h; path = ../SGuitar/include/SGuitar.h; sourceTree = "<group>"; };
+		D9261C181EB8CEF0007A87DE /* SGuitar.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = SGuitar.hpp; path = ../SGuitar/include/SGuitar.hpp; sourceTree = "<group>"; };
 		D927768D1D36D10700822208 /* BTBalloon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTBalloon.h; sourceTree = "<group>"; };
 		D927768E1D36D10700822208 /* BTBalloon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTBalloon.m; sourceTree = "<group>"; };
 		D927768F1D36D10700822208 /* BTBalloonArrow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTBalloonArrow.h; sourceTree = "<group>"; };
@@ -459,7 +460,6 @@
 		D9535C071D21A6CF003FCC4A /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		D9663EDA1EB3B94D000CD637 /* NSArrayIntVector.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = NSArrayIntVector.mm; path = ../SGuitar/src/NSArrayIntVector.mm; sourceTree = "<group>"; };
 		D9663EDB1EB3B94D000CD637 /* NSArrayStdStringVector.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = NSArrayStdStringVector.mm; path = ../SGuitar/src/NSArrayStdStringVector.mm; sourceTree = "<group>"; };
-		D9663EE21EB3BB62000CD637 /* SGuitar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SGuitar.h; path = ../SGuitar/include/SGuitar.h; sourceTree = "<group>"; };
 		D9663EE31EB3BB6C000CD637 /* SGuitar.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = SGuitar.mm; path = ../SGuitar/src/SGuitar.mm; sourceTree = "<group>"; };
 		D9663EE51EB3BC25000CD637 /* SGuitar_c.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SGuitar_c.cpp; path = ../SGuitar/src/SGuitar_c.cpp; sourceTree = "<group>"; };
 		D96DC1C01D18534F00D7ECFD /* SGGuitarTests.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SGGuitarTests.mm; sourceTree = "<group>"; };
@@ -927,9 +927,9 @@
 				5228EF6C1D29DF7C00E3E15B /* Canvas */,
 				52D672041E2CA4F3002799FA /* File */,
 				D9F0F0A11D25C47200903F3A /* Utils */,
-				528BA10F1D18F03C009FDC64 /* SGuitar.hpp */,
+				D9261C171EB8CEF0007A87DE /* SGuitar.h */,
+				D9261C181EB8CEF0007A87DE /* SGuitar.hpp */,
 				528BA0E01D18B9DA009FDC64 /* SGuitar.cpp */,
-				D9663EE21EB3BB62000CD637 /* SGuitar.h */,
 				D9663EE31EB3BB6C000CD637 /* SGuitar.mm */,
 				D9663EE51EB3BC25000CD637 /* SGuitar_c.cpp */,
 			);

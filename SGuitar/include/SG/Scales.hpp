@@ -16,6 +16,9 @@
 #include <string>
 
 namespace SG {
+    //
+    // storage container for the scales
+    //
     class Scales {
     protected:
         std::vector<ScaleType> scales;

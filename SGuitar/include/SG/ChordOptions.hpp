@@ -17,6 +17,9 @@
 #include <string>
 
 namespace SG {
+    //
+    // storage container for the chord settings
+    //
     class ChordOptions {
     protected:
         bool showChord;

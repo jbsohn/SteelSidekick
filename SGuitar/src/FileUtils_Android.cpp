@@ -5,7 +5,7 @@
 #ifdef __ANDROID__
 
 #include <dirent.h>
-#include "SG/FileUtils.h"
+#include "SG/FileUtils.hpp"
 
 namespace SG {
     std::string FileUtils::rootPathForFiles = "";

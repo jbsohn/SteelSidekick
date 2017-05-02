@@ -13,6 +13,9 @@
 #ifdef __cplusplus
 
 namespace SG {
+    //
+    // container to store the adjustment for a string, the string number and step (adjustments) to make
+    //
     class StringAdjustment {
     protected:
         int stringNumber;
@@ -22,10 +25,6 @@ namespace SG {
     public:
         StringAdjustment();
         StringAdjustment(int stringNumber, int step);
-//        StringAdjustment(const StringAdjustment& adjustment);
-//        StringAdjustment& operator=(const StringAdjustment& adjustment);
-//        StringAdjustment(StringAdjustment&& adjustment);
-//        StringAdjustment& operator=(StringAdjustment&& adjustment);
         ~StringAdjustment();
         
         bool isValid() const {

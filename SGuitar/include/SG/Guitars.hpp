@@ -15,6 +15,9 @@
 #include "GuitarType.hpp"
 
 namespace SG {
+    //
+    // the storage area for the guitar definitions
+    //
     class Guitars {
     protected:
         std::string guitarsPath;

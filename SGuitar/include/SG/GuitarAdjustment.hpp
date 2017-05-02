@@ -16,6 +16,9 @@
 #include <vector>
 
 namespace SG {
+    //
+    // container for the StringAdjustment(s) -- pedal or lever settings
+    //
     class GuitarAdjustment {
     protected:
         std::string adjustmentID;

@@ -14,6 +14,9 @@
 #include "GuitarType.hpp"
 
 namespace SG {
+    //
+    // storage container for the guitar types
+    //
     class GuitarTypes {
     protected:
         std::vector<GuitarType> types;

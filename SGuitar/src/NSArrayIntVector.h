@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 #import <vector>
 
+//
+// helper to convert to/from a int vector to NSArray
+//
 @interface NSArrayIntVector : NSObject
 
 + (NSArray *)arrayFromIntVector:(std::vector<int>)vector;

@@ -9,8 +9,12 @@
 #ifndef __GuitarCanvas_h__
 #define __GuitarCanvas_h__
 
-#include "SG/SGuitar.hpp"
 #include "SG/Guitar.hpp"
+#include "SG/GuitarOptions.hpp"
+#include "SG/ScaleOptions.hpp"
+#include "SG/ChordOptions.hpp"
+#include "SG/Scale.hpp"
+#include "SG/Chord.hpp"
 
 typedef enum {
     FMC_ALL,
@@ -33,6 +37,9 @@ namespace SG {
     class CanvasImage;
     class SGuitar;
     
+    //
+    // responsible for drawing the guitar fretboard
+    //
     class GuitarCanvas {
     public:
         GuitarCanvas();

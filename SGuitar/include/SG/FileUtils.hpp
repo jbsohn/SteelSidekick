@@ -23,6 +23,9 @@
 #include <vector>
 
 namespace SG {
+    //
+    // abstracts the file system for the platform
+    //
     class FileUtils {
     public:
         static std::string readFile(std::string filename);

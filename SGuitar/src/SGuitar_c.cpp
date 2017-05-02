@@ -89,11 +89,11 @@ namespace SG {
     }
 
     // Scale/Chord Names
-    std::vector<std::string>getScaleNames() {
+    std::vector<std::string> getScaleNames() {
         return SGuitar::sharedInstance().getScaleNames();
     }
 
-    std::vector<std::string>getChordNames() {
+    std::vector<std::string> getChordNames() {
         return SGuitar::sharedInstance().getChordNames();
     }
 

@@ -14,6 +14,9 @@
 #include <string>
 
 namespace SG {
+    //
+    // storage container for the scale name and its semitones
+    //
     class ScaleType {
     protected:
         std::string name;

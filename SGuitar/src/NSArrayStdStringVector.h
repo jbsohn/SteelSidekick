@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 #import <vector>
 
+//
+// helper to convert to/from a std:string vector to NSArray
+//
 @interface NSArrayStdStringVector : NSObject
 
 + (NSArray *)arrayFromStdStringVector:(std::vector<std::string>)vector;

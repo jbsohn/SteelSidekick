@@ -15,6 +15,9 @@
 #include <vector>
 
 namespace SG {
+    //
+    // represents a Chord, given a root note value and a list of semitones
+    //
     class Chord {
     protected:
         std::vector<int> chordNoteValues;

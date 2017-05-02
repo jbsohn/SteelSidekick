@@ -34,11 +34,10 @@
 #include <fstream>
 #include "nanovg.h"
 #include "nanovg_gl.h"
+#include "SG/GuitarCanvas.hpp"
 #include "SG/GuitarString.hpp"
 #include "SG/Note.hpp"
 #include "SG/FileUtils.hpp"
-#include "SG/SGuitar.hpp"
-#include "SG/GuitarCanvas.hpp"
 
 #define DEFAULT_NUMBER_OF_STRINGS       12
 
