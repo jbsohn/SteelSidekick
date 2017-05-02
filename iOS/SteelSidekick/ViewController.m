@@ -182,6 +182,8 @@
 }
 
 - (void)setupContraints {
+    // setup different constraints for landscape and portrait to keep the fretboard in the
+    // same location regardless of the orientation
     [self createLandscapeConstraints];
     [self createPortraitConstraints];
 }
@@ -200,6 +202,7 @@
 
     [self resetTitle];
     
+    // ensure proper constraints are active
     ORIENTATION orientation = [self getOrientation];
     [self updateConstraintsForOrientation:orientation];
     [self.view setNeedsLayout];
@@ -219,10 +222,12 @@
 }
 
 - (void)startTutorial {
+    // check to see if the tutorial has run
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     BOOL ranTutorial = [defaults integerForKey:RAN_TUTORIAL_KEY];
 
 
+    // if not display the balloon help
     if (!ranTutorial && !self.runningTutorial) {
         self.runningTutorial = YES;
         self.navigationController.view.userInteractionEnabled = NO;
@@ -506,6 +511,7 @@
 }
 
 - (IBAction)pedalSelected:(UIButton *)sender {
+    // the user selected a pdeal
     sender.selected = !sender.selected;
     UIButton *activatedImageView = [self.pedalActivatedImageViews objectAtIndex:sender.tag];
     activatedImageView.hidden = !sender.selected;
@@ -520,6 +526,7 @@
 }
 
 - (IBAction)leverSelected:(UIButton *)sender {
+    // the user selected a lever
     sender.selected = !sender.selected;
     UIButton *activatedImageView = [self.leverActivatedImageViews objectAtIndex:sender.tag];
     activatedImageView.hidden = !sender.selected;
@@ -532,6 +539,7 @@
 }
 
 - (void)rotateViewsForOrientation:(ORIENTATION)orientation {
+    // constraints handle the orientation shift but the image buttons need to be rotated to match
     CGAffineTransform transformView;
 
     if (orientation == O_PORTRAIT) {
@@ -561,10 +569,6 @@
 - (NSString *)settingIDForLeverTag:(NSInteger)tag {
     NSString *settingID = [SGuitar getLeverTypeName:(int)tag];
     return settingID;
-}
-
-- (IBAction)chordSelected:(UIBarButtonItem *)sender {
-    [self showChordSettings:sender];
 }
 
 - (void)showChordSettings:(UIBarButtonItem *)sender {
