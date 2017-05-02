@@ -9,16 +9,16 @@
 #ifndef _SGuitar_h_
 #define _SGuitar_h_
 
-#include "NoteName.hpp"
-#include "ScaleOptions.hpp"
-#include "ChordOptions.hpp"
-#include "GuitarOptions.hpp"
-#include "Scale.hpp"
-#include "Chord.hpp"
-#include "GuitarCanvas.hpp"
-#include "Guitar.hpp"
-#include "FileUtils.hpp"
-#include "GuitarAdjustmentType.hpp"
+#include "SG/NoteName.hpp"
+#include "SG/ScaleOptions.hpp"
+#include "SG/ChordOptions.hpp"
+#include "SG/GuitarOptions.hpp"
+#include "SG/Scale.hpp"
+#include "SG/Chord.hpp"
+#include "SG/GuitarCanvas.hpp"
+#include "SG/Guitar.hpp"
+#include "SG/FileUtils.hpp"
+#include "SG/GuitarAdjustmentType.hpp"
 
 #ifdef __cplusplus
 #include <string>

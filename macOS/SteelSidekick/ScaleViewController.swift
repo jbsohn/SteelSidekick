@@ -25,7 +25,7 @@ class ScaleViewController: NSViewController {
         let sguitar = SGuitar.sharedInstance();
 
         let scaleOptions = sguitar?.getScaleOptions();
-        let rootNote = (scaleOptions?.scaleRoteNoteValue)!;
+        let rootNote = (scaleOptions?.scaleRootNoteValue)!;
 
         // init scales
         let scales = (sguitar?.getScaleNames()) as! [String];
@@ -36,7 +36,7 @@ class ScaleViewController: NSViewController {
         // init root notes
         self.rootNoteButton.removeAllItems();
         for i in NOTE_VALUE_C...NOTE_VALUE_B {
-            let noteName = NoteName.getSharpFlat(Int32(i));
+            let noteName = SGuitar.getNoteNameSharpFlat(Int32(i));
             self.rootNoteButton.addItem(withTitle:noteName!);
         }
         
@@ -48,7 +48,7 @@ class ScaleViewController: NSViewController {
         let scaleOptions = sguitar?.getScaleOptions();
         
         let scaleRootNoteValue = self.rootNoteButton.indexOfSelectedItem
-        scaleOptions?.scaleRoteNoteValue = Int32(scaleRootNoteValue);
+        scaleOptions?.scaleRootNoteValue = Int32(scaleRootNoteValue);
     }
     
 }

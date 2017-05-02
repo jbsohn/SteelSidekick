@@ -30,7 +30,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let scaleOptions = sguitar?.getScaleOptions();
         let chordOptions = sguitar?.getChordOptions();
 
-        setDisplayItemAsMenu(type: (scaleOptions?.displayItemAs)!);
+        setDisplayItemAsMenu(type: (scaleOptions?.displayItemsAs)!);
         setMenuState(menuItem: showChordMenu, status: (chordOptions?.showChord)!);
         setMenuState(menuItem: showScaleMenu, status: (scaleOptions?.showScale)!);
     }
@@ -84,7 +84,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBAction func showAsIntervalsSelected(_ sender: NSMenuItem) {
         let sguitar = SGuitar.sharedInstance();
         let scaleOptions = sguitar?.getScaleOptions();
-        scaleOptions?.displayItemAs = DIA_INTERVAL;
+        scaleOptions?.displayItemsAs = DIA_INTERVAL;
         setDisplayItemAsMenu(type: DIA_INTERVAL);
         updateViewController();
     }
@@ -92,7 +92,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBAction func showAsNotesSelected(_ sender: NSMenuItem) {
         let sguitar = SGuitar.sharedInstance();
         let scaleOptions = sguitar?.getScaleOptions();
-        scaleOptions?.displayItemAs = DIA_NOTES;
+        scaleOptions?.displayItemsAs = DIA_NOTES;
         setDisplayItemAsMenu(type: DIA_NOTES);
         updateViewController();
     }

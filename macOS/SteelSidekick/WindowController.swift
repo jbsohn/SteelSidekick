@@ -56,13 +56,13 @@ class WindowController: NSWindowController {
         
         let scaleOptions = sguitar?.getScaleOptions()
         let scaleName = scaleOptions?.scaleName;
-        let scaleRootNoteValue: Int = Int(scaleOptions!.scaleRoteNoteValue);
-        let scaleRootNoteValueName = NoteName.getSharpFlat(Int32(scaleRootNoteValue));
+        let scaleRootNoteValue: Int = Int(scaleOptions!.scaleRootNoteValue);
+        let scaleRootNoteValueName = SGuitar.getNoteNameSharpFlat(Int32(scaleRootNoteValue));
 
         let chordOptions = sguitar?.getChordOptions()
         let chordName = chordOptions?.chordName;
-        let chordRootNoteValue: Int = Int(chordOptions!.chordRoteNoteValue);
-        let chordRootNoteValueName = NoteName.getSharpFlat(Int32(chordRootNoteValue));
+        let chordRootNoteValue: Int = Int(chordOptions!.chordRootNoteValue);
+        let chordRootNoteValueName = SGuitar.getNoteNameSharpFlat(Int32(chordRootNoteValue));
         
         scaleButton.setTitle(scaleName!);
         scaleRootNoteButton.selectItem(at: scaleRootNoteValue)
@@ -72,7 +72,7 @@ class WindowController: NSWindowController {
         chordRootNoteButton.selectItem(at:chordRootNoteValue);
         chordRootNoteButton.setTitle(chordRootNoteValueName!);
         
-        setDisplayItemAsMenu(type: (scaleOptions?.displayItemAs)!);
+        setDisplayItemAsMenu(type: (scaleOptions?.displayItemsAs)!);
         setMenuState(menuItem: showChordMenu, status: (chordOptions?.showChord)!);
         setMenuState(menuItem: showScaleMenu, status: (scaleOptions?.showScale)!);
     }
@@ -107,7 +107,7 @@ class WindowController: NSWindowController {
 
         let sguitar = SGuitar.sharedInstance();
         let scaleOptions = sguitar?.getScaleOptions();
-        scaleOptions?.scaleRoteNoteValue = Int32(sender.indexOfSelectedItem - 1);
+        scaleOptions?.scaleRootNoteValue = Int32(sender.indexOfSelectedItem - 1);
 
         updateViewController();
     }
@@ -128,7 +128,7 @@ class WindowController: NSWindowController {
         
         let sguitar = SGuitar.sharedInstance();
         let chordOptions = sguitar?.getChordOptions();
-        chordOptions?.chordRoteNoteValue = Int32(sender.indexOfSelectedItem - 1);
+        chordOptions?.chordRootNoteValue = Int32(sender.indexOfSelectedItem - 1);
 
         updateViewController();
     }
@@ -164,7 +164,7 @@ class WindowController: NSWindowController {
     @IBAction func showAsIntervalsSelected(_ sender: NSMenuItem) {
         let sguitar = SGuitar.sharedInstance();
         let scaleOptions = sguitar?.getScaleOptions();
-        scaleOptions?.displayItemAs = DIA_INTERVAL;
+        scaleOptions?.displayItemsAs = DIA_INTERVAL;
 
         setDisplayItemAsMenu(type: DIA_INTERVAL);
         updateViewController();
@@ -173,7 +173,7 @@ class WindowController: NSWindowController {
     @IBAction func showAsNotesSelected(_ sender: NSMenuItem) {
         let sguitar = SGuitar.sharedInstance();
         let scaleOptions = sguitar?.getScaleOptions();
-        scaleOptions?.displayItemAs = DIA_NOTES;
+        scaleOptions?.displayItemsAs = DIA_NOTES;
         setDisplayItemAsMenu(type: DIA_NOTES);
         updateViewController();
     }
