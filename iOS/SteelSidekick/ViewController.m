@@ -107,20 +107,23 @@
         CGPoint point = [sender locationInView:self.glView];
     
         GUITAR_CANVAS_POSITION position = [sguitar positionAtCoordinates:point.x y:point.y];
-        [self playNoteForStringNumber:position.stringNumber atFret:position.fretNumber];
         
-        // highlight the note
-        [sguitar setSelectedItem:position];
-        [self.glView setNeedsDisplay];
-
-        // reset note selected after interval
-        [NSTimer scheduledTimerWithTimeInterval:0.25 block:^{
-            GUITAR_CANVAS_POSITION none;
-            none.stringNumber = -1;
-            none.fretNumber = -1;
-            [sguitar setSelectedItem:none];
+        if (position.stringNumber >= 0 && position.fretNumber >= 0) {
+            [self playNoteForStringNumber:position.stringNumber atFret:position.fretNumber];
+            
+            // highlight the note
+            [sguitar setSelectedItem:position];
             [self.glView setNeedsDisplay];
-        } repeats:NO];
+
+            // reset note selected after interval
+            [NSTimer scheduledTimerWithTimeInterval:0.25 block:^{
+                GUITAR_CANVAS_POSITION none;
+                none.stringNumber = -1;
+                none.fretNumber = -1;
+                [sguitar setSelectedItem:none];
+                [self.glView setNeedsDisplay];
+            } repeats:NO];
+        }
     }
 }
 
@@ -571,7 +574,7 @@
     return settingID;
 }
 
-- (void)showChordSettings:(UIBarButtonItem *)sender {
+- (void)showChordSettings {
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Chord" bundle:nil];
     UINavigationController *navigationController = [sb instantiateInitialViewController];
     ChordViewController *controller = (ChordViewController *)navigationController.topViewController;
@@ -602,6 +605,10 @@
 
 - (IBAction)scaleSelected:(UIBarButtonItem *)sender {
     [self showScaleSettings];
+}
+
+- (IBAction)chordSelected:(UIBarButtonItem *)sender {
+    [self showChordSettings];
 }
 
 - (IBAction)settingsSelected:(id)sender {
