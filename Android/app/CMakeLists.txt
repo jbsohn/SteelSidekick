@@ -44,7 +44,7 @@ add_library( # Sets the name of the library.
             ../../SGuitar/src/StringAdjustment.cpp
             ../../SGuitar/src/NoteName.cpp
             ../../SGuitar/src/GuitarAdjustmentType.cpp
-            ../../SGuitar/swig/SG.cpp
+            ../../SGuitar/swig/cpp/SG.cpp
             ../../SGuitar/External/JsonBox/src/Convert.cpp
             ../../SGuitar/External/JsonBox/src/Escaper.cpp
             ../../SGuitar/External/JsonBox/src/IndentCanceller.cpp

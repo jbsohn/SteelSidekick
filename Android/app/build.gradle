@@ -26,18 +26,41 @@ android {
 
     // Configures source set directory.
     sourceSets {
-        main.java.srcDirs += "../../SGuitar/swig/java"
-        main { assets.srcDirs = ['../../Resources'] }
+        main.java.srcDirs += "${rootDir}/../SGuitar/swig/java"
+        main { assets.srcDirs = ["${rootDir}/../Resources"] }
     }
-//                    srcDir
-
     externalNativeBuild {
         cmake {
             path "CMakeLists.txt"
         }
     }
-}
 
+    task runSwig(type:Exec) {
+        String osName = System.getProperty("os.name").toLowerCase();
+        inputs.dir "${rootDir}/../SGuitar/include"
+        outputs.dir "${rootDir}/../SGuitar/swig/java/com/steelsidekick/sguitar"
+
+        if (osName.contains("windows")) {
+            // not tested
+            workingDir "${rootDir}/../SGuitar/swig"
+            commandLine 'cmd', '/c', 'swig', '-java', '-c++', '-cppext', '.cpp', '-package', 'com.steelsidekick.sguitar', '-outdir', 'java/com/steelsidekick/sguitar', '-o', 'cpp/SG.cpp', 'SGuitar.i'
+        } else {
+            println "Unix build..."
+            def swigCommand = '/usr/local/bin/swig'
+            workingDir "${rootDir}/../SGuitar/swig"
+
+            if (new File(swigCommand).exists()) {
+                commandLine swigCommand, '-java', '-c++', '-cppext', '.cpp', '-package', 'com.steelsidekick.sguitar', '-outdir', 'java/com/steelsidekick/sguitar', '-o', 'cpp/SG.cpp', 'SGuitar.i'
+            } else {
+                // to change the C++ interface we need swig but try to continue if the swig command is not found
+                println 'skipping swig'
+                commandLine 'echo'
+            }
+        }
+    }
+
+    preBuild.dependsOn runSwig
+}
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
@@ -49,25 +72,4 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.0-beta4'
 }
 
-//task cleanSwig {
-//    def sguitar = new File("../../SGuitar/swig/java/sguitar")
-////    delete fileTree(dir: sguitar)
-////    delete file('../..//SGuitar/swig/SG.cpp')
-//    sguitar.mkdirs()
-//}
-//
-//// For this to work, it's assumed SWIG is installed
-//task runSwig(type:Exec, dependsOn: ['cleanSwig']) {
-//
-//    String osName = System.getProperty("os.name").toLowerCase();
-//    if (osName.contains("windows")) {
-//        workingDir '../../SGuitar/swig'
-//        commandLine 'cmd', '/c', 'swig'
-//        args '-java', '-c++', '-cppext', '.cpp', '-package', 'sguitar', '-outdir', 'java/sguitar', '-o', 'SG.cpp', 'swiginclude/SG.i'
-//    }
-//    else {
-//        workingDir '../../SGuitar/swig'
-//        commandLine 'swig'
-//        args '-java', '-c++', '-cppext', '.cpp', '-package', 'sguitar', '-outdir', 'java/sguitar', '-o', 'SG.cpp', 'swiginclude/SG.i'
-//    }
-//}
+

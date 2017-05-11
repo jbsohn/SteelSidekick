@@ -12,8 +12,8 @@ import javax.microedition.khronos.egl.EGLContext;
 import javax.microedition.khronos.egl.EGLDisplay;
 import javax.microedition.khronos.opengles.GL10;
 
-import sguitar.GuitarCanvas;
-import sguitar.SGuitar;
+//import sguitar.GuitarCanvas;
+import com.steelsidekick.sguitar.SGuitar;
 
 class SGuitarCanvasView extends GLSurfaceView {
     private static String TAG = "SGuitarCanvasView";
@@ -308,11 +308,8 @@ class SGuitarCanvasView extends GLSurfaceView {
             noteWidthHeight = sguitar.cacluateNoteWidthHeight(width, height);
 
             if (!isCanvasInitialized) {
-                //noteWidthHeight = 32.0f;
                 sguitar.init(width, height, noteWidthHeight, borderWidth, 1.0f);
             }
-            //noteWidthHeight = canvas.calculateNoteWidthHeight(width, height) * 2;
-
             sguitar.updateCanvasDimensions(width, height, noteWidthHeight, 1.0f);
         }
 

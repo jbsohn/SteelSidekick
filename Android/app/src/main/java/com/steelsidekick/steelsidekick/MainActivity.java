@@ -13,12 +13,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-import sguitar.FileUtils;
-import sguitar.Guitar;
-import sguitar.Note;
-import sguitar.SG;
-import sguitar.SGuitar;
-import sguitar.StdStringVector;
+import com.steelsidekick.sguitar.SGuitar;
+import com.steelsidekick.sguitar.StdStringVector;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,23 +28,18 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-//        // Example of a call to a native method
-//        TextView tv = (TextView) findViewById(R.id.sample_text);
-//        tv.setText(stringFromJNI());
-        setContentView(R.layout.activity_main);
-        guitarCanvasView = (SGuitarCanvasView) findViewById(R.id.surfaceView);
-
-
-        setSGuitarPaths(getFilesDir().getAbsolutePath());
 
         String filesDir = getFilesDir().getAbsolutePath();
+        SGuitar.setSystemAndUserPaths(filesDir, filesDir);
+
+        setContentView(R.layout.activity_main);
+
         copyAssetFolder(getAssets(), "Guitars", filesDir + "/" + "Guitars");
         copyAssetFolder(getAssets(), "Settings", filesDir + "/Settings");
         copyAssetFolder(getAssets(), "Images", filesDir + "/Images");
 
-        sguitarTests();
+        setContentView(R.layout.activity_main);
+        guitarCanvasView = (SGuitarCanvasView) findViewById(R.id.surfaceView);
     }
 
 
@@ -132,61 +123,6 @@ public class MainActivity extends AppCompatActivity {
         int read;
         while((read = in.read(buffer)) != -1){
             out.write(buffer, 0, read);
-        }
-    }
-
-    protected void sguitarTests() {
-        Note note = new Note(SG.NOTE_VALUE_C, 4);
-        int value = note.getNoteValue();
-        Log.v("TEST", "note=" + value);
-        Log.v("TEST", "pitch=" + note.getPitchValue());
-
-        String filesDir = getFilesDir().getAbsolutePath();
-        FileUtils.setRootPathForFiles(filesDir);
-        FileUtils.setRootPathForUserFiles(filesDir);
-
-        String userFiles = FileUtils.getRootPathForUserFiles();
-        Log.v("TEST", "userFiles: " + userFiles);
-
-        String rootPathFiles = FileUtils.getRootPathForFiles();
-        Log.v("TEST", "files: " + rootPathFiles);
-
-        StdStringVector files = FileUtils.readFileListFromPath(rootPathFiles + "/" + "Guitars/Pedal Steel");
-        for (int i = 0; i < files.size(); i++) {
-            Log.v("TEST", "file: " + files.get(i));
-        }
-        String contents = FileUtils.readFile(rootPathFiles + "/" + "Guitars/Pedal Steel/C6 (10-String)");
-        Log.v("TEST", "contents: " + contents);
-
-        SGuitar guitar = SGuitar.sharedInstance();
-        StdStringVector chords = guitar.getChordNames();
-        for (int i = 0; i < chords.size(); i++) {
-            Log.v("TEST", "test: " + chords.get(i));
-        }
-
-        StdStringVector scales = guitar.getScaleNames();
-        for (int i = 0; i < scales.size(); i++) {
-            Log.v("TEST", "scale: " + scales.get(i));
-        }
-
-        StdStringVector guitarTypes = guitar.getGuitarTypeNames();
-        for (int i = 0; i < guitarTypes.size(); i++) {
-            Log.v("TEST", "guitarTypes: " + guitarTypes.get(i));
-        }
-
-        StdStringVector pedalTypes = guitar.getGuitarNames("Pedal Steel");
-        for (int i = 0; i < pedalTypes.size(); i++) {
-            Log.v("TEST", "pedalTypes: " + pedalTypes.get(i));
-        }
-
-        StdStringVector lapTypes = guitar.getGuitarNames("Lap Steel");
-        for (int i = 0; i < lapTypes.size(); i++) {
-            Log.v("TEST", "lapTypes: " + lapTypes.get(i));
-        }
-
-        StdStringVector customTypes = guitar.getCustomGuitarNames();
-        for (int i = 0; i < customTypes.size(); i++) {
-            Log.v("TEST", "customTypes: " + customTypes.get(i));
         }
     }
 }
