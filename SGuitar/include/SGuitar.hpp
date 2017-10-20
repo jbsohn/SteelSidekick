@@ -55,7 +55,9 @@ namespace SG {
         ~SGuitar();
     public:
         static SGuitar& sharedInstance();
-        
+
+        static void setSystemAndUserPaths(std::string systemPath, std::string userPath);
+
         SGGuitarOptions getGuitarOptions();
         void setGuitarOptions(SGGuitarOptions options);
         
@@ -82,9 +84,9 @@ namespace SG {
         // Guitar Canvas
         GUITAR_CANVAS_POSITION positionAtCoordinates(float x, float y);
         void setSelectedItem(GUITAR_CANVAS_POSITION position);
-        void init(float width, float height, float noteWidthHeight, float borderWidth, float scale);
+        void init(float width, float height, float noteWidthHeight, float borderWidth, float scale, float leftSafeArea);
         float cacluateNoteWidthHeight(float width, float height);
-        void updateCanvasDimensions(float width, float height, float noteWidthHeight, float scale);
+        void updateCanvasDimensions(float width, float height, float noteWidthHeight, float scale, float leftSafeArea);
         void draw();
 
         // Scale/Chord Names

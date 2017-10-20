@@ -6,7 +6,7 @@
 //  Copyright © 2016 John Sohn. All rights reserved.
 //
 
-#include <string>
+ #include <string>
 #include <vector>
 
 #ifdef __APPLE__
@@ -284,7 +284,8 @@ namespace SG {
         int fretCount;
         int stringCount;
         GUITAR_CANVAS_POSITION selectedItem;
-        
+        float leftSafeArea;
+
         // images
         std::vector<CanvasImage> notesSharp;
         std::vector<CanvasImage> notesFlat;
@@ -349,6 +350,7 @@ namespace SG {
         
         inline float calcLeft() {
             float left = canvas.getLeft();
+            left += leftSafeArea;
             return left;
         }
         
@@ -369,32 +371,35 @@ namespace SG {
 
     GuitarCanvas::GuitarCanvas()
         : impl(new GuitarCanvasImpl) {
-            impl->fretCount = DEFAULT_FRET_COUNT;
-            impl->stringCount = DEFAULT_STRING_COUNT;
+        impl->fretCount = DEFAULT_FRET_COUNT;
+        impl->stringCount = DEFAULT_STRING_COUNT;
+        impl->leftSafeArea = 0.0f;
     }
 
     GuitarCanvas::GuitarCanvas(float width, float height, float noteWidthHeight, float borderWidth, float scale)
         : impl(new GuitarCanvasImpl) {
-        init(width, height, noteWidthHeight, borderWidth, scale);
+        init(width, height, noteWidthHeight, borderWidth, scale, 0.0);
     }
 
     GuitarCanvas::~GuitarCanvas() {
         
     }
 
-    void GuitarCanvas::init(float width, float height, float noteWidthHeight, float borderWidth, float scale) {
+    void GuitarCanvas::init(float width, float height, float noteWidthHeight, float borderWidth, float scale, float leftSafeArea) {
         impl->canvas.init(width, height, scale);
         impl->borderWidth = borderWidth;
         impl->fretCount = DEFAULT_FRET_COUNT;
         impl->stringCount = DEFAULT_STRING_COUNT;
         impl->noteWidthHeight = noteWidthHeight;
+        impl->leftSafeArea = leftSafeArea;
         
         loadImages();
     }
 
-    void GuitarCanvas::updateCanvasDimensions(float width, float height, float noteWidthHeight, float scale) {
+    void GuitarCanvas::updateCanvasDimensions(float width, float height, float noteWidthHeight, float scale, float leftSafeArea) {
         impl->canvas.updateCanvasDimensions(width, height, scale);
         impl->noteWidthHeight = noteWidthHeight;
+        impl->leftSafeArea = leftSafeArea;
     }
     
     void GuitarCanvas::draw(Guitar guitar, GuitarOptions guitarOptions, ScaleOptions scaleOptions, ChordOptions chordOptions,
@@ -500,8 +505,8 @@ namespace SG {
     
     void GuitarCanvas::drawBackground() {
         if (isLandscape()) {
-            impl->fret.drawImage(impl->noteWidthHeight * 0.25, impl->canvas.getTop(), impl->canvas.getWidth(), impl->borderWidth); // top horizontal
-            impl->fret.drawImage(impl->noteWidthHeight * 0.25, impl->canvas.getHeight() - impl->borderWidth, impl->canvas.getWidth(), impl->canvas.getHeight()); // bottom horizontal
+            impl->fret.drawImage((impl->noteWidthHeight * 0.25) + impl->calcLeft(), impl->canvas.getTop(), impl->canvas.getWidth(), impl->borderWidth); // top horizontal
+            impl->fret.drawImage((impl->noteWidthHeight * 0.25) + impl->calcLeft(), impl->canvas.getHeight() - impl->borderWidth, impl->canvas.getWidth(), impl->canvas.getHeight()); // bottom horizontal
         } else {
             impl->fret.drawImage(impl->canvas.getLeft(), impl->noteWidthHeight * 0.25, impl->borderWidth, impl->canvas.getHeight()); // left vertical
             impl->fret.drawImage(impl->canvas.getWidth() - impl->borderWidth, impl->noteWidthHeight * 0.25, impl->borderWidth, impl->canvas.getHeight()); // right vertical
@@ -516,14 +521,14 @@ namespace SG {
         float height;
         
         if (isLandscape()) {
-            x = impl->noteWidthHeight * 0.10;
+            x = impl->noteWidthHeight * 0.10 + impl->calcLeft();
             y = 0.0;
             width = impl->noteWidthHeight * 0.8;
             height = impl->canvas.getHeight();
             image = impl->rollerBar;
         } else {
             x = impl->canvas.getTop();
-            y = impl->noteWidthHeight * 0.10;
+            y = (impl->noteWidthHeight * 0.10) + impl->calcLeft();
             height = impl->noteWidthHeight * 0.8;
             width = impl->canvas.getWidth();
             image = impl->rollerBar90;
@@ -532,14 +537,20 @@ namespace SG {
         image.drawImage(x, y, width, height);
     }
 
-    void GuitarCanvas::drawString(int stringNumber, float y, float stringHeight) {
-        float left = impl->canvas.getLeft();
-        float top = y + (impl->noteWidthHeight * 0.5) - (stringHeight * 0.5);
-
+    void GuitarCanvas::drawString(int stringNumber, float top, float stringHeight) {
+        float x = impl->canvas.getLeft();
+        float y = top + (impl->noteWidthHeight * 0.5) - (stringHeight * 0.5);
+        
         if (isLandscape()) {
-            impl->stringFlat.drawImage(left, top, impl->canvas.getWidth(), stringHeight);
+            float width = impl->canvas.getWidth();
+            float height = stringHeight;
+
+            impl->stringFlat.drawImage(x, y, width, height);
         } else {
-            impl->stringFlat90.drawImage(top, left, stringHeight, impl->canvas.getHeight());
+            float width = stringHeight;
+            float height = impl->canvas.getHeight();
+
+            impl->stringFlat90.drawImage(y, x, width, height);
         }
     }
     
@@ -551,14 +562,15 @@ namespace SG {
         float height;
         
         if (isLandscape()) {
-            x = left;
+            x = impl->calcLeft();
             y = top + (impl->noteWidthHeight * 0.5 - ROLLER_WIDTH_HEIGHT * 0.5);
             image = impl->roller;
             width = impl->noteWidthHeight;
             height = ROLLER_WIDTH_HEIGHT;
         } else {
             x = top + (impl->noteWidthHeight * 0.5 - ROLLER_WIDTH_HEIGHT * 0.5);
-            y = left;
+            y = left + impl->calcLeft();
+            y += impl->leftSafeArea;
             image = impl->roller90;
             width = ROLLER_WIDTH_HEIGHT;
             height = impl->noteWidthHeight;
@@ -854,7 +866,7 @@ namespace SG {
                 stringNumber = (impl->stringCount + 1) - s;
             }
             
-            GuitarString curString = guitar.getString(s);
+            GuitarString curString = guitar.getString(stringNumber);
             std::vector<int> notes = curString.getNoteValues();
             
             int fretNumber = 0;
@@ -924,12 +936,16 @@ namespace SG {
         float theTop = impl->calcTop();
         const float topAdjust = (topSpacing - impl->noteWidthHeight) / 2;
         
+        position.fretNumber = -1;
+        position.stringNumber = -1;
+
         if (!isLandscape()) {
             float temp = x;
             x = y;
             y = temp;
         }
-        // string number = y - top / (topSpacing - topAdjust)
+
+        // calculate the string number
         int stringNumber = (int) trunc((y - (top + topAdjust)) / topSpacing) + 1;
         if (!isLandscape()) {
             stringNumber = (impl->stringCount + 1) - stringNumber;
@@ -945,10 +961,16 @@ namespace SG {
             position.stringNumber = stringNumber;
         }
         
+        // calculate the fret selected
         float leftAdjustment = impl->calcLeftAdjustment();
-        int fretNumber = (int) trunc(x / leftAdjustment);
+        int fretNumber = (int) trunc((x - impl->calcLeft()) / leftAdjustment);
         float fretPos = fretNumber * leftAdjustment;
-        if (x >= fretPos && x <= (fretPos + impl->noteWidthHeight)) {
+        
+        // ensure the coordinate is within the fretboard
+        if (fretNumber <= impl->fretCount &&
+            x > impl->calcLeft() &&
+            x >= fretPos - impl->calcLeft() &&
+            x <= (fretPos + impl->calcLeft() + impl->noteWidthHeight)) {
             position.fretNumber = fretNumber;
         }
         

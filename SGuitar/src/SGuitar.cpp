@@ -98,7 +98,14 @@ namespace SG {
         static SGuitar instance;
         return instance;
     }
-    
+
+    void SGuitar::setSystemAndUserPaths(std::string systemPath, std::string userPath) {
+#ifdef __ANDROID__
+        FileUtils::setRootPathForFiles(systemPath);
+        FileUtils::setRootPathForUserFiles(userPath);
+#endif
+    }
+
     SGGuitarOptions SGuitar::getGuitarOptions() {
         SGGuitarOptions options;
         options.guitarType = impl->guitarOptions.getGuitarType();
@@ -197,16 +204,16 @@ namespace SG {
         return -1;
     }
     
-    void SGuitar::init(float width, float height, float noteWidthHeight, float borderWidth, float scale) {
-        impl->guitarCanvas.init(width, height, noteWidthHeight, borderWidth, scale);
+    void SGuitar::init(float width, float height, float noteWidthHeight, float borderWidth, float scale, float leftSafeArea) {
+        impl->guitarCanvas.init(width, height, noteWidthHeight, borderWidth, scale, leftSafeArea);
     }
     
     float SGuitar::cacluateNoteWidthHeight(float width, float height) {
         return impl->guitarCanvas.cacluateNoteWidthHeight(width, height);
     }
     
-    void SGuitar::updateCanvasDimensions(float width, float height, float noteWidthHeight, float scale) {
-        impl->guitarCanvas.updateCanvasDimensions(width, height, noteWidthHeight, scale);
+    void SGuitar::updateCanvasDimensions(float width, float height, float noteWidthHeight, float scale, float leftSafeArea) {
+        impl->guitarCanvas.updateCanvasDimensions(width, height, noteWidthHeight, scale, leftSafeArea);
     }
 
     void SGuitar::draw() {

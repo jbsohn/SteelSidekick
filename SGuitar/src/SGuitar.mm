@@ -264,16 +264,16 @@
     _object->setSelectedItem(position);
 }
 
-- (void)initCanvas:(float)width height:(float)height noteWidthHeight:(float)noteWidthHeight borderWidth:(float)borderWidth scale:(float)scale {
-    _object->init(width, height, noteWidthHeight, borderWidth, scale);
+- (void)initCanvas:(float)width height:(float)height noteWidthHeight:(float)noteWidthHeight borderWidth:(float)borderWidth scale:(float)scale leftSafeArea:(float)leftSafeArea {
+    _object->init(width, height, noteWidthHeight, borderWidth, scale, leftSafeArea);
 }
 
 - (float)cacluateNoteWidthHeight:(float)width height:(float)height {
     return _object->cacluateNoteWidthHeight(width, height);
 }
 
-- (void)updateCanvasDimensions:(float)width height:(float)height noteWidthHeight:(float)noteWidthHeight scale:(float)scale {
-    _object->updateCanvasDimensions(width, height, noteWidthHeight, scale);
+- (void)updateCanvasDimensions:(float)width height:(float)height noteWidthHeight:(float)noteWidthHeight scale:(float)scale leftSafeArea:(float)leftSafeArea {
+    _object->updateCanvasDimensions(width, height, noteWidthHeight, scale, leftSafeArea);
 }
 
 - (void)draw {

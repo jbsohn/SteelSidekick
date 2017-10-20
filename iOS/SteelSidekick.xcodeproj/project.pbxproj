@@ -127,7 +127,6 @@
 		D9663EDD1EB3B94D000CD637 /* NSArrayIntVector.mm in Sources */ = {isa = PBXBuildFile; fileRef = D9663EDA1EB3B94D000CD637 /* NSArrayIntVector.mm */; };
 		D9663EDE1EB3B94D000CD637 /* NSArrayStdStringVector.mm in Sources */ = {isa = PBXBuildFile; fileRef = D9663EDB1EB3B94D000CD637 /* NSArrayStdStringVector.mm */; };
 		D9663EE41EB3BB6C000CD637 /* SGuitar.mm in Sources */ = {isa = PBXBuildFile; fileRef = D9663EE31EB3BB6C000CD637 /* SGuitar.mm */; };
-		D9663EE61EB3BC25000CD637 /* SGuitar_c.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D9663EE51EB3BC25000CD637 /* SGuitar_c.cpp */; };
 		D96DC1C21D18534F00D7ECFD /* SGGuitarTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = D96DC1C01D18534F00D7ECFD /* SGGuitarTests.mm */; };
 		D96DC1C31D18534F00D7ECFD /* TestScaleChord.mm in Sources */ = {isa = PBXBuildFile; fileRef = D96DC1C11D18534F00D7ECFD /* TestScaleChord.mm */; };
 		D96DC1C81D18769C00D7ECFD /* Guitar-Test.json in Resources */ = {isa = PBXBuildFile; fileRef = D96DC1C51D18769C00D7ECFD /* Guitar-Test.json */; };
@@ -461,7 +460,6 @@
 		D9663EDA1EB3B94D000CD637 /* NSArrayIntVector.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = NSArrayIntVector.mm; path = ../SGuitar/src/NSArrayIntVector.mm; sourceTree = "<group>"; };
 		D9663EDB1EB3B94D000CD637 /* NSArrayStdStringVector.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = NSArrayStdStringVector.mm; path = ../SGuitar/src/NSArrayStdStringVector.mm; sourceTree = "<group>"; };
 		D9663EE31EB3BB6C000CD637 /* SGuitar.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = SGuitar.mm; path = ../SGuitar/src/SGuitar.mm; sourceTree = "<group>"; };
-		D9663EE51EB3BC25000CD637 /* SGuitar_c.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SGuitar_c.cpp; path = ../SGuitar/src/SGuitar_c.cpp; sourceTree = "<group>"; };
 		D96DC1C01D18534F00D7ECFD /* SGGuitarTests.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SGGuitarTests.mm; sourceTree = "<group>"; };
 		D96DC1C11D18534F00D7ECFD /* TestScaleChord.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TestScaleChord.mm; sourceTree = "<group>"; };
 		D96DC1C51D18769C00D7ECFD /* Guitar-Test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Guitar-Test.json"; sourceTree = "<group>"; };
@@ -931,7 +929,6 @@
 				D9261C181EB8CEF0007A87DE /* SGuitar.hpp */,
 				528BA0E01D18B9DA009FDC64 /* SGuitar.cpp */,
 				D9663EE31EB3BB6C000CD637 /* SGuitar.mm */,
-				D9663EE51EB3BC25000CD637 /* SGuitar_c.cpp */,
 			);
 			name = SGGuitar;
 			sourceTree = "<group>";
@@ -1356,7 +1353,7 @@
 		D9BCFE061C7E5DDB00C36405 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0900;
 				TargetAttributes = {
 					D9BCFE0D1C7E5DDB00C36405 = {
 						CreatedOnToolsVersion = 7.2;
@@ -1532,7 +1529,6 @@
 				D96DC2AC1D188C8D00D7ECFD /* BlitSquare.cpp in Sources */,
 				528BA0EF1D18B9DA009FDC64 /* GuitarTypes.cpp in Sources */,
 				D96DC2B11D188C8D00D7ECFD /* Chorus.cpp in Sources */,
-				D9663EE61EB3BC25000CD637 /* SGuitar_c.cpp in Sources */,
 				528BA0EC1D18B9DA009FDC64 /* Guitars.cpp in Sources */,
 				D96DC2D21D188C8D00D7ECFD /* Mesh2D.cpp in Sources */,
 				D96DC2ED1D188C8D00D7ECFD /* Shakers.cpp in Sources */,

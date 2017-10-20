@@ -46,13 +46,13 @@ namespace SG {
         GuitarCanvas(float width, float height, float noteWidthHeight, float borderWidth, float scale);
         ~GuitarCanvas();
         
-        void init(float width, float height, float noteWidthHeight, float borderWidth, float scale);
+        void init(float width, float height, float noteWidthHeight, float borderWidth, float scale, float leftSafeArea);
         
         float calculateWidth();
         float cacluateNoteWidthHeight(float width, float height);
         bool isLandscape();
         
-        void updateCanvasDimensions(float width, float height, float noteWidthHeight, float scale);
+        void updateCanvasDimensions(float width, float height, float noteWidthHeight, float scale, float leftSafeArea);
         void draw(Guitar guitar, GuitarOptions guitarOptions, ScaleOptions scaleOptions, ChordOptions chordOptions,
                   Scale scale, Chord chord);
 

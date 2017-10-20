@@ -23,13 +23,13 @@ namespace SG {
         std::vector <std::string> result;
         dirent* de;
         DIR* dp;
-        int errno = 0;
+        int errnum = 0;
         dp = opendir( path.empty() ? "." : path.c_str() );
         if (dp)
         {
             while (true)
             {
-                errno = 0;
+                errnum = 0;
                 de = readdir( dp );
                 if (de == NULL) break;
                 result.push_back( std::string( de->d_name ) );

@@ -175,12 +175,18 @@
     float width = self.glView.frame.size.width;
     float height = self.glView.frame.size.height;
     float noteWidthHeight = [sguitar cacluateNoteWidthHeight:width height:height];
-    
+    float left = 0.0;
+
+    if (@available(iOS 11.0, *)) {
+        CGRect safeRect = [self.view.safeAreaLayoutGuide layoutFrame];
+        left = safeRect.origin.x;
+    }
+
     if (!self.isCanvasInitialized) {
-        [sguitar initCanvas:width height:height noteWidthHeight:noteWidthHeight borderWidth:borderWidth scale:[[UIScreen mainScreen] scale]];
+        [sguitar initCanvas:width height:height noteWidthHeight:noteWidthHeight borderWidth:borderWidth scale:[[UIScreen mainScreen] scale] leftSafeArea:left];
         self.isCanvasInitialized = YES;
     } else {
-        [sguitar updateCanvasDimensions:width height:height noteWidthHeight:noteWidthHeight scale:[[UIScreen mainScreen] scale]];
+        [sguitar updateCanvasDimensions:width height:height noteWidthHeight:noteWidthHeight scale:[UIScreen mainScreen].scale leftSafeArea:left];
     }
 }
 

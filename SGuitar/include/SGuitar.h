@@ -60,9 +60,9 @@
 // Guitar Canvas
 - (GUITAR_CANVAS_POSITION)positionAtCoordinates:(float)x y:(float)y;
 - (void)setSelectedItem:(GUITAR_CANVAS_POSITION)position;
-- (void)initCanvas:(float)width height:(float)height noteWidthHeight:(float)noteWidthHeight borderWidth:(float)borderWidth scale:(float)scale;
+- (void)initCanvas:(float)width height:(float)height noteWidthHeight:(float)noteWidthHeight borderWidth:(float)borderWidth scale:(float)scale leftSafeArea:(float)leftSafeArea;
 - (float)cacluateNoteWidthHeight:(float)width height:(float)height;
-- (void)updateCanvasDimensions:(float)width height:(float)height noteWidthHeight:(float)noteWidthHeight scale:(float)scale;
+- (void)updateCanvasDimensions:(float)width height:(float)height noteWidthHeight:(float)noteWidthHeight scale:(float)scale leftSafeArea:(float)leftSafeArea;
 - (void)draw;
 
 // Scale/Chord Names
