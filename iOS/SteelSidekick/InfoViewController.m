@@ -37,7 +37,7 @@
 #define CHORD_COLOR                     0x0536FF
 #define SCALE_CHORD_COLOR               0x751F92
 
-#define CHORD_SCALE_OFFSET              2.0
+#define CHORD_SCALE_OFFSET              22.0
 
 @implementation InfoViewController
 
