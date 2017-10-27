@@ -37,7 +37,7 @@
 #define CHORD_COLOR                     0x0536FF
 #define SCALE_CHORD_COLOR               0x751F92
 
-#define CHORD_SCALE_OFFSET              22.0
+//#define CHORD_SCALE_OFFSET              22.0
 
 @implementation InfoViewController
 
@@ -202,36 +202,55 @@
     // Dispose of any resources that can be recreated.
 }
 
+// get the safe layout area for iPhone X/iOS 11
+- (float)offsetForInfoView {
+    float offset = 0.0f;
+    if (@available(iOS 11.0, *)) {
+        UIViewController *controller = [UIApplication sharedApplication].keyWindow.rootViewController;
+        CGRect safeRect = [controller.view.safeAreaLayoutGuide layoutFrame];
+        offset = safeRect.origin.x;
+        
+        // make sure we are not in portrait mode
+        if (offset == 0.0f) {
+            offset = safeRect.origin.y;
+        }
+    }
+    return offset;
+}
+
+// in landscape use one line for the scale/chord view
 - (void)createOneLineConstraints {
+    float offset = [self offsetForInfoView];
     self.oneLineConstraints = [NSLayoutConstraint autoCreateConstraintsWithoutInstalling:^{
-        [self.scaleView autoMatchDimension:ALDimensionWidth toDimension:ALDimensionWidth ofView:self.chordView];
+        [self.scaleView autoSetDimension:ALDimensionWidth toSize:240.0f];
         [self.scaleView autoSetDimension:ALDimensionHeight toSize:INFO_VIEW_SCALE_HEIGHT];
         [self.scaleView autoPinEdge:ALEdgeTop toEdge:ALEdgeTop ofView:self.view];
-        [self.scaleView autoPinEdge:ALEdgeLeft toEdge:ALEdgeLeft ofView:self.view withOffset:CHORD_SCALE_OFFSET];
-        [self.scaleView autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:self.chordView];
+        [self.scaleView autoPinEdge:ALEdgeLeft toEdge:ALEdgeLeft ofView:self.view withOffset:offset];
         
-        [self.chordView autoMatchDimension:ALDimensionWidth toDimension:ALDimensionWidth ofView:self.scaleLabel];
+        [self.chordView autoSetDimension:ALDimensionWidth toSize:240.0f];
         [self.chordView autoSetDimension:ALDimensionHeight toSize:INFO_VIEW_CHORD_HEIGHT];
         [self.chordView autoPinEdge:ALEdgeTop toEdge:ALEdgeTop ofView:self.view];
-        [self.chordView autoPinEdge:ALEdgeRight toEdge:ALEdgeRight ofView:self.view];
-        [self.chordView autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:self.scaleView];
+        [self.chordView autoPinEdge:ALEdgeRight toEdge:ALEdgeRight ofView:self.view withOffset:-offset];
     }];
 }
 
+// in portrait use two lines, one for scale and one for chord info
 - (void)createTwoLineConstraints {
+    float offset = [self offsetForInfoView];
     self.twoLineConstraints = [NSLayoutConstraint autoCreateConstraintsWithoutInstalling:^{
         [self.scaleView autoSetDimension:ALDimensionHeight toSize:INFO_VIEW_SCALE_HEIGHT];
         [self.scaleView autoPinEdge:ALEdgeTop toEdge:ALEdgeTop ofView:self.view];
-        [self.scaleView autoPinEdge:ALEdgeLeft toEdge:ALEdgeLeft ofView:self.view withOffset:CHORD_SCALE_OFFSET];
+        [self.scaleView autoPinEdge:ALEdgeLeft toEdge:ALEdgeLeft ofView:self.view withOffset:offset];
         [self.scaleView autoPinEdge:ALEdgeRight toEdge:ALEdgeRight ofView:self.view];
 
         [self.chordView autoSetDimension:ALDimensionHeight toSize:INFO_VIEW_CHORD_HEIGHT];
         [self.chordView autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.scaleView];
-        [self.chordView autoPinEdge:ALEdgeLeft toEdge:ALEdgeLeft ofView:self.view withOffset:CHORD_SCALE_OFFSET];
+        [self.chordView autoPinEdge:ALEdgeLeft toEdge:ALEdgeLeft ofView:self.view withOffset:offset];
         [self.chordView autoPinEdge:ALEdgeRight toEdge:ALEdgeRight ofView:self.view];
     }];
 }
 
+// update constraints for the current orientation, one line or two lines for displaying chord and scale information
 - (void)updateConstraintsForOrientation:(ORIENTATION)orientation {
     BOOL useOneLine = NO;
 
