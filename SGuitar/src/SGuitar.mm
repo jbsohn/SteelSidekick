@@ -224,6 +224,14 @@
     return [NSArrayIntVector arrayFromIntVector:noteValues];
 }
 
+- (BOOL)isNoteValueInScale:(int)noteValue {
+    return  _object->isNoteValueInScale(noteValue);
+}
+
+- (BOOL)isNoteValueInChord:(int)noteValue {
+    return _object->isNoteValueInChord(noteValue);
+}
+
 // Guitar Settings
 - (int)getNumberOfStrings {
     return _object->getNumberOfStrings();

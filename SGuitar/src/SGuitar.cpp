@@ -169,6 +169,22 @@ namespace SG {
         Chord chord(impl->chordOptions.getChordRootNoteValue(), intervals);
         return chord.getNoteValues();
     }
+    
+    bool SGuitar::isNoteValueInScale(int noteValue) {
+        std::string scaleName = impl->scaleOptions.getScaleName();
+        ScaleType scaleType = impl->scales.getScaleType(scaleName);
+        std::vector<int> semitones = scaleType.getSemitones();
+        Scale scale(impl->scaleOptions.getScaleRootNoteValue(), semitones);
+        return scale.isNoteValueInScale(noteValue);
+    }
+    
+    bool SGuitar::isNoteValueInChord(int noteValue) {
+        std::string chordName = impl->chordOptions.getChordName();
+        ChordType chordType = impl->chords.getChordType(chordName);
+        std::vector<int> intervals = chordType.getintervals();
+        Chord chord(impl->chordOptions.getChordRootNoteValue(), intervals);
+        return chord.isNoteValueInChord(noteValue);
+    }
 
     void SGuitar::reloadGuitar() {
         impl->setupGuitar();

@@ -37,8 +37,6 @@
 #define CHORD_COLOR                     0x0536FF
 #define SCALE_CHORD_COLOR               0x751F92
 
-//#define CHORD_SCALE_OFFSET              22.0
-
 @implementation InfoViewController
 
 - (void)viewDidLoad {
@@ -177,9 +175,9 @@
             
             if ([sguitar getScaleOptions].showScale && [sguitar getChordOptions].showChord) {
                 if (isScale) {
-//                    isBoth = [[sguitar getChord] isNoteValueInChord:noteValue];
+                    isBoth = [sguitar isNoteValueInChord:noteValue];
                 } else {
-//                    isBoth = [[sguitar getScale] isNoteValueInScale:noteValue];
+                    isBoth = [sguitar isNoteValueInScale:noteValue];
                 }
             }
             

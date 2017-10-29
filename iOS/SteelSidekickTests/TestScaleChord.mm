@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
-#import "SG/SGuitar.hpp"
+#import "SGuitar.hpp"
 #import "SG/Chords.hpp"
 #import "SG/Scales.hpp"
 #import "SG/GuitarString.hpp"
@@ -554,6 +554,180 @@ using namespace SG;
     XCTAssert([self evaluateChordType:@"Suspended Second" withRootNote:NOTE_VALUE_A withDescription:a]);
     XCTAssert([self evaluateChordType:@"Suspended Second" withRootNote:NOTE_VALUE_A_SHARP withDescription:aSharp]);
     XCTAssert([self evaluateChordType:@"Suspended Second" withRootNote:NOTE_VALUE_B withDescription:b]);
+}
+
+- (void) testSeventh
+{
+    NSString *c = @"C E G A#";
+    NSString *cSharp = @"C# F G# B";
+    NSString *d = @"D F# A C";
+    NSString *dSharp = @"D# G A# C#";
+    NSString *e = @"E G# B D";
+    NSString *f = @"F A C D#";
+    NSString *fSharp = @"F# A# C# E";
+    NSString *g = @"G B D F";
+    NSString *gSharp = @"G# C D# F#";
+    NSString *a = @"A C# E G";
+    NSString *aSharp = @"A# D F G#";
+    NSString *b = @"B D# F# A";
+    
+    XCTAssert([self evaluateChordType:@"Seventh" withRootNote:NOTE_VALUE_C withDescription:c]);
+    XCTAssert([self evaluateChordType:@"Seventh" withRootNote:NOTE_VALUE_C_SHARP withDescription:cSharp]);
+    XCTAssert([self evaluateChordType:@"Seventh" withRootNote:NOTE_VALUE_D withDescription:d]);
+    XCTAssert([self evaluateChordType:@"Seventh" withRootNote:NOTE_VALUE_D_SHARP withDescription:dSharp]);
+    XCTAssert([self evaluateChordType:@"Seventh" withRootNote:NOTE_VALUE_E withDescription:e]);
+    XCTAssert([self evaluateChordType:@"Seventh" withRootNote:NOTE_VALUE_F withDescription:f]);
+    XCTAssert([self evaluateChordType:@"Seventh" withRootNote:NOTE_VALUE_F_SHARP withDescription:fSharp]);
+    XCTAssert([self evaluateChordType:@"Seventh" withRootNote:NOTE_VALUE_G withDescription:g]);
+    XCTAssert([self evaluateChordType:@"Seventh" withRootNote:NOTE_VALUE_G_SHARP withDescription:gSharp]);
+    XCTAssert([self evaluateChordType:@"Seventh" withRootNote:NOTE_VALUE_A withDescription:a]);
+    XCTAssert([self evaluateChordType:@"Seventh" withRootNote:NOTE_VALUE_A_SHARP withDescription:aSharp]);
+    XCTAssert([self evaluateChordType:@"Seventh" withRootNote:NOTE_VALUE_B withDescription:b]);
+}
+
+- (void) testMajorSixthChords
+{
+    NSString *c = @"C E G A";
+    NSString *cSharp = @"C# F G# A#";
+    NSString *d = @"D F# A B";
+    NSString *dSharp = @"D# G A# C";
+    NSString *e = @"E G# B C#";
+    NSString *f = @"F A C D";
+    NSString *fSharp = @"F# A# C# D#";
+    NSString *g = @"G B D E";
+    NSString *gSharp = @"G# C D# F";
+    NSString *a = @"A C# E F#";
+    NSString *aSharp = @"A# D F G";
+    NSString *b = @"B D# F# G#";
+    
+    XCTAssert([self evaluateChordType:@"Major Sixth" withRootNote:NOTE_VALUE_C withDescription:c]);
+    XCTAssert([self evaluateChordType:@"Major Sixth" withRootNote:NOTE_VALUE_C_SHARP withDescription:cSharp]);
+    XCTAssert([self evaluateChordType:@"Major Sixth" withRootNote:NOTE_VALUE_D withDescription:d]);
+    XCTAssert([self evaluateChordType:@"Major Sixth" withRootNote:NOTE_VALUE_D_SHARP withDescription:dSharp]);
+    XCTAssert([self evaluateChordType:@"Major Sixth" withRootNote:NOTE_VALUE_E withDescription:e]);
+    XCTAssert([self evaluateChordType:@"Major Sixth" withRootNote:NOTE_VALUE_F withDescription:f]);
+    XCTAssert([self evaluateChordType:@"Major Sixth" withRootNote:NOTE_VALUE_F_SHARP withDescription:fSharp]);
+    XCTAssert([self evaluateChordType:@"Major Sixth" withRootNote:NOTE_VALUE_G withDescription:g]);
+    XCTAssert([self evaluateChordType:@"Major Sixth" withRootNote:NOTE_VALUE_G_SHARP withDescription:gSharp]);
+    XCTAssert([self evaluateChordType:@"Major Sixth" withRootNote:NOTE_VALUE_A withDescription:a]);
+    XCTAssert([self evaluateChordType:@"Major Sixth" withRootNote:NOTE_VALUE_A_SHARP withDescription:aSharp]);
+    XCTAssert([self evaluateChordType:@"Major Sixth" withRootNote:NOTE_VALUE_B withDescription:b]);
+}
+
+- (void) testMinorSixthChords
+{
+    NSString *c = @"C D# G A";
+    NSString *cSharp = @"C# E G# A#";
+    NSString *d = @"D F A B";
+    NSString *dSharp = @"D# F# A# C";
+    NSString *e = @"E G B C#";
+    NSString *f = @"F G# C D";
+    NSString *fSharp = @"F# A C# D#";
+    NSString *g = @"G A# D E";
+    NSString *gSharp = @"G# B D# F";
+    NSString *a = @"A C E F#";
+    NSString *aSharp = @"A# C# F G";
+    NSString *b = @"B D F# G#";
+
+    XCTAssert([self evaluateChordType:@"Minor Sixth" withRootNote:NOTE_VALUE_C withDescription:c]);
+    XCTAssert([self evaluateChordType:@"Minor Sixth" withRootNote:NOTE_VALUE_C_SHARP withDescription:cSharp]);
+    XCTAssert([self evaluateChordType:@"Minor Sixth" withRootNote:NOTE_VALUE_D withDescription:d]);
+    XCTAssert([self evaluateChordType:@"Minor Sixth" withRootNote:NOTE_VALUE_D_SHARP withDescription:dSharp]);
+    XCTAssert([self evaluateChordType:@"Minor Sixth" withRootNote:NOTE_VALUE_E withDescription:e]);
+    XCTAssert([self evaluateChordType:@"Minor Sixth" withRootNote:NOTE_VALUE_F withDescription:f]);
+    XCTAssert([self evaluateChordType:@"Minor Sixth" withRootNote:NOTE_VALUE_F_SHARP withDescription:fSharp]);
+    XCTAssert([self evaluateChordType:@"Minor Sixth" withRootNote:NOTE_VALUE_G withDescription:g]);
+    XCTAssert([self evaluateChordType:@"Minor Sixth" withRootNote:NOTE_VALUE_G_SHARP withDescription:gSharp]);
+    XCTAssert([self evaluateChordType:@"Minor Sixth" withRootNote:NOTE_VALUE_A withDescription:a]);
+    XCTAssert([self evaluateChordType:@"Minor Sixth" withRootNote:NOTE_VALUE_A_SHARP withDescription:aSharp]);
+    XCTAssert([self evaluateChordType:@"Minor Sixth" withRootNote:NOTE_VALUE_B withDescription:b]);
+}
+
+- (void) testMajorSeventhChords
+{
+    NSString *c = @"C E G B";
+    NSString *cSharp = @"C# F G# C";
+    NSString *d = @"D F# A C#";
+    NSString *dSharp = @"D# G A# D";
+    NSString *e = @"E G# B D#";
+    NSString *f = @"F A C E";
+    NSString *fSharp = @"F# A# C# F";
+    NSString *g = @"G B D F#";
+    NSString *gSharp = @"G# C D# G";
+    NSString *a = @"A C# E G#";
+    NSString *aSharp = @"A# D F A";
+    NSString *b = @"B D# F# A#";
+    
+    XCTAssert([self evaluateChordType:@"Major Seventh" withRootNote:NOTE_VALUE_C withDescription:c]);
+    XCTAssert([self evaluateChordType:@"Major Seventh" withRootNote:NOTE_VALUE_C_SHARP withDescription:cSharp]);
+    XCTAssert([self evaluateChordType:@"Major Seventh" withRootNote:NOTE_VALUE_D withDescription:d]);
+    XCTAssert([self evaluateChordType:@"Major Seventh" withRootNote:NOTE_VALUE_D_SHARP withDescription:dSharp]);
+    XCTAssert([self evaluateChordType:@"Major Seventh" withRootNote:NOTE_VALUE_E withDescription:e]);
+    XCTAssert([self evaluateChordType:@"Major Seventh" withRootNote:NOTE_VALUE_F withDescription:f]);
+    XCTAssert([self evaluateChordType:@"Major Seventh" withRootNote:NOTE_VALUE_F_SHARP withDescription:fSharp]);
+    XCTAssert([self evaluateChordType:@"Major Seventh" withRootNote:NOTE_VALUE_G withDescription:g]);
+    XCTAssert([self evaluateChordType:@"Major Seventh" withRootNote:NOTE_VALUE_G_SHARP withDescription:gSharp]);
+    XCTAssert([self evaluateChordType:@"Major Seventh" withRootNote:NOTE_VALUE_A withDescription:a]);
+    XCTAssert([self evaluateChordType:@"Major Seventh" withRootNote:NOTE_VALUE_A_SHARP withDescription:aSharp]);
+    XCTAssert([self evaluateChordType:@"Major Seventh" withRootNote:NOTE_VALUE_B withDescription:b]);
+}
+
+- (void) testMinorSeventhChords
+{
+    NSString *c = @"C D# G A#";
+    NSString *cSharp = @"C# E G# B";
+    NSString *d = @"D F A C";
+    NSString *dSharp = @"D# F# A# C#";
+    NSString *e = @"E G B D";
+    NSString *f = @"F G# C D#";
+    NSString *fSharp = @"F# A C# E";
+    NSString *g = @"G A# D F";
+    NSString *gSharp = @"G# B D# F#";
+    NSString *a = @"A C E G";
+    NSString *aSharp = @"A# C# F G#";
+    NSString *b = @"B D F# A";
+    
+    XCTAssert([self evaluateChordType:@"Minor Seventh" withRootNote:NOTE_VALUE_C withDescription:c]);
+    XCTAssert([self evaluateChordType:@"Minor Seventh" withRootNote:NOTE_VALUE_C_SHARP withDescription:cSharp]);
+    XCTAssert([self evaluateChordType:@"Minor Seventh" withRootNote:NOTE_VALUE_D withDescription:d]);
+    XCTAssert([self evaluateChordType:@"Minor Seventh" withRootNote:NOTE_VALUE_D_SHARP withDescription:dSharp]);
+    XCTAssert([self evaluateChordType:@"Minor Seventh" withRootNote:NOTE_VALUE_E withDescription:e]);
+    XCTAssert([self evaluateChordType:@"Minor Seventh" withRootNote:NOTE_VALUE_F withDescription:f]);
+    XCTAssert([self evaluateChordType:@"Minor Seventh" withRootNote:NOTE_VALUE_F_SHARP withDescription:fSharp]);
+    XCTAssert([self evaluateChordType:@"Minor Seventh" withRootNote:NOTE_VALUE_G withDescription:g]);
+    XCTAssert([self evaluateChordType:@"Minor Seventh" withRootNote:NOTE_VALUE_G_SHARP withDescription:gSharp]);
+    XCTAssert([self evaluateChordType:@"Minor Seventh" withRootNote:NOTE_VALUE_A withDescription:a]);
+    XCTAssert([self evaluateChordType:@"Minor Seventh" withRootNote:NOTE_VALUE_A_SHARP withDescription:aSharp]);
+    XCTAssert([self evaluateChordType:@"Minor Seventh" withRootNote:NOTE_VALUE_B withDescription:b]);
+}
+
+- (void) testNinthChords
+{
+    NSString *c = @"C E G A# D";
+    NSString *cSharp = @"C# F G# B D#";
+    NSString *d = @"D F# A C E";
+    NSString *dSharp = @"D# G A# C# F";
+    NSString *e = @"E G# B D F#";
+    NSString *f = @"F A C D# G";
+    NSString *fSharp = @"F# A# C# E G#";
+    NSString *g = @"G B D F A";
+    NSString *gSharp = @"G# C D# F# A#";
+    NSString *a = @"A C# E G B";
+    NSString *aSharp = @"A# D F G# C";
+    NSString *b = @"B D# F# A C#";
+    
+    XCTAssert([self evaluateChordType:@"Ninth" withRootNote:NOTE_VALUE_C withDescription:c]);
+    XCTAssert([self evaluateChordType:@"Ninth" withRootNote:NOTE_VALUE_C_SHARP withDescription:cSharp]);
+    XCTAssert([self evaluateChordType:@"Ninth" withRootNote:NOTE_VALUE_D withDescription:d]);
+    XCTAssert([self evaluateChordType:@"Ninth" withRootNote:NOTE_VALUE_D_SHARP withDescription:dSharp]);
+    XCTAssert([self evaluateChordType:@"Ninth" withRootNote:NOTE_VALUE_E withDescription:e]);
+    XCTAssert([self evaluateChordType:@"Ninth" withRootNote:NOTE_VALUE_F withDescription:f]);
+    XCTAssert([self evaluateChordType:@"Ninth" withRootNote:NOTE_VALUE_F_SHARP withDescription:fSharp]);
+    XCTAssert([self evaluateChordType:@"Ninth" withRootNote:NOTE_VALUE_G withDescription:g]);
+    XCTAssert([self evaluateChordType:@"Ninth" withRootNote:NOTE_VALUE_G_SHARP withDescription:gSharp]);
+    XCTAssert([self evaluateChordType:@"Ninth" withRootNote:NOTE_VALUE_A withDescription:a]);
+    XCTAssert([self evaluateChordType:@"Ninth" withRootNote:NOTE_VALUE_A_SHARP withDescription:aSharp]);
+    XCTAssert([self evaluateChordType:@"Ninth" withRootNote:NOTE_VALUE_B withDescription:b]);
 }
 
 @end

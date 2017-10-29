@@ -10,7 +10,7 @@
 #import <XCTest/XCTest.h>
 #import <fstream>
 #import <sstream>
-#import "SG/SGuitar.hpp"
+#import "SGuitar.hpp"
 #import "SG/GuitarString.hpp"
 #import "SG/Guitar.hpp"
 #import "SG/Chords.hpp"

@@ -45,6 +45,8 @@
 
 - (NSArray *)getScaleNoteValues;
 - (NSArray *)getChordNoteValues;
+- (BOOL)isNoteValueInScale:(int)noteValue;
+- (BOOL)isNoteValueInChord:(int)noteValue;
 
 // Guitar
 - (int)getNumberOfStrings;

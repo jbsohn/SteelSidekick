@@ -16,4 +16,22 @@
 }, {
 	"Name": "Suspended Second",
 	"Intervals": [0, 2, 7]
+}, {
+    "Name": "Seventh",
+    "Intervals": [0, 4, 7, 10]
+}, {
+    "Name": "Major Sixth",
+    "Intervals": [0, 4, 7, 9]
+}, {
+    "Name": "Minor Sixth",
+    "Intervals": [0, 3, 7, 9]
+}, {
+    "Name": "Major Seventh",
+    "Intervals": [0, 4, 7,11]
+}, {
+    "Name": "Minor Seventh",
+    "Intervals": [0, 3, 7, 10]
+}, {
+    "Name": "Ninth",
+    "Intervals": [0, 4, 7, 10, 2]
 }]

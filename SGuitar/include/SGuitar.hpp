@@ -69,6 +69,8 @@ namespace SG {
 
         std::vector<int> getScaleNoteValues();
         std::vector<int> getChordNoteValues();
+        bool isNoteValueInScale(int noteValue);
+        bool isNoteValueInChord(int noteValue);
 
         // Guitar Settings
         int getNumberOfStrings();
