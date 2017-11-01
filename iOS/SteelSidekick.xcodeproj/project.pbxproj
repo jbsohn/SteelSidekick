@@ -14,7 +14,7 @@
 		527016FB1C8AA8F300EE5CF5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 527016FA1C8AA8F300EE5CF5 /* ViewController.m */; };
 		5273B1FB1D488FD200D37CB4 /* GuitarNameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5273B1FA1D488FD200D37CB4 /* GuitarNameTableViewCell.m */; };
 		528003E11E3970CE00EC24A8 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 528003E01E3970CE00EC24A8 /* SettingsViewController.m */; };
-		5284F0361D7E15E9000C3C37 /* NSTimer+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 5284F0341D7E15E9000C3C37 /* NSTimer+Blocks.m */; };
+		5284F0361D7E15E9000C3C37 /* NSTimer+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 5284F0341D7E15E9000C3C37 /* NSTimer+Blocks.m */; settings = {COMPILER_FLAGS = "-w"; }; };
 		5284F03A1D7E211D000C3C37 /* AboutTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5284F0391D7E211D000C3C37 /* AboutTableViewController.m */; };
 		5284F03C1D7E2391000C3C37 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5284F03B1D7E2391000C3C37 /* Settings.bundle */; };
 		528BA0E21D18B9DA009FDC64 /* Chord.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 528BA0CB1D18B9DA009FDC64 /* Chord.cpp */; };
@@ -39,9 +39,9 @@
 		528BA0F61D18B9DA009FDC64 /* ScaleType.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 528BA0DF1D18B9DA009FDC64 /* ScaleType.cpp */; };
 		528BA0F71D18B9DA009FDC64 /* SGuitar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 528BA0E01D18B9DA009FDC64 /* SGuitar.cpp */; };
 		528BA0F81D18B9DA009FDC64 /* StringAdjustment.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 528BA0E11D18B9DA009FDC64 /* StringAdjustment.cpp */; };
-		52969EAD1D17B6A000EFE67B /* nanovg.c in Sources */ = {isa = PBXBuildFile; fileRef = 52969EA71D17B6A000EFE67B /* nanovg.c */; };
+		52969EAD1D17B6A000EFE67B /* nanovg.c in Sources */ = {isa = PBXBuildFile; fileRef = 52969EA71D17B6A000EFE67B /* nanovg.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		52A12F1C1DFFA83200408552 /* UIViewController+Orientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A12F1B1DFFA83200408552 /* UIViewController+Orientation.m */; };
-		52BF4BEC1D203FBF00710CE5 /* UIColor+Expanded.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BF4BEB1D203FBF00710CE5 /* UIColor+Expanded.m */; };
+		52BF4BEC1D203FBF00710CE5 /* UIColor+Expanded.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BF4BEB1D203FBF00710CE5 /* UIColor+Expanded.m */; settings = {COMPILER_FLAGS = "-w"; }; };
 		52BF4BEF1D20415B00710CE5 /* FlatColorPalette.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BF4BEE1D20415B00710CE5 /* FlatColorPalette.m */; };
 		52CA6EF31D2B611D00EBA92E /* CustomGuitar.mm in Sources */ = {isa = PBXBuildFile; fileRef = 52CA6EF21D2B611D00EBA92E /* CustomGuitar.mm */; };
 		52D0A1081C7FE5D200EA5C6D /* Chord.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52D0A0E41C7FE5D200EA5C6D /* Chord.storyboard */; };
@@ -65,7 +65,7 @@
 		52E4144B1D1783C000D030A2 /* IQUIView+Hierarchy.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E413B61D1783BF00D030A2 /* IQUIView+Hierarchy.m */; };
 		52E4144C1D1783C000D030A2 /* IQUIViewController+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E413B81D1783BF00D030A2 /* IQUIViewController+Additions.m */; };
 		52E4144D1D1783C000D030A2 /* IQUIWindow+Hierarchy.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E413BA1D1783BF00D030A2 /* IQUIWindow+Hierarchy.m */; };
-		52E4144E1D1783C000D030A2 /* IQKeyboardManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E413BF1D1783BF00D030A2 /* IQKeyboardManager.m */; };
+		52E4144E1D1783C000D030A2 /* IQKeyboardManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E413BF1D1783BF00D030A2 /* IQKeyboardManager.m */; settings = {COMPILER_FLAGS = "-w"; }; };
 		52E4144F1D1783C000D030A2 /* IQKeyboardReturnKeyHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E413C11D1783BF00D030A2 /* IQKeyboardReturnKeyHandler.m */; };
 		52E414501D1783C000D030A2 /* IQTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E413C41D1783BF00D030A2 /* IQTextView.m */; };
 		52E414511D1783C000D030A2 /* IQBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E413C71D1783BF00D030A2 /* IQBarButtonItem.m */; };
@@ -185,7 +185,7 @@
 		D96DC2DF1D188C8D00D7ECFD /* Phonemes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC27F1D188C8D00D7ECFD /* Phonemes.cpp */; };
 		D96DC2E01D188C8D00D7ECFD /* PitShift.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC2801D188C8D00D7ECFD /* PitShift.cpp */; };
 		D96DC2E11D188C8D00D7ECFD /* Plucked.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC2811D188C8D00D7ECFD /* Plucked.cpp */; };
-		D96DC2E21D188C8D00D7ECFD /* PoleZero.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC2821D188C8D00D7ECFD /* PoleZero.cpp */; };
+		D96DC2E21D188C8D00D7ECFD /* PoleZero.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC2821D188C8D00D7ECFD /* PoleZero.cpp */; settings = {COMPILER_FLAGS = "-w"; }; };
 		D96DC2E31D188C8D00D7ECFD /* PRCRev.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC2831D188C8D00D7ECFD /* PRCRev.cpp */; };
 		D96DC2E51D188C8D00D7ECFD /* Resonate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC2861D188C8D00D7ECFD /* Resonate.cpp */; };
 		D96DC2E61D188C8D00D7ECFD /* Rhodey.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D96DC2871D188C8D00D7ECFD /* Rhodey.cpp */; };
@@ -1358,7 +1358,7 @@
 					D9BCFE0D1C7E5DDB00C36405 = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = N9V659CU72;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 					D9BCFE261C7E5DDB00C36405 = {
 						CreatedOnToolsVersion = 7.2;
@@ -1783,14 +1783,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -1831,14 +1837,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -1869,9 +1881,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = N9V659CU72;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1884,8 +1896,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.steelsidekick.com.SteelSidekick;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1c5c1e88-39ee-4150-8253-ed41449bccbc";
-				PROVISIONING_PROFILE_SPECIFIER = "Steel Sidekick";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				USER_HEADER_SEARCH_PATHS = "../SGuitar/External/JsonBox/include ../SGuitar/External/stk/include ../SGuitar/include";
 			};
 			name = Debug;
@@ -1895,9 +1907,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = N9V659CU72;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1910,8 +1922,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.steelsidekick.com.SteelSidekick;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1c5c1e88-39ee-4150-8253-ed41449bccbc";
-				PROVISIONING_PROFILE_SPECIFIER = "Steel Sidekick";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				USER_HEADER_SEARCH_PATHS = "../SGuitar/External/JsonBox/include ../SGuitar/External/stk/include ../SGuitar/include";
 			};
 			name = Release;
