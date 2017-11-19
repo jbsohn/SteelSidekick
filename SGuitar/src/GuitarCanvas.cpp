@@ -407,6 +407,9 @@ namespace SG {
         glClearColor(0.08, 0.08, 0.18, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT|GL_STENCIL_BUFFER_BIT);
         
+        // reset/sync the number of strings
+        impl->stringCount = guitar.getNumberOfStrings();
+        
         CanvasFrame frame(&impl->canvas);
         drawBackground();
         drawRollerBar();
