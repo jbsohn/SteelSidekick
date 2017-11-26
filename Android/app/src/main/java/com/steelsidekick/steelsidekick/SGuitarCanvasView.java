@@ -294,7 +294,7 @@ class SGuitarCanvasView extends GLSurfaceView {
             if (!isCanvasInitialized) {
                 float borderWidth = 40.0f;
                 float noteWidthHeight = sguitar.cacluateNoteWidthHeight(width, height);
-                sguitar.init(width, height, noteWidthHeight, borderWidth, 1.0f);
+                sguitar.init(width, height, noteWidthHeight, borderWidth, 1.0f, 0.0f);
                 isCanvasInitialized = true;
             }
             sguitar.draw();
@@ -308,9 +308,9 @@ class SGuitarCanvasView extends GLSurfaceView {
             noteWidthHeight = sguitar.cacluateNoteWidthHeight(width, height);
 
             if (!isCanvasInitialized) {
-                sguitar.init(width, height, noteWidthHeight, borderWidth, 1.0f);
+                sguitar.init(width, height, noteWidthHeight, borderWidth, 1.0f, 0.0f);
             }
-            sguitar.updateCanvasDimensions(width, height, noteWidthHeight, 1.0f);
+            sguitar.updateCanvasDimensions(width, height, noteWidthHeight, 1.0f, 0.0f);
         }
 
 
@@ -319,7 +319,7 @@ class SGuitarCanvasView extends GLSurfaceView {
             float noteWidthHeight = sguitar.cacluateNoteWidthHeight(width, height);
 
             if (!isCanvasInitialized) {
-                sguitar.init(width, height, noteWidthHeight, 5, 1);
+                sguitar.init(width, height, noteWidthHeight, 5, 1, 0.0f);
                 isCanvasInitialized = true;
             }
         }

@@ -1,13 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_scale"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.steelsidekick.steelsidekick.ScaleActivity">
 
-</RelativeLayout>
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="368dp"
+        android:layout_height="495dp"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="132dp"
+            android:layout_height="28dp"
+            android:text="Display As:"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="121dp" />
+
+        <Spinner
+            android:id="@+id/spinner3"
+            android:layout_width="179dp"
+            android:layout_height="32dp"
+            tools:layout_editor_absoluteX="173dp"
+            tools:layout_editor_absoluteY="121dp" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="132dp"
+            android:layout_height="32dp"
+            android:text="Root Note:"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="70dp" />
+
+        <Spinner
+            android:id="@+id/spinner2"
+            android:layout_width="179dp"
+            android:layout_height="32dp"
+            tools:layout_editor_absoluteX="173dp"
+            tools:layout_editor_absoluteY="70dp" />
+
+        <Switch
+            android:id="@+id/switch1"
+            android:layout_width="340dp"
+            android:layout_height="36dp"
+            android:text="Show Scale Notes"
+            tools:layout_editor_absoluteX="14dp"
+            tools:layout_editor_absoluteY="16dp" />
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.constraint.ConstraintLayout>
