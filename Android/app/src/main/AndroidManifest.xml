@@ -19,7 +19,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ScaleActivity"></activity>
+        <activity
+            android:name=".ScaleActivity"
+            android:label="Scale"
+            android:parentActivityName=".MainActivity">
+        </activity>
     </application>
 
 </manifest>

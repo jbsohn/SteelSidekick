@@ -2,11 +2,14 @@ package com.steelsidekick.steelsidekick;
 
 import android.content.res.AssetManager;
 
+import com.steelsidekick.sguitar.StdStringVector;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.ArrayList;
 
 public class Util {
 
@@ -71,5 +74,13 @@ public class Util {
         while((read = in.read(buffer)) != -1){
             out.write(buffer, 0, read);
         }
+    }
+
+    public static ArrayList<String> stdStringVectorToArrayList(StdStringVector vector) {
+        ArrayList<String> values = new ArrayList<String>();
+        for (int i = 0; i < vector.size(); i++) {
+            values.add(vector.get(i));
+        }
+        return values;
     }
 }

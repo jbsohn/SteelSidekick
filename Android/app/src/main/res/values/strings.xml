@@ -2,14 +2,20 @@
     <string name="app_name">Steel Sidekick</string>
     <string name="action_settings">Settings</string>
     <string name="action_scale">Scale..</string>
+    <string name="action_chord">Chord...</string>
+    <string name="show_scale">Show Scale</string>
     <string-array name="notes_array">
         <item>C</item>
         <item>C#/Db</item>
         <item>D</item>
         <item>D#/Eb</item>
+        <item>E</item>
         <item>F</item>
         <item>F#/Gb</item>
         <item>G</item>
         <item>G#/Ab</item>
+        <item>A</item>
+        <item>A#/Bb</item>
+        <item>B</item>
     </string-array>
 </resources>
