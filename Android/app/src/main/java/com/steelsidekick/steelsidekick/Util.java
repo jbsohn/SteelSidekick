@@ -83,4 +83,14 @@ public class Util {
         }
         return values;
     }
+
+    public static int getIndexInItems(ArrayList<String> items, String itemName) {
+        for (int i = 0; i < items.size(); i++) {
+            String item = items.get(i);
+            if (item.equals(itemName)) {
+                return i;
+            }
+        }
+        return -1;
+    }
 }

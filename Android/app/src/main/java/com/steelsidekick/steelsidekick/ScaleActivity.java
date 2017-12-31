@@ -44,6 +44,13 @@ public class ScaleActivity extends AppCompatActivity {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, scaleNames);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         scaleSpinner.setAdapter(adapter);
+
+        String selectedScaleName = options.getScaleName();
+        int scaleIndex = Util.getIndexInItems(scaleNames, selectedScaleName);
+        if (scaleIndex > 0) {
+            scaleSpinner.setSelection(scaleIndex);
+        }
+
         scaleSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
@@ -61,6 +68,7 @@ public class ScaleActivity extends AppCompatActivity {
         });
 
         Spinner rootNoteSpinner = (Spinner) findViewById(R.id.rootNoteSpinner);
+        rootNoteSpinner.setSelection(options.getScaleRootNoteValue());
         rootNoteSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
