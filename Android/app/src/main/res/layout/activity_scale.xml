@@ -74,7 +74,7 @@
                 android:layout_height="32dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginTop="8dp"
-                android:minHeight="100dp"
+                android:gravity="right"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -95,7 +95,7 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginTop="16dp"
                 android:entries="@array/notes_array"
-                android:minWidth="100dp"
+                android:gravity="right"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/scaleSpinner" />
         </android.support.constraint.ConstraintLayout>
