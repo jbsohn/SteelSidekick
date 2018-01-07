@@ -24,11 +24,13 @@
             android:label="Scale"
             android:parentActivityName=".MainActivity">
         </activity>
-        <activity
-            android:name=".ChordActivity">
+        <activity android:name=".ChordActivity">
             android:label="Chord"
             android:parentActivityName=".MainActivity">
         </activity>
+        <activity android:name=".GuitarActivity"
+            android:label="Guitar"
+            android:parentActivityName=".MainActivity">
+        </activity>
     </application>
-
 </manifest>
