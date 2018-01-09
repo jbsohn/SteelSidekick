@@ -11,8 +11,8 @@
         android:orderInCategory="101"
         android:title="@string/action_chord" />
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/action_guitar"
         android:orderInCategory="102"
-        android:title="@string/action_settings"
+        android:title="Guitar..."
         app:showAsAction="never" />
 </menu>
