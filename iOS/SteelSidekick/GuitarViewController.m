@@ -255,8 +255,6 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // ensure we are deleting a user defined type
         if (item.isCustomType) {
-            [self endEditing];
-
             if ([sguitar removeCustomGuitar:item.name]) {
                 [self setupItems];
                 [self.tableView reloadData];

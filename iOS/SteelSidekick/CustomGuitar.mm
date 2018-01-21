@@ -40,28 +40,7 @@
 }
 
 - (int)getNumberOfStrings {
-    int numberOfStrings = SG::Guitar::numberOfStringsForType(self.guitarStringType);
-    return numberOfStrings;
-}
-
-- (void)setGuitarType:(GUITAR_TYPE)guitarType {
-    guitar.setGuitarType(guitarType);
-}
-
-- (GUITAR_TYPE)guitarType {
-    GUITAR_TYPE guitarType = guitar.getGuitarType();
-    return guitarType;
-}
-
-- (void)setGuitarStringType:(GUITAR_STRING_TYPE)guitarStringType {
-    int numberOfStrings = SG::Guitar::numberOfStringsForType(guitarStringType);
-    guitar.setNumberOfStrings(numberOfStrings);
-}
-
-- (GUITAR_STRING_TYPE)guitarStringType {
-    int numberOfStrings = guitar.getNumberOfStrings();
-    GUITAR_STRING_TYPE type = SG::Guitar::typeForNumberOfStrings(numberOfStrings);
-    return type;
+    return SG::Guitar::numberOfStringsForType(self.guitarStringType);
 }
 
 - (void)setNote:(SG::Note)note forStringNumber:(int)stringNumber {
@@ -101,8 +80,8 @@
     // default to 10 string pedal steel guitar
     self.guitarName = @"";
     self.editingGuitarName = @"";
+    self.guitarStringType = GST_STRINGS_10;
     guitar.setGuitarType(GT_PEDAL_STEEL);
-    guitar.setNumberOfStrings(10);
 
     // set to the maximum so we can resize as editing
     // without losing any entered values
