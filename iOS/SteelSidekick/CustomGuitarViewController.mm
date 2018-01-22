@@ -211,11 +211,9 @@ NSString *CUSTOM_GUITAR_SECTIONS_NAMES[] = {
 
     if (indexPath.section == CGS_STRINGS) {
         self.editingStringNumber = indexPath.row + 1;
-        NSLog(@"didSelectRowAtIndexPath self.editingStringNumber: %d", self.editingStringNumber);
         SG::Note note = [customGuitar getStartNoteForStringNumber:self.editingStringNumber];
         self.selectedNote = note.getNoteValue();
         self.selectedPitch = note.getPitchValue();
-        NSLog(@"didSelectRowAtIndexPath self.selectedNote: %d, self.selectedPitch: %d", self.selectedNote, self.selectedPitch);
         NSArray *initialSelections = @[[NSNumber numberWithInt:self.selectedNote],
                                        [NSNumber numberWithInt:self.selectedPitch - 1]];
         [ActionSheetCustomPicker showPickerWithTitle:@"Select Note and Octave"
@@ -391,7 +389,6 @@ NSString *CUSTOM_GUITAR_SECTIONS_NAMES[] = {
 
 - (void)actionSheetPickerDidSucceed:(AbstractActionSheetPicker *)actionSheetPicker origin:(id)origin {
     CustomGuitar *customGuitar = [CustomGuitar sharedInstance];
-    NSLog(@"actionSheetPickerDidSucceed self.selectedNote: %d, self.selectedPitch: %d", self.selectedNote, self.selectedPitch);
     SG::Note note = SG::Note(self.selectedNote, self.selectedPitch);
     
     [customGuitar setNote:note forStringNumber:self.editingStringNumber];
@@ -440,10 +437,8 @@ NSString *CUSTOM_GUITAR_SECTIONS_NAMES[] = {
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     if (component == 0) {
         self.selectedNote = (int) row;
-        NSLog(@"didSelectRow self.selectedNote = %d", self.selectedNote);
     } else if (component == 1) {
         self.selectedPitch = (int) row + 1;
-        NSLog(@"didSelectRow selectedPitch = %d", self.selectedPitch);
     }
 }
 
