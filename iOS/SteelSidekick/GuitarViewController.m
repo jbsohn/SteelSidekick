@@ -189,7 +189,8 @@
         cell.editingAccessoryType = UITableViewCellAccessoryNone;
     }
     
-    if (item.isCustomType) {
+    // show the detail button if it is a custom type and we are not in editing mdoe
+    if (item.isCustomType && !self.editing) {
         cell.accessoryType = UITableViewCellAccessoryDetailButton;
     } else {
         cell.accessoryType = UITableViewCellAccessoryNone;

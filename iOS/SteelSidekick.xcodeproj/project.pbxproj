@@ -10,6 +10,15 @@
 		5228EF6B1D29B8B300E3E15B /* nanovg.c in Sources */ = {isa = PBXBuildFile; fileRef = 52969EA71D17B6A000EFE67B /* nanovg.c */; };
 		5252A0E91D208F9400641714 /* ColorSchemeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5252A0E81D208F9400641714 /* ColorSchemeViewController.m */; };
 		52584A861E2C8D15002461F5 /* NoteName.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52584A841E2C8D15002461F5 /* NoteName.cpp */; };
+		525D6810201523B100E11E22 /* ActionSheetDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 525D67FE201523B100E11E22 /* ActionSheetDatePicker.m */; };
+		525D6811201523B100E11E22 /* ActionSheetLocalePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 525D6800201523B100E11E22 /* ActionSheetLocalePicker.m */; };
+		525D6812201523B100E11E22 /* ActionSheetDistancePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 525D6804201523B100E11E22 /* ActionSheetDistancePicker.m */; };
+		525D6813201523B100E11E22 /* ActionSheetCustomPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 525D6805201523B100E11E22 /* ActionSheetCustomPicker.m */; };
+		525D6814201523B100E11E22 /* SWActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 525D6807201523B100E11E22 /* SWActionSheet.m */; };
+		525D6815201523B100E11E22 /* ActionSheetStringPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 525D6809201523B100E11E22 /* ActionSheetStringPicker.m */; };
+		525D6816201523B100E11E22 /* DistancePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 525D680A201523B100E11E22 /* DistancePickerView.m */; };
+		525D6817201523B100E11E22 /* ActionSheetMultipleStringPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 525D680B201523B100E11E22 /* ActionSheetMultipleStringPicker.m */; };
+		525D6818201523B100E11E22 /* AbstractActionSheetPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 525D680C201523B100E11E22 /* AbstractActionSheetPicker.m */; };
 		527016F81C8AA88B00EE5CF5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 527016F61C8AA88B00EE5CF5 /* Main.storyboard */; };
 		527016FB1C8AA8F300EE5CF5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 527016FA1C8AA8F300EE5CF5 /* ViewController.m */; };
 		5273B1FB1D488FD200D37CB4 /* GuitarNameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5273B1FA1D488FD200D37CB4 /* GuitarNameTableViewCell.m */; };
@@ -85,7 +94,6 @@
 		52E416081D17B46C00D030A2 /* SolidusEscaper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52E415D11D17B46C00D030A2 /* SolidusEscaper.cpp */; };
 		52E416091D17B46C00D030A2 /* Value.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52E415D21D17B46C00D030A2 /* Value.cpp */; };
 		D9112ADD1D13173700F085DF /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9160D871CBBFF7B00A09A4A /* InfoViewController.m */; };
-		D919744C1CCAB73B000312F4 /* StringNoteTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D919744B1CCAB73B000312F4 /* StringNoteTableViewCell.m */; };
 		D92776911D36D10700822208 /* BTBalloon.m in Sources */ = {isa = PBXBuildFile; fileRef = D927768E1D36D10700822208 /* BTBalloon.m */; };
 		D92776921D36D10700822208 /* BTBalloonArrow.m in Sources */ = {isa = PBXBuildFile; fileRef = D92776901D36D10700822208 /* BTBalloonArrow.m */; };
 		D93D347B1EB00126004E1514 /* GuitarTypes-Test.settings in Resources */ = {isa = PBXBuildFile; fileRef = D93D34781EB00126004E1514 /* GuitarTypes-Test.settings */; };
@@ -248,6 +256,26 @@
 		5252A0E81D208F9400641714 /* ColorSchemeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorSchemeViewController.m; sourceTree = "<group>"; };
 		52584A841E2C8D15002461F5 /* NoteName.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = NoteName.cpp; path = ../SGuitar/src/NoteName.cpp; sourceTree = "<group>"; };
 		52584A871E2C8D9E002461F5 /* NoteName.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = NoteName.hpp; path = ../SGuitar/include/SG/NoteName.hpp; sourceTree = "<group>"; };
+		525D67FC201523B100E11E22 /* ActionSheetCustomPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetCustomPicker.h; sourceTree = "<group>"; };
+		525D67FD201523B100E11E22 /* ActionSheetStringPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetStringPicker.h; sourceTree = "<group>"; };
+		525D67FE201523B100E11E22 /* ActionSheetDatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetDatePicker.m; sourceTree = "<group>"; };
+		525D67FF201523B100E11E22 /* SWActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWActionSheet.h; sourceTree = "<group>"; };
+		525D6800201523B100E11E22 /* ActionSheetLocalePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetLocalePicker.m; sourceTree = "<group>"; };
+		525D6801201523B100E11E22 /* AbstractActionSheetPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractActionSheetPicker.h; sourceTree = "<group>"; };
+		525D6802201523B100E11E22 /* ActionSheetMultipleStringPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetMultipleStringPicker.h; sourceTree = "<group>"; };
+		525D6803201523B100E11E22 /* DistancePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DistancePickerView.h; sourceTree = "<group>"; };
+		525D6804201523B100E11E22 /* ActionSheetDistancePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetDistancePicker.m; sourceTree = "<group>"; };
+		525D6805201523B100E11E22 /* ActionSheetCustomPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetCustomPicker.m; sourceTree = "<group>"; };
+		525D6806201523B100E11E22 /* ActionSheetCustomPickerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetCustomPickerDelegate.h; sourceTree = "<group>"; };
+		525D6807201523B100E11E22 /* SWActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWActionSheet.m; sourceTree = "<group>"; };
+		525D6808201523B100E11E22 /* ActionSheetDatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetDatePicker.h; sourceTree = "<group>"; };
+		525D6809201523B100E11E22 /* ActionSheetStringPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetStringPicker.m; sourceTree = "<group>"; };
+		525D680A201523B100E11E22 /* DistancePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DistancePickerView.m; sourceTree = "<group>"; };
+		525D680B201523B100E11E22 /* ActionSheetMultipleStringPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetMultipleStringPicker.m; sourceTree = "<group>"; };
+		525D680C201523B100E11E22 /* AbstractActionSheetPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbstractActionSheetPicker.m; sourceTree = "<group>"; };
+		525D680D201523B100E11E22 /* ActionSheetLocalePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetLocalePicker.h; sourceTree = "<group>"; };
+		525D680E201523B100E11E22 /* ActionSheetPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetPicker.h; sourceTree = "<group>"; };
+		525D680F201523B100E11E22 /* ActionSheetDistancePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetDistancePicker.h; sourceTree = "<group>"; };
 		527016F71C8AA88B00EE5CF5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		527016F91C8AA8F300EE5CF5 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		527016FA1C8AA8F300EE5CF5 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
@@ -443,8 +471,6 @@
 		52E4E5021D1783AB00D030A2 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/AppiraterLocalizable.strings"; sourceTree = "<group>"; };
 		D9160D861CBBFF7B00A09A4A /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
 		D9160D871CBBFF7B00A09A4A /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = InfoViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		D919744A1CCAB73B000312F4 /* StringNoteTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = StringNoteTableViewCell.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		D919744B1CCAB73B000312F4 /* StringNoteTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringNoteTableViewCell.m; sourceTree = "<group>"; };
 		D9261C171EB8CEF0007A87DE /* SGuitar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SGuitar.h; path = ../SGuitar/include/SGuitar.h; sourceTree = "<group>"; };
 		D9261C181EB8CEF0007A87DE /* SGuitar.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = SGuitar.hpp; path = ../SGuitar/include/SGuitar.hpp; sourceTree = "<group>"; };
 		D927768D1D36D10700822208 /* BTBalloon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTBalloon.h; sourceTree = "<group>"; };
@@ -614,6 +640,34 @@
 			name = Canvas;
 			sourceTree = "<group>";
 		};
+		525D67FB201523B100E11E22 /* Pickers */ = {
+			isa = PBXGroup;
+			children = (
+				525D67FC201523B100E11E22 /* ActionSheetCustomPicker.h */,
+				525D67FD201523B100E11E22 /* ActionSheetStringPicker.h */,
+				525D67FF201523B100E11E22 /* SWActionSheet.h */,
+				525D6801201523B100E11E22 /* AbstractActionSheetPicker.h */,
+				525D6802201523B100E11E22 /* ActionSheetMultipleStringPicker.h */,
+				525D6803201523B100E11E22 /* DistancePickerView.h */,
+				525D6806201523B100E11E22 /* ActionSheetCustomPickerDelegate.h */,
+				525D6808201523B100E11E22 /* ActionSheetDatePicker.h */,
+				525D67FE201523B100E11E22 /* ActionSheetDatePicker.m */,
+				525D6800201523B100E11E22 /* ActionSheetLocalePicker.m */,
+				525D6804201523B100E11E22 /* ActionSheetDistancePicker.m */,
+				525D6805201523B100E11E22 /* ActionSheetCustomPicker.m */,
+				525D6807201523B100E11E22 /* SWActionSheet.m */,
+				525D6809201523B100E11E22 /* ActionSheetStringPicker.m */,
+				525D680A201523B100E11E22 /* DistancePickerView.m */,
+				525D680B201523B100E11E22 /* ActionSheetMultipleStringPicker.m */,
+				525D680C201523B100E11E22 /* AbstractActionSheetPicker.m */,
+				525D680D201523B100E11E22 /* ActionSheetLocalePicker.h */,
+				525D680E201523B100E11E22 /* ActionSheetPicker.h */,
+				525D680F201523B100E11E22 /* ActionSheetDistancePicker.h */,
+			);
+			name = Pickers;
+			path = External/Pickers;
+			sourceTree = "<group>";
+		};
 		527FB7931D2CDF3800A35FA7 /* include */ = {
 			isa = PBXGroup;
 			children = (
@@ -732,8 +786,6 @@
 				52D0A0F31C7FE5D200EA5C6D /* CustomGuitarViewController.mm */,
 				52D0A1041C7FE5D200EA5C6D /* GuitarAdjustmentViewController.h */,
 				52D0A1051C7FE5D200EA5C6D /* GuitarAdjustmentViewController.mm */,
-				D919744A1CCAB73B000312F4 /* StringNoteTableViewCell.h */,
-				D919744B1CCAB73B000312F4 /* StringNoteTableViewCell.m */,
 				5273B1F91D488FD200D37CB4 /* GuitarNameTableViewCell.h */,
 				5273B1FA1D488FD200D37CB4 /* GuitarNameTableViewCell.m */,
 			);
@@ -936,6 +988,7 @@
 		52E4E4D91D17839100D030A2 /* External */ = {
 			isa = PBXGroup;
 			children = (
+				525D67FB201523B100E11E22 /* Pickers */,
 				5284F0321D7E15E9000C3C37 /* NSTimer-Blocks */,
 				D92776851D36D0C400822208 /* BTBalloon */,
 				52BF4BE91D203FBF00710CE5 /* Color */,
@@ -1490,6 +1543,7 @@
 				52E416041D17B46C00D030A2 /* IndentCanceller.cpp in Sources */,
 				D96DC2CF1D188C8D00D7ECFD /* LentPitShift.cpp in Sources */,
 				D96DC3031D188C8D00D7ECFD /* Wurley.cpp in Sources */,
+				525D6814201523B100E11E22 /* SWActionSheet.m in Sources */,
 				528BA0F51D18B9DA009FDC64 /* Scales.cpp in Sources */,
 				52E414481D1783C000D030A2 /* IQNSArray+Sort.m in Sources */,
 				D96DC2B61D188C8D00D7ECFD /* Drummer.cpp in Sources */,
@@ -1515,6 +1569,7 @@
 				D9BCFE161C7E5DDB00C36405 /* AppDelegate.m in Sources */,
 				D96DC2D31D188C8D00D7ECFD /* Messager.cpp in Sources */,
 				52E414581D1783C000D030A2 /* NSArray+PureLayout.m in Sources */,
+				525D6817201523B100E11E22 /* ActionSheetMultipleStringPicker.m in Sources */,
 				D96DC2E01D188C8D00D7ECFD /* PitShift.cpp in Sources */,
 				D96DC2DD1D188C8D00D7ECFD /* OneZero.cpp in Sources */,
 				52D0A10D1C7FE5D200EA5C6D /* ChordViewController.m in Sources */,
@@ -1537,6 +1592,7 @@
 				52D0A10E1C7FE5D200EA5C6D /* GuitarViewController.m in Sources */,
 				D9112ADD1D13173700F085DF /* InfoViewController.m in Sources */,
 				52E416051D17B46C00D030A2 /* Indenter.cpp in Sources */,
+				525D6816201523B100E11E22 /* DistancePickerView.m in Sources */,
 				52E414511D1783C000D030A2 /* IQBarButtonItem.m in Sources */,
 				D96DC2F41D188C8D00D7ECFD /* Sphere.cpp in Sources */,
 				D92776921D36D10700822208 /* BTBalloonArrow.m in Sources */,
@@ -1550,6 +1606,7 @@
 				D9BCFE131C7E5DDB00C36405 /* main.m in Sources */,
 				D96DC2C21D188C8D00D7ECFD /* FormSwep.cpp in Sources */,
 				52E4144F1D1783C000D030A2 /* IQKeyboardReturnKeyHandler.m in Sources */,
+				525D6813201523B100E11E22 /* ActionSheetCustomPicker.m in Sources */,
 				D96DC2EB1D188C8D00D7ECFD /* Sampler.cpp in Sources */,
 				D96DC3061D188D4700D7ECFD /* GuitarPlayer.mm in Sources */,
 				D96DC2E31D188C8D00D7ECFD /* PRCRev.cpp in Sources */,
@@ -1560,11 +1617,13 @@
 				52A12F1C1DFFA83200408552 /* UIViewController+Orientation.m in Sources */,
 				D96DC2AF1D188C8D00D7ECFD /* Bowed.cpp in Sources */,
 				D96DC2FB1D188C8D00D7ECFD /* TubeBell.cpp in Sources */,
+				525D6811201523B100E11E22 /* ActionSheetLocalePicker.m in Sources */,
 				D96DC2CE1D188C8D00D7ECFD /* JCRev.cpp in Sources */,
 				528BA0E71D18B9DA009FDC64 /* FileUtils_iOS.mm in Sources */,
 				D96DC2AB1D188C8D00D7ECFD /* BlitSaw.cpp in Sources */,
 				D96DC2E61D188C8D00D7ECFD /* Rhodey.cpp in Sources */,
 				52E416031D17B46C00D030A2 /* Escaper.cpp in Sources */,
+				525D6815201523B100E11E22 /* ActionSheetStringPicker.m in Sources */,
 				D96DC2AE1D188C8D00D7ECFD /* BlowHole.cpp in Sources */,
 				D96DC2BF1D188C8D00D7ECFD /* Flute.cpp in Sources */,
 				D96DC2EC1D188C8D00D7ECFD /* Saxofony.cpp in Sources */,
@@ -1576,6 +1635,7 @@
 				D96DC2BA1D188C8D00D7ECFD /* FileRead.cpp in Sources */,
 				D96DC2A81D188C8D00D7ECFD /* BeeThree.cpp in Sources */,
 				528BA0E21D18B9DA009FDC64 /* Chord.cpp in Sources */,
+				525D6810201523B100E11E22 /* ActionSheetDatePicker.m in Sources */,
 				D96DC2B01D188C8D00D7ECFD /* Brass.cpp in Sources */,
 				52D0A1151C7FE5D200EA5C6D /* ScaleViewController.m in Sources */,
 				52D672091E2CAEC2002799FA /* GuitarAdjustmentType.cpp in Sources */,
@@ -1583,6 +1643,8 @@
 				528BA0E61D18B9DA009FDC64 /* FileUtils.cpp in Sources */,
 				52D0A1131C7FE5D200EA5C6D /* RootNoteViewController.m in Sources */,
 				5284F03A1D7E211D000C3C37 /* AboutTableViewController.m in Sources */,
+				525D6818201523B100E11E22 /* AbstractActionSheetPicker.m in Sources */,
+				525D6812201523B100E11E22 /* ActionSheetDistancePicker.m in Sources */,
 				D96DC2FD1D188C8D00D7ECFD /* TwoPole.cpp in Sources */,
 				52D5F8881D1B936E006C1308 /* ColorScheme.m in Sources */,
 				528BA0ED1D18B9DA009FDC64 /* GuitarString.cpp in Sources */,
@@ -1600,7 +1662,6 @@
 				52E414491D1783C000D030A2 /* IQUIScrollView+Additions.m in Sources */,
 				D96DC3001D188C8D00D7ECFD /* Voicer.cpp in Sources */,
 				52E414531D1783C000D030A2 /* IQToolbar.m in Sources */,
-				D919744C1CCAB73B000312F4 /* StringNoteTableViewCell.m in Sources */,
 				52E414521D1783C000D030A2 /* IQTitleBarButtonItem.m in Sources */,
 				D96DC2D81D188C8D00D7ECFD /* Moog.cpp in Sources */,
 				D9663EDD1EB3B94D000CD637 /* NSArrayIntVector.mm in Sources */,

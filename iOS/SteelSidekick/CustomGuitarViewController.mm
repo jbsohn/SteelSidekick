@@ -9,7 +9,7 @@
 #import "CustomGuitarViewController.h"
 #import "GuitarAdjustmentViewController.h"
 #import "GuitarNameTableViewCell.h"
-#import "StringNoteTableViewCell.h"
+#import "ActionSheetPicker.h"
 #import "CustomGuitar.h"
 #import "SGuitar.h"
 #import "ColorScheme.h"
@@ -84,10 +84,18 @@ NSString *CUSTOM_GUITAR_SECTIONS_NAMES[] = {
 @end
 
 ////////////////////////////////////////////////////////////////////////////////
-@interface CustomGuitarViewController () <StringNoteTableViewCellDelegate>
+@interface CustomGuitarViewController () <ActionSheetCustomPickerDelegate> {
+    NSArray *noteValues;
+    NSArray *pitchValues;
+}
 
 @property NSMutableArray *items;
 @property NSString *selectedAdjustmentID;
+
+// for editing string
+@property int editingStringNumber;
+@property int selectedNote;
+@property int selectedPitch;
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *saveButton;
 
@@ -99,6 +107,26 @@ NSString *CUSTOM_GUITAR_SECTIONS_NAMES[] = {
 {
     [super viewDidLoad];
     
+    // set default settings for editing string
+    self.selectedNote = 0;
+    self.selectedPitch = 4;
+    self.editingStringNumber = 1;
+    
+    // note/pitch values to display
+    noteValues = @[@"C",
+              @"C\u266f/D\u266d",
+              @"D",
+              @"D\u266f/E\u266d",
+              @"E",
+              @"F",
+              @"F\u266f/G\u266d",
+              @"G",
+              @"G\u266f/A\u266d",
+              @"A",
+              @"A\u266f/B\u266d",
+              @"B"];
+    pitchValues = @[@"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8"];
+
     CGSize size = POPOVER_VIEW_SIZE;
     [self setPreferredContentSize:size];
     
@@ -166,18 +194,6 @@ NSString *CUSTOM_GUITAR_SECTIONS_NAMES[] = {
     self.items = [[NSMutableArray alloc] initWithArray:@[nameItems, guitarTypeItems, guitarStringTypeItems, stringItems, pedalItems, leverItems]];
 }
 
-- (NSInteger)getStringNotePickerRow {
-    NSArray *stringsItems = self.items[CGS_STRINGS];
-    
-    for (int i = 0; i < [stringsItems count]; i++) {
-        CustomGuitarItem *item = stringsItems[i];
-        if (item.type == CGIT_GUITAR_STRING_NOTE_SELECT) {
-            return i;
-        }
-    }
-    return -1;
-}
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -194,42 +210,19 @@ NSString *CUSTOM_GUITAR_SECTIONS_NAMES[] = {
     CustomGuitar *customGuitar = [CustomGuitar sharedInstance];
 
     if (indexPath.section == CGS_STRINGS) {
-        NSInteger stringNotePickerRow = [self getStringNotePickerRow];
-        if (stringNotePickerRow >= 0) {
-            // string picker is active, toggle note/pitch ticker off
-            NSMutableArray *stringsItems = self.items[CGS_STRINGS];
-            [stringsItems removeObjectAtIndex:stringNotePickerRow];
-            
-            [self.tableView beginUpdates];
-            [self.tableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:stringNotePickerRow inSection:CGS_STRINGS]]
-                                  withRowAnimation:UITableViewRowAnimationFade];
-            [self.tableView endUpdates];
-        } else {
-            // selected a guitar string, toggle note/pitch picker on
-            NSMutableArray *stringItems = self.items[CGS_STRINGS];
-            [stringItems insertObject:[[CustomGuitarItem alloc] initWithType:CGIT_GUITAR_STRING_NOTE_SELECT]
-                              atIndex:indexPath.row + 1];
-            
-            [self.tableView beginUpdates];
-            [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:indexPath.row + 1 inSection:CGS_STRINGS]]
-                                  withRowAnimation:UITableViewRowAnimationFade];
-            [self.tableView endUpdates];
-            
-            StringNoteTableViewCell *noteCell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:indexPath.row + 1 inSection:CGS_STRINGS]];
-            NSArray *items = self.items[indexPath.section];
-            CustomGuitarItem *item = items[indexPath.row];
-            int stringNumber = item.itemID;
-            noteCell.delegate = self;
-
-            SG::Note note = [customGuitar getStartNoteForStringNumber:stringNumber];
-            noteCell.note = note.getNoteValue();
-            noteCell.pitch = note.getPitchValue();
-            noteCell.stringNumber = stringNumber;
-            [noteCell refresh];
-            
-            [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:indexPath.row inSection:CGS_STRINGS]
-                                  atScrollPosition:UITableViewScrollPositionTop animated:YES];
-        }
+        self.editingStringNumber = indexPath.row + 1;
+        NSLog(@"didSelectRowAtIndexPath self.editingStringNumber: %d", self.editingStringNumber);
+        SG::Note note = [customGuitar getStartNoteForStringNumber:self.editingStringNumber];
+        self.selectedNote = note.getNoteValue();
+        self.selectedPitch = note.getPitchValue();
+        NSLog(@"didSelectRowAtIndexPath self.selectedNote: %d, self.selectedPitch: %d", self.selectedNote, self.selectedPitch);
+        NSArray *initialSelections = @[[NSNumber numberWithInt:self.selectedNote],
+                                       [NSNumber numberWithInt:self.selectedPitch - 1]];
+        [ActionSheetCustomPicker showPickerWithTitle:@"Select Note and Octave"
+                                            delegate:self
+                                    showCancelButton:NO
+                                              origin:self.view
+                                   initialSelections:initialSelections];
     } else if (indexPath.section == CGS_GUITAR_TYPE) {
         GUITAR_TYPE guitarType = (GUITAR_TYPE) indexPath.row;
         if (customGuitar.guitarType != guitarType) {
@@ -278,9 +271,6 @@ NSString *CUSTOM_GUITAR_SECTIONS_NAMES[] = {
         if (section == CGS_STRINGS) {
             // the number of strings should reflect the current instrument being edited
             rows = SG::Guitar::numberOfStringsForType(customGuitar.guitarStringType);
-            if ([self getStringNotePickerRow] >=0) {
-                rows++;
-            }
         } else {
             rows = [items count];
         }
@@ -336,17 +326,12 @@ NSString *CUSTOM_GUITAR_SECTIONS_NAMES[] = {
             cell.accessoryType = UITableViewCellAccessoryNone;
         }
     } else if (indexPath.section == CGS_STRINGS) {
-        // check to see if the note/pitch picker is active
-        NSInteger pickerRow = [self getStringNotePickerRow];
         int stringNumber = item.itemID;
-
-        if (indexPath.row != pickerRow) {   // not a note/pitch picker row
-            // display the guitar string note/pitch
-            SG::Note note = [customGuitar getStartNoteForStringNumber:stringNumber];
-            cell.textLabel.text = [NSString stringWithFormat:@"%d", stringNumber];
-            NSString *name = @(SG::NoteName::getNoteNameSharpFlat(note.getNoteValue()).c_str());
-            cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ %d", name, note.getPitchValue()];
-        }
+        // display the guitar string note/pitch
+        SG::Note note = [customGuitar getStartNoteForStringNumber:stringNumber];
+        cell.textLabel.text = [NSString stringWithFormat:@"%d", stringNumber];
+        NSString *name = @(SG::NoteName::getNoteNameSharpFlat(note.getNoteValue()).c_str());
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ %d", name, note.getPitchValue()];
     } else if (indexPath.section == CGS_PEDALS) {
         NSString *pedalName = @(SG::GuitarAdjustmentType::getPedalTypeName((int) indexPath.row).c_str());
         cell.textLabel.text = pedalName;
@@ -379,16 +364,6 @@ NSString *CUSTOM_GUITAR_SECTIONS_NAMES[] = {
     }
 }
 
-- (void)didSelectStringNoteItem:(StringNoteTableViewCell *)cell {
-    // the user selected a note/pitch for the string from the picker view
-    CustomGuitar *customGuitar = [CustomGuitar sharedInstance];
-    int stringNumber = cell.stringNumber;
-    SG::Note note = SG::Note(cell.note, cell.pitch);
-
-    [customGuitar setNote:note forStringNumber:stringNumber];
-    [self.tableView reloadData];
-}
-
 - (void)guitarAdjustmentsViewControllerDidFinish:(GuitarAdjustmentViewController *)controller {
     
 }
@@ -412,6 +387,64 @@ NSString *CUSTOM_GUITAR_SECTIONS_NAMES[] = {
     [customGuitar reset];
     customGuitar.guitarName = guitarName;
     [customGuitar load];
+}
+
+- (void)actionSheetPickerDidSucceed:(AbstractActionSheetPicker *)actionSheetPicker origin:(id)origin {
+    CustomGuitar *customGuitar = [CustomGuitar sharedInstance];
+    NSLog(@"actionSheetPickerDidSucceed self.selectedNote: %d, self.selectedPitch: %d", self.selectedNote, self.selectedPitch);
+    SG::Note note = SG::Note(self.selectedNote, self.selectedPitch);
+    
+    [customGuitar setNote:note forStringNumber:self.editingStringNumber];
+    [self.tableView reloadData];
+}
+
+/////////////////////////////////////////////////////////////////////////
+#pragma mark - UIPickerViewDataSource Implementation
+/////////////////////////////////////////////////////////////////////////
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+    return 2;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    if (component == 0) {
+        return [noteValues count];
+    } else if (component == 1) {
+        return [pitchValues count];
+    }
+    return 0;
+}
+
+/////////////////////////////////////////////////////////////////////////
+#pragma mark UIPickerViewDelegate Implementation
+/////////////////////////////////////////////////////////////////////////
+
+- (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component {
+    if (component == 0) {
+        return 80.0f;
+    } else if (component == 1) {
+        return 40.0f;
+    }
+    return 0.0;
+}
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    if (component == 0) {
+        return noteValues[(NSUInteger) row];
+    } else if (component == 1) {
+        return pitchValues[(NSUInteger) row];
+    }
+    return nil;
+}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    if (component == 0) {
+        self.selectedNote = (int) row;
+        NSLog(@"didSelectRow self.selectedNote = %d", self.selectedNote);
+    } else if (component == 1) {
+        self.selectedPitch = (int) row + 1;
+        NSLog(@"didSelectRow selectedPitch = %d", self.selectedPitch);
+    }
 }
 
 @end
