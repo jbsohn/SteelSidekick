@@ -192,7 +192,7 @@ namespace SG {
                 JsonBox::Object string;
                 Note startNote = gs.getStartNote();
                 string["StringNumber"] = i;
-                string["StartNote"] = startNote.getNoteNamePitch();
+                string["StartNote"] = startNote.getNoteNamePitchUTF8();
                 guitarStrings.push_back(string);
             }
             return guitarStrings;

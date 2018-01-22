@@ -63,7 +63,7 @@ namespace SG {
         int getMIDIValue() const;
         int getNoteValue() const;
         int getPitchValue() const;
-        std::string getNoteNamePitch() const;
+        std::string getNoteNamePitchUTF8() const;
     protected:
         void init(int noteValue, int pitch);
         void init(const Note& note);

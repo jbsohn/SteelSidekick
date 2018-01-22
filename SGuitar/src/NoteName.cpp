@@ -54,12 +54,10 @@ namespace SG {
         for (int i = 0; i <= NOTE_VALUE_B; i++) {
             std::string curSharp = UTF8_NOTE_NAMES_SHARP[i];
             std::string curFlat = UTF8_NOTE_NAMES_FLAT[i];
+            std::string curSharpW = NOTE_NAMES_SHARP[i];
+            std::string curFlatW = NOTE_NAMES_FLAT[i];
             
-            if (noteName == curSharp) {
-                return (int) i;
-            }
-            
-            if (noteName == curFlat) {
+            if (noteName == curSharp || noteName == curFlat || noteName == curSharpW || noteName == curFlatW) {
                 return (int) i;
             }
         }
@@ -73,5 +71,10 @@ namespace SG {
     std::string NoteName::getNoteNameSharp(int noteValue) {
         return NoteName::NOTE_NAMES_SHARP[noteValue];
     }
+    
+    std::string NoteName::getNoteNameSharpUTF8(int noteValue) {
+        return NoteName::UTF8_NOTE_NAMES_SHARP[noteValue];
+    }
+
 }
 

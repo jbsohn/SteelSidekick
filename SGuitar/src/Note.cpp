@@ -86,8 +86,8 @@ namespace SG {
         return -1;
     }
     
-    std::string Note::getNoteNamePitch() const {
-        std::string name = NoteName::getNoteNameSharp(getNoteValue());
+    std::string Note::getNoteNamePitchUTF8() const {
+        std::string name = NoteName::getNoteNameSharpUTF8(getNoteValue());
         int pitch = getPitchValue();
         std::string namePitch = name + "-" + std::to_string(pitch);
         return namePitch;

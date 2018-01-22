@@ -21,6 +21,7 @@ namespace SG {
         static int noteValueForName(std::string noteName);
         static std::string getNoteNameSharpFlat(int noteValue);
         static std::string getNoteNameSharp(int noteValue);
+        static std::string getNoteNameSharpUTF8(int noteValue);
 
     protected:
         static std::string UTF8_NOTE_NAMES_SHARP[];
