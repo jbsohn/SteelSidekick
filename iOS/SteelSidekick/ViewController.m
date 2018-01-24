@@ -7,13 +7,13 @@
 //
 
 #import <GLKit/GLKit.h>
+#import "SteelSidekick-Swift.h"
 #import "UIViewController+Orientation.h"
 #import "ViewController.h"
 #import "PureLayout.h"
 #import "ScaleViewController.h"
 #import "ChordViewController.h"
 #import "SettingsViewController.h"
-#import "InfoViewController.h"
 #import "GuitarPlayer.h"
 #import "SGuitar.h"
 #import "ColorScheme.h"

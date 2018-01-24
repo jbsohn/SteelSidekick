@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="wMQ-za-UgB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="wMQ-za-UgB">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -628,7 +628,7 @@
         <!--Info View Controller-->
         <scene sceneID="EZr-Ov-FUT">
             <objects>
-                <viewController id="F7X-Dk-jiV" customClass="InfoViewController" sceneMemberID="viewController">
+                <viewController id="F7X-Dk-jiV" customClass="InfoViewController" customModule="SteelSidekick" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="a10-Rk-Xi5"/>
                         <viewControllerLayoutGuide type="bottom" id="yJA-JN-MVC"/>
@@ -819,30 +819,30 @@
                         <outlet property="chordView" destination="SYD-fp-u4F" id="LKp-kZ-wuO"/>
                         <outlet property="scaleLabel" destination="Ttm-cJ-wcy" id="Hhk-aP-ckA"/>
                         <outlet property="scaleView" destination="CVU-vd-1Wa" id="Jef-nV-ojj"/>
-                        <outletCollection property="scaleImages" destination="WTi-rV-Lbt" id="TeB-5t-Iad"/>
-                        <outletCollection property="scaleImages" destination="H50-Ql-FXc" id="0GN-d2-Ylm"/>
-                        <outletCollection property="scaleImages" destination="rqc-zb-UEB" id="2Gf-ez-vka"/>
-                        <outletCollection property="scaleImages" destination="Pty-YS-WXt" id="ebf-ii-LXQ"/>
-                        <outletCollection property="scaleImages" destination="F5p-KU-DMH" id="H75-dY-kIW"/>
-                        <outletCollection property="scaleImages" destination="ZbW-5J-nPm" id="P8a-Ci-bxu"/>
-                        <outletCollection property="scaleImages" destination="x2D-2k-JYa" id="jch-uj-f6I"/>
-                        <outletCollection property="scaleImages" destination="BPi-5m-UmG" id="nSt-MY-KbV"/>
-                        <outletCollection property="scaleImages" destination="Vxj-CE-Mlb" id="Sdf-N1-cZb"/>
-                        <outletCollection property="scaleImages" destination="DDJ-Td-lDC" id="xUW-C7-jUZ"/>
-                        <outletCollection property="scaleImages" destination="KcD-NP-hqy" id="dDw-Zp-VGt"/>
-                        <outletCollection property="scaleImages" destination="s8R-YN-DKj" id="gXf-Cn-JOz"/>
-                        <outletCollection property="chordImages" destination="nHJ-89-Jk5" id="qle-Yu-aHw"/>
-                        <outletCollection property="chordImages" destination="ARu-jg-ebd" id="ZcF-hX-2ds"/>
-                        <outletCollection property="chordImages" destination="ume-rD-Rca" id="s9H-1L-zCC"/>
-                        <outletCollection property="chordImages" destination="lvL-Xg-ox2" id="PQr-i9-Rhp"/>
-                        <outletCollection property="chordImages" destination="pfC-02-Hbg" id="elJ-oT-g4a"/>
-                        <outletCollection property="chordImages" destination="ypi-ho-wTk" id="7YK-8y-8FU"/>
-                        <outletCollection property="chordImages" destination="hbw-aP-pry" id="8fr-la-PiS"/>
-                        <outletCollection property="chordImages" destination="gLw-hn-pYr" id="GUB-qz-yMM"/>
-                        <outletCollection property="chordImages" destination="K6L-vF-w8r" id="771-CQ-SMX"/>
-                        <outletCollection property="chordImages" destination="LeM-eW-q6T" id="8rN-Ov-aKe"/>
-                        <outletCollection property="chordImages" destination="UJH-DV-4R7" id="P24-GH-qjr"/>
-                        <outletCollection property="chordImages" destination="YGd-7w-S7e" id="cnN-r2-33A"/>
+                        <outletCollection property="scaleImages" destination="WTi-rV-Lbt" collectionClass="NSMutableArray" id="TeB-5t-Iad"/>
+                        <outletCollection property="scaleImages" destination="H50-Ql-FXc" collectionClass="NSMutableArray" id="0GN-d2-Ylm"/>
+                        <outletCollection property="scaleImages" destination="rqc-zb-UEB" collectionClass="NSMutableArray" id="2Gf-ez-vka"/>
+                        <outletCollection property="scaleImages" destination="Pty-YS-WXt" collectionClass="NSMutableArray" id="ebf-ii-LXQ"/>
+                        <outletCollection property="scaleImages" destination="F5p-KU-DMH" collectionClass="NSMutableArray" id="H75-dY-kIW"/>
+                        <outletCollection property="scaleImages" destination="ZbW-5J-nPm" collectionClass="NSMutableArray" id="P8a-Ci-bxu"/>
+                        <outletCollection property="scaleImages" destination="x2D-2k-JYa" collectionClass="NSMutableArray" id="jch-uj-f6I"/>
+                        <outletCollection property="scaleImages" destination="BPi-5m-UmG" collectionClass="NSMutableArray" id="nSt-MY-KbV"/>
+                        <outletCollection property="scaleImages" destination="Vxj-CE-Mlb" collectionClass="NSMutableArray" id="Sdf-N1-cZb"/>
+                        <outletCollection property="scaleImages" destination="DDJ-Td-lDC" collectionClass="NSMutableArray" id="xUW-C7-jUZ"/>
+                        <outletCollection property="scaleImages" destination="KcD-NP-hqy" collectionClass="NSMutableArray" id="dDw-Zp-VGt"/>
+                        <outletCollection property="scaleImages" destination="s8R-YN-DKj" collectionClass="NSMutableArray" id="gXf-Cn-JOz"/>
+                        <outletCollection property="chordImages" destination="nHJ-89-Jk5" collectionClass="NSMutableArray" id="qle-Yu-aHw"/>
+                        <outletCollection property="chordImages" destination="ARu-jg-ebd" collectionClass="NSMutableArray" id="ZcF-hX-2ds"/>
+                        <outletCollection property="chordImages" destination="ume-rD-Rca" collectionClass="NSMutableArray" id="s9H-1L-zCC"/>
+                        <outletCollection property="chordImages" destination="lvL-Xg-ox2" collectionClass="NSMutableArray" id="PQr-i9-Rhp"/>
+                        <outletCollection property="chordImages" destination="pfC-02-Hbg" collectionClass="NSMutableArray" id="elJ-oT-g4a"/>
+                        <outletCollection property="chordImages" destination="ypi-ho-wTk" collectionClass="NSMutableArray" id="7YK-8y-8FU"/>
+                        <outletCollection property="chordImages" destination="hbw-aP-pry" collectionClass="NSMutableArray" id="8fr-la-PiS"/>
+                        <outletCollection property="chordImages" destination="gLw-hn-pYr" collectionClass="NSMutableArray" id="GUB-qz-yMM"/>
+                        <outletCollection property="chordImages" destination="K6L-vF-w8r" collectionClass="NSMutableArray" id="771-CQ-SMX"/>
+                        <outletCollection property="chordImages" destination="LeM-eW-q6T" collectionClass="NSMutableArray" id="8rN-Ov-aKe"/>
+                        <outletCollection property="chordImages" destination="UJH-DV-4R7" collectionClass="NSMutableArray" id="P24-GH-qjr"/>
+                        <outletCollection property="chordImages" destination="YGd-7w-S7e" collectionClass="NSMutableArray" id="cnN-r2-33A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1KN-zm-Ftb" userLabel="First Responder" sceneMemberID="firstResponder"/>

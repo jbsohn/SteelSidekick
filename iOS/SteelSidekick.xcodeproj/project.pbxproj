@@ -93,7 +93,7 @@
 		52E416071D17B46C00D030A2 /* JsonWritingError.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52E415D01D17B46C00D030A2 /* JsonWritingError.cpp */; };
 		52E416081D17B46C00D030A2 /* SolidusEscaper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52E415D11D17B46C00D030A2 /* SolidusEscaper.cpp */; };
 		52E416091D17B46C00D030A2 /* Value.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52E415D21D17B46C00D030A2 /* Value.cpp */; };
-		D9112ADD1D13173700F085DF /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9160D871CBBFF7B00A09A4A /* InfoViewController.m */; };
+		D91AB61C2016427700E28D88 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91AB61B2016427700E28D88 /* InfoViewController.swift */; };
 		D92776911D36D10700822208 /* BTBalloon.m in Sources */ = {isa = PBXBuildFile; fileRef = D927768E1D36D10700822208 /* BTBalloon.m */; };
 		D92776921D36D10700822208 /* BTBalloonArrow.m in Sources */ = {isa = PBXBuildFile; fileRef = D92776901D36D10700822208 /* BTBalloonArrow.m */; };
 		D93D347B1EB00126004E1514 /* GuitarTypes-Test.settings in Resources */ = {isa = PBXBuildFile; fileRef = D93D34781EB00126004E1514 /* GuitarTypes-Test.settings */; };
@@ -469,8 +469,8 @@
 		52E4E5001D1783AB00D030A2 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/AppiraterLocalizable.strings; sourceTree = "<group>"; };
 		52E4E5011D1783AB00D030A2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/AppiraterLocalizable.strings"; sourceTree = "<group>"; };
 		52E4E5021D1783AB00D030A2 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/AppiraterLocalizable.strings"; sourceTree = "<group>"; };
-		D9160D861CBBFF7B00A09A4A /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
-		D9160D871CBBFF7B00A09A4A /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = InfoViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		D91AB6182016423400E28D88 /* SteelSidekick-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SteelSidekick-Bridging-Header.h"; sourceTree = "<group>"; };
+		D91AB61B2016427700E28D88 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		D9261C171EB8CEF0007A87DE /* SGuitar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SGuitar.h; path = ../SGuitar/include/SGuitar.h; sourceTree = "<group>"; };
 		D9261C181EB8CEF0007A87DE /* SGuitar.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = SGuitar.hpp; path = ../SGuitar/include/SGuitar.hpp; sourceTree = "<group>"; };
 		D927768D1D36D10700822208 /* BTBalloon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTBalloon.h; sourceTree = "<group>"; };
@@ -1201,14 +1201,14 @@
 				D9BCFE151C7E5DDB00C36405 /* AppDelegate.m */,
 				527016F91C8AA8F300EE5CF5 /* ViewController.h */,
 				527016FA1C8AA8F300EE5CF5 /* ViewController.m */,
-				D9160D861CBBFF7B00A09A4A /* InfoViewController.h */,
-				D9160D871CBBFF7B00A09A4A /* InfoViewController.m */,
+				D91AB61B2016427700E28D88 /* InfoViewController.swift */,
 				52A12F1A1DFFA83200408552 /* UIViewController+Orientation.h */,
 				52A12F1B1DFFA83200408552 /* UIViewController+Orientation.m */,
 				D9BCFE1D1C7E5DDB00C36405 /* Assets.xcassets */,
 				D9BCFE1F1C7E5DDB00C36405 /* LaunchScreen.storyboard */,
 				D9BCFE221C7E5DDB00C36405 /* Info.plist */,
 				D9BCFE111C7E5DDB00C36405 /* Supporting Files */,
+				D91AB6182016423400E28D88 /* SteelSidekick-Bridging-Header.h */,
 			);
 			path = SteelSidekick;
 			sourceTree = "<group>";
@@ -1406,11 +1406,12 @@
 		D9BCFE061C7E5DDB00C36405 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0920;
 				TargetAttributes = {
 					D9BCFE0D1C7E5DDB00C36405 = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = N9V659CU72;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 					D9BCFE261C7E5DDB00C36405 = {
@@ -1560,6 +1561,7 @@
 				D96DC2BD1D188C8D00D7ECFD /* FileWvOut.cpp in Sources */,
 				D96DC2C41D188C8D00D7ECFD /* Granulate.cpp in Sources */,
 				D96DC2DF1D188C8D00D7ECFD /* Phonemes.cpp in Sources */,
+				D91AB61C2016427700E28D88 /* InfoViewController.swift in Sources */,
 				D96DC2B81D188C8D00D7ECFD /* Envelope.cpp in Sources */,
 				D96DC2A61D188C8D00D7ECFD /* Asymp.cpp in Sources */,
 				D96DC2E51D188C8D00D7ECFD /* Resonate.cpp in Sources */,
@@ -1590,7 +1592,6 @@
 				D96DC2ED1D188C8D00D7ECFD /* Shakers.cpp in Sources */,
 				D96DC2FE1D188C8D00D7ECFD /* TwoZero.cpp in Sources */,
 				52D0A10E1C7FE5D200EA5C6D /* GuitarViewController.m in Sources */,
-				D9112ADD1D13173700F085DF /* InfoViewController.m in Sources */,
 				52E416051D17B46C00D030A2 /* Indenter.cpp in Sources */,
 				525D6816201523B100E11E22 /* DistancePickerView.m in Sources */,
 				52E414511D1783C000D030A2 /* IQBarButtonItem.m in Sources */,
@@ -1931,6 +1932,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "";
 				VALIDATE_PRODUCT = YES;
@@ -1941,6 +1943,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -1959,6 +1962,9 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "SteelSidekick/SteelSidekick-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				USER_HEADER_SEARCH_PATHS = "../SGuitar/External/JsonBox/include ../SGuitar/External/stk/include ../SGuitar/include";
 			};
 			name = Debug;
@@ -1967,6 +1973,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -1985,6 +1992,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "SteelSidekick/SteelSidekick-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				USER_HEADER_SEARCH_PATHS = "../SGuitar/External/JsonBox/include ../SGuitar/External/stk/include ../SGuitar/include";
 			};
 			name = Release;
@@ -1992,6 +2001,7 @@
 		D9BCFE3F1C7E5DDB00C36405 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = SteelSidekickTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -2006,6 +2016,7 @@
 		D9BCFE401C7E5DDB00C36405 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = SteelSidekickTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -2020,6 +2031,7 @@
 		D9BCFE421C7E5DDB00C36405 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = SteelSidekickUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.steelsidekick.SteelSidekickUITests;
@@ -2032,6 +2044,7 @@
 		D9BCFE431C7E5DDB00C36405 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = SteelSidekickUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.steelsidekick.SteelSidekickUITests;
