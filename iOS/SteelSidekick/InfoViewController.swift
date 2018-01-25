@@ -245,12 +245,12 @@ class InfoViewController: UIViewController {
             scaleView.autoSetDimension(ALDimension.height, toSize:CGFloat(INFO_VIEW_SCALE_HEIGHT))
             scaleView.autoPinEdge(ALEdge.top, to:ALEdge.top, of:self.view)
             scaleView.autoPinEdge(ALEdge.left, to:ALEdge.left, of:self.view, withOffset:offset)
-            scaleView.autoPinEdge(ALEdge.right, to:ALEdge.right, of:self.view)
+            scaleView.autoPinEdge(ALEdge.right, to:ALEdge.right, of:self.view, withOffset:offset)
             
             chordView.autoSetDimension(ALDimension.height, toSize:CGFloat(INFO_VIEW_CHORD_HEIGHT))
             chordView.autoPinEdge(ALEdge.top, to:ALEdge.bottom, of:self.scaleView)
             chordView.autoPinEdge(ALEdge.left, to:ALEdge.left, of:self.view, withOffset:offset)
-            chordView.autoPinEdge(ALEdge.right, to:ALEdge.right, of:self.view)
+            chordView.autoPinEdge(ALEdge.right, to:ALEdge.right, of:self.view, withOffset:offset)
             } as NSArray
     }
     
