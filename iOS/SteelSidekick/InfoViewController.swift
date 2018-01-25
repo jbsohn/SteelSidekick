@@ -16,15 +16,18 @@ func UIColorFromRGB2(rgbValue: UInt) -> UIColor {
     )
 }
 
-let NOTE_BACKGROUND                 = "Note-Background"
-let NOTE_CHORD_BACKGROUND           = "Note-ChordBackground"
-let NOTE_SCALE_BACKGROUND           = "Note-ScaleBackground"
-let NOTE_SCALE_CHORD_BACKGROUND     = "Note-ScaleChordBackground"
+let NOTE_BACKGROUND: String                 = "Note-Background"
+let NOTE_CHORD_BACKGROUND: String           = "Note-ChordBackground"
+let NOTE_SCALE_BACKGROUND: String           = "Note-ScaleBackground"
+let NOTE_SCALE_CHORD_BACKGROUND: String     = "Note-ScaleChordBackground"
 
-let SCALE_COLOR                     = 0xA01401
-let CHORD_COLOR                     = 0x0536FF
-let SCALE_CHORD_COLOR               = 0x751F92
+let SCALE_COLOR: UInt                       = 0xA01401
+let CHORD_COLOR: UInt                       = 0x0536FF
+let SCALE_CHORD_COLOR: UInt                 = 0x751F92
 
+enum SetupNoteType {
+    case chord, scale
+}
 
 class InfoViewController: UIViewController {
     
@@ -56,8 +59,8 @@ class InfoViewController: UIViewController {
         super.viewWillAppear(animated)
         
         setupLabels()
-        setupNoteDisplayImages(images: self.scaleImages, isScale: true)
-        setupNoteDisplayImages(images: self.chordImages, isScale: false)
+        setupNoteDisplayImages(images: self.scaleImages, type: SetupNoteType.scale)
+        setupNoteDisplayImages(images: self.chordImages, type: SetupNoteType.chord)
         
         // set constraints for initial orientation
         let view:UIView = (self.parent?.view)!
@@ -142,23 +145,23 @@ class InfoViewController: UIViewController {
     
     func updateDisplay() {
         setupLabels()
-        setupNoteDisplayImages(images: self.scaleImages, isScale: true)
-        setupNoteDisplayImages(images: self.chordImages, isScale: false)
+        setupNoteDisplayImages(images: self.scaleImages, type: SetupNoteType.scale)
+        setupNoteDisplayImages(images: self.chordImages, type: SetupNoteType.chord)
     }
     
-    func setupNoteDisplayImages(images: [UIImageView], isScale: Bool) {
+    func setupNoteDisplayImages(images: [UIImageView], type: SetupNoteType) {
         let sguitar:SGuitar = SGuitar.sharedInstance()
         let scaleOptions:SGScaleOptions = sguitar.getScaleOptions()
         let chordOptions:SGChordOptions = sguitar.getChordOptions()
-        var noteValues: NSArray = [];
+        var noteValues:[Int] = []
         
-        if (isScale) {  // Scale
+        if (type == SetupNoteType.scale) {  // Scale
             if (scaleOptions.showScale) {
-                noteValues = sguitar.getScaleNoteValues() as NSArray
+                noteValues = sguitar.getScaleNoteValues() as! Array<Int>
             }
-        } else {        // Chord
+        } else {                    // Chord
             if (chordOptions.showChord) {
-                noteValues = sguitar.getChordNoteValues() as NSArray
+                noteValues = sguitar.getChordNoteValues() as! Array<Int>
             }
         }
         
@@ -166,39 +169,36 @@ class InfoViewController: UIViewController {
             let image:UIImageView = images[i]
             
             if (i < noteValues.count) {
-                let note:NSNumber = noteValues[i] as! NSNumber
-                let noteValue:Int = note.intValue
-                image.isHidden = false;
+                let noteValue:Int = noteValues[i]
+                image.isHidden = false
                 
                 var imageName:String = ""
-                
                 if (sguitar.getOptions().showNotesAs == ADT_SHARP) {
                     imageName = noteImagesSharp[noteValue]
                 } else {
                     imageName = noteImagesFlat[noteValue]
                 }
                 
-                
                 image.image = UIImage(named: imageName)
-                var isBoth:Bool = false;
+                var isBoth:Bool = false
                 
                 if (sguitar.getScaleOptions().showScale && sguitar.getChordOptions().showChord) {
-                    if (isScale) {
-                        isBoth = sguitar.isNoteValue(inChord: Int32(noteValue));
+                    if (type == SetupNoteType.scale) {
+                        isBoth = sguitar.isNoteValue(inChord:Int32(noteValue))
                     } else {
-                        isBoth = sguitar.isNoteValue(inScale: Int32(noteValue));
+                        isBoth = sguitar.isNoteValue(inScale:Int32(noteValue))
                     }
                 }
                 
                 if (isBoth) {   // must check for both first
-                    image.backgroundColor = UIColorFromRGB2(rgbValue: UInt(SCALE_CHORD_COLOR));
-                } else if (isScale) {
-                    image.backgroundColor = UIColorFromRGB2(rgbValue: UInt(SCALE_COLOR));
+                    image.backgroundColor = UIColorFromRGB2(rgbValue:SCALE_CHORD_COLOR)
+                } else if (type == SetupNoteType.scale) {
+                    image.backgroundColor = UIColorFromRGB2(rgbValue:SCALE_COLOR)
                 } else {
-                    image.backgroundColor = UIColorFromRGB2(rgbValue: UInt(CHORD_COLOR));
+                    image.backgroundColor = UIColorFromRGB2(rgbValue:CHORD_COLOR)
                 }
             } else {
-                image.isHidden = true;
+                image.isHidden = true
             }
         }
     }
@@ -256,14 +256,14 @@ class InfoViewController: UIViewController {
     
     // update constraints for the current orientation, one line or two lines for displaying chord and scale information
     func updateConstraintsForOrientation(orientation: ORIENTATION) {
-        var useOneLine:Bool = false;
+        var useOneLine:Bool = false
         
         if (orientation == O_LANDSCAPE) {
-            useOneLine = true;
+            useOneLine = true
         } else if (orientation == O_PORTRAIT) {
             let size:CGSize = self.size(forPortrait:self.parent!.view.frame.size)
             if (size.width >= CGFloat(INFO_VIEW_SCALE_CHORD_WIDTH)) {
-                useOneLine = true;
+                useOneLine = true
             }
         }
         
