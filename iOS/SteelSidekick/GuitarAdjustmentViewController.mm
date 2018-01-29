@@ -10,7 +10,7 @@
 #import "GuitarAdjustmentViewController.h"
 #import "SGuitar.h"
 #import "ColorScheme.h"
-#import "CustomGuitar.h"
+#import "SCustomGuitar.hpp"
 
 #define POPOVER_VIEW_SIZE       CGSizeMake(320.0, 480.0)
 #define HEADER_HEIGHT           44.0f
@@ -98,14 +98,18 @@
 }
 
 - (void)setupItems {
-    CustomGuitar *customGuitar = [CustomGuitar sharedInstance];
     NSMutableArray *newItems = [[NSMutableArray alloc] init];
-    SG::GuitarAdjustment guitarAdjustment = [customGuitar getGuitarAdjustmentForAdjustmentID:self.adjustmentID];
+    SG::SCustomGuitar& customGuitar = SG::SCustomGuitar::sharedInstance();
+    
+    SG::GuitarAdjustment guitarAdjustment = customGuitar.getGuitarAdjustment([self.adjustmentID UTF8String]);
     self.items = [[NSArray alloc] init];
 
     [newItems addObject:[[StringAdjustementItem alloc] init]];
     
-    for (int stringNumber = 1; stringNumber <= [customGuitar getNumberOfStrings]; stringNumber++) {
+    GUITAR_STRING_TYPE type = customGuitar.getGuitarStringType();
+    int numberOfStrings = SG::Guitar::numberOfStringsForType(type);
+    
+    for (int stringNumber = 1; stringNumber <= numberOfStrings; stringNumber++) {
         SG::StringAdjustment stringAdjustment = guitarAdjustment.stringAdjustmentForStringNumber(stringNumber);
         StringAdjustementItem *item = [[StringAdjustementItem alloc] initWithStringAdjustment:stringAdjustment];
         [newItems addObject:item];
@@ -115,9 +119,11 @@
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    CustomGuitar *customGuitar = [CustomGuitar sharedInstance];
+    SG::SCustomGuitar& customGuitar = SG::SCustomGuitar::sharedInstance();
+    
     SG::GuitarAdjustment newGuitarAdjustment;
-    int numberOfStrings = [customGuitar getNumberOfStrings];
+    GUITAR_STRING_TYPE type = customGuitar.getGuitarStringType();
+    int numberOfStrings = SG::Guitar::numberOfStringsForType(type);
 
     for (int i = 1; i <= numberOfStrings; i++) {
         StringAdjustmentTableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i - 1 inSection: 0]];
@@ -129,8 +135,7 @@
     }
     
     newGuitarAdjustment.setAdjustmentID([self.adjustmentID UTF8String]);
-
-    [customGuitar setGuitarAdjustment:newGuitarAdjustment forAdjustmentID:self.adjustmentID];
+    customGuitar.setGuitarAdjustment([self.adjustmentID UTF8String], newGuitarAdjustment);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -145,8 +150,9 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    CustomGuitar *customGuitar = [CustomGuitar sharedInstance];
-    int numberOfStrings = [customGuitar getNumberOfStrings];
+    SG::SCustomGuitar& customGuitar = SG::SCustomGuitar::sharedInstance();
+    GUITAR_STRING_TYPE type = customGuitar.getGuitarStringType();
+    int numberOfStrings = SG::Guitar::numberOfStringsForType(type);
     return numberOfStrings;
 }
 

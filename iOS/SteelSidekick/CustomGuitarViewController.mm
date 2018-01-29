@@ -10,9 +10,9 @@
 #import "GuitarAdjustmentViewController.h"
 #import "GuitarNameTableViewCell.h"
 #import "ActionSheetPicker.h"
-#import "CustomGuitar.h"
 #import "SGuitar.h"
 #import "ColorScheme.h"
+#import "SCustomGuitar.hpp"
 
 #define POPOVER_VIEW_SIZE     CGSizeMake(320.0, 480.0)
 
@@ -139,9 +139,8 @@ NSString *CUSTOM_GUITAR_SECTIONS_NAMES[] = {
 }
 
 - (void)reset {
-    CustomGuitar *customGuitar = [CustomGuitar sharedInstance];
-    [customGuitar reset];
-    
+    SG::SCustomGuitar& customGuitar = SG::SCustomGuitar::sharedInstance();
+    customGuitar.reset();
     self.saveButton.enabled = NO;
 }
 
@@ -207,11 +206,12 @@ NSString *CUSTOM_GUITAR_SECTIONS_NAMES[] = {
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    CustomGuitar *customGuitar = [CustomGuitar sharedInstance];
+    SG::SCustomGuitar& customGuitar = SG::SCustomGuitar::sharedInstance();
 
     if (indexPath.section == CGS_STRINGS) {
         self.editingStringNumber = indexPath.row + 1;
-        SG::Note note = [customGuitar getStartNoteForStringNumber:self.editingStringNumber];
+        int midiValue = customGuitar.getStartNoteMidiValue(self.editingStringNumber);
+        SG::Note note(midiValue);
         self.selectedNote = note.getNoteValue();
         self.selectedPitch = note.getPitchValue();
         NSArray *initialSelections = @[[NSNumber numberWithInt:self.selectedNote],
@@ -223,14 +223,14 @@ NSString *CUSTOM_GUITAR_SECTIONS_NAMES[] = {
                                    initialSelections:initialSelections];
     } else if (indexPath.section == CGS_GUITAR_TYPE) {
         GUITAR_TYPE guitarType = (GUITAR_TYPE) indexPath.row;
-        if (customGuitar.guitarType != guitarType) {
+        if (customGuitar.getGuitarType() != guitarType) {
             // user selected a new guitar type, set it and reload the table to reflect new guitar type
-            customGuitar.guitarType = guitarType;
+            customGuitar.setGuitarType(guitarType);
             [self.tableView reloadData];
         }
     } else if (indexPath.section == CGS_GUITAR_STRING_TYPE) {
         // user set the number of strings
-        customGuitar.guitarStringType = (GUITAR_STRING_TYPE) indexPath.row;
+        customGuitar.setGuitarStringType((GUITAR_STRING_TYPE) indexPath.row);
         [self.tableView reloadData];
     } else {
         // user selectected a pedal or lever to adjust
@@ -251,24 +251,25 @@ NSString *CUSTOM_GUITAR_SECTIONS_NAMES[] = {
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    CustomGuitar *customGuitar = [CustomGuitar sharedInstance];
+    SG::SCustomGuitar& customGuitar = SG::SCustomGuitar::sharedInstance();
     
     // non-pedal steel does not have pedals or levers to adjust
-    if (customGuitar.guitarType == GT_LAP_STEEL) {
+    if (customGuitar.getGuitarType() == GT_LAP_STEEL) {
         return LAP_STEEL_NUMBER_OF_SECTIONS;
     }
     return self.items.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    CustomGuitar *customGuitar = [CustomGuitar sharedInstance];
+    SG::SCustomGuitar& customGuitar = SG::SCustomGuitar::sharedInstance();
     NSArray *items = self.items[section];
     NSInteger rows = 0;
-    
+
     if (items) {
         if (section == CGS_STRINGS) {
             // the number of strings should reflect the current instrument being edited
-            rows = SG::Guitar::numberOfStringsForType(customGuitar.guitarStringType);
+            GUITAR_STRING_TYPE type = customGuitar.getGuitarStringType();
+            rows = SG::Guitar::numberOfStringsForType(type);
         } else {
             rows = [items count];
         }
@@ -278,8 +279,8 @@ NSString *CUSTOM_GUITAR_SECTIONS_NAMES[] = {
 
 - (IBAction)nameEditingChanged:(UITextField *)sender {
     // user changed the value in the guitar name
-    CustomGuitar *customGuitar = [CustomGuitar sharedInstance];
-    [customGuitar setGuitarName:sender.text];
+    SG::SCustomGuitar& customGuitar = SG::SCustomGuitar::sharedInstance();
+    customGuitar.setGuitarName([sender.text UTF8String]);
     
     if (sender.text.length > 0) {
         self.saveButton.enabled = YES;
@@ -291,16 +292,16 @@ NSString *CUSTOM_GUITAR_SECTIONS_NAMES[] = {
     CustomGuitarItem *item = items[indexPath.row];
     NSString *idName = CUSTOM_GUITAR_ITEM_TYPE_NAMES[item.type];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:idName forIndexPath:indexPath];
-    CustomGuitar *customGuitar = [CustomGuitar sharedInstance];
+    SG::SCustomGuitar& customGuitar = SG::SCustomGuitar::sharedInstance();
 
     [[ColorScheme sharedInstance] applyThemeToTableViewCell:cell];
 
     if (indexPath.section == CGIT_GUITAR_NAME) {
         GuitarNameTableViewCell *guitarNameCell = (GuitarNameTableViewCell *)cell;
-        NSString *name = customGuitar.guitarName;
+        NSString *name = @(customGuitar.getGuitarName().c_str());
         guitarNameCell.guitarNameTextField.text = name;
     } else if (indexPath.section == CGS_GUITAR_TYPE) {
-        GUITAR_TYPE guitarType = customGuitar.guitarType;
+        GUITAR_TYPE guitarType = customGuitar.getGuitarType();
         
         // set guitar type (currently pedal or lap steel)
         NSString *guitarTypeName = @(SG::Guitar::getGuitarTypeName((int) indexPath.row).c_str());
@@ -318,7 +319,7 @@ NSString *CUSTOM_GUITAR_SECTIONS_NAMES[] = {
         cell.textLabel.text = guitarStringTypeName;
         
         // display checkmark if currently selected
-        if (customGuitar.guitarStringType == indexPath.row) {
+        if (customGuitar.getGuitarStringType() == indexPath.row) {
             cell.accessoryType = UITableViewCellAccessoryCheckmark;
         } else {
             cell.accessoryType = UITableViewCellAccessoryNone;
@@ -326,7 +327,8 @@ NSString *CUSTOM_GUITAR_SECTIONS_NAMES[] = {
     } else if (indexPath.section == CGS_STRINGS) {
         int stringNumber = item.itemID;
         // display the guitar string note/pitch
-        SG::Note note = [customGuitar getStartNoteForStringNumber:stringNumber];
+        int midiValue = customGuitar.getStartNoteMidiValue(stringNumber);
+        SG::Note note(midiValue);
         cell.textLabel.text = [NSString stringWithFormat:@"%d", stringNumber];
         NSString *name = @(SG::NoteName::getNoteNameSharpFlat(note.getNoteValue()).c_str());
         cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ %d", name, note.getPitchValue()];
@@ -375,23 +377,23 @@ NSString *CUSTOM_GUITAR_SECTIONS_NAMES[] = {
 }
 
 - (IBAction)saveSelected:(id)sender {
-    CustomGuitar *customGuitar = [CustomGuitar sharedInstance];
-    [customGuitar save];
+    SG::SCustomGuitar& customGuitar = SG::SCustomGuitar::sharedInstance();
+    customGuitar.save();
     [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)loadGuitar:(NSString *)guitarName {
-    CustomGuitar *customGuitar = [CustomGuitar sharedInstance];
-    [customGuitar reset];
-    customGuitar.guitarName = guitarName;
-    [customGuitar load];
+    SG::SCustomGuitar& customGuitar = SG::SCustomGuitar::sharedInstance();
+    customGuitar.reset();
+    customGuitar.setGuitarName([guitarName UTF8String]);
+    customGuitar.load();
 }
 
 - (void)actionSheetPickerDidSucceed:(AbstractActionSheetPicker *)actionSheetPicker origin:(id)origin {
-    CustomGuitar *customGuitar = [CustomGuitar sharedInstance];
+    SG::SCustomGuitar& customGuitar = SG::SCustomGuitar::sharedInstance();
     SG::Note note = SG::Note(self.selectedNote, self.selectedPitch);
     
-    [customGuitar setNote:note forStringNumber:self.editingStringNumber];
+    customGuitar.setStartNote(note.getMIDIValue(), self.editingStringNumber);
     [self.tableView reloadData];
 }
 
