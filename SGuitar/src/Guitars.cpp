@@ -70,6 +70,11 @@ namespace SG {
         return guitars;
     }
 
+    bool Guitars::isExistingCustomGuitarName(std::string name) const {
+        std::string fileName = guitarFileNameForCustomGuitar(name);
+        return (fileName.length() > 0);
+    }
+    
     std::string Guitars::guitarFileNameForCustomGuitar(std::string name) const {
         std::string root = FileUtils::getRootPathForUserFiles();
         std::string path = root + "/Custom Guitars";

@@ -35,6 +35,7 @@ namespace SG {
 
         std::vector<std::string> getCustomGuitarNames() const;
         std::string guitarFileNameForCustomGuitar(std::string name) const;
+        bool isExistingCustomGuitarName(std::string name) const;
         bool removeCustomGuitar(std::string name);
 
     protected:
