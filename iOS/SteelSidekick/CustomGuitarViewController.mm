@@ -16,7 +16,17 @@
 
 #define POPOVER_VIEW_SIZE     CGSizeMake(320.0, 480.0)
 
+
 #define LAP_STEEL_NUMBER_OF_SECTIONS      4
+
+#define NOTE_AND_OCTAVE_PICKER_TITLE    @"Select Note and Octave"
+#define GUITAR_EXISTS_ALERT_TITLE       @"Custom Guitar Already Exists"
+#define GUITAR_EXISTS_ALERT             @"The custom guitar you are saving already exists. Do you want to overwrite the existing item?"
+
+typedef enum {
+    GEAR_CANCEL,
+    GEAR_OVERWRITE
+} GUITAR_EXISTS_ALERT_RESPONSE_TYPE;
 
 typedef enum {
     CGIT_GUITAR_NAME,
@@ -33,7 +43,6 @@ NSString *CUSTOM_GUITAR_ITEM_TYPE_NAMES[] = {
     @"guitarTypeCell",
     @"guitarStringTypeCell",
     @"stringCell",
-    @"stringNoteCell",
     @"pedalCell",
     @"leverCell"
 };
@@ -57,7 +66,7 @@ NSString *CUSTOM_GUITAR_SECTIONS_NAMES[] = {
 };
 
 //////////////////////////////////////////////////////////////////////////////
-@interface CustomGuitarItem : NSObject
+@interface CustomGuitarItem : NSObject <UIAlertViewDelegate>
 
 @property CUSTOM_GUITAR_ITEM_TYPE type;
 @property int itemID;
@@ -91,6 +100,7 @@ NSString *CUSTOM_GUITAR_SECTIONS_NAMES[] = {
 
 @property NSMutableArray *items;
 @property NSString *selectedAdjustmentID;
+@property BOOL editingGuitar;
 
 // for editing string
 @property int editingStringNumber;
@@ -141,6 +151,7 @@ NSString *CUSTOM_GUITAR_SECTIONS_NAMES[] = {
 - (void)reset {
     SG::SCustomGuitar& customGuitar = SG::SCustomGuitar::sharedInstance();
     customGuitar.reset();
+    self.editingGuitar = NO;
     self.saveButton.enabled = NO;
 }
 
@@ -209,14 +220,14 @@ NSString *CUSTOM_GUITAR_SECTIONS_NAMES[] = {
     SG::SCustomGuitar& customGuitar = SG::SCustomGuitar::sharedInstance();
 
     if (indexPath.section == CGS_STRINGS) {
-        self.editingStringNumber = indexPath.row + 1;
-        int midiValue = customGuitar.getStartNoteMidiValue(self.editingStringNumber);
+        self.editingStringNumber = (int) (indexPath.row + 1);
+        int midiValue = customGuitar.getStartNoteMIDIValue(self.editingStringNumber);
         SG::Note note(midiValue);
         self.selectedNote = note.getNoteValue();
         self.selectedPitch = note.getPitchValue();
         NSArray *initialSelections = @[[NSNumber numberWithInt:self.selectedNote],
                                        [NSNumber numberWithInt:self.selectedPitch - 1]];
-        [ActionSheetCustomPicker showPickerWithTitle:@"Select Note and Octave"
+        [ActionSheetCustomPicker showPickerWithTitle:NOTE_AND_OCTAVE_PICKER_TITLE
                                             delegate:self
                                     showCancelButton:NO
                                               origin:self.view
@@ -300,6 +311,10 @@ NSString *CUSTOM_GUITAR_SECTIONS_NAMES[] = {
         GuitarNameTableViewCell *guitarNameCell = (GuitarNameTableViewCell *)cell;
         NSString *name = @(customGuitar.getGuitarName().c_str());
         guitarNameCell.guitarNameTextField.text = name;
+        
+        if (self.editingGuitar) {
+            guitarNameCell.guitarNameTextField.enabled = NO;
+        }
     } else if (indexPath.section == CGS_GUITAR_TYPE) {
         GUITAR_TYPE guitarType = customGuitar.getGuitarType();
         
@@ -327,7 +342,7 @@ NSString *CUSTOM_GUITAR_SECTIONS_NAMES[] = {
     } else if (indexPath.section == CGS_STRINGS) {
         int stringNumber = item.itemID;
         // display the guitar string note/pitch
-        int midiValue = customGuitar.getStartNoteMidiValue(stringNumber);
+        int midiValue = customGuitar.getStartNoteMIDIValue(stringNumber);
         SG::Note note(midiValue);
         cell.textLabel.text = [NSString stringWithFormat:@"%d", stringNumber];
         NSString *name = @(SG::NoteName::getNoteNameSharpFlat(note.getNoteValue()).c_str());
@@ -378,8 +393,39 @@ NSString *CUSTOM_GUITAR_SECTIONS_NAMES[] = {
 
 - (IBAction)saveSelected:(id)sender {
     SG::SCustomGuitar& customGuitar = SG::SCustomGuitar::sharedInstance();
-    customGuitar.save();
-    [self.navigationController popViewControllerAnimated:YES];
+    BOOL save = NO;
+    
+    if (self.editingGuitar) {
+        // editing an existing guitar, overwrite it
+        save = YES;
+    } else if (customGuitar.isExistingGuitar()) {
+        // the guitar the user is attempting to save already exists
+        // ask the user to cancel save or overwrite
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:GUITAR_EXISTS_ALERT_TITLE
+                                                        message:GUITAR_EXISTS_ALERT
+                                                       delegate:self
+                                              cancelButtonTitle:@"Cancel"
+                                              otherButtonTitles:@"Overwrite", nil];
+        [alert show];
+    } else {
+        save = YES;
+    }
+    
+    if (save) {
+        // save guitar and dismiss controller
+        customGuitar.save();
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    SG::SCustomGuitar& customGuitar = SG::SCustomGuitar::sharedInstance();
+
+    // the custom guitar exists but the user wants to overrrite it
+    if (buttonIndex == GEAR_OVERWRITE) {
+        customGuitar.save();
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 - (void)loadGuitar:(NSString *)guitarName {
@@ -387,13 +433,14 @@ NSString *CUSTOM_GUITAR_SECTIONS_NAMES[] = {
     customGuitar.reset();
     customGuitar.setGuitarName([guitarName UTF8String]);
     customGuitar.load();
+    self.editingGuitar = YES;
 }
 
 - (void)actionSheetPickerDidSucceed:(AbstractActionSheetPicker *)actionSheetPicker origin:(id)origin {
     SG::SCustomGuitar& customGuitar = SG::SCustomGuitar::sharedInstance();
     SG::Note note = SG::Note(self.selectedNote, self.selectedPitch);
     
-    customGuitar.setStartNote(note.getMIDIValue(), self.editingStringNumber);
+    customGuitar.setStartNoteMIDIValue(note.getMIDIValue(), self.editingStringNumber);
     [self.tableView reloadData];
 }
 

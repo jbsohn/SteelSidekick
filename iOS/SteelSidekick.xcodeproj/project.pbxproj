@@ -354,6 +354,7 @@
 		52A12F1A1DFFA83200408552 /* UIViewController+Orientation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Orientation.h"; sourceTree = "<group>"; };
 		52A12F1B1DFFA83200408552 /* UIViewController+Orientation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Orientation.m"; sourceTree = "<group>"; };
 		52A12F1D1DFFC92100408552 /* Globals.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Globals.h; sourceTree = "<group>"; };
+		52A8406E20267F5F00FC6065 /* FileUtils_Android.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FileUtils_Android.cpp; path = ../SGuitar/src/FileUtils_Android.cpp; sourceTree = "<group>"; };
 		52BF4BEA1D203FBF00710CE5 /* UIColor+Expanded.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Expanded.h"; sourceTree = "<group>"; };
 		52BF4BEB1D203FBF00710CE5 /* UIColor+Expanded.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Expanded.m"; sourceTree = "<group>"; };
 		52BF4BED1D20415B00710CE5 /* FlatColorPalette.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlatColorPalette.h; sourceTree = "<group>"; };
@@ -819,6 +820,7 @@
 				528BA0FF1D18F03C009FDC64 /* FileUtils.hpp */,
 				528BA0CF1D18B9DA009FDC64 /* FileUtils.cpp */,
 				528BA0D01D18B9DA009FDC64 /* FileUtils_iOS.mm */,
+				52A8406E20267F5F00FC6065 /* FileUtils_Android.cpp */,
 			);
 			name = File;
 			sourceTree = "<group>";
