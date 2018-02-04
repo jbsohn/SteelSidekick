@@ -33,7 +33,6 @@ typedef enum {
     CGIT_GUITAR_TYPE,
     CGIT_GUITAR_STRING_TYPE,
     CGIT_GUITAR_STRING,
-    CGIT_GUITAR_STRING_NOTE_SELECT,
     CGIT_PEDAL,
     CGIT_LEVER,
 } CUSTOM_GUITAR_ITEM_TYPE;
@@ -302,6 +301,7 @@ NSString *CUSTOM_GUITAR_SECTIONS_NAMES[] = {
     NSArray *items = self.items[indexPath.section];
     CustomGuitarItem *item = items[indexPath.row];
     NSString *idName = CUSTOM_GUITAR_ITEM_TYPE_NAMES[item.type];
+    NSLog(@"idName: %@", idName);
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:idName forIndexPath:indexPath];
     SG::SCustomGuitar& customGuitar = SG::SCustomGuitar::sharedInstance();
 
@@ -357,20 +357,20 @@ NSString *CUSTOM_GUITAR_SECTIONS_NAMES[] = {
     return cell;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    NSArray *section = self.items[indexPath.section];
-    CustomGuitarItem *item = section[indexPath.row];
-    
-    // set height to the default value defined in storyboard
-    CGFloat height = [super tableView:tableView heightForRowAtIndexPath:indexPath];
-    
-    // set the cell to a valid size for the picker view
-    if (item.type == CGIT_GUITAR_STRING_NOTE_SELECT) {
-        height = 220.0;
-    }
-    return height;
-}
-
+//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+//    NSArray *section = self.items[indexPath.section];
+//    CustomGuitarItem *item = section[indexPath.row];
+//    
+//    // set height to the default value defined in storyboard
+//    CGFloat height = [super tableView:tableView heightForRowAtIndexPath:indexPath];
+//    
+//    // set the cell to a valid size for the picker view
+//    if (item.type == CGIT_GUITAR_STRING_NOTE_SELECT) {
+//        height = 220.0;
+//    }
+//    return height;
+//}
+//
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"showStringAdjustment"]) {
         // set the current adjustement ID being edited

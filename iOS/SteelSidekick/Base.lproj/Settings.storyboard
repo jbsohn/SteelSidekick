@@ -641,30 +641,6 @@ https://github.com/anhero/JsonBox</string>
                                     </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="stringNoteCell" rowHeight="176" id="MW7-Ow-mTf" customClass="StringNoteTableViewCell">
-                                <rect key="frame" x="0.0" y="319.5" width="320" height="176"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" tableViewCell="MW7-Ow-mTf" id="RaR-86-yml">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="176"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gfq-ON-Jgy">
-                                            <rect key="frame" x="16" y="7" width="288" height="162"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="162" id="eEV-tA-Cww"/>
-                                            </constraints>
-                                        </pickerView>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="gfq-ON-Jgy" firstAttribute="leading" secondItem="RaR-86-yml" secondAttribute="leadingMargin" id="N3M-Ve-NaR"/>
-                                        <constraint firstItem="gfq-ON-Jgy" firstAttribute="centerY" secondItem="RaR-86-yml" secondAttribute="centerY" id="NYe-Qc-IsI"/>
-                                        <constraint firstItem="gfq-ON-Jgy" firstAttribute="trailing" secondItem="RaR-86-yml" secondAttribute="trailingMargin" id="fk3-5e-gJR"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="stringNotePickerView" destination="gfq-ON-Jgy" id="XJ3-5h-HtF"/>
-                                </connections>
-                            </tableViewCell>
                         </prototypes>
                         <sections/>
                         <connections>
