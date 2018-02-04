@@ -19,4 +19,9 @@ namespace SG {
         buffer << t.rdbuf();
         return buffer.str();
     }
+    
+    bool FileUtils::isExistingFile(std::string filename, std::string path) {
+        std::vector<std::string> files = readFileListFromPath(path);
+        return (std::find(files.begin(), files.end(), filename) != files.end());
+    }
 }

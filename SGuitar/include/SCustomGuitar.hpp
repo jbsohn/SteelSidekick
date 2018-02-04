@@ -33,19 +33,22 @@ namespace SG {
         
         GUITAR_TYPE getGuitarType();
         void setGuitarType(GUITAR_TYPE type);
+
+        void setNumberOfStrings(int numberOfStrings);
+        int getNumberOfStrings();
         
         GUITAR_STRING_TYPE getGuitarStringType();
         void setGuitarStringType(GUITAR_STRING_TYPE type);
 
-        void setStartNote(int midiValue, int stringNumber);
-        int getStartNoteMidiValue(int stringNumber);
+        void setStartNoteMIDIValue(int midiValue, int stringNumber);
+        int getStartNoteMIDIValue(int stringNumber);
         
         void setGuitarAdjustment(std::string settingID, SG::GuitarAdjustment adjustment);
 
         SG::GuitarAdjustment getGuitarAdjustment(std::string adjustmentID);
-
         SG::StringAdjustment getStringAdjustment(std::string adjustmentID, int stringNumber);
         
+        bool isExistingGuitar();
         void save();
         void load();
     private:
