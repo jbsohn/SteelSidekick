@@ -32,7 +32,10 @@ namespace SG {
                 errnum = 0;
                 de = readdir( dp );
                 if (de == NULL) break;
-                result.push_back( std::string( de->d_name ) );
+
+                if (de->d_type == DT_REG) {
+                    result.push_back(std::string(de->d_name));
+                }
             }
             closedir( dp );
             std::sort( result.begin(), result.end() );
