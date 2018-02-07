@@ -231,7 +231,7 @@
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" adjustsLetterSpacingToFitWidth="YES" id="zCz-hL-C5C">
                                                     <rect key="frame" x="16" y="0.0" width="568" height="87.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <string key="text">Thanks to Marvin Born, Gary Preston, Duncan Sexton, Pauline Sohn, Rasmus Fris, Bill McCloskey, David Sheads, and Mark Thomas for valuable feedback.</string>
+                                                    <string key="text">Thanks to Marvin Born, Gary Preston, Duncan Sexton, Pauline Sohn, Rasmus Fris, Bill McCloskey, David Sheads, Mark Thomas, and Robert Fawcett  for valuable feedback.</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -253,7 +253,7 @@
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w65-n3-rs6">
                                                     <rect key="frame" x="8" y="8" width="584" height="723.5"/>
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <mutableString key="text">NSTimer+Blocks
+                                                    <string key="text">NSTimer+Blocks
 Jiva DeVoe
 Copyright 2011 Random Ideas, LLC. All rights reserved.
 https://github.com/jivadevoe/NSTimer-Blocks
@@ -288,7 +288,7 @@ Copyright (c) 2013 Mikko Mononen memon@inside.org
 https://github.com/memononen/nanovg
 
 Json Box Copyright (c) 2011 Anhero Inc.
-https://github.com/anhero/JsonBox  ActionSheetPicker-3.0 Copyright (c) 2011, Tim Cinel (see AUTHORS) http://skywinder.github.io/ActionSheetPicker-3.0/ </mutableString>
+https://github.com/anhero/JsonBox  ActionSheetPicker-3.0 Copyright (c) 2011, Tim Cinel (see AUTHORS) http://skywinder.github.io/ActionSheetPicker-3.0/ </string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     <dataDetectorType key="dataDetectorTypes" link="YES"/>
