@@ -145,6 +145,7 @@ NSString *CUSTOM_GUITAR_SECTIONS_NAMES[] = {
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [[ColorScheme sharedInstance] applyThemeToTableView:self.tableView];
+    [self.tableView reloadData];
 }
 
 - (void)reset {
@@ -301,7 +302,6 @@ NSString *CUSTOM_GUITAR_SECTIONS_NAMES[] = {
     NSArray *items = self.items[indexPath.section];
     CustomGuitarItem *item = items[indexPath.row];
     NSString *idName = CUSTOM_GUITAR_ITEM_TYPE_NAMES[item.type];
-    NSLog(@"idName: %@", idName);
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:idName forIndexPath:indexPath];
     SG::SCustomGuitar& customGuitar = SG::SCustomGuitar::sharedInstance();
 
@@ -350,41 +350,33 @@ NSString *CUSTOM_GUITAR_SECTIONS_NAMES[] = {
     } else if (indexPath.section == CGS_PEDALS) {
         NSString *pedalName = @(SG::GuitarAdjustmentType::getPedalTypeName((int) indexPath.row).c_str());
         cell.textLabel.text = pedalName;
+
+        // let user know pedal has an adjustment
+        if (customGuitar.hasGuitarAdjustment([pedalName UTF8String])) {
+            cell.detailTextLabel.text = @"Active";
+        } else {
+            cell.detailTextLabel.text = @"";
+        }
     } else if (indexPath.section == CGS_LEVERS) {
         NSString *leverName = @(SG::GuitarAdjustmentType::getLeverTypeName((int) indexPath.row).c_str());
         cell.textLabel.text = leverName;
+
+        // let user know lever has an adjustment
+        if (customGuitar.hasGuitarAdjustment([leverName UTF8String])) {
+            cell.detailTextLabel.text = @"Active";
+        } else {
+            cell.detailTextLabel.text = @"";
+        }
     }
     return cell;
 }
 
-//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-//    NSArray *section = self.items[indexPath.section];
-//    CustomGuitarItem *item = section[indexPath.row];
-//    
-//    // set height to the default value defined in storyboard
-//    CGFloat height = [super tableView:tableView heightForRowAtIndexPath:indexPath];
-//    
-//    // set the cell to a valid size for the picker view
-//    if (item.type == CGIT_GUITAR_STRING_NOTE_SELECT) {
-//        height = 220.0;
-//    }
-//    return height;
-//}
-//
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"showStringAdjustment"]) {
         // set the current adjustement ID being edited
         GuitarAdjustmentViewController *vc = segue.destinationViewController;
         vc.adjustmentID = self.selectedAdjustmentID;
     }
-}
-
-- (void)guitarAdjustmentsViewControllerDidFinish:(GuitarAdjustmentViewController *)controller {
-    
-}
-
-- (void)guitarAdjustmentViewControllerItemSelected:(GuitarAdjustmentViewController *)controller {
-    
 }
 
 - (IBAction)cancelSelected:(id)sender {

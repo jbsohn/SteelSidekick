@@ -97,6 +97,15 @@ namespace SG {
         return stringAdjustment;
     }
 
+    bool SCustomGuitar::hasGuitarAdjustment(std::string adjustmentID) {
+        SG::GuitarAdjustment guitarAdjustment = impl->guitar.getAdjustment(adjustmentID);
+
+        if (guitarAdjustment.getNumberOfStringAdjustments() > 0) {
+            return true;
+        }
+        return false;
+    }
+
     bool SCustomGuitar::isExistingGuitar() {
         std::string path = SG::FileUtils::getRootPathForUserFiles() + "/Custom Guitars" + "/";
         return FileUtils::isExistingFile(impl->guitarName, path);
