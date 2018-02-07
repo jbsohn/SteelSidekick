@@ -241,13 +241,17 @@
         self.runningTutorial = YES;
         self.navigationController.view.userInteractionEnabled = NO;
 
-        BTBalloon *balloon = [BTBalloon sharedInstance];
-        UIView *scaleButtonView = [self.scaleButton valueForKey:@"view"];
-        UIView *chordButtonView = [self.chordButton valueForKey:@"view"];
-        UIView *infoButtonView = [self.infoButton valueForKey:@"view"];
-        UIView *settingsButtonView = [self.settingsButton valueForKey:@"view"];
 
+        BTBalloon *balloon = [BTBalloon sharedInstance];
+        UIView *scaleButtonView = (UIView *)[self.scaleButton performSelector:@selector(view)];
+        UIView *chordButtonView = (UIView *)[self.self.chordButton performSelector:@selector(view)];
+        UIView *infoButtonView = (UIView *)[self.self.infoButton performSelector:@selector(view)];
+        UIView *settingsButtonView = (UIView *)[self.self.settingsButton performSelector:@selector(view)];
         self.view.alpha = 0.25;
+
+        // wait for events to process...
+        [[NSRunLoop mainRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:0.5]];
+
         [balloon showWithTitle:SCALE_TUTORIAL_TEXT image:[UIImage imageNamed:@"SingleTap"] anchorToView:scaleButtonView buttonTitle:@"OK" buttonCallback:^{
             [balloon showWithTitle:CHORD_TUTORIAL_TEXT image:[UIImage imageNamed:@"SingleTap"] anchorToView:chordButtonView buttonTitle:@"OK" buttonCallback:^{
                 [balloon showWithTitle:INFO_TUTORIAL_TEXT image:[UIImage imageNamed:@"SingleTap"] anchorToView:infoButtonView buttonTitle:@"OK" buttonCallback:^{
@@ -260,7 +264,7 @@
                     }];
                 }];
             }];
-        } afterDelay:0.5];
+        }];
     }
 }
 
