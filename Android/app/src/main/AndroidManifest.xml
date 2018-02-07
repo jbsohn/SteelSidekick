@@ -32,5 +32,9 @@
             android:label="Guitar"
             android:parentActivityName=".MainActivity">
         </activity>
+        <activity android:name=".GuitarSelectActivity"
+            android:label="Select Guitar"
+            android:parentActivityName=".GuitarActivity">
+        </activity>
     </application>
 </manifest>

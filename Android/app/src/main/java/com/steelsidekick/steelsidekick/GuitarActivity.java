@@ -1,7 +1,10 @@
 package com.steelsidekick.steelsidekick;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.CompoundButton;
@@ -22,6 +25,15 @@ public class GuitarActivity extends AppCompatActivity {
 
         SGuitar sguitar = SGuitar.sharedInstance();
         SGGuitarOptions options = sguitar.getGuitarOptions();
+
+        CardView guitarCardView = findViewById(R.id.guitarCardView);
+        guitarCardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(GuitarActivity.this, GuitarSelectActivity.class);
+                startActivity(intent);
+            }
+        });
 
         // handle the show all notes on/off switch
         Switch showAllNotesSwitch = findViewById(R.id.showAllNotesSwitch);

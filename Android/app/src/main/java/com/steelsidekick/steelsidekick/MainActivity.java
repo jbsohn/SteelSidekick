@@ -35,7 +35,6 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-
         String filesDir = getFilesDir().getAbsolutePath();
         SGuitar.setSystemAndUserPaths(filesDir, filesDir);
 
