@@ -27,9 +27,28 @@
 //    [Appirater setTimeBeforeReminding:2];
 //    [Appirater setDebug:YES];
 
+
+    [self setupLastGuitar];
     [self setupGuitarDirectories];
     [self applyTheme];
     return YES;
+}
+
+// set the last guitar selected
+- (void)setupLastGuitar {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    SGuitar* sguitar = [SGuitar sharedInstance];
+    SGGuitarOptions *guitarOptions = [sguitar getGuitarOptions];
+    
+    NSString *guitarType = [defaults valueForKey:@"guitarType"];
+    NSString *guitarName = [defaults valueForKey:@"guitarName"];
+    
+    if (guitarType && guitarName && [guitarType length] > 0 && [guitarName length] > 0) {
+        guitarOptions.guitarType = guitarType;
+        guitarOptions.guitarName = guitarName;
+        [sguitar setGuitarOptions:guitarOptions];
+        [sguitar reloadGuitar];
+    }
 }
 
 - (void)setupGuitarDirectories {
