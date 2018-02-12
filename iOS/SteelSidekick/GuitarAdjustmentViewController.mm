@@ -111,6 +111,11 @@
     
     for (int stringNumber = 1; stringNumber <= numberOfStrings; stringNumber++) {
         SG::StringAdjustment stringAdjustment = guitarAdjustment.stringAdjustmentForStringNumber(stringNumber);
+        if (!stringAdjustment.isValid()) {
+            // adjustment item does not exist, create new one for string defaulting to 0 steps
+            stringAdjustment = SG::StringAdjustment(stringNumber, 0);
+        }
+
         StringAdjustementItem *item = [[StringAdjustementItem alloc] initWithStringAdjustment:stringAdjustment];
         [newItems addObject:item];
     }
@@ -125,12 +130,13 @@
     GUITAR_STRING_TYPE type = customGuitar.getGuitarStringType();
     int numberOfStrings = SG::Guitar::numberOfStringsForType(type);
 
-    for (int i = 1; i <= numberOfStrings; i++) {
-        StringAdjustmentTableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i - 1 inSection: 0]];
-        int step = cell.stepsStepper.value;
+    for (int stringNumber = 1; stringNumber <= numberOfStrings; stringNumber++) {
+        StringAdjustementItem *item = self.items[stringNumber];
+        SG::StringAdjustment adjustment = [item getStringAdjustment];
+        int step = adjustment.getStep();
         
         if (step != 0) {
-            newGuitarAdjustment.addStringAdjustment(SG::StringAdjustment(i, step));
+            newGuitarAdjustment.addStringAdjustment(SG::StringAdjustment(stringNumber, step));
         }
     }
     

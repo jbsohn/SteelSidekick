@@ -36,7 +36,7 @@ namespace SG {
         }
         
         void setStep(int step) {
-            step = step;
+            this->step = step;
         }
         
         int getStep() const {
