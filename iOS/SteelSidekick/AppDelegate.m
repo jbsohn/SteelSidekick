@@ -40,8 +40,8 @@
     SGuitar* sguitar = [SGuitar sharedInstance];
     SGGuitarOptions *guitarOptions = [sguitar getGuitarOptions];
     
-    NSString *guitarType = [defaults valueForKey:@"guitarType"];
-    NSString *guitarName = [defaults valueForKey:@"guitarName"];
+    NSString *guitarType = [defaults stringForKey:@"guitarType"];
+    NSString *guitarName = [defaults stringForKey:@"guitarName"];
     
     if (guitarType && guitarName && [guitarType length] > 0 && [guitarName length] > 0) {
         guitarOptions.guitarType = guitarType;

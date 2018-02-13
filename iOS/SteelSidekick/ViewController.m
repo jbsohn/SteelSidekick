@@ -723,6 +723,19 @@
 
 - (void)settingsViewControllerDidFinish:(SettingsViewController *)controller {
     [controller dismissViewControllerAnimated:YES completion:nil];
+    
+    // save the selected guitar and load it again on app startup
+    [self setLastGuitar];
+}
+
+- (void)setLastGuitar {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    SGuitar* sguitar = [SGuitar sharedInstance];
+    SGGuitarOptions *guitarOptions = [sguitar getGuitarOptions];
+    
+    [defaults setObject:guitarOptions.guitarType forKey:@"guitarType"];
+    [defaults setObject:guitarOptions.guitarName forKey:@"guitarName"];
+    [defaults synchronize];
 }
 
 - (IBAction)infoSelected:(id)sender {
