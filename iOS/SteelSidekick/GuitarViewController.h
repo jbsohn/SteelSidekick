@@ -18,8 +18,8 @@
 
 @interface GuitarViewController : UITableViewController
 
-@property NSString *selectedGuitarType;
-@property NSString *selectedGuitarName;
+@property (strong, nonatomic) NSString *selectedGuitarType;
+@property (strong, nonatomic) NSString *selectedGuitarName;
 
 @property (weak, nonatomic) id <GuitarViewControllerDelegate> delegate;
 

@@ -17,10 +17,10 @@
 //////////////////////////////////////////////////////////////////////
 @interface GuitarViewItem : NSObject
 
-@property NSString *name;
-@property NSString *type;
-@property BOOL isButton;
-@property BOOL isCustomType;
+@property (strong, nonatomic) NSString *name;
+@property (strong, nonatomic) NSString *type;
+@property (nonatomic, assign) BOOL isButton;
+@property (nonatomic, assign) BOOL isCustomType;
 @end
 
 @implementation GuitarViewItem
@@ -30,10 +30,10 @@
 //////////////////////////////////////////////////////////////////////
 @interface GuitarViewController ()
 
-@property NSArray *items;
-@property NSArray *sectionTitles;
-@property UIBarButtonItem *editButton;
-@property UIBarButtonItem *doneButton;
+@property (strong, nonatomic) NSArray *items;
+@property (strong, nonatomic) NSArray *sectionTitles;
+@property (strong, nonatomic) UIBarButtonItem *editButton;
+@property (strong, nonatomic) UIBarButtonItem *doneButton;
 
 @end
 

@@ -67,8 +67,8 @@ NSString *CUSTOM_GUITAR_SECTIONS_NAMES[] = {
 //////////////////////////////////////////////////////////////////////////////
 @interface CustomGuitarItem : NSObject <UIAlertViewDelegate>
 
-@property CUSTOM_GUITAR_ITEM_TYPE type;
-@property int itemID;
+@property (nonatomic, assign) CUSTOM_GUITAR_ITEM_TYPE type;
+@property (nonatomic, assign) int itemID;
 
 @end
 
@@ -97,14 +97,14 @@ NSString *CUSTOM_GUITAR_SECTIONS_NAMES[] = {
     NSArray *pitchValues;
 }
 
-@property NSMutableArray *items;
-@property NSString *selectedAdjustmentID;
-@property BOOL editingGuitar;
+@property (strong, nonatomic) NSMutableArray *items;
+@property (strong, nonatomic) NSString *selectedAdjustmentID;
+@property (nonatomic, assign) BOOL editingGuitar;
 
 // for editing string
-@property int editingStringNumber;
-@property int selectedNote;
-@property int selectedPitch;
+@property (nonatomic, assign) int editingStringNumber;
+@property (nonatomic, assign) int selectedNote;
+@property (nonatomic, assign) int selectedPitch;
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *saveButton;
 

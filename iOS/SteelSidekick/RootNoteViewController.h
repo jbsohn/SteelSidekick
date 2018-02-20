@@ -17,7 +17,7 @@
 
 @interface RootNoteViewController : UITableViewController
 
-@property int selectedNote;
+@property (nonatomic, assign) int selectedNote;
 @property (weak, nonatomic) id <RootNoteViewControllerDelegate> delegate;
 
 @end

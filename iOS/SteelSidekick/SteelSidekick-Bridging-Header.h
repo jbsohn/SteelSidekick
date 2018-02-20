@@ -8,3 +8,10 @@
 #import "PureLayout.h"
 #import "Globals.h"
 
+#import "ScaleViewController.h"
+#import "ChordViewController.h"
+#import "SettingsViewController.h"
+#import "GuitarPlayer.h"
+#import "NSTimer+Blocks.h"
+#import "GuitarPlayer.h"
+#import "ColorScheme.h"

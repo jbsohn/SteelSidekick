@@ -48,11 +48,11 @@
 @property (strong, nonatomic) UIPopoverController *popover;
 @property (strong, nonatomic) EAGLContext *context;
 @property (strong, nonatomic) InfoViewController* infoViewController;
-@property NSArray *landscapeConstraints;
-@property NSArray *portraitConstraints;
-@property float pedalLeverHeight;
-@property BOOL runningTutorial;
-@property BOOL isCanvasInitialized;
+@property (strong, nonatomic) NSArray *landscapeConstraints;
+@property (strong, nonatomic) NSArray *portraitConstraints;
+@property (nonatomic, assign) float pedalLeverHeight;
+@property (nonatomic, assign) BOOL runningTutorial;
+@property (nonatomic, assign) BOOL isCanvasInitialized;
 
 @end
 

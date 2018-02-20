@@ -12,11 +12,11 @@
 
 @interface FlatColorPalette : NSObject
 
-@property NSString *name;
-@property UIColor *primaryColor;
-@property UIColor *secondaryColor;
-@property UIColor *textColor;
-@property BOOL isSystem;
+@property (strong, nonatomic) NSString *name;
+@property (strong, nonatomic) UIColor *primaryColor;
+@property (strong, nonatomic) UIColor *secondaryColor;
+@property (strong, nonatomic) UIColor *textColor;
+@property (nonatomic, assign) BOOL isSystem;
 
 + (NSArray *)defaultColorPalettes;
 + (FlatColorPalette *)defaultPaletteForName:(NSString *)name;

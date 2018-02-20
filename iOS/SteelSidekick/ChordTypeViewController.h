@@ -17,8 +17,8 @@
 
 @interface ChordTypeViewController : UITableViewController
 
-@property NSArray *chordNames;
-@property NSString *selectedChordName;
+@property (strong, nonatomic) NSArray *chordNames;
+@property (strong, nonatomic) NSString *selectedChordName;
 
 @property (weak, nonatomic) id <ChordTypeViewControllerDelegate> delegate;
 

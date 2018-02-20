@@ -17,8 +17,8 @@
 
 @interface ScaleTypeViewController : UITableViewController
 
-@property NSArray *scaleNames;
-@property NSString *selectedScaleName;
+@property (strong, nonatomic) NSArray *scaleNames;
+@property (strong, nonatomic) NSString *selectedScaleName;
 
 @property (weak, nonatomic) id <ScaleTypeViewControllerDelegate> delegate;
 

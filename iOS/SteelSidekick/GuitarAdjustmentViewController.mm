@@ -44,7 +44,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 @interface GuitarAdjustmentViewController ()
 
-@property NSArray *items;
+@property (strong, nonatomic) NSArray *items;
 
 @end
 

@@ -10,8 +10,8 @@
 
 @interface ColorScheme()
 
-@property UIColor *tableViewColor;
-@property UIColor *tableViewCellColor;
+@property (strong, nonatomic) UIColor *tableViewColor;
+@property (strong, nonatomic) UIColor *tableViewCellColor;
 
 @end
 
