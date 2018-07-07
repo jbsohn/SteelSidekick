@@ -1,0 +1,3 @@
+[submodule "SGuitar/deps/djinni"]
+	path = SGuitar/deps/djinni
+	url = https://github.com/dropbox/djinni.git

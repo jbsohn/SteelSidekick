@@ -1,0 +1,47 @@
+
+DisplayItemAs = enum {
+    Note;
+    Interval;
+}
+
+AccidentalDisplayType = enum {
+    Sharp;
+    Flat;
+}
+
+GuitarOptions = record {
+    guitarType: string;
+    guitarName: string;
+    showAllNotes: bool;
+    showNotesAs: AccidentalDisplayType;
+}
+
+ScaleOptions = record {
+    showScale: bool;
+    scaleName: string;
+    scaleRootNoteValue: i32;
+    displayItemsAs: DisplayItemAs;
+}
+
+ChordOptions = record {
+    showChord: bool;
+    chordName: string;
+    chordRootNoteValue: i32;
+    displayItemsAs: DisplayItemAs;
+}
+
+SGuitar = interface +c {
+    getGuitarOptions(): GuitarOptions;
+    setGuitarOptions(options: GuitarOptions);
+    
+    getScaleOptions(): ScaleOptions;
+    setScaleOptions(options: ScaleOptions);
+    
+    getChordOptions(): ChordOptions;
+    setChordOptions(options: ChordOptions);
+
+    getScaleNoteValues(): list<i32>;
+    getChordNoteValues(): list<i32>;
+    isNoteValueInScale(noteValue: i32): bool;
+    isNoteValueInChord(noteValue: i32): bool;
+}
