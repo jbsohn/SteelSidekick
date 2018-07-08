@@ -1,16 +1,19 @@
 package com.steelsidekick.steelsidekick;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.steelsidekick.sguitar.SGGuitarOptions;
 import com.steelsidekick.sguitar.SGuitar;
-import com.steelsidekick.sguitar.StdStringVector;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by john on 2/4/18.
@@ -22,28 +25,6 @@ public class GuitarSelectActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        class Guitar {
-            private String guitarName;
-            private String guitarType;
-
-            public String getGuitarName() {
-                return guitarName;
-            }
-
-            public void setGuitarName(String guitarName) {
-                this.guitarName = guitarName;
-            }
-
-
-            public String getGuitarType() {
-                return guitarType;
-            }
-
-            public void setGuitarType(String guitarType) {
-                this.guitarType = guitarType;
-            }
-
-        }
 
         super.onCreate(savedInstanceState);
 
@@ -53,30 +34,42 @@ public class GuitarSelectActivity extends AppCompatActivity {
 
         SGuitar sguitar = SGuitar.sharedInstance();
 
-        ArrayList<Guitar> allGuitars = new ArrayList<>();
+        final ArrayList<GuitarSelectItem> allGuitars = new ArrayList<>();
 
         ArrayList<String> types = Util.stdStringVectorToArrayList(sguitar.getGuitarTypeNames());
         for (String type : types) {
             ArrayList<String> guitars = Util.stdStringVectorToArrayList(sguitar.getGuitarNames(type));
 
-            for (String guitar : guitars) {
-                Guitar newGuitar = new Guitar();
-                newGuitar.setGuitarName(guitar);
-                newGuitar.setGuitarType(type);
+            GuitarSelectItem header = new GuitarSelectItem(type, type, true);
+            allGuitars.add(header);
 
+            for (String guitar : guitars) {
+                GuitarSelectItem newGuitar = new GuitarSelectItem(guitar, type, false);
                 allGuitars.add(newGuitar);
             }
         }
 
-
-        String[] listItems = new String[allGuitars.size()];
-        for (int i = 0; i < allGuitars.size(); i++) {
-            Guitar guitar = allGuitars.get(i);
-            listItems[i] = guitar.getGuitarName();
-        }
-
-        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, listItems);
+        GuitarSelectAdapter adapter = new GuitarSelectAdapter(this, allGuitars);
         mGuitarListView.setAdapter(adapter);
+
+        mGuitarListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView adapterView, View view, int position, long l) {
+            GuitarSelectItem item = allGuitars.get(position);
+            SGuitar sguitar = SGuitar.sharedInstance();
+            SGGuitarOptions options = sguitar.getGuitarOptions();
+            options.setGuitarName(item.getName());
+            options.setGuitarType(item.getType());
+            sguitar.setGuitarOptions(options);
+            sguitar.reloadGuitar();
+
+            Intent resultIntent = new Intent();
+            resultIntent.putExtra("guitarName", item.getName());
+            setResult(Activity.RESULT_OK, resultIntent);
+
+            finish();
+            }
+        });
     }
 
 }

@@ -1,5 +1,6 @@
 package com.steelsidekick.steelsidekick;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,14 +8,19 @@ import android.support.v7.widget.CardView;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.CompoundButton;
 import android.widget.Spinner;
 import android.widget.Switch;
+import android.widget.TextView;
 
 import com.steelsidekick.sguitar.ACCIDENTAL_DISPLAY_TYPE;
 import com.steelsidekick.sguitar.SGChordOptions;
 import com.steelsidekick.sguitar.SGGuitarOptions;
 import com.steelsidekick.sguitar.SGuitar;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 public class GuitarActivity extends AppCompatActivity {
 
@@ -31,9 +37,13 @@ public class GuitarActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(GuitarActivity.this, GuitarSelectActivity.class);
-                startActivity(intent);
+                startActivityForResult(intent, 1);
             }
         });
+        TextView guitarNameTextView = findViewById(R.id.guitarNameTextView);
+        guitarNameTextView.setText(sguitar.getGuitarOptions().getGuitarName());
+
+
 
         // handle the show all notes on/off switch
         Switch showAllNotesSwitch = findViewById(R.id.showAllNotesSwitch);
@@ -65,6 +75,17 @@ public class GuitarActivity extends AppCompatActivity {
 
             }
         });
+    }
 
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == Activity.RESULT_OK) {
+            String guitarName = data.getStringExtra("guitarName");
+            if (guitarName != null) {
+                TextView guitarNameTextView = findViewById(R.id.guitarNameTextView);
+                guitarNameTextView.setText(guitarName);
+            }
+        }
     }
 }
