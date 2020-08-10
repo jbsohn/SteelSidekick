@@ -9,7 +9,6 @@
 
 #import "GuitarAdjustmentViewController.h"
 #import "SGuitar.h"
-#import "ColorScheme.h"
 #import "SCustomGuitar.hpp"
 
 #define POPOVER_VIEW_SIZE       CGSizeMake(320.0, 480.0)
@@ -94,7 +93,6 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self setupItems];
-    [[ColorScheme sharedInstance] applyThemeToTableView:self.tableView];
 }
 
 - (void)setupItems {
@@ -168,7 +166,6 @@
     
     StringAdjustmentTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier
                                                                           forIndexPath:indexPath];
-    [[ColorScheme sharedInstance] applyThemeToTableViewCell:cell];
     
     StringAdjustementItem* item = self.items[stringNumber];
     SG::StringAdjustment stringAdjustment = [item getStringAdjustment];

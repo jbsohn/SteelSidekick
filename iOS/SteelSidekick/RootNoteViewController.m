@@ -7,7 +7,6 @@
 //
 
 #import "RootNoteViewController.h"
-#import "ColorScheme.h"
 
 #define POPOVER_VIEW_SIZE     CGSizeMake(320.0, 480.0)
 
@@ -29,8 +28,6 @@
     
     UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:self.selectedNote inSection:0]];
     cell.accessoryType = UITableViewCellAccessoryCheckmark;
-    
-    [[ColorScheme sharedInstance] applyThemeToTableView:self.tableView];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -45,7 +42,6 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [super tableView:tableView cellForRowAtIndexPath:indexPath];
-    [[ColorScheme sharedInstance] applyThemeToTableViewCell:cell];
     return cell;
 }
 

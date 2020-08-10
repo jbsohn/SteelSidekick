@@ -7,7 +7,6 @@
 //
 
 #import "ScaleTypeViewController.h"
-#import "ColorScheme.h"
 
 #define POPOVER_VIEW_SIZE     CGSizeMake(320.0, 480.0)
 
@@ -24,7 +23,6 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [[ColorScheme sharedInstance] applyThemeToTableView:self.tableView];
 }
 
 - (void)setupAsPopover {
@@ -84,7 +82,6 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"scaleType"];
-    [[ColorScheme sharedInstance] applyThemeToTableViewCell:cell];
 
     if (indexPath.section == 0) {
         NSString *cellScaleName = self.scaleNames[indexPath.row];

@@ -14,4 +14,3 @@
 #import "GuitarPlayer.h"
 #import "NSTimer+Blocks.h"
 #import "GuitarPlayer.h"
-#import "ColorScheme.h"

@@ -16,7 +16,6 @@
 #import "SettingsViewController.h"
 #import "GuitarPlayer.h"
 #import "SGuitar.h"
-#import "ColorScheme.h"
 #import "BTBalloon.h"
 #import "NSTimer+Blocks.h"
 #import "Globals.h"
@@ -199,7 +198,6 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [[ColorScheme sharedInstance] applyThemeToView:self.view];
     self.view.hidden = YES;
 
     [self resetTitle];
@@ -596,7 +594,6 @@
         controller.inPopover = YES;
         self.popover = [[UIPopoverController alloc] initWithContentViewController:navigationController];
         self.popover.delegate = self;
-        [[ColorScheme sharedInstance] applyThemeToPopover:self.popover];
         
         [self.popover presentPopoverFromBarButtonItem:self.chordButton permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
     } else {
@@ -638,7 +635,6 @@
         controller.inPopover = YES;
         self.popover = [[UIPopoverController alloc] initWithContentViewController:navigationController];
         self.popover.delegate = self;
-        [[ColorScheme sharedInstance] applyThemeToPopover:self.popover];
         
         [self.popover presentPopoverFromBarButtonItem:self.scaleButton permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
     } else {
@@ -668,7 +664,6 @@
         controller.inPopover = YES;
         self.popover = [[UIPopoverController alloc] initWithContentViewController:navigationController];
         self.popover.delegate = self;
-        [[ColorScheme sharedInstance] applyThemeToPopover:self.popover];
         
         [self.popover presentPopoverFromBarButtonItem:self.settingsButton permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
     } else {
@@ -704,11 +699,6 @@
 }
 
 - (void)settingsViewControllerResetDisplay {
-    if (self.popover) {
-        [[ColorScheme sharedInstance] applyThemeToPopover:self.popover];
-    }
-    [[ColorScheme sharedInstance] applyThemeToView:self.view];
-    
     SGuitar* sguitar = [SGuitar sharedInstance];
     [sguitar reloadGuitar];
     

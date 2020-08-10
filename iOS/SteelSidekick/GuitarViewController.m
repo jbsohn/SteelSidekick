@@ -9,8 +9,6 @@
 #import "GuitarViewController.h"
 #import "CustomGuitarViewController.h"
 #import "SGuitar.h"
-//#import "NSArrayStdStringVector.h"
-#import "ColorScheme.h"
 
 #define POPOVER_VIEW_SIZE     CGSizeMake(320.0, 480.0)
 
@@ -48,7 +46,6 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [[ColorScheme sharedInstance] applyThemeToTableView:self.tableView];
     [self setupItems];
     
     SGuitar *sguitar = [SGuitar sharedInstance];
@@ -177,7 +174,6 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"guitarCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    [[ColorScheme sharedInstance] applyThemeToTableViewCell:cell];
 
     NSArray *sectionItems = self.items[indexPath.section];
     GuitarViewItem *item = sectionItems[indexPath.row];

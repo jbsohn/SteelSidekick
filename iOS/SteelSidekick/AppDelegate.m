@@ -8,7 +8,6 @@
 
 #import "AppDelegate.h"
 #import "Appirater.h"
-#import "ColorScheme.h"
 #import "SGuitar.h"
 
 @interface AppDelegate ()
@@ -30,7 +29,6 @@
 
     [self setupLastGuitar];
     [self setupGuitarDirectories];
-    [self applyTheme];
     return YES;
 }
 
@@ -55,20 +53,6 @@
     NSString *dataPath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/Custom Guitars"];
     if (![[NSFileManager defaultManager] fileExistsAtPath:dataPath]) {
         [[NSFileManager defaultManager] createDirectoryAtPath:dataPath withIntermediateDirectories:NO attributes:nil error:nil];
-    }
-}
-- (void)applyTheme {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString *colorScheme = [defaults stringForKey:@"ColorScheme"];
-    FlatColorPalette *palette = [FlatColorPalette defaultPaletteForName:colorScheme];
-
-    if (!palette) {
-        // default to first entry
-        palette = [[FlatColorPalette defaultColorPalettes] objectAtIndex:0];
-    }
-    
-    if (palette) {
-        [[ColorScheme sharedInstance] applyFlatColorPalette:palette toTableView:YES];
     }
 }
 

@@ -7,13 +7,11 @@
 //
 
 #import "AboutTableViewController.h"
-#import "ColorScheme.h"
 
 @implementation AboutTableViewController
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [[ColorScheme sharedInstance] applyThemeToTableView:self.tableView];
 }
 
 @end

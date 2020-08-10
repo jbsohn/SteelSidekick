@@ -10,7 +10,6 @@
 #import "ChordTypeViewController.h"
 #import "RootNoteViewController.h"
 #import "SGuitar.h"
-#import "ColorScheme.h"
 
 #define POPOVER_VIEW_SIZE     CGSizeMake(320.0, 480.0)
 
@@ -54,7 +53,6 @@
     
     [self resetChordName];
     [self resetChordRootNote];
-    [[ColorScheme sharedInstance] applyThemeToTableView:self.tableView];
 }
 
 - (void)setupDone {
@@ -65,7 +63,6 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [super tableView:tableView cellForRowAtIndexPath:indexPath];
-    [[ColorScheme sharedInstance] applyThemeToTableViewCell:cell];
     return cell;
 }
 

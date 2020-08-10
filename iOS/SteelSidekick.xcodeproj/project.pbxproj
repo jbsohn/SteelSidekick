@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		5228EF6B1D29B8B300E3E15B /* nanovg.c in Sources */ = {isa = PBXBuildFile; fileRef = 52969EA71D17B6A000EFE67B /* nanovg.c */; };
-		5252A0E91D208F9400641714 /* ColorSchemeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5252A0E81D208F9400641714 /* ColorSchemeViewController.m */; };
 		52584A861E2C8D15002461F5 /* NoteName.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52584A841E2C8D15002461F5 /* NoteName.cpp */; };
 		525D6810201523B100E11E22 /* ActionSheetDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 525D67FE201523B100E11E22 /* ActionSheetDatePicker.m */; };
 		525D6811201523B100E11E22 /* ActionSheetLocalePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 525D6800201523B100E11E22 /* ActionSheetLocalePicker.m */; };
@@ -54,7 +53,6 @@
 		52969EAD1D17B6A000EFE67B /* nanovg.c in Sources */ = {isa = PBXBuildFile; fileRef = 52969EA71D17B6A000EFE67B /* nanovg.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		52A12F1C1DFFA83200408552 /* UIViewController+Orientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A12F1B1DFFA83200408552 /* UIViewController+Orientation.m */; };
 		52BF4BEC1D203FBF00710CE5 /* UIColor+Expanded.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BF4BEB1D203FBF00710CE5 /* UIColor+Expanded.m */; settings = {COMPILER_FLAGS = "-w"; }; };
-		52BF4BEF1D20415B00710CE5 /* FlatColorPalette.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BF4BEE1D20415B00710CE5 /* FlatColorPalette.m */; };
 		52D0A1081C7FE5D200EA5C6D /* Chord.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52D0A0E41C7FE5D200EA5C6D /* Chord.storyboard */; };
 		52D0A10A1C7FE5D200EA5C6D /* Scale.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52D0A0E81C7FE5D200EA5C6D /* Scale.storyboard */; };
 		52D0A10B1C7FE5D200EA5C6D /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52D0A0EA1C7FE5D200EA5C6D /* Settings.storyboard */; };
@@ -64,7 +62,6 @@
 		52D0A1131C7FE5D200EA5C6D /* RootNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D0A0FB1C7FE5D200EA5C6D /* RootNoteViewController.m */; };
 		52D0A1141C7FE5D200EA5C6D /* ScaleTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D0A0FD1C7FE5D200EA5C6D /* ScaleTypeViewController.m */; };
 		52D0A1151C7FE5D200EA5C6D /* ScaleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D0A0FF1C7FE5D200EA5C6D /* ScaleViewController.m */; };
-		52D5F8881D1B936E006C1308 /* ColorScheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D5F8871D1B936E006C1308 /* ColorScheme.m */; };
 		52D672091E2CAEC2002799FA /* GuitarAdjustmentType.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52D672071E2CAEC2002799FA /* GuitarAdjustmentType.cpp */; };
 		52E413DF1D1783BF00D030A2 /* Appirater.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E4E4DD1D1783AB00D030A2 /* Appirater.m */; };
 		52E413E11D1783BF00D030A2 /* AppiraterLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 52E4E4E01D1783AB00D030A2 /* AppiraterLocalizable.strings */; };
@@ -252,8 +249,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5252A0E71D208F9400641714 /* ColorSchemeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorSchemeViewController.h; sourceTree = "<group>"; };
-		5252A0E81D208F9400641714 /* ColorSchemeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorSchemeViewController.m; sourceTree = "<group>"; };
 		52584A841E2C8D15002461F5 /* NoteName.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = NoteName.cpp; path = ../SGuitar/src/NoteName.cpp; sourceTree = "<group>"; };
 		52584A871E2C8D9E002461F5 /* NoteName.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = NoteName.hpp; path = ../SGuitar/include/SG/NoteName.hpp; sourceTree = "<group>"; };
 		525D67FC201523B100E11E22 /* ActionSheetCustomPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetCustomPicker.h; sourceTree = "<group>"; };
@@ -357,8 +352,6 @@
 		52A8406E20267F5F00FC6065 /* FileUtils_Android.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FileUtils_Android.cpp; path = ../SGuitar/src/FileUtils_Android.cpp; sourceTree = "<group>"; };
 		52BF4BEA1D203FBF00710CE5 /* UIColor+Expanded.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Expanded.h"; sourceTree = "<group>"; };
 		52BF4BEB1D203FBF00710CE5 /* UIColor+Expanded.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Expanded.m"; sourceTree = "<group>"; };
-		52BF4BED1D20415B00710CE5 /* FlatColorPalette.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlatColorPalette.h; sourceTree = "<group>"; };
-		52BF4BEE1D20415B00710CE5 /* FlatColorPalette.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlatColorPalette.m; sourceTree = "<group>"; };
 		52D0A0E51C7FE5D200EA5C6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Chord.storyboard; sourceTree = "<group>"; };
 		52D0A0E91C7FE5D200EA5C6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Scale.storyboard; sourceTree = "<group>"; };
 		52D0A0EB1C7FE5D200EA5C6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
@@ -379,8 +372,6 @@
 		52D0A1001C7FE5D200EA5C6D /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		52D0A1041C7FE5D200EA5C6D /* GuitarAdjustmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = GuitarAdjustmentViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		52D0A1051C7FE5D200EA5C6D /* GuitarAdjustmentViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; lineEnding = 0; path = GuitarAdjustmentViewController.mm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		52D5F8861D1B936E006C1308 /* ColorScheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorScheme.h; sourceTree = "<group>"; };
-		52D5F8871D1B936E006C1308 /* ColorScheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorScheme.m; sourceTree = "<group>"; };
 		52D671FD1E2CA4B8002799FA /* NSArrayStdStringVector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSArrayStdStringVector.h; path = ../SGuitar/src/NSArrayStdStringVector.h; sourceTree = "<group>"; };
 		52D671FF1E2CA4B8002799FA /* NSArrayIntVector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSArrayIntVector.h; path = ../SGuitar/src/NSArrayIntVector.h; sourceTree = "<group>"; };
 		52D672071E2CAEC2002799FA /* GuitarAdjustmentType.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GuitarAdjustmentType.cpp; path = ../SGuitar/src/GuitarAdjustmentType.cpp; sourceTree = "<group>"; };
@@ -751,8 +742,6 @@
 				D9EFC3E01CC7BAFF00FDD605 /* Guitar */,
 				52D0A1001C7FE5D200EA5C6D /* SettingsViewController.h */,
 				528003E01E3970CE00EC24A8 /* SettingsViewController.m */,
-				5252A0E71D208F9400641714 /* ColorSchemeViewController.h */,
-				5252A0E81D208F9400641714 /* ColorSchemeViewController.m */,
 				5284F0381D7E211D000C3C37 /* AboutTableViewController.h */,
 				5284F0391D7E211D000C3C37 /* AboutTableViewController.m */,
 				52D0A0EA1C7FE5D200EA5C6D /* Settings.storyboard */,
@@ -801,17 +790,6 @@
 				52A99CDB1CC5E2A100E4B6FB /* Shared */,
 			);
 			name = Settings;
-			sourceTree = "<group>";
-		};
-		52D5F8851D1B9354006C1308 /* ColorScheme */ = {
-			isa = PBXGroup;
-			children = (
-				52BF4BED1D20415B00710CE5 /* FlatColorPalette.h */,
-				52BF4BEE1D20415B00710CE5 /* FlatColorPalette.m */,
-				52D5F8861D1B936E006C1308 /* ColorScheme.h */,
-				52D5F8871D1B936E006C1308 /* ColorScheme.m */,
-			);
-			name = ColorScheme;
 			sourceTree = "<group>";
 		};
 		52D672041E2CA4F3002799FA /* File */ = {
@@ -1187,7 +1165,6 @@
 		D9BCFE101C7E5DDB00C36405 /* SteelSidekick */ = {
 			isa = PBXGroup;
 			children = (
-				52D5F8851D1B9354006C1308 /* ColorScheme */,
 				D96DC3071D188D4C00D7ECFD /* Sound */,
 				52D0A0E21C7FE5B200EA5C6D /* Settings */,
 				52A12F1D1DFFC92100408552 /* Globals.h */,
@@ -1400,7 +1377,7 @@
 		D9BCFE061C7E5DDB00C36405 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 1120;
 				TargetAttributes = {
 					D9BCFE0D1C7E5DDB00C36405 = {
 						CreatedOnToolsVersion = 7.2;
@@ -1420,7 +1397,7 @@
 			};
 			buildConfigurationList = D9BCFE091C7E5DDB00C36405 /* Build configuration list for PBXProject "SteelSidekick" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -1525,7 +1502,6 @@
 				528BA0F41D18B9DA009FDC64 /* ScaleOptions.cpp in Sources */,
 				D96DC2EE1D188C8D00D7ECFD /* Simple.cpp in Sources */,
 				D9663EDE1EB3B94D000CD637 /* NSArrayStdStringVector.mm in Sources */,
-				5252A0E91D208F9400641714 /* ColorSchemeViewController.m in Sources */,
 				527016FB1C8AA8F300EE5CF5 /* ViewController.m in Sources */,
 				52E413DF1D1783BF00D030A2 /* Appirater.m in Sources */,
 				D96DC2F01D188C8D00D7ECFD /* SingWave.cpp in Sources */,
@@ -1575,7 +1551,6 @@
 				52584A861E2C8D15002461F5 /* NoteName.cpp in Sources */,
 				D96DC2C71D188C8D00D7ECFD /* Iir.cpp in Sources */,
 				D96DC2BB1D188C8D00D7ECFD /* FileWrite.cpp in Sources */,
-				52BF4BEF1D20415B00710CE5 /* FlatColorPalette.m in Sources */,
 				52BF4BEC1D203FBF00710CE5 /* UIColor+Expanded.m in Sources */,
 				D96DC2AD1D188C8D00D7ECFD /* BlowBotl.cpp in Sources */,
 				528BA0EE1D18B9DA009FDC64 /* GuitarType.cpp in Sources */,
@@ -1642,7 +1617,6 @@
 				525D6818201523B100E11E22 /* AbstractActionSheetPicker.m in Sources */,
 				525D6812201523B100E11E22 /* ActionSheetDistancePicker.m in Sources */,
 				D96DC2FD1D188C8D00D7ECFD /* TwoPole.cpp in Sources */,
-				52D5F8881D1B936E006C1308 /* ColorScheme.m in Sources */,
 				528BA0ED1D18B9DA009FDC64 /* GuitarString.cpp in Sources */,
 				528BA0E41D18B9DA009FDC64 /* Chords.cpp in Sources */,
 				52E4144E1D1783C000D030A2 /* IQKeyboardManager.m in Sources */,
@@ -1843,12 +1817,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -1879,6 +1855,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "";
 			};
@@ -1897,12 +1874,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -1927,6 +1906,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "";
 				VALIDATE_PRODUCT = YES;
@@ -1941,6 +1921,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1952,13 +1933,14 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
+				MARKETING_VERSION = 2.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.steelsidekick.com.SteelSidekick;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "SteelSidekick/SteelSidekick-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 				USER_HEADER_SEARCH_PATHS = "../SGuitar/External/JsonBox/include ../SGuitar/External/stk/include ../SGuitar/include";
 			};
 			name = Debug;
@@ -1971,6 +1953,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1982,12 +1965,13 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
+				MARKETING_VERSION = 2.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.steelsidekick.com.SteelSidekick;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "SteelSidekick/SteelSidekick-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 				USER_HEADER_SEARCH_PATHS = "../SGuitar/External/JsonBox/include ../SGuitar/External/stk/include ../SGuitar/include";
 			};
 			name = Release;

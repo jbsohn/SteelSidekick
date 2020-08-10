@@ -8,9 +8,7 @@
 
 #import "SettingsViewController.h"
 #import "GuitarViewController.h"
-#import "ColorSchemeViewController.h"
 #import "SGuitar.h"
-#import "ColorScheme.h"
 #import "Globals.h"
 
 #define POPOVER_VIEW_SIZE     CGSizeMake(320.0, 480.0)
@@ -22,11 +20,10 @@ typedef enum {
     SECTION_SHOW_TUTORIAL = 3
 } SETTINGS_SECTIONS;
 
-@interface SettingsViewController ()  <GuitarViewControllerDelegate, ColorSchemeViewControllerDelegate>
+@interface SettingsViewController ()  <GuitarViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableViewCell *guitarCell;
 @property (weak, nonatomic) IBOutlet UITableViewCell *showAllNotesCell;
-@property (weak, nonatomic) IBOutlet UITableViewCell *colorSchemeCell;
 @property (strong, nonatomic) UISwitch *showAllNotesSwitch;
 
 @end
@@ -44,37 +41,12 @@ typedef enum {
     [super viewWillAppear:animated];
     [self resetShowAllNotes];
     [self resetGuitar];
-    [self resetColorScheme];
 }
 
 - (void)setupDone {
     if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) {
         self.navigationItem.rightBarButtonItem = nil;
     }
-}
-
-- (NSString *)getColorTheme {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString *results = [defaults stringForKey:@"ColorScheme"];
-    NSString *name;
-
-    if (results) {
-        // ensure the palette exists
-        FlatColorPalette *palette = [FlatColorPalette defaultPaletteForName:results];
-        if (!palette) {
-            // default to first item
-            palette = [[FlatColorPalette defaultColorPalettes] objectAtIndex:0];
-        }
-        
-        if (palette) {
-            name = palette.name;
-        }
-    } else {
-        // default to first item
-        FlatColorPalette *palette = [[FlatColorPalette defaultColorPalettes] objectAtIndex:0];
-        name = palette.name;
-    }
-    return name;
 }
 
 - (void)setupAsPopover {
@@ -119,13 +91,6 @@ typedef enum {
     self.showAllNotesSwitch.on = guitarOptions.showAllNotes;
 }
 
-- (void)resetColorScheme {
-    NSString *labelText =  [self getColorTheme];
-    self.colorSchemeCell.detailTextLabel.text = labelText;
-    [[ColorScheme sharedInstance] applyThemeToTableView:self.tableView];
-    [self.tableView reloadData];
-}
-
 - (void)guitarViewControllerItemSelected:(GuitarViewController *)controller {
     SGuitar *sguitar = [SGuitar sharedInstance];
     SGGuitarOptions *guitarOptions = [sguitar getGuitarOptions];
@@ -141,10 +106,6 @@ typedef enum {
     [self.delegate settingsViewControllerResetDisplay];
 }
 
-- (void)didSelectNewTheme:(ColorSchemeViewController *)controller {
-    [self.delegate settingsViewControllerResetDisplay];
-}
-
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     SGuitar *sguitar = [SGuitar sharedInstance];
     SGGuitarOptions *guitarOptions = [sguitar getGuitarOptions];
@@ -153,9 +114,6 @@ typedef enum {
         vc.delegate = self;
         vc.selectedGuitarName = guitarOptions.guitarName;
         vc.selectedGuitarType = guitarOptions.guitarType;
-    } else if ([segue.identifier isEqualToString:@"showColorScheme"]) {
-        ColorSchemeViewController *vc = segue.destinationViewController;
-        vc.delegate = self;
     }
 }
 
@@ -171,7 +129,6 @@ typedef enum {
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [super tableView:tableView cellForRowAtIndexPath:indexPath];
-    [[ColorScheme sharedInstance] applyThemeToTableViewCell:cell];
 
     SGuitar *sguitar = [SGuitar sharedInstance];
     SGGuitarOptions *guitarOptions = [sguitar getGuitarOptions];

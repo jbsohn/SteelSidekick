@@ -29,7 +29,7 @@ enum SetupNoteType {
     case chord, scale
 }
 
-class InfoViewController: UIViewController {
+public class InfoViewController: UIViewController {
     
     @IBOutlet weak var scaleView: UIView!
     @IBOutlet weak var chordView: UIView!
@@ -88,17 +88,17 @@ class InfoViewController: UIViewController {
                           "Images/Note-B-Flat",
                           "Images/Note-B"]
     
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
         setupContraints()
     }
     
-    override func didReceiveMemoryWarning() {
+    override public func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override public func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         setupLabels()
@@ -140,7 +140,8 @@ class InfoViewController: UIViewController {
         self.chordLabel.text = chordLabel
     }
     
-    func updateDisplay() {
+    @objc
+    public func updateDisplay() {
         setupLabels()
         setupNoteDisplayImages(images: self.scaleImages, type: SetupNoteType.scale)
         setupNoteDisplayImages(images: self.chordImages, type: SetupNoteType.chord)
@@ -274,7 +275,7 @@ class InfoViewController: UIViewController {
     }
     
     // update constraints on orientation change
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+    override public func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         
         coordinator.animate(alongsideTransition: { [unowned self] _ in

@@ -10,7 +10,6 @@
 #import "ScaleTypeViewController.h"
 #import "RootNoteViewController.h"
 #import "SGuitar.h"
-#import "ColorScheme.h"
 
 #define POPOVER_VIEW_SIZE     CGSizeMake(320.0, 480.0)
 
@@ -38,7 +37,6 @@ typedef enum { SECTION_SHOW_SCALE = 0,  SECTION_SCALE = 1, SECTION_DISPLAY_AS = 
     [self setupDone];
     [self setupScaleSwitch];
     [self setupAsPopover];
-    [[ColorScheme sharedInstance] applyThemeToTableView:self.tableView];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -174,7 +172,6 @@ typedef enum { SECTION_SHOW_SCALE = 0,  SECTION_SCALE = 1, SECTION_DISPLAY_AS = 
     SGuitar *sguitar = [SGuitar sharedInstance];
     SGScaleOptions *scaleOptions = [sguitar getScaleOptions];
     UITableViewCell *cell = [super tableView:tableView cellForRowAtIndexPath:indexPath];
-    [[ColorScheme sharedInstance] applyThemeToTableViewCell:cell];
 
     if (indexPath.section == SECTION_DISPLAY_AS) {
         if (scaleOptions.displayItemsAs ==  indexPath.row) {

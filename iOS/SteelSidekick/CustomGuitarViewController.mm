@@ -11,7 +11,6 @@
 #import "GuitarNameTableViewCell.h"
 #import "ActionSheetPicker.h"
 #import "SGuitar.h"
-#import "ColorScheme.h"
 #import "SCustomGuitar.hpp"
 
 #define POPOVER_VIEW_SIZE     CGSizeMake(320.0, 480.0)
@@ -144,7 +143,6 @@ NSString *CUSTOM_GUITAR_SECTIONS_NAMES[] = {
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [[ColorScheme sharedInstance] applyThemeToTableView:self.tableView];
     [self.tableView reloadData];
 }
 
@@ -304,8 +302,6 @@ NSString *CUSTOM_GUITAR_SECTIONS_NAMES[] = {
     NSString *idName = CUSTOM_GUITAR_ITEM_TYPE_NAMES[item.type];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:idName forIndexPath:indexPath];
     SG::SCustomGuitar& customGuitar = SG::SCustomGuitar::sharedInstance();
-
-    [[ColorScheme sharedInstance] applyThemeToTableViewCell:cell];
 
     if (indexPath.section == CGIT_GUITAR_NAME) {
         GuitarNameTableViewCell *guitarNameCell = (GuitarNameTableViewCell *)cell;
