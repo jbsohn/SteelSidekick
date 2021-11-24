@@ -3,40 +3,40 @@
 "GuitarType" : "Pedal Steel",
 	"GuitarStrings": [{
 		"StringNumber": 1,
-		"StartNote": "F#-3"
+		"StartNote": "F#-4"
 	}, {
 		"StringNumber": 2,
-		"StartNote": "D#-3"
+		"StartNote": "D#-4"
 	}, {
 		"StringNumber": 3,
-		"StartNote": "G#-3"
+		"StartNote": "G#-4"
 	}, {
 		"StringNumber": 4,
-		"StartNote": "E-3"
+		"StartNote": "E-4"
 	}, {
 		"StringNumber": 5,
-		"StartNote": "B-2"
-	}, {
-		"StringNumber": 6,
-		"StartNote": "G#-2"
-	}, {
-		"StringNumber": 7,
-		"StartNote": "F#-2"
-	}, {
-		"StringNumber": 8,
-		"StartNote": "E-2"
-	}, {
-		"StringNumber": 9,
 		"StartNote": "B-3"
 	}, {
-		"StringNumber": 10,
+		"StringNumber": 6,
 		"StartNote": "G#-3"
 	}, {
-		"StringNumber": 11,
+		"StringNumber": 7,
+		"StartNote": "F#-3"
+	}, {
+		"StringNumber": 8,
 		"StartNote": "E-3"
 	}, {
-		"StringNumber": 12,
+		"StringNumber": 9,
 		"StartNote": "B-2"
+	}, {
+		"StringNumber": 10,
+		"StartNote": "G#-2"
+	}, {
+		"StringNumber": 11,
+		"StartNote": "E-2"
+	}, {
+		"StringNumber": 12,
+		"StartNote": "B-1"
 	}],
 	"GuitarAdjustments": [{
 		"ID": "P1",

@@ -14,7 +14,6 @@
 #import "ScaleViewController.h"
 #import "ChordViewController.h"
 #import "SettingsViewController.h"
-#import "GuitarPlayer.h"
 #import "SGuitar.h"
 #import "BTBalloon.h"
 #import "NSTimer+Blocks.h"
@@ -89,8 +88,9 @@
 }
 
 - (void)setupSound {
-    GuitarPlayer *player = [GuitarPlayer sharedInstance];
-    [player playInit];
+    MIDIPlayer *player = [MIDIPlayer shared];
+    [player startAndReturnError:nil];
+    [player loadPatchWithGmpatch:26 channel:8 error:nil];
 }
 
 - (void)setupGestures {
@@ -132,8 +132,9 @@
     int midiNoteValue = [sguitar midiValue:stringNumber fretNumber:fretNumber];
     
     if (midiNoteValue > 0) {
-        GuitarPlayer *player = [GuitarPlayer sharedInstance];
-        [player playMidiNote:midiNoteValue onString:stringNumber isPlucked:YES];
+        MIDIPlayer *player = [MIDIPlayer shared];
+        [player stopNote:midiNoteValue];
+        [player playNote:midiNoteValue];
     }
 }
 

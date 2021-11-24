@@ -79,25 +79,25 @@ class WindowController: NSWindowController {
 
     func setDisplayItemAsMenu(type: DISPLAY_ITEM_AS_TYPE) {
         if (type == DIA_NOTES) {
-            showAsNotesMenu.state = NSOnState;
-            showAsIntervalsMenu.state = NSOffState;
+            showAsNotesMenu.state = NSControl.StateValue.on;
+            showAsIntervalsMenu.state = NSControl.StateValue.off;
         } else if (type == DIA_INTERVAL) {
-            showAsNotesMenu.state = NSOffState;
-            showAsIntervalsMenu.state = NSOnState;
+            showAsNotesMenu.state = NSControl.StateValue.off;
+            showAsIntervalsMenu.state = NSControl.StateValue.on;
         }
     }
     
     func setMenuState(menuItem: NSMenuItem, status: Bool) {
         if (status) {
-            menuItem.state = NSOnState;
+            menuItem.state = NSControl.StateValue.on;
         } else {
-            menuItem.state = NSOffState;
+            menuItem.state = NSControl.StateValue.off;
         }
     }
 
     func updateViewController() {
         let vc = contentViewController as! ViewController
-        let ad = NSApplication.shared().delegate as? AppDelegate
+        let ad = NSApplication.shared.delegate as? AppDelegate
         ad?.syncMenuItems();
         vc.view.needsDisplay = true;
     }

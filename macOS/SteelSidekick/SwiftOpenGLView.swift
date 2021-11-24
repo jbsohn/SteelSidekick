@@ -73,10 +73,9 @@ class SwiftOpenGLView: NSOpenGLView {
         //  We're only drawing with colors now, but if we were using a depth or stencil buffer
         //  we would also want to clear those here separated by "logical or" " | "
 //        glClear(GLbitfield(GL_COLOR_BUFFER_BIT))
-        
         let sguitar = SGuitar.sharedInstance();
         let noteWidthHeight = sguitar?.cacluateNoteWidthHeight(Float(self.frame.size.width), height: Float(self.frame.size.height));
-        sguitar?.initCanvas(Float(self.frame.size.width), height: Float(self.frame.size.height), noteWidthHeight: Float(noteWidthHeight!), borderWidth: 16.0, scale: 1.0);
+        sguitar?.initCanvas(Float(self.frame.size.width), height: Float(self.frame.size.height), noteWidthHeight: Float(noteWidthHeight!), borderWidth: 16.0, scale: 1.0, leftSafeArea: 0);
         sguitar?.draw();
         
         //  Tell OpenGL that you're done rendering and it's time to send the context to the screen

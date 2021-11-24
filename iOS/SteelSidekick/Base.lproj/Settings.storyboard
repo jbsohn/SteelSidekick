@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="XxO-Tt-mv7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="XxO-Tt-mv7">
     <device id="retina6_5" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -14,7 +15,7 @@
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" bounces="NO" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="TwW-q9-jwn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                         <sections>
                             <tableViewSection id="fRm-oe-IEj">
                                 <cells>
@@ -22,18 +23,18 @@
                                         <rect key="frame" x="0.0" y="10" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PGl-To-xpJ" id="hoo-eA-yGg">
-                                            <rect key="frame" x="0.0" y="0.0" width="383" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="384" height="44"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Guitar" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tsb-Ff-5Os">
-                                                    <rect key="frame" x="19.999999999999996" y="11.999999999999998" width="50.666666666666664" height="20.333333333333332"/>
+                                                    <rect key="frame" x="20.000000000000004" y="11.999999999999998" width="50.333333333333336" height="20.333333333333332"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Default" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Wpe-F2-dlw">
-                                                    <rect key="frame" x="319.66666666666669" y="11.999999999999998" width="55.333333333333336" height="20.333333333333332"/>
+                                                    <rect key="frame" x="321.33333333333331" y="11.999999999999998" width="55" height="20.333333333333332"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -41,7 +42,7 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                        <color key="backgroundColor" systemColor="tableCellGroupedBackgroundColor"/>
                                         <connections>
                                             <segue destination="Edr-a6-2aw" kind="show" identifier="displayGuitar" id="7jE-5T-Ste"/>
                                         </connections>
@@ -51,7 +52,7 @@
                             <tableViewSection headerTitle="" footerTitle="" id="S8a-hr-BGo">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="scaleCell" textLabel="kZA-gG-QhL" style="IBUITableViewCellStyleDefault" id="kLB-Kq-9WC">
-                                        <rect key="frame" x="0.0" y="93.666666030883789" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="88.666666030883789" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kLB-Kq-9WC" id="oDK-r6-3PA">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -66,14 +67,14 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                        <color key="backgroundColor" systemColor="tableCellGroupedBackgroundColor"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="Show Notes As" footerTitle="" id="Gm3-SH-k6h">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="scaleCell" textLabel="HgH-da-fTk" style="IBUITableViewCellStyleDefault" id="vIM-FY-bEy">
-                                        <rect key="frame" x="0.0" y="204.99999809265137" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="190.33333206176758" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vIM-FY-bEy" id="4s5-d1-b5y">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -88,10 +89,10 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                        <color key="backgroundColor" systemColor="tableCellGroupedBackgroundColor"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="scaleRootNoteCell" textLabel="sFG-ZU-F73" style="IBUITableViewCellStyleDefault" id="jTe-FT-4Mc">
-                                        <rect key="frame" x="0.0" y="248.99999809265137" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="234.33333206176758" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jTe-FT-4Mc" id="pQJ-GM-iVW">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -106,14 +107,14 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                        <color key="backgroundColor" systemColor="tableCellGroupedBackgroundColor"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="" footerTitle="" id="Ynv-0I-Zbz">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="scaleToggleCell" textLabel="XPd-BZ-9In" style="IBUITableViewCellStyleDefault" id="ZS7-EZ-Rtb" userLabel="Guitar Cell">
-                                        <rect key="frame" x="0.0" y="344.66666412353516" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="321.66666412353516" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZS7-EZ-Rtb" id="djK-qS-6Yz">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -128,21 +129,21 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                        <color key="backgroundColor" systemColor="tableCellGroupedBackgroundColor"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="" footerTitle="" id="uBn-vO-gjb">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="scaleToggleCell" textLabel="zy5-pp-Ose" style="IBUITableViewCellStyleDefault" id="QQv-4k-RlN" userLabel="Guitar Cell">
-                                        <rect key="frame" x="0.0" y="440.33333015441895" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="408.99999618530273" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QQv-4k-RlN" id="xla-qI-xRL">
-                                            <rect key="frame" x="0.0" y="0.0" width="383" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="384" height="44"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="About" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zy5-pp-Ose">
-                                                    <rect key="frame" x="20" y="0.0" width="355" height="44"/>
+                                                    <rect key="frame" x="20" y="0.0" width="356.33333333333331" height="44"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                     <nil key="textColor"/>
@@ -150,7 +151,7 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                        <color key="backgroundColor" systemColor="tableCellGroupedBackgroundColor"/>
                                         <connections>
                                             <segue destination="wZ1-3s-xL1" kind="show" id="g6I-Tr-Tjk"/>
                                         </connections>
@@ -186,7 +187,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="TZK-Xb-vUs">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="1200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                         <sections>
                             <tableViewSection id="kS8-Bi-Vfm">
                                 <cells>
@@ -198,13 +199,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Version" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JEk-Tk-mg2">
-                                                    <rect key="frame" x="20" y="12.999999999999998" width="54" height="19.333333333333332"/>
+                                                    <rect key="frame" x="20.000000000000004" y="12.999999999999998" width="54.333333333333336" height="19.333333333333332"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="2.2" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RxK-sm-3wL">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="2.5" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RxK-sm-3wL">
                                                     <rect key="frame" x="557.33333333333337" y="12.999999999999998" width="22.666666666666668" height="19.333333333333332"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -213,14 +214,14 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                        <color key="backgroundColor" systemColor="tableCellGroupedBackgroundColor"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="" id="cCf-sM-72e">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" textLabel="zCz-hL-C5C" rowHeight="88" style="IBUITableViewCellStyleDefault" id="tvE-gq-s1w">
-                                        <rect key="frame" x="0.0" y="102.33333396911621" width="600" height="88"/>
+                                        <rect key="frame" x="0.0" y="97.333333969116211" width="600" height="88"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tvE-gq-s1w" id="aek-Zz-LSB">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="88"/>
@@ -236,14 +237,14 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                        <color key="backgroundColor" systemColor="tableCellGroupedBackgroundColor"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="This application uses the following open source components:" id="Z7U-uy-bPs">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="740" id="1Gw-Lk-Hvn">
-                                        <rect key="frame" x="0.0" y="246.33333396911621" width="600" height="740"/>
+                                        <rect key="frame" x="0.0" y="235" width="600" height="740"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1Gw-Lk-Hvn" id="Od9-YC-IgR">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="740"/>
@@ -251,7 +252,7 @@
                                             <subviews>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w65-n3-rs6">
                                                     <rect key="frame" x="8" y="8" width="584" height="724"/>
-                                                    <string key="text">NSTimer+Blocks
+                                                    <mutableString key="text">NSTimer+Blocks
 Jiva DeVoe
 Copyright 2011 Random Ideas, LLC. All rights reserved.
 https://github.com/jivadevoe/NSTimer-Blocks
@@ -277,17 +278,15 @@ PureLayout
 Copyright (c) 2014-2015 Tyler Fox
 https://github.com/PureLayout/PureLayout
 
-The Synthesis ToolKit in C++ (STK)
-Copyright (c) 1995--2016 Perry R. Cook and Gary P. Scavone. All Rights Reserved.
-https://ccrma.stanford.edu/software/stk/
-
+GeneralUser GS S. Christian Collins
+http://www.schristiancollins.com 
 NanoVG
 Copyright (c) 2013 Mikko Mononen memon@inside.org
 https://github.com/memononen/nanovg
 
 Json Box Copyright (c) 2011 Anhero Inc.
-https://github.com/anhero/JsonBox  ActionSheetPicker-3.0 Copyright (c) 2011, Tim Cinel (see AUTHORS) http://skywinder.github.io/ActionSheetPicker-3.0/ </string>
-                                                    <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+https://github.com/anhero/JsonBox  ActionSheetPicker-3.0 Copyright (c) 2011, Tim Cinel (see AUTHORS) http://skywinder.github.io/ActionSheetPicker-3.0/ </mutableString>
+                                                    <color key="textColor" systemColor="labelColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     <dataDetectorType key="dataDetectorTypes" link="YES"/>
@@ -300,7 +299,7 @@ https://github.com/anhero/JsonBox  ActionSheetPicker-3.0 Copyright (c) 201
                                                 <constraint firstItem="w65-n3-rs6" firstAttribute="leading" secondItem="Od9-YC-IgR" secondAttribute="leading" constant="8" id="lFl-Gn-0CR"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                        <color key="backgroundColor" systemColor="tableCellGroupedBackgroundColor"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -340,10 +339,10 @@ https://github.com/anhero/JsonBox  ActionSheetPicker-3.0 Copyright (c) 201
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="aTJ-6K-zkH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="guitarCell" textLabel="g4R-4p-ueb" imageView="JtW-5C-Gia" style="IBUITableViewCellStyleDefault" id="vKG-Ct-tvL">
-                                <rect key="frame" x="0.0" y="55.333332061767578" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="49" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vKG-Ct-tvL" id="3wt-My-K9e">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -362,7 +361,7 @@ https://github.com/anhero/JsonBox  ActionSheetPicker-3.0 Copyright (c) 201
                                         </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                <color key="backgroundColor" systemColor="tableCellGroupedBackgroundColor"/>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -389,7 +388,7 @@ https://github.com/anhero/JsonBox  ActionSheetPicker-3.0 Copyright (c) 201
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="stringAdjustmentCell" id="EHT-VV-L8d" customClass="StringAdjustmentTableViewCell">
-                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="24.333333969116211" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EHT-VV-L8d" id="SZf-KU-FBe">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -470,10 +469,10 @@ https://github.com/anhero/JsonBox  ActionSheetPicker-3.0 Copyright (c) 201
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="H6k-DX-PoA">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="650"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="guitarNameCell" id="NHl-5n-V0F" customClass="GuitarNameTableViewCell">
-                                <rect key="frame" x="0.0" y="55.333332061767578" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="49" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" tableViewCell="NHl-5n-V0F" id="8Qa-Jc-Qj0">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -506,13 +505,13 @@ https://github.com/anhero/JsonBox  ActionSheetPicker-3.0 Copyright (c) 201
                                         <constraint firstItem="emc-Bp-DuG" firstAttribute="leading" secondItem="8Qa-Jc-Qj0" secondAttribute="leading" constant="15" id="nQs-aH-toF"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                <color key="backgroundColor" systemColor="tableCellGroupedBackgroundColor"/>
                                 <connections>
                                     <outlet property="guitarNameTextField" destination="ny0-EE-7bX" id="KAy-IV-gCK"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="guitarTypeCell" textLabel="5sU-cj-PnG" style="IBUITableViewCellStyleDefault" id="3V8-U9-HxY">
-                                <rect key="frame" x="0.0" y="99.333332061767578" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="93" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3V8-U9-HxY" id="GHt-s7-gnI">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -527,10 +526,10 @@ https://github.com/anhero/JsonBox  ActionSheetPicker-3.0 Copyright (c) 201
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                <color key="backgroundColor" systemColor="tableCellGroupedBackgroundColor"/>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="guitarStringTypeCell" textLabel="mMX-2p-Jde" style="IBUITableViewCellStyleDefault" id="jtL-Me-VDh">
-                                <rect key="frame" x="0.0" y="143.33333206176758" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="137" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jtL-Me-VDh" id="xpk-Wl-cah">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -545,10 +544,10 @@ https://github.com/anhero/JsonBox  ActionSheetPicker-3.0 Copyright (c) 201
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                <color key="backgroundColor" systemColor="tableCellGroupedBackgroundColor"/>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="stringCell" textLabel="d0b-e6-sHK" detailTextLabel="0MI-CJ-fGM" style="IBUITableViewCellStyleValue1" id="dxf-gI-DdJ">
-                                <rect key="frame" x="0.0" y="187.33333206176758" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="181" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dxf-gI-DdJ" id="GvI-nF-nKJ">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -570,13 +569,13 @@ https://github.com/anhero/JsonBox  ActionSheetPicker-3.0 Copyright (c) 201
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                <color key="backgroundColor" systemColor="tableCellGroupedBackgroundColor"/>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="pedalCell" textLabel="yFo-pM-oS7" detailTextLabel="mNq-cU-6oM" style="IBUITableViewCellStyleValue1" id="KaA-YM-eS6">
-                                <rect key="frame" x="0.0" y="231.33333206176758" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="225" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KaA-YM-eS6" id="Md0-S9-XU9">
-                                    <rect key="frame" x="0.0" y="0.0" width="293" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="294.33333333333331" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="P1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yFo-pM-oS7">
@@ -587,7 +586,7 @@ https://github.com/anhero/JsonBox  ActionSheetPicker-3.0 Copyright (c) 201
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mNq-cU-6oM">
-                                            <rect key="frame" x="241" y="11.999999999999998" width="44" height="20.333333333333332"/>
+                                            <rect key="frame" x="242.66666666666666" y="11.999999999999998" width="43.666666666666664" height="20.333333333333332"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -595,24 +594,24 @@ https://github.com/anhero/JsonBox  ActionSheetPicker-3.0 Copyright (c) 201
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                <color key="backgroundColor" systemColor="tableCellGroupedBackgroundColor"/>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="leverCell" textLabel="SO1-nB-uqw" detailTextLabel="9gn-r7-0u3" style="IBUITableViewCellStyleValue1" id="OId-DV-f0j">
-                                <rect key="frame" x="0.0" y="275.33333206176758" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="269" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OId-DV-f0j" id="0Xa-Oe-gCM">
-                                    <rect key="frame" x="0.0" y="0.0" width="293" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="294.33333333333331" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="LKL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SO1-nB-uqw">
-                                            <rect key="frame" x="16" y="11.999999999999998" width="29.666666666666668" height="20.333333333333332"/>
+                                            <rect key="frame" x="15.999999999999998" y="11.999999999999998" width="29.333333333333332" height="20.333333333333332"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9gn-r7-0u3">
-                                            <rect key="frame" x="241" y="11.999999999999998" width="44" height="20.333333333333332"/>
+                                            <rect key="frame" x="242.66666666666666" y="11.999999999999998" width="43.666666666666664" height="20.333333333333332"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -620,7 +619,7 @@ https://github.com/anhero/JsonBox  ActionSheetPicker-3.0 Copyright (c) 201
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                <color key="backgroundColor" systemColor="tableCellGroupedBackgroundColor"/>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
@@ -655,5 +654,14 @@ https://github.com/anhero/JsonBox  ActionSheetPicker-3.0 Copyright (c) 201
     </scenes>
     <resources>
         <image name="checkmark" width="170.66667175292969" height="170.66667175292969"/>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tableCellGroupedBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
