@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -142,8 +142,8 @@
 		D96DC30B1D1891CA00D7ECFD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D96DC30A1D1891CA00D7ECFD /* AVFoundation.framework */; };
 		D96DC30D1D1891D400D7ECFD /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D96DC30C1D1891D400D7ECFD /* AudioToolbox.framework */; };
 		D9752F2A1D305924005CC651 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D96DC3081D1891BA00D7ECFD /* AVKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		D9752F2C1D305924005CC651 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9C7414C1C7E5F60002B2A5F /* GLKit.framework */; };
-		D9752F2E1D305924005CC651 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9C7414A1C7E5F57002B2A5F /* OpenGLES.framework */; };
+		D9752F2C1D305924005CC651 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9C7414C1C7E5F60002B2A5F /* GLKit.framework */; platformFilter = ios; };
+		D9752F2E1D305924005CC651 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9C7414A1C7E5F57002B2A5F /* OpenGLES.framework */; platformFilter = ios; };
 		D9BCFE131C7E5DDB00C36405 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D9BCFE121C7E5DDB00C36405 /* main.m */; };
 		D9BCFE161C7E5DDB00C36405 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D9BCFE151C7E5DDB00C36405 /* AppDelegate.m */; };
 		D9BCFE1E1C7E5DDB00C36405 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9BCFE1D1C7E5DDB00C36405 /* Assets.xcassets */; };
@@ -276,6 +276,7 @@
 		52A8406E20267F5F00FC6065 /* FileUtils_Android.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FileUtils_Android.cpp; path = ../SGuitar/src/FileUtils_Android.cpp; sourceTree = "<group>"; };
 		52BF4BEA1D203FBF00710CE5 /* UIColor+Expanded.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Expanded.h"; sourceTree = "<group>"; };
 		52BF4BEB1D203FBF00710CE5 /* UIColor+Expanded.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Expanded.m"; sourceTree = "<group>"; };
+		52C2FA3F274F618F00973394 /* SteelSidekick.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SteelSidekick.entitlements; sourceTree = "<group>"; };
 		52D0A0E51C7FE5D200EA5C6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Chord.storyboard; sourceTree = "<group>"; };
 		52D0A0E91C7FE5D200EA5C6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Scale.storyboard; sourceTree = "<group>"; };
 		52D0A0EB1C7FE5D200EA5C6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
@@ -900,6 +901,7 @@
 		D9BCFE101C7E5DDB00C36405 /* SteelSidekick */ = {
 			isa = PBXGroup;
 			children = (
+				52C2FA3F274F618F00973394 /* SteelSidekick.entitlements */,
 				D96DC3071D188D4C00D7ECFD /* Sound */,
 				52D0A0E21C7FE5B200EA5C6D /* Settings */,
 				52A12F1D1DFFC92100408552 /* Globals.h */,
@@ -1564,7 +1566,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "";
@@ -1577,6 +1580,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = SteelSidekick/SteelSidekick.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -1587,7 +1591,10 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = SteelSidekick/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1597,10 +1604,16 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "SteelSidekick/SteelSidekick-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				USER_HEADER_SEARCH_PATHS = "../SGuitar/External/JsonBox/include ../SGuitar/External/stk/include ../SGuitar/include";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = (
+					../SGuitar/External/JsonBox/include,
+					../SGuitar/External/stk/include,
+					../SGuitar/include,
+				);
 			};
 			name = Debug;
 		};
@@ -1609,6 +1622,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = SteelSidekick/SteelSidekick.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -1619,7 +1633,10 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = SteelSidekick/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1629,9 +1646,15 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "SteelSidekick/SteelSidekick-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
-				USER_HEADER_SEARCH_PATHS = "../SGuitar/External/JsonBox/include ../SGuitar/External/stk/include ../SGuitar/include";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = (
+					../SGuitar/External/JsonBox/include,
+					../SGuitar/External/stk/include,
+					../SGuitar/include,
+				);
 			};
 			name = Release;
 		};
@@ -1641,12 +1664,20 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = SteelSidekickTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.steelsidekick.SteelSidekickTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SteelSidekick.app/SteelSidekick";
-				USER_HEADER_SEARCH_PATHS = "../SGuitar/External/JsonBox/include ../SGuitar/External/stk/include ../SGuitar/include";
+				USER_HEADER_SEARCH_PATHS = (
+					../SGuitar/External/JsonBox/include,
+					../SGuitar/External/stk/include,
+					../SGuitar/include,
+				);
 			};
 			name = Debug;
 		};
@@ -1656,12 +1687,20 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = SteelSidekickTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.steelsidekick.SteelSidekickTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SteelSidekick.app/SteelSidekick";
-				USER_HEADER_SEARCH_PATHS = "../SGuitar/External/JsonBox/include ../SGuitar/External/stk/include ../SGuitar/include";
+				USER_HEADER_SEARCH_PATHS = (
+					../SGuitar/External/JsonBox/include,
+					../SGuitar/External/stk/include,
+					../SGuitar/include,
+				);
 			};
 			name = Release;
 		};
@@ -1670,7 +1709,11 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = SteelSidekickUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.steelsidekick.SteelSidekickUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_TARGET_NAME = SteelSidekick;
@@ -1683,7 +1726,11 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = SteelSidekickUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.steelsidekick.SteelSidekickUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_TARGET_NAME = SteelSidekick;
