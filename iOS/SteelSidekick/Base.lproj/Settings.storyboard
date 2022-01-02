@@ -220,17 +220,17 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="" id="cCf-sM-72e">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" textLabel="zCz-hL-C5C" rowHeight="88" style="IBUITableViewCellStyleDefault" id="tvE-gq-s1w">
-                                        <rect key="frame" x="0.0" y="97.333333969116211" width="600" height="88"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" textLabel="zCz-hL-C5C" rowHeight="122" style="IBUITableViewCellStyleDefault" id="tvE-gq-s1w">
+                                        <rect key="frame" x="0.0" y="97.333333969116211" width="600" height="122"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tvE-gq-s1w" id="aek-Zz-LSB">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="88"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="122"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" adjustsLetterSpacingToFitWidth="YES" id="zCz-hL-C5C">
-                                                    <rect key="frame" x="20" y="0.0" width="560" height="88"/>
+                                                    <rect key="frame" x="20" y="0.0" width="560" height="122"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <string key="text">Thanks to Marvin Born, Gary Preston, Duncan Sexton, Pauline Sohn, Rasmus Fris, Bill McCloskey, David Sheads, Mark Thomas, and Robert Fawcett  for valuable feedback.</string>
+                                                    <mutableString key="text">Thanks to Maureen Carruthers, Marvin Born, Gary Preston, Duncan Sexton, Pauline Sohn, Rasmus Fris, Bill McCloskey, David Sheads, Mark Thomas, Robert Fawcett and Les Ford for valuable feedback.  This version is dedicated to Sonny Curtis (https://www.sonnycurtis.net/).</mutableString>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -244,7 +244,7 @@
                             <tableViewSection headerTitle="This application uses the following open source components:" id="Z7U-uy-bPs">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="740" id="1Gw-Lk-Hvn">
-                                        <rect key="frame" x="0.0" y="235" width="600" height="740"/>
+                                        <rect key="frame" x="0.0" y="269" width="600" height="740"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1Gw-Lk-Hvn" id="Od9-YC-IgR">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="740"/>

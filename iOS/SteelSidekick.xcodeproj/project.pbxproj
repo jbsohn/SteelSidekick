@@ -102,7 +102,6 @@
 		D93D347D1EB00126004E1514 /* Scales-Test.settings in Resources */ = {isa = PBXBuildFile; fileRef = D93D347A1EB00126004E1514 /* Scales-Test.settings */; };
 		D9535C041D21A6BC003FCC4A /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9535C031D21A6BB003FCC4A /* CFNetwork.framework */; };
 		D9535C061D21A6C8003FCC4A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9535C051D21A6C8003FCC4A /* SystemConfiguration.framework */; };
-		D9535C081D21A6D0003FCC4A /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9535C071D21A6CF003FCC4A /* StoreKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		D95884FA1D1C244A001349CC /* Chord.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 528BA0CB1D18B9DA009FDC64 /* Chord.cpp */; };
 		D95884FB1D1C244A001349CC /* ChordOptions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 528BA0CC1D18B9DA009FDC64 /* ChordOptions.cpp */; };
 		D95884FC1D1C244A001349CC /* Chords.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 528BA0CD1D18B9DA009FDC64 /* Chords.cpp */; };
@@ -403,7 +402,6 @@
 		D93D347A1EB00126004E1514 /* Scales-Test.settings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Scales-Test.settings"; sourceTree = "<group>"; };
 		D9535C031D21A6BB003FCC4A /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		D9535C051D21A6C8003FCC4A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		D9535C071D21A6CF003FCC4A /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		D9663EDA1EB3B94D000CD637 /* NSArrayIntVector.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = NSArrayIntVector.mm; path = ../SGuitar/src/NSArrayIntVector.mm; sourceTree = "<group>"; };
 		D9663EDB1EB3B94D000CD637 /* NSArrayStdStringVector.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = NSArrayStdStringVector.mm; path = ../SGuitar/src/NSArrayStdStringVector.mm; sourceTree = "<group>"; };
 		D9663EE31EB3BB6C000CD637 /* SGuitar.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = SGuitar.mm; path = ../SGuitar/src/SGuitar.mm; sourceTree = "<group>"; };
@@ -438,7 +436,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9535C081D21A6D0003FCC4A /* StoreKit.framework in Frameworks */,
 				D9535C061D21A6C8003FCC4A /* SystemConfiguration.framework in Frameworks */,
 				D9752F2A1D305924005CC651 /* AVKit.framework in Frameworks */,
 				D9535C041D21A6BC003FCC4A /* CFNetwork.framework in Frameworks */,
@@ -877,7 +874,6 @@
 				D9BCFE351C7E5DDB00C36405 /* SteelSidekickUITests */,
 				D9BCFE0F1C7E5DDB00C36405 /* Products */,
 				5284F03B1D7E2391000C3C37 /* Settings.bundle */,
-				D9535C071D21A6CF003FCC4A /* StoreKit.framework */,
 				D9535C051D21A6C8003FCC4A /* SystemConfiguration.framework */,
 				D9535C031D21A6BB003FCC4A /* CFNetwork.framework */,
 				D96DC30C1D1891D400D7ECFD /* AudioToolbox.framework */,
@@ -1118,7 +1114,6 @@
 				TargetAttributes = {
 					D9BCFE0D1C7E5DDB00C36405 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = N9V659CU72;
 						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
@@ -1582,12 +1577,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = SteelSidekick/SteelSidekick.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = N9V659CU72;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1624,12 +1619,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = SteelSidekick/SteelSidekick.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = N9V659CU72;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
