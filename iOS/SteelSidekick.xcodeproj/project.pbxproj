@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5211EEF627AF8D4D00621095 /* SoundViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5211EEF527AF8D4D00621095 /* SoundViewController.m */; };
 		5228EF6B1D29B8B300E3E15B /* nanovg.c in Sources */ = {isa = PBXBuildFile; fileRef = 52969EA71D17B6A000EFE67B /* nanovg.c */; };
 		52584A861E2C8D15002461F5 /* NoteName.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52584A841E2C8D15002461F5 /* NoteName.cpp */; };
 		525D6810201523B100E11E22 /* ActionSheetDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 525D67FE201523B100E11E22 /* ActionSheetDatePicker.m */; };
@@ -172,6 +173,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5211EEF427AF8D4D00621095 /* SoundViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundViewController.h; sourceTree = "<group>"; };
+		5211EEF527AF8D4D00621095 /* SoundViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundViewController.m; sourceTree = "<group>"; };
 		52584A841E2C8D15002461F5 /* NoteName.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = NoteName.cpp; path = ../SGuitar/src/NoteName.cpp; sourceTree = "<group>"; };
 		52584A871E2C8D9E002461F5 /* NoteName.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = NoteName.hpp; path = ../SGuitar/include/SG/NoteName.hpp; sourceTree = "<group>"; };
 		525D67FC201523B100E11E22 /* ActionSheetCustomPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetCustomPicker.h; sourceTree = "<group>"; };
@@ -275,7 +278,6 @@
 		52A8406E20267F5F00FC6065 /* FileUtils_Android.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FileUtils_Android.cpp; path = ../SGuitar/src/FileUtils_Android.cpp; sourceTree = "<group>"; };
 		52BF4BEA1D203FBF00710CE5 /* UIColor+Expanded.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Expanded.h"; sourceTree = "<group>"; };
 		52BF4BEB1D203FBF00710CE5 /* UIColor+Expanded.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Expanded.m"; sourceTree = "<group>"; };
-		52C2FA3F274F618F00973394 /* SteelSidekick.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SteelSidekick.entitlements; sourceTree = "<group>"; };
 		52D0A0E51C7FE5D200EA5C6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Chord.storyboard; sourceTree = "<group>"; };
 		52D0A0E91C7FE5D200EA5C6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Scale.storyboard; sourceTree = "<group>"; };
 		52D0A0EB1C7FE5D200EA5C6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
@@ -463,6 +465,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5211EEF327AF8D3C00621095 /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				5211EEF427AF8D4D00621095 /* SoundViewController.h */,
+				5211EEF527AF8D4D00621095 /* SoundViewController.m */,
+			);
+			name = Sound;
+			sourceTree = "<group>";
+		};
 		5228EF6C1D29DF7C00E3E15B /* Canvas */ = {
 			isa = PBXGroup;
 			children = (
@@ -579,6 +590,7 @@
 		52A99CDA1CC5D29100E4B6FB /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				5211EEF327AF8D3C00621095 /* Sound */,
 				D9EFC3E01CC7BAFF00FDD605 /* Guitar */,
 				52D0A1001C7FE5D200EA5C6D /* SettingsViewController.h */,
 				528003E01E3970CE00EC24A8 /* SettingsViewController.m */,
@@ -897,7 +909,6 @@
 		D9BCFE101C7E5DDB00C36405 /* SteelSidekick */ = {
 			isa = PBXGroup;
 			children = (
-				52C2FA3F274F618F00973394 /* SteelSidekick.entitlements */,
 				D96DC3071D188D4C00D7ECFD /* Sound */,
 				52D0A0E21C7FE5B200EA5C6D /* Settings */,
 				52A12F1D1DFFC92100408552 /* Globals.h */,
@@ -1247,6 +1258,7 @@
 				528BA0F21D18B9DA009FDC64 /* OptionTypes.cpp in Sources */,
 				52E414501D1783C000D030A2 /* IQTextView.m in Sources */,
 				5284F0361D7E15E9000C3C37 /* NSTimer+Blocks.m in Sources */,
+				5211EEF627AF8D4D00621095 /* SoundViewController.m in Sources */,
 				52727937201ECF6900F6FF12 /* CustomGuitarViewController.mm in Sources */,
 				528BA0E31D18B9DA009FDC64 /* ChordOptions.cpp in Sources */,
 				D91AB61C2016427700E28D88 /* InfoViewController.swift in Sources */,

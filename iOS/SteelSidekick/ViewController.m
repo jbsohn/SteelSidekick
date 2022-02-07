@@ -90,7 +90,21 @@
 - (void)setupSound {
     MIDIPlayer *player = [MIDIPlayer shared];
     [player startAndReturnError:nil];
-    [player loadPatchWithGmpatch:26 channel:8 error:nil];
+
+    NSString *selectedSoundName = [[NSUserDefaults standardUserDefaults] valueForKey:@"selectedSoundName"];
+    if ([selectedSoundName length] <= 0) {
+        selectedSoundName = @"Hawaiian Guitar";
+        [[NSUserDefaults standardUserDefaults] setObject:selectedSoundName forKey:@"selectedSoundName"];
+    }
+    
+    NSNumber *velocity = [[NSUserDefaults standardUserDefaults] valueForKey:@"selectedSoundVolume"];
+    if (!velocity) {
+        velocity = @64;
+        [[NSUserDefaults standardUserDefaults] setValue:velocity forKey:@"selectedSoundVolume"];
+    }
+
+    player.velocity = [velocity intValue];
+    [player loadSoundWithName:selectedSoundName error:nil];
 }
 
 - (void)setupGestures {

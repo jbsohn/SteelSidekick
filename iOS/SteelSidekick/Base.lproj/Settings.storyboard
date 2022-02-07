@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="XxO-Tt-mv7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="XxO-Tt-mv7">
     <device id="retina6_5" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,7 +23,7 @@
                                         <rect key="frame" x="0.0" y="10" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PGl-To-xpJ" id="hoo-eA-yGg">
-                                            <rect key="frame" x="0.0" y="0.0" width="384" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="385" height="44"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Guitar" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tsb-Ff-5Os">
@@ -34,7 +34,7 @@
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Default" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Wpe-F2-dlw">
-                                                    <rect key="frame" x="321.33333333333331" y="11.999999999999998" width="55" height="20.333333333333332"/>
+                                                    <rect key="frame" x="322.33333333333331" y="11.999999999999998" width="55" height="20.333333333333332"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -111,10 +111,74 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection headerTitle="" footerTitle="" id="vec-c5-NCF">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="Ewh-WQ-9VA" detailTextLabel="dOl-LG-ttb" style="IBUITableViewCellStyleValue1" id="jIV-jk-XkF">
+                                        <rect key="frame" x="0.0" y="321.66666412353516" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jIV-jk-XkF" id="bDg-M6-ma5">
+                                            <rect key="frame" x="0.0" y="0.0" width="385.33333333333331" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Sound" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ewh-WQ-9VA">
+                                                    <rect key="frame" x="20.000000000000004" y="11.999999999999998" width="52.333333333333336" height="20.333333333333332"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dOl-LG-ttb">
+                                                    <rect key="frame" x="333.66666666666663" y="11.999999999999998" width="43.666666666666664" height="20.333333333333332"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" systemColor="tableCellGroupedBackgroundColor"/>
+                                        <connections>
+                                            <segue destination="z8h-Ac-vUg" kind="show" identifier="displaySound" id="hbx-ut-hYf"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="scaleToggleCell" id="zQF-uW-3Am" userLabel="Guitar Cell">
+                                        <rect key="frame" x="0.0" y="365.66666412353516" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zQF-uW-3Am" id="Yx2-dX-CU0">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="128" translatesAutoresizingMaskIntoConstraints="NO" id="TTn-sF-eGw">
+                                                    <rect key="frame" x="101" y="8" width="293" height="29"/>
+                                                    <connections>
+                                                        <action selector="volumeSliderChanged:" destination="3bG-h6-E8r" eventType="valueChanged" id="yYf-KW-NMQ"/>
+                                                    </connections>
+                                                </slider>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Volume" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EJC-eO-Wha">
+                                                    <rect key="frame" x="20" y="11" width="61" height="22"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="TTn-sF-eGw" secondAttribute="trailing" constant="22" id="1iv-MU-DsQ"/>
+                                                <constraint firstItem="TTn-sF-eGw" firstAttribute="leading" secondItem="EJC-eO-Wha" secondAttribute="trailing" constant="22" id="Gw3-zK-HWM"/>
+                                                <constraint firstItem="EJC-eO-Wha" firstAttribute="leading" secondItem="Yx2-dX-CU0" secondAttribute="leadingMargin" id="LJe-Br-zhT"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="EJC-eO-Wha" secondAttribute="bottom" id="QkU-Af-cuC"/>
+                                                <constraint firstItem="TTn-sF-eGw" firstAttribute="top" secondItem="Yx2-dX-CU0" secondAttribute="top" constant="8" id="TCI-xd-nWW"/>
+                                                <constraint firstAttribute="bottom" secondItem="TTn-sF-eGw" secondAttribute="bottom" constant="8" id="rGJ-cU-khS"/>
+                                                <constraint firstItem="EJC-eO-Wha" firstAttribute="top" secondItem="Yx2-dX-CU0" secondAttribute="topMargin" id="w6o-hN-K7e"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" systemColor="tableCellGroupedBackgroundColor"/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                             <tableViewSection headerTitle="" footerTitle="" id="Ynv-0I-Zbz">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="scaleToggleCell" textLabel="XPd-BZ-9In" style="IBUITableViewCellStyleDefault" id="ZS7-EZ-Rtb" userLabel="Guitar Cell">
-                                        <rect key="frame" x="0.0" y="321.66666412353516" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="452.99999618530273" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZS7-EZ-Rtb" id="djK-qS-6Yz">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -136,14 +200,14 @@
                             <tableViewSection headerTitle="" footerTitle="" id="uBn-vO-gjb">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="scaleToggleCell" textLabel="zy5-pp-Ose" style="IBUITableViewCellStyleDefault" id="QQv-4k-RlN" userLabel="Guitar Cell">
-                                        <rect key="frame" x="0.0" y="408.99999618530273" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="540.33332824707031" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QQv-4k-RlN" id="xla-qI-xRL">
-                                            <rect key="frame" x="0.0" y="0.0" width="384" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="385" height="44"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="About" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zy5-pp-Ose">
-                                                    <rect key="frame" x="20" y="0.0" width="356.33333333333331" height="44"/>
+                                                    <rect key="frame" x="20" y="0.0" width="357.33333333333331" height="44"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                     <nil key="textColor"/>
@@ -174,11 +238,13 @@
                     <connections>
                         <outlet property="guitarCell" destination="PGl-To-xpJ" id="1ed-zB-Mem"/>
                         <outlet property="showAllNotesCell" destination="kLB-Kq-9WC" id="lwe-mE-kko"/>
+                        <outlet property="soundCell" destination="jIV-jk-XkF" id="WLY-yO-qgr"/>
+                        <outlet property="volumeSlider" destination="TTn-sF-eGw" id="L7w-qy-78n"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SHn-e3-Uia" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="527" y="611"/>
+            <point key="canvasLocation" x="524.63768115942037" y="610.71428571428567"/>
         </scene>
         <!--About Table View Controller-->
         <scene sceneID="fQ6-xN-eMM">
@@ -230,7 +296,7 @@
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" adjustsLetterSpacingToFitWidth="YES" id="zCz-hL-C5C">
                                                     <rect key="frame" x="20" y="0.0" width="560" height="122"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <mutableString key="text">Thanks to Maureen Carruthers, Marvin Born, Gary Preston, Duncan Sexton, Pauline Sohn, Rasmus Fris, Bill McCloskey, David Sheads, Mark Thomas, Robert Fawcett and Les Ford for valuable feedback.  This version is dedicated to Sonny Curtis (https://www.sonnycurtis.net/).</mutableString>
+                                                    <string key="text">Thanks to Maureen Carruthers, Marvin Born, Gary Preston, Duncan Sexton, Pauline Sohn, Rasmus Fris, Bill McCloskey, David Sheads, Mark Thomas, Robert Fawcett and Les Ford for valuable feedback.  This version is dedicated to Sonny Curtis (https://www.sonnycurtis.net/).</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -252,7 +318,7 @@
                                             <subviews>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w65-n3-rs6">
                                                     <rect key="frame" x="8" y="8" width="584" height="724"/>
-                                                    <mutableString key="text">NSTimer+Blocks
+                                                    <string key="text">NSTimer+Blocks
 Jiva DeVoe
 Copyright 2011 Random Ideas, LLC. All rights reserved.
 https://github.com/jivadevoe/NSTimer-Blocks
@@ -285,7 +351,7 @@ Copyright (c) 2013 Mikko Mononen memon@inside.org
 https://github.com/memononen/nanovg
 
 Json Box Copyright (c) 2011 Anhero Inc.
-https://github.com/anhero/JsonBox  ActionSheetPicker-3.0 Copyright (c) 2011, Tim Cinel (see AUTHORS) http://skywinder.github.io/ActionSheetPicker-3.0/ </mutableString>
+https://github.com/anhero/JsonBox  ActionSheetPicker-3.0 Copyright (c) 2011, Tim Cinel (see AUTHORS) http://skywinder.github.io/ActionSheetPicker-3.0/ </string>
                                                     <color key="textColor" systemColor="labelColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -331,6 +397,45 @@ https://github.com/anhero/JsonBox  ActionSheetPicker-3.0 Copyright (c) 201
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HO6-Kk-ncI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="527" y="-221"/>
+        </scene>
+        <!--Sound View Controller-->
+        <scene sceneID="iFS-It-1wv">
+            <objects>
+                <tableViewController id="z8h-Ac-vUg" customClass="SoundViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="4rZ-qt-tN7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="soundCell" textLabel="kPZ-yg-6Y5" style="IBUITableViewCellStyleDefault" id="vCU-vs-N4n">
+                                <rect key="frame" x="0.0" y="44.666666030883789" width="414" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vCU-vs-N4n" id="Zlv-ek-ARC">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kPZ-yg-6Y5">
+                                            <rect key="frame" x="20" y="0.0" width="374" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" systemColor="tableCellGroupedBackgroundColor"/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="z8h-Ac-vUg" id="lCU-en-tEW"/>
+                            <outlet property="delegate" destination="z8h-Ac-vUg" id="xkJ-av-H6T"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="2jZ-Qx-UNo"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UT6-wn-HtC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1777" y="741"/>
         </scene>
         <!--Guitar Table View Controller-->
         <scene sceneID="Gvh-t0-ZCP">
@@ -388,7 +493,7 @@ https://github.com/anhero/JsonBox  ActionSheetPicker-3.0 Copyright (c) 201
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="stringAdjustmentCell" id="EHT-VV-L8d" customClass="StringAdjustmentTableViewCell">
-                                <rect key="frame" x="0.0" y="24.333333969116211" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="44.666666030883789" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EHT-VV-L8d" id="SZf-KU-FBe">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -575,7 +680,7 @@ https://github.com/anhero/JsonBox  ActionSheetPicker-3.0 Copyright (c) 201
                                 <rect key="frame" x="0.0" y="225" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KaA-YM-eS6" id="Md0-S9-XU9">
-                                    <rect key="frame" x="0.0" y="0.0" width="294.33333333333331" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="295.33333333333331" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="P1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yFo-pM-oS7">
@@ -586,7 +691,7 @@ https://github.com/anhero/JsonBox  ActionSheetPicker-3.0 Copyright (c) 201
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mNq-cU-6oM">
-                                            <rect key="frame" x="242.66666666666666" y="11.999999999999998" width="43.666666666666664" height="20.333333333333332"/>
+                                            <rect key="frame" x="243.66666666666666" y="11.999999999999998" width="43.666666666666664" height="20.333333333333332"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -600,7 +705,7 @@ https://github.com/anhero/JsonBox  ActionSheetPicker-3.0 Copyright (c) 201
                                 <rect key="frame" x="0.0" y="269" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OId-DV-f0j" id="0Xa-Oe-gCM">
-                                    <rect key="frame" x="0.0" y="0.0" width="294.33333333333331" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="295.33333333333331" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="LKL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SO1-nB-uqw">
@@ -611,7 +716,7 @@ https://github.com/anhero/JsonBox  ActionSheetPicker-3.0 Copyright (c) 201
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9gn-r7-0u3">
-                                            <rect key="frame" x="242.66666666666666" y="11.999999999999998" width="43.666666666666664" height="20.333333333333332"/>
+                                            <rect key="frame" x="243.66666666666666" y="11.999999999999998" width="43.666666666666664" height="20.333333333333332"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -659,6 +764,9 @@ https://github.com/anhero/JsonBox  ActionSheetPicker-3.0 Copyright (c) 201
         </systemColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="tableCellGroupedBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

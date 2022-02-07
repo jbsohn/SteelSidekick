@@ -8,8 +8,10 @@
 
 #import "SettingsViewController.h"
 #import "GuitarViewController.h"
+#import "SoundViewController.h"
 #import "SGuitar.h"
 #import "Globals.h"
+#import "SteelSidekick-Swift.h"
 
 #define POPOVER_VIEW_SIZE     CGSizeMake(320.0, 480.0)
 
@@ -17,14 +19,17 @@ typedef enum {
     SECTION_GUITAR = 0,
     SECTION_SHOW_ALL_NOTES = 1,
     SECTION_SHOW_NOTES_AS = 2,
-    SECTION_SHOW_TUTORIAL = 3
+    SECTION_SOUND = 3,
+    SECTION_SHOW_TUTORIAL = 4
 } SETTINGS_SECTIONS;
 
-@interface SettingsViewController ()  <GuitarViewControllerDelegate>
+@interface SettingsViewController ()  <GuitarViewControllerDelegate, SoundViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableViewCell *guitarCell;
 @property (weak, nonatomic) IBOutlet UITableViewCell *showAllNotesCell;
 @property (strong, nonatomic) UISwitch *showAllNotesSwitch;
+@property (weak, nonatomic) IBOutlet UITableViewCell *soundCell;
+@property (weak, nonatomic) IBOutlet UISlider *volumeSlider;
 
 @end
 
@@ -41,6 +46,8 @@ typedef enum {
     [super viewWillAppear:animated];
     [self resetShowAllNotes];
     [self resetGuitar];
+    [self resetSound];
+    [self resetVolume];
 }
 
 - (void)setupDone {
@@ -91,6 +98,19 @@ typedef enum {
     self.showAllNotesSwitch.on = guitarOptions.showAllNotes;
 }
 
+- (void)resetSound {
+    NSString *selectedSoundName = [[NSUserDefaults standardUserDefaults] valueForKey:@"selectedSoundName"];
+    self.soundCell.detailTextLabel.text = selectedSoundName;
+}
+
+- (void)resetVolume {
+    NSNumber *velocity = [[NSUserDefaults standardUserDefaults] valueForKey:@"selectedSoundVolume"];
+    if (!velocity) {
+        velocity = @64;
+    }
+    self.volumeSlider.value = [velocity floatValue];
+}
+
 - (void)guitarViewControllerItemSelected:(GuitarViewController *)controller {
     SGuitar *sguitar = [SGuitar sharedInstance];
     SGGuitarOptions *guitarOptions = [sguitar getGuitarOptions];
@@ -114,6 +134,13 @@ typedef enum {
         vc.delegate = self;
         vc.selectedGuitarName = guitarOptions.guitarName;
         vc.selectedGuitarType = guitarOptions.guitarType;
+    } else if ([segue.identifier isEqualToString:@"displaySound"]) {
+        NSString *selectedSoundName = [[NSUserDefaults standardUserDefaults] valueForKey:@"selectedSoundName"];
+
+        SoundViewController *vc = [segue destinationViewController];
+        vc.delegate = self;
+        vc.soundNames = [MIDIPlayer shared].soundNames;
+        vc.selectedSoundName = selectedSoundName;
     }
 }
 
@@ -152,22 +179,37 @@ typedef enum {
         SGGuitarOptions *guitarOptions = [sguitar getGuitarOptions];
         
         UITableViewCell *prevCell =
-                [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:guitarOptions.showNotesAs
-                                                                         inSection:SECTION_SHOW_NOTES_AS]];
+        [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:guitarOptions.showNotesAs
+                                                                 inSection:SECTION_SHOW_NOTES_AS]];
         prevCell.accessoryType = UITableViewCellAccessoryNone;
         
         guitarOptions.showNotesAs = (ACCIDENTAL_DISPLAY_TYPE) indexPath.row;
         [sguitar setGuitarOptions:guitarOptions];
-
+        
         UITableViewCell *newCell =
-                [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:guitarOptions.showNotesAs
-                                                                         inSection:SECTION_SHOW_NOTES_AS]];
+        [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:guitarOptions.showNotesAs
+                                                                 inSection:SECTION_SHOW_NOTES_AS]];
         newCell.accessoryType = UITableViewCellAccessoryCheckmark;
         
         [self.delegate settingsViewControllerResetDisplay];
     } else if (indexPath.section == SECTION_SHOW_TUTORIAL) {
         [self.delegate settingsViewControllerStartTutorial:self];
     }
+}
+
+- (void)soundViewControllerDidFinish:(SoundViewController *)controller {
+
+}
+
+- (void)soundViewControllerItemSelected:(SoundViewController *)controller {
+    [[NSUserDefaults standardUserDefaults] setObject:controller.selectedSoundName forKey:@"selectedSoundName"];
+    [[MIDIPlayer shared] loadSoundWithName:controller.selectedSoundName error:nil];
+}
+
+- (IBAction)volumeSliderChanged:(UISlider *)sender {
+    [[MIDIPlayer shared] stopAllNotes];
+    [[NSUserDefaults standardUserDefaults] setInteger:sender.value forKey:@"selectedSoundVolume"];
+    [[MIDIPlayer shared] setVelocity:sender.value];
 }
 
 @end
