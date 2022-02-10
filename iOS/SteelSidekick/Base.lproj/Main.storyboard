@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="wMQ-za-UgB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="wMQ-za-UgB">
     <device id="retina4_7" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,7 +21,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lzI-72-xlv">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="675"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="724"/>
                                 <color key="backgroundColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jrd-k8-9rC" userLabel="Bottom View">
@@ -481,10 +482,10 @@
                             <constraint firstItem="0eb-4t-0iA" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottomMargin" placeholder="YES" id="O2L-B1-UpE"/>
                             <constraint firstItem="Jrd-k8-9rC" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="20" placeholder="YES" id="clX-Gt-ITY"/>
                             <constraint firstItem="lzI-72-xlv" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="fZm-wE-B6d"/>
-                            <constraint firstItem="lzI-72-xlv" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="fyA-PM-Q74"/>
+                            <constraint firstItem="lzI-72-xlv" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="fyA-PM-Q74"/>
                             <constraint firstItem="0eb-4t-0iA" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" placeholder="YES" id="ge1-n7-ryA"/>
                             <constraint firstItem="lzI-72-xlv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="hwV-bu-luV"/>
-                            <constraint firstItem="lzI-72-xlv" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="j1w-jm-ZZk"/>
+                            <constraint firstItem="lzI-72-xlv" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="j1w-jm-ZZk"/>
                             <constraint firstItem="Jrd-k8-9rC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" placeholder="YES" id="nj2-WR-Kbh"/>
                             <constraint firstAttribute="trailing" secondItem="80Z-1a-uQJ" secondAttribute="trailing" constant="8" placeholder="YES" id="pKQ-RM-98v"/>
                             <constraint firstItem="4hq-NJ-nPZ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="60" placeholder="YES" id="soT-ar-7Af"/>
@@ -798,7 +799,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="SYD-fp-u4F" firstAttribute="width" secondItem="CVU-vd-1Wa" secondAttribute="width" placeholder="YES" id="KdO-4M-EU2"/>
                             <constraint firstItem="SYD-fp-u4F" firstAttribute="leading" secondItem="CVU-vd-1Wa" secondAttribute="trailing" placeholder="YES" id="MCJ-Dh-aQe"/>
@@ -861,5 +862,8 @@
         <image name="VerticalLever.png" width="132" height="132"/>
         <image name="VerticalLeverActive" width="44" height="44"/>
         <image name="VerticalLeverActive.png" width="132" height="132"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
