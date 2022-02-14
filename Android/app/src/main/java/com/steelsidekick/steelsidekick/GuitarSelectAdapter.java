@@ -12,8 +12,8 @@ import java.util.ArrayList;
 
 class GuitarSelectAdapter extends BaseAdapter {
 
-    private ArrayList<GuitarSelectItem> guitarSelectItems = null;
-    private LayoutInflater mInflater;
+    private final ArrayList<GuitarSelectItem> guitarSelectItems;
+    private final LayoutInflater mInflater;
 
     public static final int TYPE_HEADER = 0;
     public static final int TYPE_ITEM = 1;
@@ -57,7 +57,7 @@ class GuitarSelectAdapter extends BaseAdapter {
         GuitarSelectItem item = guitarSelectItems.get(position);
 
         convertView = mInflater.inflate(R.layout.layout_guitar, null);
-        TextView textView = (TextView) convertView.findViewById(R.id.textView);
+        TextView textView = convertView.findViewById(R.id.textView);
         textView.setText(item.getName());
         if (item.isHeader()) {
             textView.setTypeface(Typeface.DEFAULT_BOLD);

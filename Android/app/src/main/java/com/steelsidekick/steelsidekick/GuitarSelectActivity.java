@@ -3,15 +3,13 @@ package com.steelsidekick.steelsidekick;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.steelsidekick.sguitar.SGGuitarOptions;
 import com.steelsidekick.sguitar.SGuitar;
+import com.steelsidekick.steelsidekick.databinding.ActivityGuitarSelectBinding;
 
 import java.util.ArrayList;
 
@@ -20,17 +18,15 @@ import java.util.ArrayList;
  */
 
 public class GuitarSelectActivity extends AppCompatActivity {
-    private static final String TAG = GuitarSelectActivity.class.getName();
-    private ListView mGuitarListView;
+    //private static final String TAG = GuitarSelectActivity.class.getName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
+        com.steelsidekick.steelsidekick.databinding.ActivityGuitarSelectBinding binding = ActivityGuitarSelectBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-        setContentView(R.layout.activity_guitar_select);
-
-        mGuitarListView = findViewById(R.id.guitarListView);
+        ListView mGuitarListView = binding.guitarListView;
 
         SGuitar sguitar = SGuitar.sharedInstance();
 
@@ -52,11 +48,8 @@ public class GuitarSelectActivity extends AppCompatActivity {
         GuitarSelectAdapter adapter = new GuitarSelectAdapter(this, allGuitars);
         mGuitarListView.setAdapter(adapter);
 
-        mGuitarListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView adapterView, View view, int position, long l) {
+        mGuitarListView.setOnItemClickListener((adapterView, view, position, l) -> {
             GuitarSelectItem item = allGuitars.get(position);
-            SGuitar sguitar = SGuitar.sharedInstance();
             SGGuitarOptions options = sguitar.getGuitarOptions();
             options.setGuitarName(item.getName());
             options.setGuitarType(item.getType());
@@ -68,7 +61,6 @@ public class GuitarSelectActivity extends AppCompatActivity {
             setResult(Activity.RESULT_OK, resultIntent);
 
             finish();
-            }
         });
     }
 

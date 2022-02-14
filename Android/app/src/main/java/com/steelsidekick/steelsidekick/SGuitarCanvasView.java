@@ -15,7 +15,7 @@ import javax.microedition.khronos.opengles.GL10;
 //import sguitar.GuitarCanvas;
 import com.steelsidekick.sguitar.SGuitar;
 
-class SGuitarCanvasView extends GLSurfaceView {
+public class SGuitarCanvasView extends GLSurfaceView {
     private static String TAG = "SGuitarCanvasView";
     private static final boolean DEBUG = false;
 
