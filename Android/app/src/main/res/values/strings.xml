@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">Steel Sidekick</string>
-    <string name="action_guitar">Guitar...</string>
-    <string name="action_scale">Scale..</string>
-    <string name="action_chord">Chord...</string>
+    <string name="action_guitar">Guitar…</string>
+    <string name="action_scale">Scale…</string>
+    <string name="action_chord">Chord…</string>
     <string name="show_scale">Show Scale</string>
     <string-array name="notes_array">
         <item>C</item>

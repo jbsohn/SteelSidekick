@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.steelsidekick.steelsidekick.ScaleActivity"
+    tools:context=".ScaleActivity"
     tools:layout_editor_absoluteY="89dp">
 
     <androidx.cardview.widget.CardView

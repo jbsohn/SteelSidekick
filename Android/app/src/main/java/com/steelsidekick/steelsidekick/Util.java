@@ -38,18 +38,16 @@ public class Util {
 
     public static boolean copyAsset(AssetManager assetManager,
                                      String fromAssetPath, String toPath) {
-        InputStream in = null;
-        OutputStream out = null;
+        InputStream in;
+        OutputStream out;
         try {
             in = assetManager.open(fromAssetPath);
             new File(toPath).createNewFile();
             out = new FileOutputStream(toPath);
             copyFile(in, out);
             in.close();
-            in = null;
             out.flush();
             out.close();
-            out = null;
             return true;
         } catch(Exception e) {
             e.printStackTrace();
@@ -77,7 +75,7 @@ public class Util {
     }
 
     public static ArrayList<String> stdStringVectorToArrayList(StdStringVector vector) {
-        ArrayList<String> values = new ArrayList<String>();
+        ArrayList<String> values = new ArrayList<>();
         for (int i = 0; i < vector.size(); i++) {
             values.add(vector.get(i));
         }
