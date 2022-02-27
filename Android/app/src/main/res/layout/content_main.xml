@@ -10,13 +10,13 @@
 
     <View
         android:id="@+id/leverView"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="#999999"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintWidth="50dp" />
+        app:layout_constraintWidth_percent="0.10" />
 
     <View
         android:id="@+id/leverViewBorder"
@@ -26,6 +26,34 @@
         app:layout_constraintStart_toEndOf="@id/leverView"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <com.steelsidekick.steelsidekick.SGuitarCanvasView
+        android:id="@+id/canvasView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/leverViewBorder"
+        app:layout_constraintEnd_toStartOf="@id/pedalViewBorder"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/pedalViewBorder"
+        android:layout_width="16dp"
+        android:layout_height="0dp"
+        android:background="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/pedalView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/pedalView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#999999"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.10" />
 
     <ImageButton
         android:id="@+id/leverLKL"
@@ -147,34 +175,6 @@
         app:layout_constraintBottom_toBottomOf="@id/leverView"
         app:layout_constraintEnd_toEndOf="@id/leverView"
         app:layout_constraintStart_toStartOf="@id/leverView" />
-
-    <com.steelsidekick.steelsidekick.SGuitarCanvasView
-        android:id="@+id/canvasView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@id/leverViewBorder"
-        app:layout_constraintEnd_toStartOf="@id/pedalViewBorder"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <View
-        android:id="@+id/pedalViewBorder"
-        android:layout_width="16dp"
-        android:layout_height="0dp"
-        android:background="#000000"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/pedalView"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <View
-        android:id="@+id/pedalView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#999999"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintWidth="50dp" />
 
     <ImageButton
         android:id="@+id/pedal1"
