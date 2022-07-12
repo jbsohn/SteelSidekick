@@ -304,6 +304,10 @@ namespace SG {
         return impl->guitars.removeCustomGuitar(name);
     }
     
+    bool SGuitar::addCustomGuitarFromPath(std::string path, std::string name) {
+        return impl->guitars.addCustomGuitarFromPath(path, name);
+    }
+
     std::string SGuitar::getDescription() {
         return impl->guitar.getDescription();
     }

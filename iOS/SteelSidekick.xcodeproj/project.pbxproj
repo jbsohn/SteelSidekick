@@ -95,6 +95,10 @@
 		52EE8E76274E00D3008D0AD6 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 52EE8E72274E00D3008D0AD6 /* LICENSE.txt */; };
 		52EE8E77274E00D3008D0AD6 /* GeneralUser GS v1.471.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = 52EE8E73274E00D3008D0AD6 /* GeneralUser GS v1.471.sf2 */; };
 		52EE8E78274E00D3008D0AD6 /* MIDIPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EE8E74274E00D3008D0AD6 /* MIDIPlayer.swift */; };
+		52F48681287B85A000CF4AA9 /* Icon-320.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F4867D287B85A000CF4AA9 /* Icon-320.png */; };
+		52F48682287B85A000CF4AA9 /* Icon-44.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F4867E287B85A000CF4AA9 /* Icon-44.png */; };
+		52F48683287B85A000CF4AA9 /* Icon-22.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F4867F287B85A000CF4AA9 /* Icon-22.png */; };
+		52F48684287B85A000CF4AA9 /* Icon-64.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F48680287B85A000CF4AA9 /* Icon-64.png */; };
 		D91AB61C2016427700E28D88 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91AB61B2016427700E28D88 /* InfoViewController.swift */; };
 		D92776911D36D10700822208 /* BTBalloon.m in Sources */ = {isa = PBXBuildFile; fileRef = D927768E1D36D10700822208 /* BTBalloon.m */; };
 		D92776921D36D10700822208 /* BTBalloonArrow.m in Sources */ = {isa = PBXBuildFile; fileRef = D92776901D36D10700822208 /* BTBalloonArrow.m */; };
@@ -391,6 +395,10 @@
 		52EE8E72274E00D3008D0AD6 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE.txt; path = "General User/LICENSE.txt"; sourceTree = "<group>"; };
 		52EE8E73274E00D3008D0AD6 /* GeneralUser GS v1.471.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GeneralUser GS v1.471.sf2"; path = "General User/GeneralUser GS v1.471.sf2"; sourceTree = "<group>"; };
 		52EE8E74274E00D3008D0AD6 /* MIDIPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MIDIPlayer.swift; sourceTree = "<group>"; };
+		52F4867D287B85A000CF4AA9 /* Icon-320.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-320.png"; sourceTree = "<group>"; };
+		52F4867E287B85A000CF4AA9 /* Icon-44.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-44.png"; sourceTree = "<group>"; };
+		52F4867F287B85A000CF4AA9 /* Icon-22.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-22.png"; sourceTree = "<group>"; };
+		52F48680287B85A000CF4AA9 /* Icon-64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-64.png"; sourceTree = "<group>"; };
 		D91AB6182016423400E28D88 /* SteelSidekick-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SteelSidekick-Bridging-Header.h"; sourceTree = "<group>"; };
 		D91AB61B2016427700E28D88 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		D9261C171EB8CEF0007A87DE /* SGuitar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SGuitar.h; path = ../SGuitar/include/SGuitar.h; sourceTree = "<group>"; };
@@ -837,6 +845,17 @@
 			path = External/appirater;
 			sourceTree = "<group>";
 		};
+		52F4867C287B840E00CF4AA9 /* UTI Icons */ = {
+			isa = PBXGroup;
+			children = (
+				52F4867F287B85A000CF4AA9 /* Icon-22.png */,
+				52F4867E287B85A000CF4AA9 /* Icon-44.png */,
+				52F48680287B85A000CF4AA9 /* Icon-64.png */,
+				52F4867D287B85A000CF4AA9 /* Icon-320.png */,
+			);
+			name = "UTI Icons";
+			sourceTree = "<group>";
+		};
 		D92776851D36D0C400822208 /* BTBalloon */ = {
 			isa = PBXGroup;
 			children = (
@@ -909,6 +928,7 @@
 		D9BCFE101C7E5DDB00C36405 /* SteelSidekick */ = {
 			isa = PBXGroup;
 			children = (
+				52F4867C287B840E00CF4AA9 /* UTI Icons */,
 				D96DC3071D188D4C00D7ECFD /* Sound */,
 				52D0A0E21C7FE5B200EA5C6D /* Settings */,
 				52A12F1D1DFFC92100408552 /* Globals.h */,
@@ -1198,17 +1218,21 @@
 				D9BCFE211C7E5DDB00C36405 /* LaunchScreen.storyboard in Resources */,
 				527016F81C8AA88B00EE5CF5 /* Main.storyboard in Resources */,
 				52EE8E77274E00D3008D0AD6 /* GeneralUser GS v1.471.sf2 in Resources */,
+				52F48684287B85A000CF4AA9 /* Icon-64.png in Resources */,
 				52EE8E75274E00D3008D0AD6 /* README.txt in Resources */,
 				D9DA9EAE1E29655B00BF5141 /* Guitars in Resources */,
 				D9BCFE1E1C7E5DDB00C36405 /* Assets.xcassets in Resources */,
 				52EE8E76274E00D3008D0AD6 /* LICENSE.txt in Resources */,
 				52D0A1081C7FE5D200EA5C6D /* Chord.storyboard in Resources */,
 				52E414551D1783C000D030A2 /* IQKeyboardManager.bundle in Resources */,
+				52F48681287B85A000CF4AA9 /* Icon-320.png in Resources */,
 				52D0A10B1C7FE5D200EA5C6D /* Settings.storyboard in Resources */,
 				52E413E11D1783BF00D030A2 /* AppiraterLocalizable.strings in Resources */,
 				D9DA9EAD1E29655B00BF5141 /* Settings in Resources */,
+				52F48683287B85A000CF4AA9 /* Icon-22.png in Resources */,
 				5284F03C1D7E2391000C3C37 /* Settings.bundle in Resources */,
 				52D0A10A1C7FE5D200EA5C6D /* Scale.storyboard in Resources */,
+				52F48682287B85A000CF4AA9 /* Icon-44.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

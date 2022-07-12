@@ -94,6 +94,16 @@ namespace SG {
         return FileUtils::deleteFile(filename);
     }
     
+    bool Guitars::addCustomGuitarFromPath(std::string path, std::string name) {
+        std::string root = FileUtils::getRootPathForUserFiles();
+        std::string rootPath = root + "/Custom Guitars/" + name;
+        
+        if (!FileUtils::copyFile(path, rootPath)) {
+            return false;
+        }
+        return true;
+    }
+
     std::vector<GuitarType> Guitars::readGuitarTypes(std::string json) {
         std::vector<GuitarType> types;
         JsonBox::Value root;

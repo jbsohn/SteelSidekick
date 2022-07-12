@@ -33,6 +33,8 @@ namespace SG {
         static std::string getRootPathForFiles();
         static std::string getRootPathForUserFiles();
         static bool deleteFile(std::string filename);
+        static bool copyFile(std::string fromPath, std::string toPath);
+        static bool moveFile(std::string fromPath, std::string toPath);
         static bool isExistingFile(std::string filename, std::string path);
 #ifdef __ANDROID__
         static void setRootPathForFiles(std::string pathname);

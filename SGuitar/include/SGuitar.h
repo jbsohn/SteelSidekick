@@ -76,6 +76,7 @@
 - (NSArray *)getGuitarNames:(NSString *)type;
 - (NSArray *)getCustomGuitarNames;
 - (BOOL)removeCustomGuitar:(NSString *)name;
+- (BOOL)addCustomGuitarFromPath:(NSString *)path name:(NSString *)name;
 
 + (NSString *)getNoteNameSharpFlat:(int)noteValue;
 + (NSString *)getPedalTypeName:(int)index;

@@ -320,6 +320,10 @@
     return _object->removeCustomGuitar([name UTF8String]);
 }
 
+- (BOOL)addCustomGuitarFromPath:(NSString *)path name:(NSString *)name {
+    return _object->addCustomGuitarFromPath([path UTF8String], [name UTF8String]);
+}
+
 + (NSString *)getNoteNameSharpFlat:(int)noteValue {
     return @(SG::SGuitar::getNoteNameSharpFlat(noteValue).c_str());
 }

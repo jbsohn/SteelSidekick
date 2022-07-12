@@ -47,6 +47,14 @@ namespace SG {
         return false;
     }
 
+    static bool copyFile(std::string fromPath, std::string toPath) {
+        return false;
+    }
+
+    bool FileUtils::moveFile(std::string fromPath, std::string toPath) {
+        return false;
+    }
+
     void FileUtils::setRootPathForFiles(std::string pathname) {
         FileUtils::rootPathForFiles = pathname;
     }

@@ -100,7 +100,8 @@ namespace SG {
         std::vector<std::string> getGuitarNames(std::string type) const;
         std::vector<std::string> getCustomGuitarNames() const;
         bool removeCustomGuitar(std::string name);
-
+        bool addCustomGuitarFromPath(std::string path, std::string name);
+        
         // Note Name for note value
         static std::string getNoteNameSharpFlat(int noteValue) {
             return NoteName::getNoteNameSharpFlat(noteValue);

@@ -41,5 +41,19 @@ namespace SG {
         BOOL status = [[NSFileManager defaultManager] removeItemAtPath:@(filename.c_str()) error:&error];
         return status;
     }
+
+    bool FileUtils::copyFile(std::string fromPath, std::string toPath) {
+        NSError *error;
+        BOOL status = [[NSFileManager defaultManager] copyItemAtPath:@(fromPath.c_str()) toPath:@(toPath.c_str()) error:&error];
+        return status;
+    }
+
+    bool FileUtils::moveFile(std::string fromPath, std::string toPath) {
+        NSError *error;
+        BOOL status = [[NSFileManager defaultManager] moveItemAtPath:@(fromPath.c_str()) toPath:@(toPath.c_str()) error:&error];
+        return status;
+    }
+
 }
+
 #endif

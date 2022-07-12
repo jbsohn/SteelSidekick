@@ -20,16 +20,40 @@
     // Override point for customization after application launch.
     [Appirater appLaunched:YES];
     [Appirater setAppId:@"802758051"];
-//    [Appirater setDaysUntilPrompt:1];
-//    [Appirater setUsesUntilPrompt:2];
-//    [Appirater setSignificantEventsUntilPrompt:-1];
-//    [Appirater setTimeBeforeReminding:2];
-//    [Appirater setDebug:YES];
-
 
     [self setupLastGuitar];
     [self setupGuitarDirectories];
     return YES;
+}
+
+- (BOOL)application:(UIApplication *)app
+            openURL:(NSURL *)url
+            options:(NSDictionary<UIApplicationOpenURLOptionsKey, id> *)options {
+    if ([url.pathExtension isEqualToString:@"sguitar"]) {
+        [self importGuitarFromPath:url.path];
+    }
+    return NO;
+}
+
+- (void)importGuitarFromPath:(NSString *)path {
+    NSString *name = [[[path pathComponents] lastObject] stringByDeletingPathExtension];
+    NSString *title = [NSString stringWithFormat:@"Importing %@", name];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:@"Enter the guitar name to import." preferredStyle:UIAlertControllerStyleAlert];
+    [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        textField.text = name;
+        textField.placeholder = name;
+    }];
+    UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        NSString *name = [alertController.textFields firstObject].text;
+        if (![[SGuitar sharedInstance] addCustomGuitarFromPath:path name:name]) {
+            NSLog(@"failed.");
+        }
+    }];
+    [alertController addAction:confirmAction];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+}];
+    [alertController addAction:cancelAction];
+    [self.window.rootViewController presentViewController:alertController animated:YES completion:nil];
 }
 
 // set the last guitar selected

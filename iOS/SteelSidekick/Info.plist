@@ -52,5 +52,58 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+    <key>CFBundleDocumentTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleTypeExtensions</key>
+            <array>
+                <string></string>
+            </array>
+            <key>CFBundleTypeIconFiles</key>
+            <array>
+                <string>book_22.png</string>
+                <string>book_44.png</string>
+                <string>book_64.png</string>
+                <string>book_320.png</string>
+            </array>
+            <key>CFBundleTypeName</key>
+            <string>Steel Sidekick Guitar</string>
+            <key>CFBundleTypeRole</key>
+            <string>Editor</string>
+            <key>LSHandlerRank</key>
+            <string>Owner</string>
+            <key>LSItemContentTypes</key>
+            <array>
+                <string>com.steelsidekick.SteelSidekick.sguitar</string>
+            </array>
+        </dict>
+    </array>
+    <key>UTExportedTypeDeclarations</key>
+    <array>
+        <dict>
+            <key>UTTypeConformsTo</key>
+            <array>
+                <string>public.data</string>
+            </array>
+            <key>UTTypeDescription</key>
+            <string>Steel Sidekick Guitar</string>
+            <key>UTTypeIconFiles</key>
+            <array>
+                <string>Icon-320.png</string>
+                <string>Icon-64.png</string>
+                <string>Icon-44.png</string>
+                <string>Icon-22.png</string>
+            </array>
+            <key>UTTypeIdentifier</key>
+            <string>com.steelsidekick.SteelSidekick.sguitar</string>
+            <key>UTTypeTagSpecification</key>
+            <dict>
+                <key>public.filename-extension</key>
+                <string>sguitar</string>
+                <key>public.mime-type</key>
+                <string>application/sguitar</string>
+            </dict>
+        </dict>
+    </array>
 </dict>
 </plist>
