@@ -34,11 +34,11 @@
     }
     return NO;
 }
-
 - (void)importGuitarFromPath:(NSString *)path {
     NSString *name = [[[path pathComponents] lastObject] stringByDeletingPathExtension];
     NSString *title = [NSString stringWithFormat:@"Importing %@", name];
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:@"Enter the guitar name to import." preferredStyle:UIAlertControllerStyleAlert];
+
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:@"Enter the guitar name to import as." preferredStyle:UIAlertControllerStyleAlert];
     [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
         textField.text = name;
         textField.placeholder = name;
@@ -46,13 +46,22 @@
     UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         NSString *name = [alertController.textFields firstObject].text;
         if (![[SGuitar sharedInstance] addCustomGuitarFromPath:path name:name]) {
-            NSLog(@"failed.");
+            [self showImportErrorAlertForPath:path];
         }
     }];
     [alertController addAction:confirmAction];
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-}];
+    }];
     [alertController addAction:cancelAction];
+    [self.window.rootViewController presentViewController:alertController animated:YES completion:nil];
+}
+
+- (void)showImportErrorAlertForPath:(NSString *)path {
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"" message:@"An error occurred while trying to import the guitar. Please ensure you are not using the name of an existing custom guitar." preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        [self importGuitarFromPath:path];
+    }];
+    [alertController addAction:okAction];
     [self.window.rootViewController presentViewController:alertController animated:YES completion:nil];
 }
 
