@@ -324,6 +324,11 @@
     return _object->addCustomGuitarFromPath([path UTF8String], [name UTF8String]);
 }
 
+- (NSString *)pathForGuitar:(NSString *)name type:(NSString *)type {
+    std::string path = _object->pathForGuitar([name UTF8String], [type UTF8String]);
+    return @(path.c_str());
+}
+
 + (NSString *)getNoteNameSharpFlat:(int)noteValue {
     return @(SG::SGuitar::getNoteNameSharpFlat(noteValue).c_str());
 }

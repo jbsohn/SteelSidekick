@@ -637,8 +637,40 @@
     [self showSettings];
 }
 
-- (IBAction)shareSelected:(id)sender {
-    NSLog(@"shareSelected...");
+- (IBAction)shareSelected:(UIBarButtonItem *)sender {
+    NSError *error;
+    SGuitar* sguitar = [SGuitar sharedInstance];
+    NSString *name = [sguitar getGuitarOptions].guitarName;
+    NSString *type = [sguitar getGuitarOptions].guitarType;
+    NSString *path = [sguitar pathForGuitar:name type:type];
+    if (path.length <= 0) {
+        [self showAlert:@"ERROR: unable to share guitar"];
+        return;
+    }
+
+    NSString *documentsPath = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] firstObject].path;
+    NSString *toFileName = [NSString stringWithFormat:@"%@.sguitar", [[path lastPathComponent] stringByDeletingPathExtension]];
+    NSString *toPath = [NSString stringWithFormat:@"%@/%@", documentsPath, toFileName];
+
+    
+    [[NSFileManager defaultManager] removeItemAtPath:toPath error:nil];
+    if (![[NSFileManager defaultManager] copyItemAtPath:path toPath:toPath error:&error]) {
+        NSLog(@"error: %@", error);
+        [self showAlert:@"ERROR: unable to share guitar"];
+        return;
+    }
+    NSURL *urlPath = [NSURL fileURLWithPath:toPath];
+    NSArray *activities = @[urlPath];
+    UIActivityViewController *controller = [[UIActivityViewController alloc] initWithActivityItems:activities applicationActivities:nil];
+    controller.popoverPresentationController.barButtonItem = sender;
+    [self presentViewController:controller animated:YES completion:nil];
+}
+
+- (void)showAlert:(NSString *)message {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"" message:message preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+    [alert addAction:okAction];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 // scale settings

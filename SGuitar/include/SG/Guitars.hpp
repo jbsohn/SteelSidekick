@@ -37,7 +37,8 @@ namespace SG {
         std::string guitarFileNameForCustomGuitar(std::string name) const;
         bool isExistingCustomGuitarName(std::string name) const;
         bool removeCustomGuitar(std::string name);
-        bool addCustomGuitarFromPath(std::string path, std::string name);
+        bool addCustomGuitarFromPath(std::string path, std::string name) const;
+        std::string pathForGuitar(std::string name, std::string type) const;
 
     protected:
         std::vector<GuitarType> readGuitarTypes(std::string json);        

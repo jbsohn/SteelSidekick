@@ -507,11 +507,6 @@
                                     <action selector="chordSelected:" destination="BYZ-38-t0r" id="YLd-0Y-EsC"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem image="info.circle" catalog="system" id="ndu-Qq-LQJ">
-                                <connections>
-                                    <action selector="infoSelected:" destination="BYZ-38-t0r" id="nss-h3-Lya"/>
-                                </connections>
-                            </barButtonItem>
                         </leftBarButtonItems>
                         <view key="titleView" contentMode="scaleToFill" id="QOP-JY-FvM">
                             <rect key="frame" x="438" y="5.5" width="148" height="33"/>
@@ -521,6 +516,11 @@
                             <barButtonItem image="gearshape" catalog="system" width="22" id="NJu-Ju-Bbx">
                                 <connections>
                                     <action selector="settingsSelected:" destination="BYZ-38-t0r" id="oPT-M6-Juo"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="info.circle" catalog="system" id="ndu-Qq-LQJ">
+                                <connections>
+                                    <action selector="infoSelected:" destination="BYZ-38-t0r" id="nss-h3-Lya"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem image="square.and.arrow.up" catalog="system" id="hIq-rV-V3j">
@@ -787,7 +787,7 @@
                                     <constraint firstItem="zEK-uD-OQe" firstAttribute="top" secondItem="SYD-fp-u4F" secondAttribute="top" id="fvz-Hv-ZAR"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guitar Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3LR-W4-Y7U">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guitar Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3LR-W4-Y7U">
                                 <rect key="frame" x="0.0" y="8" width="600" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>

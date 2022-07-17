@@ -94,7 +94,7 @@ namespace SG {
         return FileUtils::deleteFile(filename);
     }
     
-    bool Guitars::addCustomGuitarFromPath(std::string path, std::string name) {
+    bool Guitars::addCustomGuitarFromPath(std::string path, std::string name) const {
         std::string root = FileUtils::getRootPathForUserFiles();
         std::string rootPath = root + "/Custom Guitars/" + name;
         
@@ -102,6 +102,18 @@ namespace SG {
             return false;
         }
         return true;
+    }
+
+    std::string Guitars::pathForGuitar(std::string name, std::string type) const {
+        std::string path = guitarsPath + "/" + type;
+        std::vector<std::string> guitars = FileUtils::readFileListFromPath(path);
+
+        for (std::string curFile : guitars) {
+            if (curFile == name) {
+                return path + "/" + curFile;
+            }
+        }
+        return "";
     }
 
     std::vector<GuitarType> Guitars::readGuitarTypes(std::string json) {

@@ -19,14 +19,14 @@
 				<string>book_320.png</string>
 			</array>
 			<key>CFBundleTypeName</key>
-			<string>Steel Sidekick Guitar</string>
+			<string>Steel Sidekick Custom Guitar</string>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>LSHandlerRank</key>
 			<string>Owner</string>
 			<key>LSItemContentTypes</key>
 			<array>
-				<string>com.steelsidekick.SteelSidekick.sguitar</string>
+				<string>com.steelsidekick.sguitar</string>
 			</array>
 		</dict>
 	</array>
@@ -86,7 +86,7 @@
 				<string>public.data</string>
 			</array>
 			<key>UTTypeDescription</key>
-			<string>Steel Sidekick Guitar</string>
+			<string>Steel Sidekick Custom Guitar</string>
 			<key>UTTypeIconFiles</key>
 			<array>
 				<string>Icon-320.png</string>
@@ -95,7 +95,7 @@
 				<string>Icon-22.png</string>
 			</array>
 			<key>UTTypeIdentifier</key>
-			<string>com.steelsidekick.SteelSidekick.sguitar</string>
+			<string>com.steelsidekick.sguitar</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.filename-extension</key>
