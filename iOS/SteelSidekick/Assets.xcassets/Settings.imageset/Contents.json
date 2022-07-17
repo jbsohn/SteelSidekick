@@ -1,15 +1,17 @@
 {
   "images" : [
     {
+      "filename" : "ic_settings.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "ic_settings_2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "settings-outline.png",
+      "filename" : "ic_settings_3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
