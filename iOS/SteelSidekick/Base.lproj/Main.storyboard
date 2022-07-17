@@ -513,17 +513,17 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </view>
                         <rightBarButtonItems>
-                            <barButtonItem image="gearshape" catalog="system" width="22" id="NJu-Ju-Bbx">
+                            <barButtonItem image="Settings" width="22" id="NJu-Ju-Bbx">
                                 <connections>
                                     <action selector="settingsSelected:" destination="BYZ-38-t0r" id="oPT-M6-Juo"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem image="info.circle" catalog="system" id="ndu-Qq-LQJ">
+                            <barButtonItem image="Info" id="ndu-Qq-LQJ">
                                 <connections>
                                     <action selector="infoSelected:" destination="BYZ-38-t0r" id="nss-h3-Lya"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem image="square.and.arrow.up" catalog="system" id="hIq-rV-V3j">
+                            <barButtonItem image="Share" id="hIq-rV-V3j">
                                 <connections>
                                     <action selector="shareSelected:" destination="BYZ-38-t0r" id="gEG-qI-FsM"/>
                                 </connections>
@@ -849,6 +849,7 @@
     <resources>
         <image name="Circle" width="8" height="8"/>
         <image name="Circle.png" width="24" height="24"/>
+        <image name="Info" width="22" height="22"/>
         <image name="LeftLeverActive" width="44" height="44"/>
         <image name="LeftLeverActive.png" width="132" height="132"/>
         <image name="Lever.png" width="132" height="132"/>
@@ -856,12 +857,11 @@
         <image name="PedalActive" width="44" height="44"/>
         <image name="RightLeverActive" width="44" height="44"/>
         <image name="RightLeverActive.png" width="132" height="132"/>
+        <image name="Settings" width="22" height="22"/>
+        <image name="Share" width="22" height="22"/>
         <image name="VerticalLever.png" width="132" height="132"/>
         <image name="VerticalLeverActive" width="44" height="44"/>
         <image name="VerticalLeverActive.png" width="132" height="132"/>
-        <image name="gearshape" catalog="system" width="128" height="121"/>
-        <image name="info.circle" catalog="system" width="128" height="121"/>
-        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -105,7 +105,13 @@ namespace SG {
     }
 
     std::string Guitars::pathForGuitar(std::string name, std::string type) const {
-        std::string path = guitarsPath + "/" + type;
+        std::string root = guitarsPath;
+        std::string typePath = type;
+        if (type == "Custom") {
+            typePath = "Custom Guitars";
+            root = FileUtils::getRootPathForUserFiles();
+        }
+        std::string path = root + "/" + typePath;
         std::vector<std::string> guitars = FileUtils::readFileListFromPath(path);
 
         for (std::string curFile : guitars) {
