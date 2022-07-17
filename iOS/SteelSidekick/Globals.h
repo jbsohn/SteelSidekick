@@ -20,8 +20,8 @@
 #define LEVER_VIEW_HEIGHT                   32.0
 
 #define INFO_VIEW_SCALE_CHORD_WIDTH         600.0
-#define INFO_VIEW_HEIGHT_TWO_LINES          100.0
-#define INFO_VIEW_HEIGHT_ONE_LINE           50.0
+#define INFO_VIEW_HEIGHT_TWO_LINES          144.0
+#define INFO_VIEW_HEIGHT_ONE_LINE           94.0
 
 #define INFO_VIEW_SCALE_WIDTH               300.0
 #define INFO_VIEW_SCALE_HEIGHT              50.0

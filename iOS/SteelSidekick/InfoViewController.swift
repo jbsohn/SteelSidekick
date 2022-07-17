@@ -37,6 +37,7 @@ public class InfoViewController: UIViewController {
     @IBOutlet var chordImages: [UIImageView]!
     @IBOutlet weak var scaleLabel: UILabel!
     @IBOutlet weak var chordLabel: UILabel!
+    @IBOutlet weak var guitarNameLabel: UILabel!
     
     var oneLineConstraints: NSArray = []    // constraints in landscape
     var twoLineConstraints: NSArray = []    // constraints in portrait
@@ -102,12 +103,12 @@ public class InfoViewController: UIViewController {
         super.viewWillAppear(animated)
         
         setupLabels()
-        setupNoteDisplayImages(images: self.scaleImages, type: SetupNoteType.scale)
-        setupNoteDisplayImages(images: self.chordImages, type: SetupNoteType.chord)
+        setupNoteDisplayImages(images: scaleImages, type: SetupNoteType.scale)
+        setupNoteDisplayImages(images: chordImages, type: SetupNoteType.chord)
         
         // set constraints for initial orientation
-        let view:UIView? = self.parent?.view
-        let orientation  = self.getOrientationFor(view)
+        let view:UIView? = parent?.view
+        let orientation  = getOrientationFor(view)
         updateConstraintsForOrientation(orientation: orientation)
         self.view.setNeedsLayout()
     }
@@ -143,8 +144,8 @@ public class InfoViewController: UIViewController {
     @objc
     public func updateDisplay() {
         setupLabels()
-        setupNoteDisplayImages(images: self.scaleImages, type: SetupNoteType.scale)
-        setupNoteDisplayImages(images: self.chordImages, type: SetupNoteType.chord)
+        setupNoteDisplayImages(images: scaleImages, type: SetupNoteType.scale)
+        setupNoteDisplayImages(images: chordImages, type: SetupNoteType.chord)
     }
     
     func setupNoteDisplayImages(images: [UIImageView], type: SetupNoteType) {
@@ -222,44 +223,45 @@ public class InfoViewController: UIViewController {
     
     // in landscape use one line for the scale/chord view
     func createOneLineConstraints() {
-        let offset:CGFloat = offsetForInfoView()
-        self.oneLineConstraints = NSLayoutConstraint.autoCreateConstraintsWithoutInstalling {
+        let offset = offsetForInfoView()
+        oneLineConstraints = NSLayoutConstraint.autoCreateConstraintsWithoutInstalling {
+            
             scaleView.autoSetDimension(ALDimension.width, toSize: 240.0)
             scaleView.autoSetDimension(ALDimension.height, toSize: CGFloat(INFO_VIEW_SCALE_HEIGHT))
-            scaleView.autoPinEdge(ALEdge.top, to: ALEdge.top, of: self.view)
-            scaleView.autoPinEdge(ALEdge.left, to:ALEdge.left, of:self.view, withOffset:offset)
+            scaleView.autoPinEdge(ALEdge.top, to: ALEdge.bottom, of: guitarNameLabel)
+            scaleView.autoPinEdge(ALEdge.left, to:ALEdge.left, of:view, withOffset:offset)
             
             chordView.autoSetDimension(ALDimension.width, toSize:240.0)
             chordView.autoSetDimension(ALDimension.height, toSize:CGFloat(INFO_VIEW_CHORD_HEIGHT))
-            chordView.autoPinEdge(ALEdge.top, to:ALEdge.top, of:self.view)
-            chordView.autoPinEdge(ALEdge.right, to:ALEdge.right, of:self.view, withOffset:-offset)
-            } as NSArray
+            chordView.autoPinEdge(ALEdge.top, to:ALEdge.bottom, of:guitarNameLabel)
+            chordView.autoPinEdge(ALEdge.right, to:ALEdge.right, of:view, withOffset:-offset)
+        } as NSArray
     }
     
     // in portrait use two lines, one for scale and one for chord info
     func createTwoLineConstraints() {
-        let offset:CGFloat = offsetForInfoView()
-        self.twoLineConstraints = NSLayoutConstraint.autoCreateConstraintsWithoutInstalling {
+        let offset = offsetForInfoView()
+        twoLineConstraints = NSLayoutConstraint.autoCreateConstraintsWithoutInstalling {
             scaleView.autoSetDimension(ALDimension.height, toSize:CGFloat(INFO_VIEW_SCALE_HEIGHT))
-            scaleView.autoPinEdge(ALEdge.top, to:ALEdge.top, of:self.view)
-            scaleView.autoPinEdge(ALEdge.left, to:ALEdge.left, of:self.view, withOffset:offset)
-            scaleView.autoPinEdge(ALEdge.right, to:ALEdge.right, of:self.view, withOffset:offset)
+            scaleView.autoPinEdge(ALEdge.top, to:ALEdge.bottom, of:guitarNameLabel)
+            scaleView.autoPinEdge(ALEdge.left, to:ALEdge.left, of:view, withOffset:offset)
+            scaleView.autoPinEdge(ALEdge.right, to:ALEdge.right, of:view, withOffset:offset)
             
             chordView.autoSetDimension(ALDimension.height, toSize:CGFloat(INFO_VIEW_CHORD_HEIGHT))
-            chordView.autoPinEdge(ALEdge.top, to:ALEdge.bottom, of:self.scaleView)
-            chordView.autoPinEdge(ALEdge.left, to:ALEdge.left, of:self.view, withOffset:offset)
-            chordView.autoPinEdge(ALEdge.right, to:ALEdge.right, of:self.view, withOffset:offset)
-            } as NSArray
+            chordView.autoPinEdge(ALEdge.top, to:ALEdge.bottom, of:scaleView)
+            chordView.autoPinEdge(ALEdge.left, to:ALEdge.left, of:view, withOffset:offset)
+            chordView.autoPinEdge(ALEdge.right, to:ALEdge.right, of:view, withOffset:offset)
+        } as NSArray
     }
     
     // update constraints for the current orientation, one line or two lines for displaying chord and scale information
     func updateConstraintsForOrientation(orientation: ORIENTATION) {
-        var useOneLine:Bool = false
+        var useOneLine = false
         
         if orientation == O_LANDSCAPE {
             useOneLine = true
         } else if orientation == O_PORTRAIT {
-            let size:CGSize = self.size(forPortrait:(self.parent?.view.frame.size)!)
+            let size:CGSize = size(forPortrait:(parent?.view.frame.size)!)
             if size.width >= CGFloat(INFO_VIEW_SCALE_CHORD_WIDTH) {
                 useOneLine = true
             }
@@ -279,11 +281,11 @@ public class InfoViewController: UIViewController {
         super.viewWillTransition(to: size, with: coordinator)
         
         coordinator.animate(alongsideTransition: { [unowned self] _ in
-            let orientation:ORIENTATION  = self.getOrientationFor(size)
-            self.updateConstraintsForOrientation(orientation: orientation)
-            self.view.setNeedsLayout()
+            let orientation:ORIENTATION  = getOrientationFor(size)
+            updateConstraintsForOrientation(orientation: orientation)
+            view.setNeedsLayout()
         }) { [unowned self] _ in
-            self.updateDisplay()
+            updateDisplay()
         }
     }
 }

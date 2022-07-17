@@ -30,7 +30,6 @@
 @property (weak, nonatomic) IBOutlet UIView *bottomView;
 @property (strong, nonatomic) IBOutletCollection(UIImageView) NSArray *pedalActivatedImageViews;
 @property (strong, nonatomic) IBOutletCollection(UIImageView) NSArray *leverActivatedImageViews;
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UIView *infoView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *settingsButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *scaleButton;
@@ -153,6 +152,7 @@
 }
 
 - (void)setupForDevice {
+    [self.navigationController.navigationBar setBackgroundColor:UIColor.blackColor];
     self.automaticallyAdjustsScrollViewInsets = NO;
     
     if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) {
@@ -637,6 +637,10 @@
     [self showSettings];
 }
 
+- (IBAction)shareSelected:(id)sender {
+    NSLog(@"shareSelected...");
+}
+
 // scale settings
 - (void)showScaleSettings {
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Scale" bundle:nil];
@@ -771,12 +775,12 @@
                           delay:0.05
                         options:UIViewAnimationOptionCurveEaseIn
                      animations:^{
-                         self.infoView.frame = CGRectMake(self.infoView.frame.origin.x, CGRectGetHeight(self.view.frame) - CGRectGetHeight(self.infoView.frame),
-                                                          CGRectGetWidth(self.infoView.frame), CGRectGetHeight(self.infoView.frame));
-                     }
+        self.infoView.frame = CGRectMake(self.infoView.frame.origin.x, CGRectGetHeight(self.view.frame) - CGRectGetHeight(self.infoView.frame),
+                                         CGRectGetWidth(self.infoView.frame), CGRectGetHeight(self.infoView.frame));
+    }
                      completion:^(BOOL finished) {
-                         self.navigationController.view.userInteractionEnabled = YES;
-                     }];
+        self.navigationController.view.userInteractionEnabled = YES;
+    }];
 }
 
 - (void)hideInfoView {
@@ -788,13 +792,13 @@
                           delay:0.05
                         options:UIViewAnimationOptionCurveEaseIn
                      animations:^{
-                         self.infoView.frame = CGRectMake(self.infoView.frame.origin.x, CGRectGetHeight(self.view.frame) + CGRectGetWidth(self.infoView.frame),
-                                                          CGRectGetWidth(self.infoView.frame), CGRectGetHeight(self.infoView.frame));
-                     }
+        self.infoView.frame = CGRectMake(self.infoView.frame.origin.x, CGRectGetHeight(self.view.frame) + CGRectGetWidth(self.infoView.frame),
+                                         CGRectGetWidth(self.infoView.frame), CGRectGetHeight(self.infoView.frame));
+    }
                      completion:^(BOOL finished) {
-                         self.infoView.hidden = YES;
-                         self.navigationController.view.userInteractionEnabled = YES;
-                     }];
+        self.infoView.hidden = YES;
+        self.navigationController.view.userInteractionEnabled = YES;
+    }];
 }
 
 - (void)dismissPopover {
@@ -806,7 +810,7 @@
 - (void)resetTitle {
     SGuitar* sguitar = [SGuitar sharedInstance];
     NSString* name = [sguitar getGuitarOptions].guitarName;
-    self.titleLabel.text = name;
+    self.infoViewController.guitarNameLabel.text = name;
 }
 
 - (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController {
