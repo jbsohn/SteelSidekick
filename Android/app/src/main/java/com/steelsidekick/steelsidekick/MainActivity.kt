@@ -111,6 +111,8 @@ class MainActivity : AppCompatActivity() {
                     view.visibility = View.INVISIBLE
                 }
             }
+
+            title = guitar.guitarOptions.guitarName
         }
 
         for (leverID in 0..9) {
