@@ -132,16 +132,34 @@
             android:src="@drawable/lever"
             android:tag="RKR" />
     </RelativeLayout>
+
     <RelativeLayout
         android:layout_width="0dip"
         android:layout_height="match_parent"
-        android:layout_weight="0.80">
+        android:layout_weight="0.80"
+        android:background="#000000">
+
+        <View
+            android:id="@+id/bodyLeft"
+            android:layout_width="25dp"
+            android:layout_alignParentLeft="true"
+            android:layout_height="match_parent" />
+
         <com.steelsidekick.steelsidekick.SGuitarCanvasView
             android:id="@+id/canvasView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:layout_toLeftOf="@id/bodyRight"
+            android:layout_toRightOf="@id/bodyLeft"
+            android:layout_width="match_parent"/>
+
+        <View
+            android:id="@+id/bodyRight"
+            android:layout_width="25dp"
+            android:layout_alignParentRight="true"
+            android:layout_height="match_parent"/>
     </RelativeLayout>
     <RelativeLayout
+        android:id="@+id/pedalBox"
         android:layout_width="0dip"
         android:layout_height="match_parent"
         android:layout_weight="0.10">

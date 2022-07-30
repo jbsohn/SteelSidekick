@@ -8,6 +8,7 @@ import android.content.Intent
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.widget.ImageButton
 import com.steelsidekick.steelsidekick.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -27,27 +28,27 @@ class MainActivity : AppCompatActivity() {
         )
         setContentView(binding?.root)
 
-        binding?.main?.pedal1?.setOnClickListener { view: View -> onClickPedal(view) }
-        binding?.main?.pedal2?.setOnClickListener { view: View -> onClickPedal(view) }
-        binding?.main?.pedal3?.setOnClickListener { view: View -> onClickPedal(view) }
-        binding?.main?.pedal4?.setOnClickListener { view: View -> onClickPedal(view) }
-        binding?.main?.pedal5?.setOnClickListener { view: View -> onClickPedal(view) }
-        binding?.main?.pedal6?.setOnClickListener { view: View -> onClickPedal(view) }
-        binding?.main?.pedal7?.setOnClickListener { view: View -> onClickPedal(view) }
-        binding?.main?.pedal8?.setOnClickListener { view: View -> onClickPedal(view) }
-        binding?.main?.pedal9?.setOnClickListener { view: View -> onClickPedal(view) }
-        binding?.main?.pedal10?.setOnClickListener { view: View -> onClickPedal(view) }
+        binding?.main?.pedal1?.setOnClickListener { view: View -> onClickPedal(view as ImageButton) }
+        binding?.main?.pedal2?.setOnClickListener { view: View -> onClickPedal(view as ImageButton) }
+        binding?.main?.pedal3?.setOnClickListener { view: View -> onClickPedal(view as ImageButton) }
+        binding?.main?.pedal4?.setOnClickListener { view: View -> onClickPedal(view as ImageButton) }
+        binding?.main?.pedal5?.setOnClickListener { view: View -> onClickPedal(view as ImageButton) }
+        binding?.main?.pedal6?.setOnClickListener { view: View -> onClickPedal(view as ImageButton) }
+        binding?.main?.pedal7?.setOnClickListener { view: View -> onClickPedal(view as ImageButton) }
+        binding?.main?.pedal8?.setOnClickListener { view: View -> onClickPedal(view as ImageButton) }
+        binding?.main?.pedal9?.setOnClickListener { view: View -> onClickPedal(view as ImageButton) }
+        binding?.main?.pedal10?.setOnClickListener { view: View -> onClickPedal(view as ImageButton) }
 
-        binding?.main?.leverLKL?.setOnClickListener { view: View -> onClickLever(view) }
-        binding?.main?.leverLKLR?.setOnClickListener { view: View -> onClickLever(view) }
-        binding?.main?.leverLKV?.setOnClickListener { view: View -> onClickLever(view) }
-        binding?.main?.leverLKRR?.setOnClickListener { view: View -> onClickLever(view) }
-        binding?.main?.leverLKR?.setOnClickListener { view: View -> onClickLever(view) }
-        binding?.main?.leverRKL?.setOnClickListener { view: View -> onClickLever(view) }
-        binding?.main?.leverRKLR?.setOnClickListener { view: View -> onClickLever(view) }
-        binding?.main?.leverRKV?.setOnClickListener { view: View -> onClickLever(view) }
-        binding?.main?.leverRKRR?.setOnClickListener { view: View -> onClickLever(view) }
-        binding?.main?.leverRKR?.setOnClickListener { view: View -> onClickLever(view) }
+        binding?.main?.leverLKL?.setOnClickListener { view: View -> onClickLever(view as ImageButton) }
+        binding?.main?.leverLKLR?.setOnClickListener { view: View -> onClickLever(view as ImageButton) }
+        binding?.main?.leverLKV?.setOnClickListener { view: View -> onClickLever(view as ImageButton) }
+        binding?.main?.leverLKRR?.setOnClickListener { view: View -> onClickLever(view as ImageButton) }
+        binding?.main?.leverLKR?.setOnClickListener { view: View -> onClickLever(view as ImageButton) }
+        binding?.main?.leverRKL?.setOnClickListener { view: View -> onClickLever(view as ImageButton) }
+        binding?.main?.leverRKLR?.setOnClickListener { view: View -> onClickLever(view as ImageButton) }
+        binding?.main?.leverRKV?.setOnClickListener { view: View -> onClickLever(view as ImageButton) }
+        binding?.main?.leverRKRR?.setOnClickListener { view: View -> onClickLever(view as ImageButton) }
+        binding?.main?.leverRKR?.setOnClickListener { view: View -> onClickLever(view as ImageButton) }
 
         val filesDir = filesDir.absolutePath
         SGuitar.setSystemAndUserPaths(filesDir, filesDir)
@@ -62,37 +63,37 @@ class MainActivity : AppCompatActivity() {
         updateAdjustments()
     }
 
-    private fun onClickPedal(view: View) {
+    private fun onClickPedal(view: ImageButton) {
         val tag = view.tag as String
         val guitar = SGuitar.sharedInstance()
         val activated = !view.isActivated
         view.isActivated = activated
 
         if (activated) {
-            view.setBackgroundResource(R.drawable.pedalactive)
+            view.setImageResource(R.drawable.pedalactive)
         } else {
-            view.setBackgroundResource(R.drawable.pedal)
+            view.setImageResource(R.drawable.pedal)
         }
         guitar.activateAdjustment(tag, activated)
     }
 
-    private fun onClickLever(view: View) {
-        val tag = view.tag as String
+    private fun onClickLever(button: ImageButton) {
+        val tag = button.tag as String
         val guitar = SGuitar.sharedInstance()
-        val activated = !view.isActivated
-        view.isActivated = activated
+        val activated = !button.isActivated
+        button.isActivated = activated
         guitar.activateAdjustment(tag, activated)
 
         if (activated) {
             when (tag) {
-                "LKL", "LKLR", "RKL", "RKLR" -> view.setBackgroundResource(R.drawable.leftleveractive)
-                "LKV", "RKV" -> view.setBackgroundResource(R.drawable.verticalleveractive)
-                "LKR", "LKRR", "RKR", "RKRR" -> view.setBackgroundResource(R.drawable.rightleveractive)
+                "LKL", "LKLR", "RKL", "RKLR" -> button.setImageResource(R.drawable.leftleveractive)
+                "LKV", "RKV" -> button.setImageResource(R.drawable.verticalleveractive)
+                "LKR", "LKRR", "RKR", "RKRR" -> button.setImageResource(R.drawable.rightleveractive)
             }
         } else {
             when (tag) {
-                "LKL", "LKLR", "LKR", "LKRR", "RKL", "RKLR", "RKR", "RKRR" -> view.setBackgroundResource(R.drawable.lever)
-                "LKV", "RKV" -> view.setBackgroundResource(R.drawable.verticallever)
+                "LKL", "LKLR", "LKR", "LKRR", "RKL", "RKLR", "RKR", "RKRR" -> button.setImageResource(R.drawable.lever)
+                "LKV", "RKV" -> button.setImageResource(R.drawable.verticallever)
             }
         }
     }
