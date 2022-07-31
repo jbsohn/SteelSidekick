@@ -1,313 +1,268 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    android:layout_height="wrap_content"
+    android:baselineAligned="false"
+    android:orientation="vertical"
     tools:context=".MainActivity"
     tools:showIn="@layout/activity_main">
+    <RelativeLayout
+        android:layout_height="0dip"
+        android:layout_width="match_parent"
+        android:layout_weight="0.10">
+        <ImageButton
+            android:id="@+id/leverLKL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:contentDescription="LKL"
+            android:scaleType="fitXY"
+            android:src="@drawable/lever"
+            android:tag="LKL" />
+        <ImageButton
+            android:id="@+id/leverLKLR"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/leverLKL"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:contentDescription="LKLR"
+            android:scaleType="fitXY"
+            android:src="@drawable/lever"
+            android:tag="LKLR" />
+        <ImageButton
+            android:id="@+id/leverLKV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/leverLKLR"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:contentDescription="LKV"
+            android:scaleType="fitXY"
+            android:src="@drawable/verticallever"
+            android:tag="LKV" />
+        <ImageButton
+            android:id="@+id/leverLKRR"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/leverLKV"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:contentDescription="LKRR"
+            android:scaleType="fitXY"
+            android:src="@drawable/lever"
+            android:tag="LKRR" />
+        <ImageButton
+            android:id="@+id/leverLKR"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/leverLKRR"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:contentDescription="LKR"
+            android:scaleType="fitXY"
+            android:src="@drawable/lever"
+            android:tag="LKR" />
+        <ImageButton
+            android:id="@+id/leverRKL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/leverRKLR"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:contentDescription="RKL"
+            android:scaleType="fitXY"
+            android:src="@drawable/lever"
+            android:tag="RKL" />
+        <ImageButton
+            android:id="@+id/leverRKLR"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/leverRKV"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:contentDescription="RKLR"
+            android:scaleType="fitXY"
+            android:src="@drawable/lever"
+            android:tag="RKLR" />
+        <ImageButton
+            android:id="@+id/leverRKV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/leverRKRR"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:contentDescription="RKV"
+            android:scaleType="fitXY"
+            android:src="@drawable/verticallever"
+            android:tag="RKV" />
+        <ImageButton
+            android:id="@+id/leverRKRR"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/leverRKR"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:contentDescription="RKRR"
+            android:scaleType="fitXY"
+            android:src="@drawable/lever"
+            android:tag="RKRR" />
+        <ImageButton
+            android:id="@+id/leverRKR"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:contentDescription="RKR"
+            android:scaleType="fitXY"
+            android:src="@drawable/lever"
+            android:tag="RKR" />
+    </RelativeLayout>
 
+    <RelativeLayout
+        android:layout_height="0dip"
+        android:layout_width="match_parent"
+        android:layout_weight="0.80">
 
-    <View
-        android:id="@+id/pedalView"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:background="#999999"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent="0.10" />
+        <View
+            android:id="@+id/bodyTop"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:layout_alignParentTop="true"
+            android:background="@color/black" />
 
-    <View
-        android:id="@+id/pedalViewBorder"
-        android:layout_height="16dp"
-        android:layout_width="0dp"
-        android:background="#000000"
-        app:layout_constraintTop_toBottomOf="@id/pedalView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        <com.steelsidekick.steelsidekick.SGuitarCanvasView
+            android:id="@+id/canvasView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/bodyBottom"
+            android:layout_below="@id/bodyTop" />
 
-    <com.steelsidekick.steelsidekick.SGuitarCanvasView
-        android:id="@+id/canvasView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@id/pedalViewBorder"
-        app:layout_constraintBottom_toTopOf="@id/leverViewBorder"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <View
-        android:id="@+id/leverViewBorder"
-        android:layout_height="16dp"
-        android:layout_width="0dp"
-        android:background="#000000"
-        app:layout_constraintBottom_toTopOf="@id/leverView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <View
-        android:id="@+id/leverView"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:background="#999999"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent="0.10"
-        app:layout_constraintStart_toStartOf="parent" />
-
-
-
-
-    <ImageButton
-        android:id="@+id/leverLKL"
-        android:layout_width="50dp"
-        android:layout_height="0dp"
-        android:background="@drawable/lever"
-        android:contentDescription=""
-        android:rotation="0"
-        android:tag="LKL"
-        app:layout_constraintBottom_toBottomOf="@id/leverView"
-        app:layout_constraintStart_toStartOf="@id/leverView"
-        app:layout_constraintTop_toTopOf="@id/leverView" />
-
-    <ImageButton
-        android:id="@+id/leverLKLR"
-        android:layout_width="50dp"
-        android:layout_height="0dp"
-        android:background="@drawable/lever"
-        android:contentDescription=""
-        android:rotation="0"
-        android:tag="LKLR"
-        app:layout_constraintStart_toEndOf="@id/leverLKL"
-        app:layout_constraintBottom_toBottomOf="@id/leverView"
-        app:layout_constraintTop_toTopOf="@id/leverView" />
-
-    <ImageButton
-        android:id="@+id/leverLKV"
-        android:layout_width="50dp"
-        android:layout_height="0dp"
-        android:background="@drawable/verticallever"
-        android:contentDescription=""
-        android:rotation="0"
-        android:tag="LKV"
-        app:layout_constraintStart_toEndOf="@id/leverLKLR"
-        app:layout_constraintBottom_toBottomOf="@id/leverView"
-        app:layout_constraintTop_toTopOf="@id/leverView" />
-
-    <ImageButton
-        android:id="@+id/leverLKRR"
-        android:layout_width="50dp"
-        android:layout_height="0dp"
-        android:background="@drawable/lever"
-        android:contentDescription=""
-        android:rotation="0"
-        android:tag="LKRR"
-        app:layout_constraintStart_toEndOf="@id/leverLKV"
-        app:layout_constraintBottom_toBottomOf="@id/leverView"
-        app:layout_constraintTop_toTopOf="@id/leverView" />
-
-    <ImageButton
-        android:id="@+id/leverLKR"
-        android:layout_width="50dp"
-        android:layout_height="0dp"
-        android:background="@drawable/lever"
-        android:contentDescription=""
-        android:rotation="0"
-        android:tag="LKR"
-        app:layout_constraintStart_toEndOf="@id/leverLKRR"
-        app:layout_constraintBottom_toBottomOf="@id/leverView"
-        app:layout_constraintTop_toTopOf="@id/leverView" />
-
-    <ImageButton
-        android:id="@+id/leverRKL"
-        android:layout_width="50dp"
-        android:layout_height="0dp"
-        android:background="@drawable/lever"
-        android:contentDescription=""
-        android:rotation="0"
-        android:tag="RKL"
-        app:layout_constraintBottom_toBottomOf="@id/leverView"
-        app:layout_constraintEnd_toStartOf="@id/leverRKLR"
-        app:layout_constraintTop_toTopOf="@id/leverView" />
-
-    <ImageButton
-        android:id="@+id/leverRKLR"
-        android:layout_width="50dp"
-        android:layout_height="0dp"
-        android:background="@drawable/lever"
-        android:contentDescription=""
-        android:rotation="0"
-        android:tag="RKLR"
-        app:layout_constraintBottom_toBottomOf="@id/leverView"
-        app:layout_constraintEnd_toStartOf="@id/leverRKV"
-        app:layout_constraintTop_toTopOf="@id/leverView" />
-
-    <ImageButton
-        android:id="@+id/leverRKV"
-        android:layout_width="50dp"
-        android:layout_height="0dp"
-        android:background="@drawable/verticallever"
-        android:contentDescription=""
-        android:rotation="0"
-        android:tag="RKV"
-        app:layout_constraintBottom_toBottomOf="@id/leverView"
-        app:layout_constraintEnd_toStartOf="@id/leverRKRR"
-        app:layout_constraintTop_toTopOf="@id/leverView" />
-
-    <ImageButton
-        android:id="@+id/leverRKRR"
-        android:layout_width="50dp"
-        android:layout_height="0dp"
-        android:background="@drawable/lever"
-        android:contentDescription=""
-        android:rotation="0"
-        android:tag="RKRR"
-        app:layout_constraintBottom_toBottomOf="@id/leverView"
-        app:layout_constraintEnd_toStartOf="@id/leverRKR"
-        app:layout_constraintTop_toTopOf="@id/leverView" />
-
-
-    <ImageButton
-        android:id="@+id/leverRKR"
-        android:layout_width="50dp"
-        android:layout_height="0dp"
-        android:background="@drawable/lever"
-        android:contentDescription=""
-        android:rotation="0"
-        android:tag="RKR"
-        app:layout_constraintBottom_toBottomOf="@id/leverView"
-        app:layout_constraintEnd_toEndOf="@id/leverView"
-        app:layout_constraintTop_toTopOf="@id/leverView" />
-
-    <ImageButton
-        android:id="@+id/pedal1"
-        android:layout_width="50dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:background="@drawable/pedal"
-        android:contentDescription=""
-        android:rotation="0"
-        android:tag="P1"
-        app:layout_constraintBottom_toBottomOf="@id/pedalView"
-        app:layout_constraintStart_toStartOf="@id/pedalView"
-        app:layout_constraintTop_toTopOf="@id/pedalView" />
-
-    <ImageButton
-        android:id="@+id/pedal2"
-        android:layout_width="50dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:background="@drawable/pedal"
-        android:contentDescription=""
-        android:rotation="0"
-        android:tag="P2"
-        app:layout_constraintBottom_toBottomOf="@id/pedalView"
-        app:layout_constraintTop_toTopOf="@id/pedalView"
-        app:layout_constraintStart_toEndOf="@id/pedal1" />
-
-    <ImageButton
-        android:id="@+id/pedal3"
-        android:layout_width="50dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:background="@drawable/pedal"
-        android:contentDescription=""
-        android:rotation="0"
-        android:tag="P3"
-        app:layout_constraintBottom_toBottomOf="@id/pedalView"
-        app:layout_constraintTop_toTopOf="@id/pedalView"
-        app:layout_constraintStart_toEndOf="@id/pedal2" />
-
-    <ImageButton
-        android:id="@+id/pedal4"
-        android:layout_width="50dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:background="@drawable/pedal"
-        android:contentDescription=""
-        android:rotation="0"
-        android:tag="P4"
-        app:layout_constraintBottom_toBottomOf="@id/pedalView"
-        app:layout_constraintTop_toTopOf="@id/pedalView"
-        app:layout_constraintStart_toEndOf="@id/pedal3" />
-
-    <ImageButton
-        android:id="@+id/pedal5"
-        android:layout_width="50dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:background="@drawable/pedal"
-        android:contentDescription=""
-        android:rotation="0"
-        android:tag="P5"
-        app:layout_constraintBottom_toBottomOf="@id/pedalView"
-        app:layout_constraintTop_toTopOf="@id/pedalView"
-        app:layout_constraintStart_toEndOf="@id/pedal4" />
-
-    <ImageButton
-        android:id="@+id/pedal6"
-        android:layout_width="50dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:background="@drawable/pedal"
-        android:contentDescription=""
-        android:rotation="0"
-        android:tag="P6"
-        app:layout_constraintBottom_toBottomOf="@id/pedalView"
-        app:layout_constraintTop_toTopOf="@id/pedalView"
-        app:layout_constraintStart_toEndOf="@id/pedal5" />
-
-    <ImageButton
-        android:id="@+id/pedal7"
-        android:layout_width="50dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:background="@drawable/pedal"
-        android:contentDescription=""
-        android:rotation="0"
-        android:tag="P7"
-        app:layout_constraintBottom_toBottomOf="@id/pedalView"
-        app:layout_constraintTop_toTopOf="@id/pedalView"
-        app:layout_constraintStart_toEndOf="@id/pedal6" />
-
-    <ImageButton
-        android:id="@+id/pedal8"
-        android:layout_width="50dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:background="@drawable/pedal"
-        android:contentDescription=""
-        android:rotation="0"
-        android:tag="P8"
-        app:layout_constraintBottom_toBottomOf="@id/pedalView"
-        app:layout_constraintTop_toTopOf="@id/pedalView"
-        app:layout_constraintStart_toEndOf="@id/pedal7" />
-
-    <ImageButton
-        android:id="@+id/pedal9"
-        android:layout_width="50dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:background="@drawable/pedal"
-        android:contentDescription=""
-        android:rotation="0"
-        android:tag="P9"
-        app:layout_constraintBottom_toBottomOf="@id/pedalView"
-        app:layout_constraintTop_toTopOf="@id/pedalView"
-        app:layout_constraintStart_toEndOf="@id/pedal8" />
-
-    <ImageButton
-        android:id="@+id/pedal10"
-        android:layout_width="50dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:background="@drawable/pedal"
-        android:contentDescription=""
-        android:rotation="0"
-        android:tag="P10"
-        app:layout_constraintBottom_toBottomOf="@id/pedalView"
-        app:layout_constraintTop_toTopOf="@id/pedalView"
-        app:layout_constraintStart_toEndOf="@id/pedal9" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <View
+            android:id="@+id/bodyBottom"
+            android:background="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:layout_alignParentBottom="true"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/pedalBox"
+        android:layout_height="0dip"
+        android:layout_width="match_parent"
+        android:layout_weight="0.10">
+        <ImageButton
+            android:id="@+id/pedal1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:contentDescription=""
+            android:scaleType="fitXY"
+            android:src="@drawable/pedal"
+            android:tag="P1" />
+        <ImageButton
+            android:id="@+id/pedal2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pedal1"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:contentDescription=""
+            android:scaleType="fitXY"
+            android:src="@drawable/pedal"
+            android:tag="P2" />
+        <ImageButton
+            android:id="@+id/pedal3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pedal2"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:contentDescription=""
+            android:scaleType="fitXY"
+            android:src="@drawable/pedal"
+            android:tag="P3" />
+        <ImageButton
+            android:id="@+id/pedal4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pedal3"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:contentDescription=""
+            android:scaleType="fitXY"
+            android:src="@drawable/pedal"
+            android:tag="P4" />
+        <ImageButton
+            android:id="@+id/pedal5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pedal4"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:contentDescription=""
+            android:scaleType="fitXY"
+            android:src="@drawable/pedal"
+            android:tag="P5" />
+        <ImageButton
+            android:id="@+id/pedal6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pedal5"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:contentDescription=""
+            android:scaleType="fitXY"
+            android:src="@drawable/pedal"
+            android:tag="P6" />
+        <ImageButton
+            android:id="@+id/pedal7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pedal6"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:contentDescription=""
+            android:scaleType="fitXY"
+            android:src="@drawable/pedal"
+            android:tag="P7" />
+        <ImageButton
+            android:id="@+id/pedal8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pedal7"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:contentDescription=""
+            android:scaleType="fitXY"
+            android:src="@drawable/pedal"
+            android:tag="P8" />
+        <ImageButton
+            android:id="@+id/pedal9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pedal8"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:contentDescription=""
+            android:scaleType="fitXY"
+            android:src="@drawable/pedal"
+            android:tag="P9" />
+        <ImageButton
+            android:id="@+id/pedal10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pedal9"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:contentDescription=""
+            android:scaleType="fitXY"
+            android:src="@drawable/pedal"
+            android:tag="P10" />
+    </RelativeLayout>
+</LinearLayout>
