@@ -5,13 +5,16 @@
     android:layout_height="wrap_content"
     android:baselineAligned="false"
     android:orientation="vertical"
+    android:background="#7F7F7F"
     tools:context=".MainActivity"
     tools:showIn="@layout/activity_main">
     <RelativeLayout
         android:id="@+id/pedalBox"
-        android:layout_height="0dip"
+        android:layout_height="0dp"
+        android:layout_marginStart="32dp"
         android:layout_width="match_parent"
-        android:layout_weight="0.10">
+        android:layout_weight="1.0">
+
         <ImageButton
             android:id="@+id/pedal1"
             android:layout_width="wrap_content"
@@ -27,7 +30,7 @@
             android:id="@+id/pedal2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/pedal1"
+            android:layout_toEndOf="@id/pedal1"
             android:adjustViewBounds="true"
             android:background="@android:color/transparent"
             android:contentDescription=""
@@ -38,7 +41,7 @@
             android:id="@+id/pedal3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/pedal2"
+            android:layout_toEndOf="@id/pedal2"
             android:adjustViewBounds="true"
             android:background="@android:color/transparent"
             android:contentDescription=""
@@ -49,7 +52,7 @@
             android:id="@+id/pedal4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/pedal3"
+            android:layout_toEndOf="@id/pedal3"
             android:adjustViewBounds="true"
             android:background="@android:color/transparent"
             android:contentDescription=""
@@ -60,7 +63,7 @@
             android:id="@+id/pedal5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/pedal4"
+            android:layout_toEndOf="@id/pedal4"
             android:adjustViewBounds="true"
             android:background="@android:color/transparent"
             android:contentDescription=""
@@ -71,7 +74,7 @@
             android:id="@+id/pedal6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/pedal5"
+            android:layout_toEndOf="@id/pedal5"
             android:adjustViewBounds="true"
             android:background="@android:color/transparent"
             android:contentDescription=""
@@ -82,7 +85,7 @@
             android:id="@+id/pedal7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/pedal6"
+            android:layout_toEndOf="@id/pedal6"
             android:adjustViewBounds="true"
             android:background="@android:color/transparent"
             android:contentDescription=""
@@ -104,7 +107,7 @@
             android:id="@+id/pedal9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/pedal8"
+            android:layout_toEndOf="@id/pedal8"
             android:adjustViewBounds="true"
             android:background="@android:color/transparent"
             android:contentDescription=""
@@ -115,24 +118,24 @@
             android:id="@+id/pedal10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/pedal9"
+            android:layout_toEndOf="@id/pedal9"
             android:adjustViewBounds="true"
             android:background="@android:color/transparent"
-            android:contentDescription=""
+            android:contentDescription="TODO"
             android:scaleType="fitXY"
             android:src="@drawable/pedal"
             android:tag="P10" />
     </RelativeLayout>
 
     <RelativeLayout
-        android:layout_height="0dip"
+        android:layout_height="0dp"
         android:layout_width="match_parent"
-        android:layout_weight="0.80">
+        android:layout_weight="12.0">
 
         <View
             android:id="@+id/bodyTop"
             android:layout_width="match_parent"
-            android:layout_height="25dp"
+            android:layout_height="5dp"
             android:layout_alignParentTop="true"
             android:background="@color/black" />
 
@@ -147,14 +150,17 @@
             android:id="@+id/bodyBottom"
             android:background="@color/black"
             android:layout_width="match_parent"
-            android:layout_height="25dp"
+            android:layout_height="5dp"
             android:layout_alignParentBottom="true"/>
     </RelativeLayout>
 
     <RelativeLayout
-        android:layout_height="0dip"
         android:layout_width="match_parent"
-        android:layout_weight="0.10">
+        android:layout_height="0dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_weight="1.0">
+
         <ImageButton
             android:id="@+id/leverLKL"
             android:layout_width="wrap_content"
@@ -166,99 +172,108 @@
             android:scaleType="fitXY"
             android:src="@drawable/lever"
             android:tag="LKL" />
+
         <ImageButton
             android:id="@+id/leverLKLR"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/leverLKL"
+            android:layout_toEndOf="@id/leverLKL"
             android:adjustViewBounds="true"
             android:background="@android:color/transparent"
             android:contentDescription="LKLR"
             android:scaleType="fitXY"
             android:src="@drawable/lever"
             android:tag="LKLR" />
+
         <ImageButton
             android:id="@+id/leverLKV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/leverLKLR"
+            android:layout_toEndOf="@id/leverLKLR"
             android:adjustViewBounds="true"
             android:background="@android:color/transparent"
             android:contentDescription="LKV"
             android:scaleType="fitXY"
             android:src="@drawable/verticallever"
             android:tag="LKV" />
+
         <ImageButton
             android:id="@+id/leverLKRR"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/leverLKV"
+            android:layout_toEndOf="@id/leverLKV"
             android:adjustViewBounds="true"
             android:background="@android:color/transparent"
             android:contentDescription="LKRR"
             android:scaleType="fitXY"
             android:src="@drawable/lever"
             android:tag="LKRR" />
+
         <ImageButton
             android:id="@+id/leverLKR"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/leverLKRR"
+            android:layout_toEndOf="@id/leverLKRR"
             android:adjustViewBounds="true"
             android:background="@android:color/transparent"
             android:contentDescription="LKR"
             android:scaleType="fitXY"
             android:src="@drawable/lever"
             android:tag="LKR" />
+
         <ImageButton
             android:id="@+id/leverRKL"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toLeftOf="@id/leverRKLR"
+            android:layout_toStartOf="@id/leverRKLR"
             android:adjustViewBounds="true"
             android:background="@android:color/transparent"
             android:contentDescription="RKL"
             android:scaleType="fitXY"
             android:src="@drawable/lever"
             android:tag="RKL" />
+
         <ImageButton
             android:id="@+id/leverRKLR"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toLeftOf="@id/leverRKV"
+            android:layout_toStartOf="@id/leverRKV"
             android:adjustViewBounds="true"
             android:background="@android:color/transparent"
             android:contentDescription="RKLR"
             android:scaleType="fitXY"
             android:src="@drawable/lever"
             android:tag="RKLR" />
+
         <ImageButton
             android:id="@+id/leverRKV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toLeftOf="@id/leverRKRR"
+            android:layout_toStartOf="@id/leverRKRR"
             android:adjustViewBounds="true"
             android:background="@android:color/transparent"
             android:contentDescription="RKV"
             android:scaleType="fitXY"
             android:src="@drawable/verticallever"
             android:tag="RKV" />
+
         <ImageButton
             android:id="@+id/leverRKRR"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toLeftOf="@id/leverRKR"
+            android:layout_toStartOf="@id/leverRKR"
             android:adjustViewBounds="true"
             android:background="@android:color/transparent"
             android:contentDescription="RKRR"
             android:scaleType="fitXY"
             android:src="@drawable/lever"
             android:tag="RKRR" />
+
         <ImageButton
             android:id="@+id/leverRKR"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
             android:adjustViewBounds="true"
             android:background="@android:color/transparent"
             android:contentDescription="RKR"

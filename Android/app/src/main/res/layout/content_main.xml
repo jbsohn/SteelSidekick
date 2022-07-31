@@ -5,12 +5,15 @@
     android:layout_height="wrap_content"
     android:baselineAligned="false"
     android:orientation="horizontal"
+    android:background="#7F7F7F"
     tools:context=".MainActivity"
     tools:showIn="@layout/activity_main">
     <RelativeLayout
-        android:layout_width="0dip"
+        android:layout_width="0dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="32dp"
         android:layout_height="match_parent"
-        android:layout_weight="0.10">
+        android:layout_weight="1.0">
         <ImageButton
             android:id="@+id/leverLKL"
             android:layout_width="wrap_content"
@@ -136,7 +139,7 @@
     <RelativeLayout
         android:layout_width="0dip"
         android:layout_height="match_parent"
-        android:layout_weight="0.80"
+        android:layout_weight="12.0"
         android:background="#000000">
 
         <View
@@ -161,8 +164,9 @@
     <RelativeLayout
         android:id="@+id/pedalBox"
         android:layout_width="0dip"
+        android:layout_marginTop="32dp"
         android:layout_height="match_parent"
-        android:layout_weight="0.10">
+        android:layout_weight="1.0">
         <ImageButton
             android:id="@+id/pedal1"
             android:layout_width="wrap_content"
