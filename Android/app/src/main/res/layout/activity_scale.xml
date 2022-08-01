@@ -8,108 +8,108 @@
     tools:layout_editor_absoluteY="89dp">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/guitarCardView"
+        android:id="@+id/showScaleCardView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        >
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            >
 
             <TextView
-                android:id="@+id/textView4"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:text="Show Scales Notes"
+                android:layout_width="wrap_content"
+                android:layout_height="18dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginBottom="16dp"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:text="Show Scales Notes"
-                android:textAlignment="viewStart"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
 
             <com.google.android.material.switchmaterial.SwitchMaterial
                 android:id="@+id/scaleSwitch"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="11dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginTop="11dp"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="18dp"
+                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
         </androidx.constraintlayout.widget.ConstraintLayout>
-
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        app:contentPadding="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/guitarCardView">
+        app:layout_constraintTop_toBottomOf="@+id/showScaleCardView">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
+            android:layout_height="match_parent"
+            android:padding="16dp"
+            >
             <TextView
-                android:id="@+id/textView5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="16dp"
+                android:id="@+id/scaleTextView"
                 android:text="Scale"
+                android:layout_width="wrap_content"
+                android:layout_height="18dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginStart="16dp"
+                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                />
 
             <Spinner
                 android:id="@+id/scaleSpinner"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_marginTop="8dp"
+                android:layout_height="18dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginStart="16dp"
                 android:gravity="end"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                />
 
             <TextView
-                android:id="@+id/textView6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="16dp"
+                android:id="@+id/rootNoteTextView"
                 android:text="Root Note"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="18dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginStart="16dp"
+                app:layout_constraintTop_toBottomOf="@+id/scaleTextView"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView5"
-                app:layout_constraintVertical_bias="0.0" />
+                />
 
             <Spinner
                 android:id="@+id/rootNoteSpinner"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:layout_marginEnd="8dp"
                 android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginStart="16dp"
                 android:entries="@array/notes_array"
-                android:gravity="end"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/scaleSpinner"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/scaleSpinner" />
+                />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
